@@ -1,0 +1,51 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Jun  9 11:17:09 2024
+# Process ID: 25620
+# Current directory: D:/Study/hardware/zonghe1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16748 D:\Study\hardware\zonghe1\zonghe1.xpr
+# Log file: D:/Study/hardware/zonghe1/vivado.log
+# Journal file: D:/Study/hardware/zonghe1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/hardware/zonghe1/zonghe1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 878.707 ; gain = 264.836
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name gly_final_v4_0_project -directory D:/Study/hardware/zonghe1/zonghe1.tmp/gly_final_v4_0_project d:/Study/hardware/ip_repo/gly_final_4.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/src/dout.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/src/genMat.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/hdl/gly_final_v4_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/src/rgb2gray.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/src/sobel.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_final_4.0/hdl/gly_final_v4_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1096.941 ; gain = 0.000
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'd:/Study/hardware/ip_repo/gly_final_4.0/component.xml' ignored by IP packager.
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'd:/Study/hardware/ip_repo/gly_final_4.0/component.xml' ignored by IP packager.
+set_property core_revision 8 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path d:/Study/hardware/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Study/hardware/ip_repo'
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jun  9 11:33:54 2024...

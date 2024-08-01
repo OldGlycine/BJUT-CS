@@ -1,0 +1,123 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jun 11 05:22:30 2024
+# Process ID: 10532
+# Current directory: D:/Study/hardware/zonghe1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32224 D:\Study\hardware\zonghe1\zonghe1.xpr
+# Log file: D:/Study/hardware/zonghe1/vivado.log
+# Journal file: D:/Study/hardware/zonghe1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/hardware/zonghe1/zonghe1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 892.148 ; gain = 272.336
+update_compile_order -fileset sources_1
+open_bd_design {D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:user:spi_oled111:1.0 - spi_oled111_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:user:i2c_wyf:1.0 - i2c_wyf_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:user:gly_bram:1.5 - gly_bram_0
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /gly_bram_0/rstb(undef) and /blk_mem_gen_0/rstb(rst)
+Successfully read diagram <design_1> from BD file <D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd>
+startgroup
+set_property -dict [list CONFIG.C_S_AXI_ACLK_FREQ_HZ_d.VALUE_SRC PROPAGATED] [get_bd_cells axi_uartlite_0]
+set_property -dict [list CONFIG.C_S_AXI_ACLK_FREQ_HZ {100000000}] [get_bd_cells axi_uartlite_0]
+endgroup
+save_bd_design
+Wrote  : <D:\Study\hardware\zonghe1\zonghe1.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+ipx::edit_ip_in_project -upgrade true -name gly_bram_v1_5_project -directory D:/Study/hardware/zonghe1/zonghe1.tmp/gly_bram_v1_5_project d:/Study/hardware/ip_repo/gly_bram_1.5/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1166.789 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/src/dout.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/src/genMat.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/hdl/gly_bram_v1_5_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/src/sobel.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/src/bram_top.sv:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [d:/Study/hardware/ip_repo/gly_bram_1.5/hdl/gly_bram_v1_5.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 1166.789 ; gain = 0.000
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'd:/Study/hardware/ip_repo/gly_bram_1.5/component.xml' ignored by IP packager.
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path d:/Study/hardware/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Study/hardware/ip_repo'
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:gly_bram:1.5 [get_ips  design_1_gly_bram_0_0] -log ip_upgrade.log
+Upgrading 'D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_gly_bram_0_0 (gly_bram_v1.5 1.5) from revision 2 to revision 3
+WARNING: [BD 41-1731] Type mismatch between connected pins: /blk_mem_gen_0/rstb(rst) and /gly_bram_0_upgraded_ipi/rstb(undef)
+Wrote  : <D:\Study\hardware\zonghe1\zonghe1.srcs\sources_1\bd\design_1\design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Study/hardware/zonghe1/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_gly_bram_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd]
+WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
+Wrote  : <D:\Study\hardware\zonghe1\zonghe1.srcs\sources_1\bd\design_1\design_1.bd> 
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(17) - Only lower order bits will be connected.
+VHDL Output written to : D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/blk_mem_gen_0/addra'(32) to net 'axi_bram_ctrl_0_BRAM_PORTA_ADDR'(17) - Only lower order bits will be connected.
+VHDL Output written to : D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block spi_oled111_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block i2c_wyf_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [BD 41-1029] Generation completed for the IP Integrator block gly_bram_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_bram_ctrl_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_4/design_1_auto_pc_4_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m01_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m02_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/m03_couplers/auto_pc .
+Exporting to file D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:01:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1514.430 ; gain = 347.641
+export_ip_user_files -of_objects [get_files D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd] -directory D:/Study/hardware/zonghe1/zonghe1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/hardware/zonghe1/zonghe1.ip_user_files -ipstatic_source_dir D:/Study/hardware/zonghe1/zonghe1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/modelsim} {questa=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/questa} {riviera=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/riviera} {activehdl=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Tue Jun 11 05:27:44 2024] Launched synth_1...
+Run output will be captured here: D:/Study/hardware/zonghe1/zonghe1.runs/synth_1/runme.log
+[Tue Jun 11 05:27:44 2024] Launched impl_1...
+Run output will be captured here: D:/Study/hardware/zonghe1/zonghe1.runs/impl_1/runme.log
+report_ip_status -name ip_status 

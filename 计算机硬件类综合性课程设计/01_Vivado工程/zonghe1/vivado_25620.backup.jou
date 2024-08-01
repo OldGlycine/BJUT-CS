@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Jun  9 11:17:09 2024
+# Process ID: 25620
+# Current directory: D:/Study/hardware/zonghe1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16748 D:\Study\hardware\zonghe1\zonghe1.xpr
+# Log file: D:/Study/hardware/zonghe1/vivado.log
+# Journal file: D:/Study/hardware/zonghe1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/hardware/zonghe1/zonghe1.xpr
+update_compile_order -fileset sources_1
+ipx::edit_ip_in_project -upgrade true -name gly_final_v4_0_project -directory D:/Study/hardware/zonghe1/zonghe1.tmp/gly_final_v4_0_project d:/Study/hardware/ip_repo/gly_final_4.0/component.xml
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+set_property core_revision 8 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path d:/Study/hardware/ip_repo

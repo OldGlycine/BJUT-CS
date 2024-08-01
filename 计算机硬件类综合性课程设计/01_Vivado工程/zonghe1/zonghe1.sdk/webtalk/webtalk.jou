@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Thu May 30 19:29:19 2024
+# Process ID: 34468
+# Current directory: D:/Study/hardware/zonghe1/zonghe1.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: D:/Study/hardware/zonghe1/zonghe1.sdk/webtalk/webtalk.log
+# Journal file: D:/Study/hardware/zonghe1/zonghe1.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

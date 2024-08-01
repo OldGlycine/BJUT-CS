@@ -1,0 +1,694 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jun 12 17:27:01 2024
+# Process ID: 33880
+# Current directory: D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1
+# Command line: vivado.exe -log gly_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source gly_0.tcl
+# Log file: D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/gly_0.vds
+# Journal file: D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source gly_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+Command: synth_design -top gly_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 25248 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 489.656 ; gain = 98.234
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'gly_0' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/synth/gly_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'gly_v5_0' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'gly_v5_0_S00_AXI' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0_S00_AXI.v:4]
+	Parameter h bound to: 11'b01010000000 
+	Parameter w bound to: 11'b00111100000 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0_S00_AXI.v:239]
+INFO: [Synth 8-226] default block is never used [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0_S00_AXI.v:380]
+INFO: [Synth 8-6157] synthesizing module 'rgb2gray' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/rgb2gray.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (1#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/rgb2gray.v:23]
+INFO: [Synth 8-6157] synthesizing module 'genMat' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/genMat.v:23]
+INFO: [Synth 8-638] synthesizing module 'fifo_ip' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/synth/fifo_ip.vhd:72]
+	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
+	Parameter C_SELECT_XPM bound to: 0 - type: integer 
+	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
+	Parameter C_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_DEFAULT_VALUE bound to: BlankString - type: string 
+	Parameter C_DIN_WIDTH bound to: 8 - type: integer 
+	Parameter C_DOUT_RST_VAL bound to: 0 - type: string 
+	Parameter C_DOUT_WIDTH bound to: 8 - type: integer 
+	Parameter C_ENABLE_RLOCS bound to: 0 - type: integer 
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_FULL_FLAGS_RST_VAL bound to: 0 - type: integer 
+	Parameter C_HAS_ALMOST_EMPTY bound to: 0 - type: integer 
+	Parameter C_HAS_ALMOST_FULL bound to: 0 - type: integer 
+	Parameter C_HAS_BACKUP bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_INT_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_MEMINIT_FILE bound to: 0 - type: integer 
+	Parameter C_HAS_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_RD_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_RD_RST bound to: 0 - type: integer 
+	Parameter C_HAS_RST bound to: 0 - type: integer 
+	Parameter C_HAS_SRST bound to: 1 - type: integer 
+	Parameter C_HAS_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_HAS_VALID bound to: 0 - type: integer 
+	Parameter C_HAS_WR_ACK bound to: 0 - type: integer 
+	Parameter C_HAS_WR_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_HAS_WR_RST bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE bound to: 0 - type: integer 
+	Parameter C_INIT_WR_PNTR_VAL bound to: 0 - type: integer 
+	Parameter C_MEMORY_TYPE bound to: 1 - type: integer 
+	Parameter C_MIF_FILE_NAME bound to: BlankString - type: string 
+	Parameter C_OPTIMIZATION_MODE bound to: 0 - type: integer 
+	Parameter C_OVERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_PRELOAD_LATENCY bound to: 1 - type: integer 
+	Parameter C_PRELOAD_REGS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE bound to: 1kx18 - type: string 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL bound to: 2 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_NEGATE_VAL bound to: 3 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL bound to: 1022 - type: integer 
+	Parameter C_PROG_FULL_THRESH_NEGATE_VAL bound to: 1021 - type: integer 
+	Parameter C_PROG_FULL_TYPE bound to: 0 - type: integer 
+	Parameter C_RD_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_RD_DEPTH bound to: 1024 - type: integer 
+	Parameter C_RD_FREQ bound to: 1 - type: integer 
+	Parameter C_RD_PNTR_WIDTH bound to: 10 - type: integer 
+	Parameter C_UNDERFLOW_LOW bound to: 0 - type: integer 
+	Parameter C_USE_DOUT_RST bound to: 1 - type: integer 
+	Parameter C_USE_ECC bound to: 0 - type: integer 
+	Parameter C_USE_EMBEDDED_REG bound to: 0 - type: integer 
+	Parameter C_USE_PIPELINE_REG bound to: 0 - type: integer 
+	Parameter C_POWER_SAVING_MODE bound to: 0 - type: integer 
+	Parameter C_USE_FIFO16_FLAGS bound to: 0 - type: integer 
+	Parameter C_USE_FWFT_DATA_COUNT bound to: 0 - type: integer 
+	Parameter C_VALID_LOW bound to: 0 - type: integer 
+	Parameter C_WR_ACK_LOW bound to: 0 - type: integer 
+	Parameter C_WR_DATA_COUNT_WIDTH bound to: 10 - type: integer 
+	Parameter C_WR_DEPTH bound to: 1024 - type: integer 
+	Parameter C_WR_FREQ bound to: 1 - type: integer 
+	Parameter C_WR_PNTR_WIDTH bound to: 10 - type: integer 
+	Parameter C_WR_RESPONSE_LATENCY bound to: 1 - type: integer 
+	Parameter C_MSGON_VAL bound to: 1 - type: integer 
+	Parameter C_ENABLE_RST_SYNC bound to: 1 - type: integer 
+	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE bound to: 0 - type: integer 
+	Parameter C_SYNCHRONIZER_STAGE bound to: 2 - type: integer 
+	Parameter C_INTERFACE_TYPE bound to: 0 - type: integer 
+	Parameter C_AXI_TYPE bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_WR_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_RD_CHANNEL bound to: 1 - type: integer 
+	Parameter C_HAS_SLAVE_CE bound to: 0 - type: integer 
+	Parameter C_HAS_MASTER_CE bound to: 0 - type: integer 
+	Parameter C_ADD_NGC_CONSTRAINT bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_OVERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_COMMON_UNDERFLOW bound to: 0 - type: integer 
+	Parameter C_USE_DEFAULT_SETTINGS bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_AXI_LEN_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXI_LOCK_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXI_ID bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_AWUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_WUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_BUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_ARUSER bound to: 0 - type: integer 
+	Parameter C_HAS_AXI_RUSER bound to: 0 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TDATA bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TID bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TDEST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TUSER bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TREADY bound to: 1 - type: integer 
+	Parameter C_HAS_AXIS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TSTRB bound to: 0 - type: integer 
+	Parameter C_HAS_AXIS_TKEEP bound to: 0 - type: integer 
+	Parameter C_AXIS_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_AXIS_TID_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TDEST_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TUSER_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXIS_TSTRB_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXIS_TKEEP_WIDTH bound to: 1 - type: integer 
+	Parameter C_WACH_TYPE bound to: 0 - type: integer 
+	Parameter C_WDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_WRCH_TYPE bound to: 0 - type: integer 
+	Parameter C_RACH_TYPE bound to: 0 - type: integer 
+	Parameter C_RDCH_TYPE bound to: 0 - type: integer 
+	Parameter C_AXIS_TYPE bound to: 0 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_WRCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RACH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_RDCH bound to: 1 - type: integer 
+	Parameter C_IMPLEMENTATION_TYPE_AXIS bound to: 1 - type: integer 
+	Parameter C_APPLICATION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_APPLICATION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PRIM_FIFO_TYPE_WACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_WRCH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RACH bound to: 512x36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_RDCH bound to: 1kx36 - type: string 
+	Parameter C_PRIM_FIFO_TYPE_AXIS bound to: 1kx18 - type: string 
+	Parameter C_USE_ECC_WACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_WRCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RACH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_RDCH bound to: 0 - type: integer 
+	Parameter C_USE_ECC_AXIS bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_ERROR_INJECTION_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_DIN_WIDTH_WACH bound to: 1 - type: integer 
+	Parameter C_DIN_WIDTH_WDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_WRCH bound to: 2 - type: integer 
+	Parameter C_DIN_WIDTH_RACH bound to: 32 - type: integer 
+	Parameter C_DIN_WIDTH_RDCH bound to: 64 - type: integer 
+	Parameter C_DIN_WIDTH_AXIS bound to: 1 - type: integer 
+	Parameter C_WR_DEPTH_WACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_WDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_WRCH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RACH bound to: 16 - type: integer 
+	Parameter C_WR_DEPTH_RDCH bound to: 1024 - type: integer 
+	Parameter C_WR_DEPTH_AXIS bound to: 1024 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_WRCH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RACH bound to: 4 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_RDCH bound to: 10 - type: integer 
+	Parameter C_WR_PNTR_WIDTH_AXIS bound to: 10 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_DATA_COUNTS_AXIS bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_WRCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RACH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_RDCH bound to: 0 - type: integer 
+	Parameter C_HAS_PROG_FLAGS_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_WRCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RACH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_RDCH bound to: 1023 - type: integer 
+	Parameter C_PROG_FULL_THRESH_ASSERT_VAL_AXIS bound to: 1023 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_WRCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RACH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_RDCH bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_TYPE_AXIS bound to: 0 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_WRCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RACH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_RDCH bound to: 1022 - type: integer 
+	Parameter C_PROG_EMPTY_THRESH_ASSERT_VAL_AXIS bound to: 1022 - type: integer 
+	Parameter C_REG_SLICE_MODE_WACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_WRCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
+	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/synth/fifo_ip.vhd:540]
+INFO: [Synth 8-256] done synthesizing module 'fifo_ip' (25#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/synth/fifo_ip.vhd:72]
+INFO: [Synth 8-6155] done synthesizing module 'genMat' (26#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/genMat.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sobel' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:23]
+	Parameter sobel_thresh bound to: 50 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'cordic_ip' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/cordic_ip_1/synth/cordic_ip.vhd:70]
+	Parameter C_ARCHITECTURE bound to: 2 - type: integer 
+	Parameter C_CORDIC_FUNCTION bound to: 6 - type: integer 
+	Parameter C_COARSE_ROTATE bound to: 0 - type: integer 
+	Parameter C_DATA_FORMAT bound to: 2 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ACLK bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 1 - type: integer 
+	Parameter C_INPUT_WIDTH bound to: 21 - type: integer 
+	Parameter C_ITERATIONS bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 11 - type: integer 
+	Parameter C_PHASE_FORMAT bound to: 0 - type: integer 
+	Parameter C_PIPELINE_MODE bound to: -2 - type: integer 
+	Parameter C_PRECISION bound to: 0 - type: integer 
+	Parameter C_ROUND_MODE bound to: 0 - type: integer 
+	Parameter C_SCALE_COMP bound to: 0 - type: integer 
+	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
+	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_PHASE_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_CARTESIAN_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_S_AXIS_CARTESIAN_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXIS_DOUT_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_AXIS_DOUT_TUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'cordic_v6_0_14' declared at 'd:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/cordic_ip_1/hdl/cordic_v6_0_vh_rfs.vhd:10135' bound to instance 'U0' of component 'cordic_v6_0_14' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/cordic_ip_1/synth/cordic_ip.vhd:147]
+INFO: [Synth 8-256] done synthesizing module 'cordic_ip' (40#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/cordic_ip_1/synth/cordic_ip.vhd:70]
+INFO: [Synth 8-6155] done synthesizing module 'sobel' (41#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dout' [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/dout.v:22]
+	Parameter count_rst bound to: 11'b00001100100 
+WARNING: [Synth 8-6014] Unused sequential element done_reg was removed.  [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/dout.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'dout' (42#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/dout.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'gly_v5_0_S00_AXI' (43#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'gly_v5_0' (44#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/hdl/gly_v5_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'gly_0' (45#1) [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/synth/gly_0.v:57]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SINIT
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized17 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized15 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized15 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized15 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized15 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized15 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized15 has unconnected port C_IN
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[11]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[10]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[9]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[8]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[7]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[6]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[5]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[4]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[3]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[2]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[1]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized15 has unconnected port rem_out[0]
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized16 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized13 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized13 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized13 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized13 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized13 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized13 has unconnected port C_IN
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized14 has unconnected port WE
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized14 has unconnected port CE
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized14 has unconnected port SCLR
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized14 has unconnected port CLK
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized11 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized11 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized11 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized11 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized11 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized11 has unconnected port C_IN
+WARNING: [Synth 8-3331] design cordic_v6_0_14_delay__parameterized12 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized9 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized9 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized9 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized9 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized9 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized9 has unconnected port C_IN
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized7 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized7 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized7 has unconnected port b_in
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:52 ; elapsed = 00:31:54 . Memory (MB): peak = 839.504 ; gain = 448.082
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:31:55 . Memory (MB): peak = 839.504 ; gain = 448.082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:53 ; elapsed = 00:31:55 . Memory (MB): peak = 839.504 ; gain = 448.082
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 252 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo1/U0'
+Finished Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo1/U0'
+Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo2/U0'
+Finished Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo2/U0'
+Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo3/U0'
+Finished Parsing XDC File [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/fifo_ip_1/fifo_ip.xdc] for cell 'inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo3/U0'
+Parsing XDC File [D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gly_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gly_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 934.117 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 934.891 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 934.891 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 934.891 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:00 ; elapsed = 00:32:04 . Memory (MB): peak = 934.891 ; gain = 543.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:00 ; elapsed = 00:32:04 . Memory (MB): peak = 934.891 ; gain = 543.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo1/U0. (constraint file  D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc, line 14).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo2/U0. (constraint file  D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc, line 14).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo3/U0. (constraint file  D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/dont_touch.xdc, line 14).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/sobelel/genSq. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/gly_v5_0_S00_AXI_inst/genner/mat_fifo3. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:32:04 . Memory (MB): peak = 934.891 ; gain = 543.469
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:78]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:66]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:01 ; elapsed = 00:32:05 . Memory (MB): peak = 934.891 ; gain = 543.469
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[0]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[0]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[0]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[1]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[1]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[1]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[2]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[2]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[2]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[3]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[3]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[3]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[4]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/r_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/g_reg[4]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[4]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[13]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/trans/b_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/gly_v5_0_S00_AXI_inst/trans/b_reg[14] )
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/gly_v5_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/gly_v5_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/gly_v5_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/gly_v5_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[0]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[1]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[2]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\inst/gly_v5_0_S00_AXI_inst/doutt/addrb_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\inst/gly_v5_0_S00_AXI_inst/doutt/addrb_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/gly_v5_0_S00_AXI_inst/doutt/web_reg[3]' (FDCE) to 'inst/gly_v5_0_S00_AXI_inst/doutt/enb_reg'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:32:07 . Memory (MB): peak = 934.891 ; gain = 543.469
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:61]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:61]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:73]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:73]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:32:15 . Memory (MB): peak = 963.184 ; gain = 571.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:32:15 . Memory (MB): peak = 964.297 ; gain = 572.875
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:61]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:61]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:73]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [d:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/ip/gly_0/src/sobel.v:73]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:11 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    46|
+|2     |DSP48E1  |     3|
+|3     |LUT1     |    59|
+|4     |LUT2     |   129|
+|5     |LUT3     |   156|
+|6     |LUT4     |   180|
+|7     |LUT5     |    53|
+|8     |LUT6     |    84|
+|9     |MUXCY    |   141|
+|10    |RAMB18E1 |     3|
+|11    |SRL16E   |    14|
+|12    |XORCY    |    69|
+|13    |FDCE     |   291|
+|14    |FDPE     |     8|
+|15    |FDRE     |   482|
+|16    |FDSE     |    13|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:12 ; elapsed = 00:32:16 . Memory (MB): peak = 985.195 ; gain = 593.773
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 587 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:32:09 . Memory (MB): peak = 985.195 ; gain = 498.387
+Synthesis Optimization Complete : Time (s): cpu = 00:01:12 ; elapsed = 00:32:17 . Memory (MB): peak = 985.195 ; gain = 593.773
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 262 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 985.195 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 50 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 50 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:32:19 . Memory (MB): peak = 985.195 ; gain = 605.277
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 985.195 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/gly_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP gly_0, cache-ID = a0147f7a6b2fcc90
+INFO: [Coretcl 2-1174] Renamed 162 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 985.195 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Study/hardware/zonghe1/zonghe1.runs/gly_0_synth_1/gly_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file gly_0_utilization_synth.rpt -pb gly_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 12 17:59:29 2024...

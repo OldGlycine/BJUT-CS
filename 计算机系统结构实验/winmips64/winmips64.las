@@ -1,0 +1,1 @@
+D:\Study\学习\计算机系统结构\实验\winmips64\test3nn.s

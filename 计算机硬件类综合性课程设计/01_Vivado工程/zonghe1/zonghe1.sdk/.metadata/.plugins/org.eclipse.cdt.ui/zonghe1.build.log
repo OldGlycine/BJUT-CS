@@ -1,0 +1,8 @@
+19:03:43 **** Incremental Build of configuration Debug for project zonghe1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+
+19:03:43 Build Finished (took 454ms)
+

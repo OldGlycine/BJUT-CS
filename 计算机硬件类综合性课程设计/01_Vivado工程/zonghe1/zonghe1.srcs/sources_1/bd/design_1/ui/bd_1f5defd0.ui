@@ -1,0 +1,64 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 610 -defaultsOSRD
+preplace port uart_rtl -pg 1 -y 420 -defaultsOSRD
+preplace port scl -pg 1 -y 730 -defaultsOSRD
+preplace port clk_in1_0 -pg 1 -y 550 -defaultsOSRD
+preplace port spi_cs -pg 1 -y 910 -defaultsOSRD
+preplace port sda -pg 1 -y 750 -defaultsOSRD
+preplace port spi_clk -pg 1 -y 890 -defaultsOSRD
+preplace port spi_rst -pg 1 -y 850 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 630 -defaultsOSRD
+preplace port spi_mosi -pg 1 -y 930 -defaultsOSRD
+preplace port spi_dc -pg 1 -y 870 -defaultsOSRD
+preplace portBus data_rd -pg 1 -y 690 -defaultsOSRD
+preplace portBus state -pg 1 -y 710 -defaultsOSRD
+preplace inst spi_oled111_0 -pg 1 -lvl 3 -y 890 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 4 -y 170 -defaultsOSRD
+preplace inst gly_bram_0 -pg 1 -lvl 3 -y 120 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 400 -defaultsOSRD
+preplace inst i2c_wyf_0 -pg 1 -lvl 3 -y 720 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 3 -y 430 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 3 -y 550 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -y 290 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 880 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 660 -defaultsOSRD
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 780
+preplace netloc processing_system7_0_DDR 1 1 4 NJ 610 NJ 610 NJ 610 NJ
+preplace netloc i2c_wyf_0_scl 1 3 2 NJ 730 NJ
+preplace netloc i2c_wyf_0_state 1 3 2 NJ 710 NJ
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1150
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 460
+preplace netloc gly_bram_0_enb 1 3 1 1130
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 470 200 830
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 550 430
+preplace netloc i2c_wyf_0_data_rd 1 3 2 NJ 690 NJ
+preplace netloc spi_oled111_0_spi_mosi 1 3 2 NJ 930 NJ
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 770
+preplace netloc spi_oled111_0_spi_rst 1 3 2 NJ 850 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 810
+preplace netloc spi_oled111_0_spi_clk 1 3 2 NJ 890 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 630 NJ 630 NJ 630 NJ
+preplace netloc gly_bram_0_rstb 1 3 1 1140
+preplace netloc gly_bram_0_dinb 1 3 1 1170
+preplace netloc clk_wiz_0_clk_out1 1 3 1 1160J
+preplace netloc clk_in1_0_1 1 0 3 10J 540 450J 600 840J
+preplace netloc spi_oled111_0_spi_cs 1 3 2 NJ 910 NJ
+preplace netloc axi_uartlite_0_UART 1 3 2 NJ 420 NJ
+preplace netloc spi_oled111_0_spi_dc 1 3 2 NJ 870 NJ
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 800
+preplace netloc blk_mem_gen_0_doutb 1 2 2 830 10 1180
+preplace netloc gly_bram_0_web 1 3 1 1120
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 530 440 190 820
+preplace netloc Net 1 3 2 NJ 750 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 790
+preplace netloc gly_bram_0_addrb 1 3 1 N
+levelinfo -pg 1 -10 230 620 980 1310 1460 -top 0 -bot 1010
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_ps7_cnt":"1"
+}

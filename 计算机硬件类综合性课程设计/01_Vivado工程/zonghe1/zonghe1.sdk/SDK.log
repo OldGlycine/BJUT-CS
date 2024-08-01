@@ -1,0 +1,6 @@
+18:44:44 INFO  : Registering command handlers for SDK TCF services
+18:44:44 INFO  : Launching XSCT server: xsct.bat -interactive D:\Study\hardware\zonghe1\zonghe1.sdk\temp_xsdb_launch_script.tcl
+18:44:47 INFO  : XSCT server has started successfully.
+18:44:48 INFO  : Successfully done setting XSCT server connection channel  
+18:44:48 INFO  : Successfully done setting SDK workspace  
+18:44:48 INFO  : Processing command line option -hwspec D:/Study/hardware/zonghe1/zonghe1.sdk/design_1_wrapper.hdf.

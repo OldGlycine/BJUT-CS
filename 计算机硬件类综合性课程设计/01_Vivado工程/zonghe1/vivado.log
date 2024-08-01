@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Jun 12 19:25:06 2024
+# Process ID: 36264
+# Current directory: D:/Study/hardware/zonghe1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11536 D:\Study\hardware\zonghe1\zonghe1.xpr
+# Log file: D:/Study/hardware/zonghe1/vivado.log
+# Journal file: D:/Study/hardware/zonghe1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/hardware/zonghe1/zonghe1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Study/hardware/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/ProgramFiles/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 905.207 ; gain = 289.617
+open_bd_design {D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:user:spi_oled111:1.0 - spi_oled111_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:user:i2c_wyf:1.0 - i2c_wyf_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding cell -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding cell -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding cell -- xilinx.com:user:gly_bram:1.5 - gly_bram_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /gly_bram_0/rstb(undef) and /blk_mem_gen_0/rstb(rst)
+Successfully read diagram <design_1> from BD file <D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd>
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:gly:5.0 gly_0
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'create_bd_cell -type ip -vlnv xilinx.com:user:gly:5.0 gly_0'
+INFO: [Common 17-17] undo 'startgroup'
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 12 22:08:32 2024...

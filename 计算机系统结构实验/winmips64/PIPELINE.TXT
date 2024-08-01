@@ -1,0 +1,30 @@
+
+The pipeline simulation attempts to mimic as far as possible that described 
+in Appendix A of Computer Architecture: A Quantitative Approach.
+
+However in a few places alternative strategies were suggested, and we had to 
+choose one or the other. 
+
+Stalls are handled where they arise in the pipeline, not necessarily in ID.
+
+We decided to allow floating-point instructions to issue out of ID into their 
+own pipelines, if available. There they either proceed or stall, waiting for 
+their operands to become available. This has the advantage of allowing 
+out-of-order completion to be demonstrated, but it can cause WAR hazards 
+to arise. However the student can thus learn the advantages of register 
+renaming.
+
+Consider this simple program fragment:-
+
+    .text
+    add.d f7,f7,f3
+    add.d f7,f7,f4
+    mul.d f4,f5,f6   ; WAR on f4
+
+If the mul.d is allowed to issue, it could "overtake" the second add.d and 
+write to f4 first. Therefore in this case the mul.d must be stalled in ID.
+
+Structural hazards arise at the MEM stage bottleneck, as instructions attempt 
+to exit more than one of the execute stage pipelines at the same time. Our 
+simple rule is longest latency first. See page A-52
+

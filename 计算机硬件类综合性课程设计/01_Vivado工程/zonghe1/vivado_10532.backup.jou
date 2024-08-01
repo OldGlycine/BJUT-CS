@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Jun 11 05:22:30 2024
+# Process ID: 10532
+# Current directory: D:/Study/hardware/zonghe1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32224 D:\Study\hardware\zonghe1\zonghe1.xpr
+# Log file: D:/Study/hardware/zonghe1/vivado.log
+# Journal file: D:/Study/hardware/zonghe1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/hardware/zonghe1/zonghe1.xpr
+update_compile_order -fileset sources_1
+open_bd_design {D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.C_S_AXI_ACLK_FREQ_HZ_d.VALUE_SRC PROPAGATED] [get_bd_cells axi_uartlite_0]
+set_property -dict [list CONFIG.C_S_AXI_ACLK_FREQ_HZ {100000000}] [get_bd_cells axi_uartlite_0]
+endgroup
+save_bd_design
+ipx::edit_ip_in_project -upgrade true -name gly_bram_v1_5_project -directory D:/Study/hardware/zonghe1/zonghe1.tmp/gly_bram_v1_5_project d:/Study/hardware/ip_repo/gly_bram_1.5/component.xml
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path d:/Study/hardware/ip_repo
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:gly_bram:1.5 [get_ips  design_1_gly_bram_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_gly_bram_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Study/hardware/zonghe1/zonghe1.srcs/sources_1/bd/design_1/design_1.bd] -directory D:/Study/hardware/zonghe1/zonghe1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/hardware/zonghe1/zonghe1.ip_user_files -ipstatic_source_dir D:/Study/hardware/zonghe1/zonghe1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/modelsim} {questa=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/questa} {riviera=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/riviera} {activehdl=D:/Study/hardware/zonghe1/zonghe1.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+report_ip_status -name ip_status 

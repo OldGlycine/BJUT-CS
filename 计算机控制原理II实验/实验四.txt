@@ -1,0 +1,240 @@
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <cstring>
+#include <SPI.h>
+#include "Adafruit_LEDBackpack.h"
+
+#define RAM_CS  2
+#define TF_CS   3
+#define HZK_CS  7
+#define BaseAdd 0x2C9D0
+#define HONG    0xBAEB
+#define YAN     0xD1E0
+#define LU      0xC2B7
+#define XIAO    0xD0A1
+#define QU      0xC7F8
+#define NAN     0xC4CF
+#define XIN     0xD0C2
+#define YUAN    0xD4B0
+#define SONG    0xCBC9
+#define YU      0xD3DC
+#define DONG    0xB6AB
+#define LI      0xC0EF
+#define MEN     0xC3C5
+#define BEI     0xB1B1
+#define JING    0xBEA9
+#define GONG    0xB9A4
+#define YE      0xD2B5
+#define DA      0xB4F3
+#define XUE     0xD1A7
+Adafruit_8x16matrix matrix1 = Adafruit_8x16matrix();
+Adafruit_8x16matrix matrix2 = Adafruit_8x16matrix();
+#define HYL     '1'
+#define HYLXQ   '2'
+#define NXY     '3'
+#define SYDLDM  '4'
+#define BJUT    '5'
+
+byte led_matrix[32];  // 控制 16*16 点阵的具体亮暗信息
+byte led_matrix_left[16], led_matrix_right[16];  // 左右屏幕的具体亮暗信息
+byte zero[16] = {0};  // 用于清空屏幕
+int ADDR_word;
+char inchar;
+// 弘燕路
+uint8_t HongYanLu[11] = 
+{0xFD, 0x00, 0x08, 0x01, 0x00, HONG / 256, HONG % 256, YAN / 256, YAN % 256, LU / 256, LU % 256};
+// 弘燕路小区
+uint8_t HongYanLuXiaoQu[15] = 
+{0xFD, 0x00, 0x0C, 0x01, 0x00, HONG / 256, HONG % 256, YAN / 256, YAN % 256, LU / 256, LU % 256, XIAO / 256, XIAO % 256, QU / 256, QU % 256};  
+// 南新园
+uint8_t NanXinYuan[11] = 
+{0xFD, 0x00, 0x08, 0x01, 0x00, NAN / 256, NAN % 256, XIN / 256, XIN % 256, YUAN / 256, YUAN % 256};  
+// 松榆东里东门
+uint8_t SongYuDongLiDongMen[17] = 
+{0xFD, 0x00, 0x0E, 0x01, 0x00, SONG / 256, SONG % 256, YU / 256, YU % 256, DONG / 256, DONG % 256, LI / 256, LI % 256, DONG / 256, DONG % 256, MEN /256, MEN % 256};
+// 北京工业大学
+uint8_t BeiJingGongYeDaXue[17] =
+{0xFD, 0x00, 0x0E, 0x01, 0x00, BEI / 256, BEI % 256, JING / 256, JING % 256, GONG / 256, GONG % 256, YE / 256, YE % 256, DA / 256, DA % 256, XUE /256, XUE % 256};
+
+// 字符点阵数据在芯片中的地址计算方法
+int getAddress(int num) {
+  int addr;
+  int MSB = num / 256;
+  int LSB = num % 256;
+  if (MSB >= 0xA1 && MSB <= 0XA9 && LSB >= 0xA1) addr = ((MSB - 0xA1) * 94 + (LSB - 0xA1)) * 32 + BaseAdd;
+  else if (MSB >= 0xB0 && MSB <= 0xF7 && LSB >= 0xA1) addr = ((MSB - 0xB0) * 94 + (LSB - 0xA1) + 846) * 32 + BaseAdd;
+  return addr;
+}
+
+// 汉字地址转点阵亮暗信息
+void addressToLed(int addr) {
+  int left = 0;
+  int right = 0;
+  int i, j;
+  digitalWrite(HZK_CS, LOW);
+  SPI.transfer(0x03);
+  SPI.transfer(addr >> 16);
+  SPI.transfer(addr >> 8);
+  SPI.transfer(addr);
+  for(i = 0; i < 32; i++){
+    led_matrix[i] = SPI.transfer(0x00); //获取 32 字节点阵信息
+  }
+  digitalWrite(HZK_CS, HIGH);
+  for(j = 0; j < 32; j++){
+    if((j % 2) == 0){
+      led_matrix_left[left] = led_matrix[j];
+      left++;
+    }
+    else if((j % 2) == 1){
+      led_matrix_right[right] = led_matrix[j];
+      right++;
+    }
+  }
+}
+
+// 将点阵具体亮暗信息在点阵上显示
+void matrix_display() {
+  matrix1.clear();
+  matrix2.clear();
+  matrix1.drawBitmap(0, 0, led_matrix_left, 8, 16, LED_ON);
+  matrix2.drawBitmap(0, 0, led_matrix_right, 8, 16, LED_ON);
+  matrix1.writeDisplay();
+  matrix2.writeDisplay();
+  delay(500);
+}
+
+// 清屏
+void matrix_clear() {
+  matrix1.clear();
+  matrix2.clear();
+  matrix1.drawBitmap(0, 0, zero, 8, 16, LED_ON);
+  matrix2.drawBitmap(0, 0, zero, 8, 16, LED_ON);
+  matrix1.writeDisplay();
+  matrix2.writeDisplay();
+  delay(500);
+}
+
+void setup() {
+  // put your setup code here, to run once:
+  // 串口
+  Serial.begin(115200);
+  // SPI 总线
+  Serial1.begin(115200);
+  SPI.begin();
+  // 初始化汉字模块引脚
+  pinMode(HZK_CS, OUTPUT);
+  digitalWrite(HZK_CS, HIGH);
+  // 初始化16*16点阵
+  matrix1.begin(0x70);
+  matrix2.begin(0x71);
+/*
+  ADDR_word = getAddress(JING);
+  addressToLed(ADDR_word);
+  matrix_display();
+  Serial.write(HongYanLu, 11);
+  delay(1000);
+  */
+}
+
+void loop() {
+  // put your main code here, to run repeatedly: 
+  while(Serial.available()) {
+    inchar = Serial.read();
+    delay(10);
+    // 弘燕路 1
+    if(inchar == HYL) {
+      Serial1.write(HongYanLu, 11);
+      ADDR_word = getAddress(HONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(YAN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(LU);
+      addressToLed(ADDR_word);
+      matrix_display();
+      matrix_clear();
+    }
+    // 弘燕路小区 2
+    else if(inchar == HYLXQ) {
+      Serial1.write(HongYanLuXiaoQu, 15);
+      ADDR_word = getAddress(HONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(YAN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(LU);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(XIAO);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(QU);
+      addressToLed(ADDR_word);
+      matrix_display();
+      matrix_clear();
+    }
+    // 南新园 3
+    else if(inchar == NXY) {
+      Serial1.write(NanXinYuan, 11);
+      ADDR_word = getAddress(NAN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(XIN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(YUAN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      matrix_clear();
+    }
+    // 松榆东里东门 4
+    else if(inchar == SYDLDM) {
+      Serial1.write(SongYuDongLiDongMen, 17);
+      ADDR_word = getAddress(SONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(YU);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(DONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(LI);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(DONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(MEN);
+      addressToLed(ADDR_word);
+      matrix_display();
+      matrix_clear();
+    }
+    
+    // 北京工业大学 5
+    else if(inchar == BJUT) {
+      Serial1.write(BeiJingGongYeDaXue, 17);
+      ADDR_word = getAddress(BEI);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(JING);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(GONG);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(YE);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(DA);
+      addressToLed(ADDR_word);
+      matrix_display();
+      ADDR_word = getAddress(XUE);
+      addressToLed(ADDR_word);
+      matrix_display();
+      matrix_clear();
+    }
+  }
+}

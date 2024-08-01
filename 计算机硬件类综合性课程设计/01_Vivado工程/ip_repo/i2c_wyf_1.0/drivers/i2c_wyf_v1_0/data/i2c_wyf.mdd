@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER i2c_wyf
+	OPTION supported_peripherals = (i2c_wyf);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = i2c_wyf;
+END DRIVER

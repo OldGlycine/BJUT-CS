@@ -1,0 +1,54 @@
+OUTBIG EQU 8002H   ;位控制口
+OUTSEG EQU 8004H   ;段控制口
+KEYIN  EQU 8001H    ;键盘读入口
+
+;缓冲器设初值， 赋值到6个数码管
+READY:    MOV 25H,#3fH
+          MOV 24H,#3fH
+          MOV 23H,#3fH
+          MOV 22H,#3fH
+          MOV 21H,#3fH
+          MOV 20H,#3fH
+
+          MOV 28h,#6
+
+MAIN:
+
+          LCALL DISPLAY   ;无键码输入，继续显示当前的数字
+          LCALL TEST
+          JZ MAIN    ;累加器为0无按键， 继续显示
+          LCALL SEARCH    ;有键值输入?
+          MOV 20H,21H    ;数码管显示出输入的键值
+          MOV 21H,22H
+          MOV 22H,23H
+          MOV 23H,24H
+          MOV 24H,25H
+
+          MOV DPTR,#LEDTAB
+          MOVC A,@A+DPTR
+          MOV 25H,A
+
+
+          DJNZ 28h, MAIN
+
+
+DISPLAY:    ;显示模块
+          MOV R0,#20H    ;缓冲区从20H处开始
+          MOV R1,#6    ;共6个八段管
+          MOV R2,#00100000B    ;从左边开始显示灯亮为1，灭为0
+
+LOOP:     MOV DPTR,#OUTSEG
+          MOV A,#0
+          MOVX @DPTR,A    ;位选设定为0
+          MOV A,@R0    ;将以20H为首地址的内存值发送到段码输出口8004H
+          MOVX @DPTR,A
+
+          MOV DPTR,#OUTBIG    ;输出位选通估号， 使每次只显示一位八段管
+          MOV A,R2
+          MOVX @DPTR,A
+          RR A
+          MOV R2,A
+          LCALL DELAY;；延时
+          INC R0
+          DJNZ R1,LOOP;； 显示6次
+          RET

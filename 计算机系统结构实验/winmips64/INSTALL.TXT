@@ -1,0 +1,24 @@
+
+On your own computer, just install anywhere convenient, and create a short-cut 
+to point at it. Note that winmips64 will write two initialisation files into 
+this directory, one winmips64.ini which stores architectural details, one 
+winmips64.las which remembers the last .s file accessed.
+
+On a network drive, install winmips64.exe into a suitable system directory. 
+Then use a standard text editor to create a file called winmips64.pth, and put 
+this file in the same directory.
+
+The read-only file winmips64.pth should contain a single line path to a 
+read-write directory private to any logged-in user. This directory will then 
+be used to store their .ini and .las files.
+
+For example winmips64.pth might contain
+
+H:
+
+or
+
+c:\temp
+
+But remember only a single line - don't press return at the end of it
+
