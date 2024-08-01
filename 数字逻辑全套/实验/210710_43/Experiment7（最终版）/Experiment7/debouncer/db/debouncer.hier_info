@@ -1,0 +1,25 @@
+|debouncer
+clk => keyout~reg0.CLK
+clk => ctb[0].CLK
+clk => ctb[1].CLK
+clk => ctb[2].CLK
+clk => ctb[3].CLK
+clk => cta[0].CLK
+clk => cta[1].CLK
+clk => cta[2].CLK
+clk => cta[3].CLK
+key => cta.OUTPUTSELECT
+key => cta.OUTPUTSELECT
+key => cta.OUTPUTSELECT
+key => cta.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+key => ctb.OUTPUTSELECT
+keyout <= keyout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

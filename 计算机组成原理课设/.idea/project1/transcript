@@ -1,0 +1,869 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile D:/Study/ComputerOrganizationClassDesign/project1/Project1.mpf 
+# Loading project Project1
+# Compile of im.v was successful.
+# Compile of dm.v was successful.
+# Compile of mips.v was successful.
+# Compile of alu.v was successful.
+# Compile of ext.v was successful.
+# Compile of ext_tb.v was successful.
+# Compile of im_tb.v was successful.
+# Compile of dm_tb.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of gpr.v was successful.
+# Compile of gpr_tb.v was successful.
+# Compile of controller.v was successful.
+# Compile of controller_tb.v was successful.
+# Compile of pc.v was successful.
+# Compile of npc.v was successful.
+# Compile of m1.v was successful.
+# Compile of m2.v was successful.
+# Compile of m3.v was successful.
+# Compile of mips_tb.v was successful.
+# Compile of npc_tb.v was successful.
+# 20 compiles, 0 failed with no errors. 
+vsim -gui work.mips_tb
+# vsim -gui work.mips_tb 
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.dm_1k
+# Loading work.ext
+# Loading work.alu
+# Loading work.controller
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+add wave -position end  sim:/mips_tb/clk
+add wave -position end  sim:/mips_tb/rst
+add wave -position end  sim:/mips_tb/mips_1/c_21071003/overflow
+add wave -position end  sim:/mips_tb/mips_1/pc_21071003/pcout
+add wave -position 3  sim:/mips_tb/mips_1/im_1k_21071003/dout
+restart
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/clk
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/reset
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/regwrite
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/m2out
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/rs
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/rt
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/m1out
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/busa
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/busb
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/i
+add wave -position end  sim:/mips_tb/mips_1/gpr_21071003/reg_files
+restart
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Compile of im.v was successful.
+# Compile of dm.v was successful.
+# Compile of mips.v was successful.
+# Compile of alu.v was successful.
+# Compile of ext.v was successful.
+# Compile of ext_tb.v was successful.
+# Compile of im_tb.v was successful.
+# Compile of dm_tb.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of gpr.v was successful.
+# Compile of gpr_tb.v was successful.
+# Compile of controller.v was successful.
+# Compile of controller_tb.v was successful.
+# Compile of pc.v was successful.
+# Compile of npc.v was successful.
+# Compile of m1.v was successful.
+# Compile of m2.v was successful.
+# Compile of m3.v was successful.
+# Compile of mips_tb.v was successful.
+# Compile of npc_tb.v was successful.
+# 20 compiles, 0 failed with no errors. 
+restart
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.dm_1k
+# Loading work.ext
+# Loading work.alu
+# Loading work.controller
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# overflowwwwwwwwwwwwwwwwwwwwwwwww!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Compile of im.v was successful.
+# Compile of dm.v was successful.
+# Compile of mips.v was successful.
+# Compile of alu.v was successful.
+# Compile of ext.v was successful.
+# Compile of ext_tb.v was successful.
+# Compile of im_tb.v was successful.
+# Compile of dm_tb.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of gpr.v was successful.
+# Compile of gpr_tb.v was successful.
+# Compile of controller.v was successful.
+# Compile of controller_tb.v was successful.
+# Compile of pc.v was successful.
+# Compile of npc.v was successful.
+# Compile of m1.v was successful.
+# Compile of m2.v was successful.
+# Compile of m3.v was successful.
+# Compile of mips_tb.v was successful.
+# Compile of npc_tb.v was successful.
+# 20 compiles, 0 failed with no errors. 
+restart
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.dm_1k
+# Loading work.ext
+# Loading work.alu
+# Loading work.controller
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Compile of im.v was successful.
+restart
+# Loading work.im_1k
+run
+# No right to hello.
+# 
+# 
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# no rights to write on gpr
+# Hello world!
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.

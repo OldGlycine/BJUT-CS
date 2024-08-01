@@ -1,0 +1,15 @@
+module aluout(clk, aluoutin, aluoutout, overflowin, overflowout, zeroin, zeroout);
+  input clk;
+  input [31:0] aluoutin;
+  output reg [31:0] aluoutout;
+  input zeroin, overflowin;
+  output reg zeroout, overflowout;
+  
+  always@(posedge clk)  begin
+    aluoutout <= aluoutin;
+    zeroout <= zeroin;
+    overflowout <= overflowin;
+  end
+  
+endmodule
+  

@@ -1,0 +1,9 @@
+module counter_top(clk,Reset,PCWr,NextPC,a,b,c,d,e,f,g,sel);
+input clk,Rest,PCWr;
+input [3:0] NextPC;
+output a,b,c,d,e,f,g;
+output sel;
+wire [3:0] data;
+counter(clk,Reset,PCWr,NextPC,data);
+led(data,a,b,c,d,e,f,g,sel);
+endmodule

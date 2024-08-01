@@ -1,0 +1,127 @@
+D:/Study/ComputerOrganizationClassDesign/project2/im.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\im.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module im_1k
+
+Top level modules:
+	im_1k
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/mips_tb.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\mips_tb.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mips_tb
+
+Top level modules:
+	mips_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/mips.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\mips.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/dm.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\dm.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dm_1k
+
+Top level modules:
+	dm_1k
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/npc.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\npc.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module npc
+
+Top level modules:
+	npc
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/ext.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\ext.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ext
+
+Top level modules:
+	ext
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/aluout.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\aluout.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module aluout
+
+Top level modules:
+	aluout
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/alu.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\alu.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/pc.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\pc.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/ir.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\ir.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ir
+
+Top level modules:
+	ir
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/controller.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\controller.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/br.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\br.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module br
+
+Top level modules:
+	br
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/m1.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\m1.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m1
+
+Top level modules:
+	m1
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/dr.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\dr.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dr
+
+Top level modules:
+	dr
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/m2.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\m2.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m2
+
+Top level modules:
+	m2
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/m3.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\m3.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m3
+
+Top level modules:
+	m3
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/gpr.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\gpr.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module gpr
+
+Top level modules:
+	gpr
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project2/ar.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project2\ar.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ar
+
+Top level modules:
+	ar
+
+} {} {}}

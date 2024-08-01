@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\8\Experiment7(new)\Experiment7\top\simulation\modelsim
+vtop
+!i10b 1
+!s100 IQ_?CgNCl9=4ZKkeYD7R^0
+I;VO;H@_8<n?@m[G:`KNn^3
+VgabWjQ24O;JQRGH7MPeTo2
+Z1 dC:\altera\8\Experiment7(new)\Experiment7\top\simulation\modelsim
+w1677224813
+8top.vo
+Ftop.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1677224962.963000
+!s107 top.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|top.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0

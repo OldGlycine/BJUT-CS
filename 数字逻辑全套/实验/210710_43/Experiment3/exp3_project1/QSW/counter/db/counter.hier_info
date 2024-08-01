@@ -1,0 +1,27 @@
+|counter
+clrn => q_out~8.OUTPUTSELECT
+clrn => q_out~9.OUTPUTSELECT
+clrn => q_out~10.OUTPUTSELECT
+clrn => q_out~11.OUTPUTSELECT
+clk => q_out[0]~reg0.CLK
+clk => q_out[1]~reg0.CLK
+clk => q_out[2]~reg0.CLK
+clk => q_out[3]~reg0.CLK
+enp => always0~0.IN0
+ent => always0~0.IN1
+ent => rco~0.IN1
+ldn => q_out~4.OUTPUTSELECT
+ldn => q_out~5.OUTPUTSELECT
+ldn => q_out~6.OUTPUTSELECT
+ldn => q_out~7.OUTPUTSELECT
+data_in[0] => q_out~7.DATAB
+data_in[1] => q_out~6.DATAB
+data_in[2] => q_out~5.DATAB
+data_in[3] => q_out~4.DATAB
+q_out[0] <= q_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[1] <= q_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[2] <= q_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[3] <= q_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rco <= rco~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,207 @@
+Simulator report for LED
+Fri Oct 28 14:37:01 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 42 nodes     ;
+; Simulation Coverage         ;      97.62 % ;
+; Total Number of Transitions ; 1387         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                             ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Option                                                                                     ; Setting                           ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                              ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                               ;               ;
+; Vector input source                                                                        ; C:/altera/Experiment2/LED/LED.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                ; On            ;
+; Check outputs                                                                              ; Off                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                               ; Off           ;
+; Detect glitches                                                                            ; Off                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                               ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                               ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                              ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                         ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                         ; Transport     ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      97.62 % ;
+; Total nodes checked                                 ; 42           ;
+; Total output ports checked                          ; 42           ;
+; Total output ports with complete 1/0-value coverage ; 41           ;
+; Total output ports with no 1/0-value coverage       ; 1            ;
+; Total output ports with no 1-value coverage         ; 1            ;
+; Total output ports with no 0-value coverage         ; 1            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------+
+; Complete 1/0-Value Coverage                            ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |LED|WideOr0     ; |LED|WideOr0     ; out0             ;
+; |LED|WideOr1     ; |LED|WideOr1     ; out0             ;
+; |LED|WideOr2     ; |LED|WideOr2     ; out0             ;
+; |LED|WideOr3     ; |LED|WideOr3     ; out0             ;
+; |LED|WideOr4     ; |LED|WideOr4     ; out0             ;
+; |LED|WideOr5     ; |LED|WideOr5     ; out0             ;
+; |LED|WideOr6     ; |LED|WideOr6     ; out0             ;
+; |LED|out~0       ; |LED|out~0       ; out              ;
+; |LED|out~1       ; |LED|out~1       ; out              ;
+; |LED|out~2       ; |LED|out~2       ; out              ;
+; |LED|out~3       ; |LED|out~3       ; out              ;
+; |LED|out~4       ; |LED|out~4       ; out              ;
+; |LED|out~5       ; |LED|out~5       ; out              ;
+; |LED|out~6       ; |LED|out~6       ; out              ;
+; |LED|out[0]      ; |LED|out[0]      ; pin_out          ;
+; |LED|out[1]      ; |LED|out[1]      ; pin_out          ;
+; |LED|out[2]      ; |LED|out[2]      ; pin_out          ;
+; |LED|out[3]      ; |LED|out[3]      ; pin_out          ;
+; |LED|out[4]      ; |LED|out[4]      ; pin_out          ;
+; |LED|out[5]      ; |LED|out[5]      ; pin_out          ;
+; |LED|out[6]      ; |LED|out[6]      ; pin_out          ;
+; |LED|in[0]       ; |LED|in[0]       ; out              ;
+; |LED|in[1]       ; |LED|in[1]       ; out              ;
+; |LED|in[2]       ; |LED|in[2]       ; out              ;
+; |LED|in[3]       ; |LED|in[3]       ; out              ;
+; |LED|n_en        ; |LED|n_en        ; out              ;
+; |LED|Decoder0~0  ; |LED|Decoder0~0  ; out              ;
+; |LED|Decoder0~1  ; |LED|Decoder0~1  ; out              ;
+; |LED|Decoder0~2  ; |LED|Decoder0~2  ; out              ;
+; |LED|Decoder0~3  ; |LED|Decoder0~3  ; out              ;
+; |LED|Decoder0~4  ; |LED|Decoder0~4  ; out              ;
+; |LED|Decoder0~5  ; |LED|Decoder0~5  ; out              ;
+; |LED|Decoder0~6  ; |LED|Decoder0~6  ; out              ;
+; |LED|Decoder0~7  ; |LED|Decoder0~7  ; out              ;
+; |LED|Decoder0~8  ; |LED|Decoder0~8  ; out              ;
+; |LED|Decoder0~9  ; |LED|Decoder0~9  ; out              ;
+; |LED|Decoder0~10 ; |LED|Decoder0~10 ; out              ;
+; |LED|Decoder0~11 ; |LED|Decoder0~11 ; out              ;
+; |LED|Decoder0~12 ; |LED|Decoder0~12 ; out              ;
+; |LED|Decoder0~13 ; |LED|Decoder0~13 ; out              ;
+; |LED|Decoder0~14 ; |LED|Decoder0~14 ; out              ;
++------------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+; |LED|sel  ; |LED|sel         ; pin_out          ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+; |LED|sel  ; |LED|sel         ; pin_out          ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 28 14:37:00 2022
+Info: Command: quartus_sim --simulation_results_format=VWF LED -c LED
+Info (324025): Using vector source file "C:/altera/Experiment2/LED/LED.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      97.62 %
+Info (328052): Number of transitions in simulation is 1387
+Info (324045): Vector file LED.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Fri Oct 28 14:37:01 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

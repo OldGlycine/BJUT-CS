@@ -1,0 +1,144 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:27:20
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 50 6C 65 61 73 65		    PROMPT DB 'Please Input a:$'
+       20 49 6E 70 75 74
+       20 61 3A 24
+ 0010 00			    Input DB ?
+ 0011 49 6E 76 61 6C 69		    INVALID_I DB 'Invalid Input! Please try again:$'
+       64 20 49 6E 70 75
+       74 21 20 50 6C 65
+       61 73 65 20 74 72
+       79 20 61 67 61 69
+       6E 3A 24
+ 0032				DATAS ENDS
+
+ 0000				STACKS SEGMENT PARA STACK
+ 0000  0020 [			    DB 20H     DUP(0)
+        00
+       ]
+ 0020				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				  
+ 0005  B4 09			    MOV AH,9
+ 0007  BA 0000 R		    MOV DX, OFFSET PROMPT 
+ 000A  CD 21			    INT 21H
+ 000C  B4 01			    MOV AH,1 
+ 000E  CD 21			    INT 21H
+ 0010  8A D8			    MOV BL,AL
+ 0012  88 1E 0010 R		    MOV BYTE PTR Input, BL  
+
+ 0016  B1 00			 MOV CL, 0 
+ 0018  80 2E 0010 R 30		 SUB BYTE PTR Input, '0' 
+				 
+ 001D				OUTER_LOOP:  
+ 001D  FE C1			 INC CL
+ 001F  3A 0E 0010 R		 CMP CL, BYTE PTR Input  ;第二个乘数大于a则退出
+ 0023  77 66			 JA EXIT
+ 0025  B3 01			 MOV BL, 1
+ 0027  B2 0D			 MOV DL,0DH
+ 0029  B4 02			 MOV AH,2
+ 002B  CD 21			 INT 21H
+ 002D  B2 0A			 MOV DL,0AH
+ 002F  B4 02			 MOV AH,2
+ 0031  CD 21			 INT 21H
+				 
+ 0033				INNER_LOOP:
+ 0033  8A C1			 MOV AL,CL ;第二个乘数分配给AL
+ 0035  F6 E3			 MUL BL    ;第一个乘数和第二个乘数相乘的结果存入AX中
+ 0037  B7 0A			 MOV BH,10 ;把除数10存入BH中
+ 0039  F6 F7			 DIV BH    ;AX除以BH，商（十位数）存在AL，余数（个位数）存在AH
+ 003B  50			 PUSH AX
+				 
+ 003C  8A D3			 MOV DL, BL  ;第一个乘数移入DL
+ 003E  80 C2 30			 ADD DL, '0' ;转为ASCLL码
+ 0041  B4 02			 MOV AH, 2   ;输出第一个乘数
+ 0043  CD 21			 INT 21H
+				 
+ 0045  B2 2A			 MOV DL, '*' 
+ 0047  B4 02			 MOV AH, 2
+ 0049  CD 21			 INT 21H
+				 
+ 004B  8A D1			    MOV DL, CL  
+ 004D  80 C2 30			    ADD DL, '0' 
+ 0050  B4 02			    MOV AH, 2   
+ 0052  CD 21			    INT 21H
+				    
+ 0054  B2 3D			    MOV DL, '=' 
+ 0056  B4 02			    MOV AH, 2
+ 0058  CD 21			    INT 21H
+				    
+ 005A  58			    POP AX      
+				    
+ 005B  8A D0			    MOV DL, AL  ;十位
+ 005D  50			    PUSH AX
+ 005E  80 C2 30			    ADD DL, '0'
+ 0061  B4 02			    MOV AH, 2
+ 0063  CD 21			    INT 21H
+				    
+ 0065  58			    POP AX
+				    
+ 0066  8A D4			    MOV DL, AH  
+ 0068  80 C2 30			    ADD DL, '0';个位
+ 006B  B4 02			    MOV AH, 2
+ 006D  CD 21			    INT 21H
+
+ 006F  B4 02			    MOV AH, 2  
+ 0071  B2 20			    MOV DL, 20H
+ 0073  CD 21			    INT 21H
+				    
+ 0075  FE C3			    INC BL
+				    ;第一个乘数大于第二个乘数，则进行外层循环
+ 0077  38 CB			 CMP BL,CL
+ 0079  77 A2			 JA OUTER_LOOP
+ 007B  38 CB			 CMP BL,CL
+ 007D  74 B4			 JE INNER_LOOP
+				 ;第二个乘数小于等于a,继续内层循环
+ 007F  3A 0E 0010 R		 CMP CL, BYTE PTR Input
+ 0083  76 AE			 JBE INNER_LOOP
+ 0085  3A 0E 0010 R		 CMP CL, BYTE PTR Input
+ 0089  74 00			 JE EXIT
+ 008B				EXIT:    
+ 008B  B4 4C			    MOV AH,4CH
+ 008D  CD 21			    INT 21H
+ 008F				CODES ENDS
+				    END START
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:27:20
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 008F	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0032	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0020	  Para	  Stack	  
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+EXIT . . . . . . . . . . . . . .	L Near	 008B	  CODES	
+INNER_LOOP . . . . . . . . . . .	L Near	 0033	  CODES	
+INVALID_I  . . . . . . . . . . .	Byte	 0011	  DATAS	
+Input  . . . . . . . . . . . . .	Byte	 0010	  DATAS	
+OUTER_LOOP . . . . . . . . . . .	L Near	 001D	  CODES	
+PROMPT . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+
+	   0 Warnings
+	   0 Errors

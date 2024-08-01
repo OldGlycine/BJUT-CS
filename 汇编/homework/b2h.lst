@@ -1,0 +1,208 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 21:08:55
+tempfile.asm						     Page 1 - 1
+
+
+				mpush macro
+					push ax
+					push bx
+					push cx
+					push dx
+					push si
+					push di
+				endm
+
+				mpop macro
+					pop di
+					pop si
+					pop dx
+					pop cx
+					pop bx
+					pop ax
+				endm
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 64 00			    buf db 100, ?, 100 dup('$')
+       0064 [
+        24
+       ]
+ 0066 00			    b2h_flag db 0
+ 0067				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+				    
+ 0005  E8 0002			    call b2h
+ 0008  EB 68			    jmp stop
+
+				;功能：二进制转十六进制
+				;变量：b2h_flag(db, dw)   
+				;需求：函数内部将需要转换的数字存入ax 
+ 000A				b2h proc
+					mpush
+ 000A  50		     1		push ax
+ 000B  53		     1		push bx
+ 000C  51		     1		push cx
+ 000D  52		     1		push dx
+ 000E  56		     1		push si
+ 000F  57		     1		push di
+ 0010  B8 0014				mov ax, 10100b  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;TODO
+ 0013  BB 1000				mov bx,4096 ; 要除以的权重，可以处理万位，
+				    
+ 0016  33 D2			b2h_cov:xor dx,dx ;清零
+ 0018  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 001A  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 001C  80 3E 0066 R 00			cmp b2h_flag,0
+ 0021  75 05				jne b2h_nor1
+ 0023  83 F8 00				cmp ax,0 ;商是零
+ 0026  74 0E				je b2h_cont
+					
+ 0028				b2h_nor1:
+ 0028  8A D0				mov dl,al
+ 002A  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 002D  B4 02				mov ah,2   ;输出
+ 002F  CD 21				int 21h
+					
+ 0031  C6 06 0066 R 01			mov b2h_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0036				b2h_cont:
+ 0036  83 FB 10				cmp bx,16  ; 如果已经处理过十位，就直接输出
+ 0039  74 0F				je b2h_outer
+					
+ 003B  33 D2				xor dx,dx ;清零
+ 003D  8B C3				mov ax,bx ;递减权重
+ 003F  BB 0010				mov bx,16
+ 0042  F7 F3			    div bx
+ 0044  8B D8			    mov bx,ax 
+				        
+ 0046  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 0048  EB CC			    jmp b2h_cov    
+				   
+ 004A				b2h_outer:
+ 004A  8A D1				mov dl,cl;个位输出
+					;如果是0-9的数字
+ 004C  80 C2 30				add dl,30h
+ 004F  80 FA 39				cmp dl,39h
+ 0052  7E 03				jle b2h_continue
+ 0054  80 C2 27				add dl, 27h;字母小写
+					;add dl, 7h;字母大写
+ 0057				b2h_continue:
+ 0057  B4 02				mov ah,2
+ 0059  CD 21				int 21h   
+					enterline
+ 005B  52		     1		push dx
+ 005C  50		     1		push ax
+ 005D  B2 0D		     1		mov dl,13
+ 005F  B4 02		     1		mov ah,2
+ 0061  CD 21		     1		int 21h
+ 0063  B2 0A		     1		mov dl,10
+ 0065  B4 02		     1		mov ah,2
+ 0067  CD 21		     1		int 21h
+ 0069  58		     1		pop ax
+ 006A  5A		     1		pop dx
+					mpop
+ 006B  5F		     1		pop di
+ 006C  5E		     1		pop si
+ 006D  5A		     1		pop dx
+ 006E  59		     1		pop cx
+ 006F  5B		     1		pop bx
+ 0070  58		     1		pop ax
+ 0071  C3				ret
+ 0072				b2h endp
+				    
+ 0072				stop:
+ 0072  B4 4C			    MOV AH,4CH
+ 0074  CD 21			    INT 21H
+ 0076				CODES ENDS
+				    END START
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 21:08:55
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+mpop . . . . . . . . . . . . . .	Proc
+mpush  . . . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0076	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0067	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+b2h  . . . . . . . . . . . . . .	P Near	 000A	  CODES	Length= 0068 Public
+  b2h_cov  . . . . . . . . . . .	L Near	 0016	  CODES	
+  b2h_nor1 . . . . . . . . . . .	L Near	 0028	  CODES	
+  b2h_cont . . . . . . . . . . .	L Near	 0036	  CODES	
+  b2h_outer  . . . . . . . . . .	L Near	 004A	  CODES	
+  b2h_continue . . . . . . . . .	L Near	 0057	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+b2h_flag . . . . . . . . . . . .	Byte	 0066	  DATAS	
+buf  . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 0072	  CODES	
+
+	   0 Warnings
+	   0 Errors

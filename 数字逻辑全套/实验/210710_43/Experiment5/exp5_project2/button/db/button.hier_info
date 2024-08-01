@@ -1,0 +1,23 @@
+|button
+swc[0] => Decoder1.IN3
+swc[1] => Decoder1.IN2
+swc[2] => Decoder1.IN1
+swc[3] => Decoder1.IN0
+swr0 <= swr0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr1 <= swr1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr2 <= swr2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr3 <= swr3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => key[0]~reg0.CLK
+clk => key[1]~reg0.CLK
+clk => key[2]~reg0.CLK
+clk => key[3]~reg0.CLK
+clk => swr3~reg0.CLK
+clk => swr2~reg0.CLK
+clk => swr1~reg0.CLK
+clk => swr0~reg0.CLK
+key[0] <= key[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[1] <= key[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[2] <= key[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[3] <= key[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

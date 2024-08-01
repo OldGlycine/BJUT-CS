@@ -1,0 +1,129 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 16:50:32
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000  0014 [				DATAARRAY DB 20 DUP('$')
+        24
+       ]
+ 0014 4D 65 73 20 30 30		    DATASTRING DB 'Mes 000000000000000$' ,'Mes 111111111111111$' ,'Mes 222222222222222$' ,'Mes 333333333333333$' ,'Mes 444444444444444$' ,'Mes 555555555555555$' ,'Mes 666666666666666$' ,'Mes 777777777777777$' ,'Mes 888888888888888$' 
+       30 30 30 30 30 30
+       30 30 30 30 30 30
+       30 24 4D 65 73 20
+       31 31 31 31 31 31
+       31 31 31 31 31 31
+       31 31 31 24 4D 65
+       73 20 32 32 32 32
+       32 32 32 32 32 32
+       32 32 32 32 32 24
+       4D 65 73 20 33 33
+       33 33 33 33 33 33
+       33 33 33 33 33 33
+       33 24 4D 65 73 20
+       34 34 34 34 34 34
+       34 34 34 34 34 34
+       34 34 34 24 4D 65
+       73 20 35 35 35 35
+       35 35 35 35 35 35
+       35 35 35 35 35 24
+       4D 65 73 20 36 36
+       36 36 36 36 36 36
+       36 36 36 36 36 36
+       36 24 4D 65 73 20
+       37 37 37 37 37 37
+       37 37 37 37 37 37
+       37 37 37 24 4D 65
+       73 20 38 38 38 38
+       38 38 38 38 38 38
+       38 38 38 38 38 24
+ 00C8 50 4C 45 41 53 45		ERR_MSG DB 'PLEASE ENTER A NEW NUM (0 - 8)$'
+       20 45 4E 54 45 52
+       20 41 20 4E 45 57
+       20 4E 55 4D 20 28
+       30 20 2D 20 38 29
+       24
+ 00E7				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES, DS:DATAS, SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX, DATAS   
+ 0003  8E D8			    MOV DS, AX     
+				    
+ 0005  B4 01			    MOV AH, 01H     
+ 0007  CD 21			    INT 21H        
+ 0009  8A D0			    MOV DL, AL
+ 000B  80 FA 71			    CMP DL,'q'    
+ 000E  74 33			    JE EXIT         
+ 0010  80 EA 30			    SUB DL, 30H
+ 0013  80 FA 00			    CMP DL, 0       
+ 0016  72 21			    JB INVALID      
+ 0018  80 FA 08			    CMP DL, 8      
+ 001B  77 1C			    JA INVALID      
+
+ 001D  8A DA			    MOV BL, DL
+ 001F  B7 00			    MOV BH, 0
+ 0021  B1 04			    MOV CL, 4
+ 0023  D2 E3			    SHL BL, CL
+ 0025  D0 E2			    SHL DL, 1
+ 0027  D0 E2			    SHL DL, 1
+ 0029  02 DA			    ADD BL, DL
+
+
+
+ 002B				 LOOP_CMP:
+ 002B  B4 09			 	MOV AH, 09H
+ 002D  8D 16 0014 R		 	LEA DX, DATASTRING
+ 0031  03 D3			 	ADD DX, BX
+ 0033  CD 21			 	INT 21H
+ 0035  75 C9			 	JNZ START 
+				 	
+ 0037  EB 0A			 JMP EXIT
+
+ 0039				INVALID:
+ 0039  B4 09			    MOV AH, 09H      
+ 003B  8D 16 00C8 R		    LEA DX, ERR_MSG   
+ 003F  CD 21			    INT 21H        
+ 0041  EB BD			    JMP START      
+ 0043				EXIT:
+ 0043  B4 4C			    MOV AH, 4CH     
+ 0045  CD 21			    INT 21H         
+
+ 0047				CODES ENDS
+				    END START
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 16:50:32
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0047	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 00E7	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0000	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+DATAARRAY  . . . . . . . . . . .	Byte	 0000	  DATAS	
+DATASTRING . . . . . . . . . . .	Byte	 0014	  DATAS	
+ERR_MSG  . . . . . . . . . . . .	Byte	 00C8	  DATAS	
+EXIT . . . . . . . . . . . . . .	L Near	 0043	  CODES	
+INVALID  . . . . . . . . . . . .	L Near	 0039	  CODES	
+LOOP_CMP . . . . . . . . . . . .	L Near	 002B	  CODES	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+
+	   0 Warnings
+	   0 Errors

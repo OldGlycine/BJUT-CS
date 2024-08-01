@@ -1,0 +1,141 @@
+D:/Study/ComputerOrganizationClassDesign/project1/m1.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/m1.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m1
+
+Top level modules:
+	m1
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mips_tb
+
+Top level modules:
+	mips_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module gpr_tb
+
+Top level modules:
+	gpr_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dm_tb
+
+Top level modules:
+	dm_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/m2.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/m2.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m2
+
+Top level modules:
+	m2
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/m3.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/m3.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module m3
+
+Top level modules:
+	m3
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/npc.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/npc.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module npc
+
+Top level modules:
+	npc
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/ext.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/ext.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ext
+
+Top level modules:
+	ext
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/alu.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/im_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/im_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module im_tb
+
+Top level modules:
+	im_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/im.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project1\im.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module im_1k
+
+Top level modules:
+	im_1k
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ext_tb
+
+Top level modules:
+	ext_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module npc_tb
+
+Top level modules:
+	npc_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/mips.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/mips.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mips
+
+Top level modules:
+	mips
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/dm.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/dm.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dm_1k
+
+Top level modules:
+	dm_1k
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module controller_tb
+
+Top level modules:
+	controller_tb
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/gpr.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/gpr.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module gpr
+
+Top level modules:
+	gpr
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/pc.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/pc.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/controller.v {1 {vlog -work work D:/Study/ComputerOrganizationClassDesign/project1/controller.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}}

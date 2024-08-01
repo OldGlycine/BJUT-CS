@@ -1,0 +1,136 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 16:04:15
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 0000			    neg_flag dw 0  
+ 0002 0000			    square_num1 dw 0
+ 0004 0000			    square_num2 dw 0
+ 0006 0000			    num1 dw 0
+ 0008 0000			    num2 dw 0
+ 000A				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,STACKS
+ 0003  8E D0			    MOV SS,AX
+ 0005  B8 ---- R		    MOV AX,DATAS
+ 0008  8E D8			    MOV DS,AX
+				    
+
+				    
+				    
+
+				    
+				    
+ 000A  B4 01			    mov ah,01h 
+ 000C  CD 21			    int 21h
+ 000E  32 E4			    xor ah, ah ;
+ 0010  3C 2D			    cmp al,'-'
+ 0012  75 0A			    jne neg_loop1
+ 0014  C7 06 0000 R 0001	    mov neg_flag,1
+ 001A  B4 01			    mov ah,01h
+ 001C  CD 21			    int 21h
+ 001E  BF 0000			    neg_loop1: mov di,0
+ 0021  2C 30			    sub al,30h
+ 0023  8B F8			    mov di,ax
+ 0025  B4 01			    mov ah,01h 
+ 0027  CD 21			    int 21h
+ 0029  8B C7			    mov ax, di;
+ 002B  A3 0006 R		    mov num1, ax
+				    
+ 002E  B4 01			    mov ah,01h 
+ 0030  CD 21			    int 21h
+ 0032  32 E4			    xor ah, ah ;
+ 0034  3C 2D			    cmp al,'-'
+ 0036  75 0A			    jne neg_loop3
+ 0038  C7 06 0000 R 0001	    mov neg_flag,1
+ 003E  B4 01			    mov ah,01h
+ 0040  CD 21			    int 21h
+ 0042  BF 0000			    neg_loop3: mov di,0
+ 0045  2C 30			    sub al,30h
+ 0047  8B F8			    mov di,ax
+ 0049  B4 01			    mov ah,01h 
+ 004B  CD 21			    int 21h
+ 004D  8B C7			    mov ax, di;
+ 004F  A3 0008 R		    mov num2, ax
+				    
+				    
+ 0052  A1 0006 R		    mov ax, num1
+ 0055  8B 1E 0006 R		    mov bx, num1
+ 0059  F7 E3			    mul bx
+ 005B  A3 0002 R		    mov square_num1, ax
+ 005E  A1 0008 R		    mov ax, num2
+ 0061  8B 1E 0008 R		    mov bx, num2
+ 0065  F7 E3			    mul bx
+ 0067  A3 0004 R		    mov square_num2, ax
+ 006A  A1 0002 R		    mov ax, square_num1
+ 006D  2B 06 0004 R		    sub ax, square_num2
+				    
+ 0071  83 F8 00			    cmp ax,0
+ 0074  73 09			    jnb neg_loop2    
+ 0076  F7 D8			    neg ax;
+ 0078  BA 002D			    mov dx,'-'
+ 007B  B4 09			    mov ah,09h
+ 007D  CD 21			    int 21h
+ 007F  B9 0000			    neg_loop2:mov cx,0
+ 0082  BA 0000			    pri_loop:mov dx,0
+ 0085  BB 000A			    mov bx,10
+ 0088  F7 F3			    div bx
+ 008A  52			    push dx
+ 008B  41			    inc cx
+ 008C  83 F8 00			    cmp ax,0
+ 008F  75 F1			    jne pri_loop
+ 0091  5A			    show_loop:pop dx
+ 0092  80 C2 30			    add dl,30h
+ 0095  B4 02			    mov ah,02h
+ 0097  CD 21			    int 21h
+ 0099  E2 F6			    loop show_loop
+
+				     
+ 009B  B4 4C			    MOV AH,4CH
+ 009D  CD 21			    INT 21H
+				    
+
+ 009F				CODES ENDS
+				    END START
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 16:04:15
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 009F	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 000A	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+neg_flag . . . . . . . . . . . .	Word	 0000	  DATAS	
+neg_loop1  . . . . . . . . . . .	L Near	 001E	  CODES	
+neg_loop2  . . . . . . . . . . .	L Near	 007F	  CODES	
+neg_loop3  . . . . . . . . . . .	L Near	 0042	  CODES	
+num1 . . . . . . . . . . . . . .	Word	 0006	  DATAS	
+num2 . . . . . . . . . . . . . .	Word	 0008	  DATAS	
+pri_loop . . . . . . . . . . . .	L Near	 0082	  CODES	
+show_loop  . . . . . . . . . . .	L Near	 0091	  CODES	
+square_num1  . . . . . . . . . .	Word	 0002	  DATAS	
+square_num2  . . . . . . . . . .	Word	 0004	  DATAS	
+
+	   0 Warnings
+	   0 Errors

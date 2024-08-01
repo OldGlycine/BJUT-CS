@@ -1,0 +1,223 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/11/23 19:34:10
+tempfile.asm						     Page 1 - 1
+
+
+				;键盘键入的ASCII码转二进制
+
+				;定义回车和换行的宏指令，也就是宏定义enterline为换行指令
+				enterline macro
+					mov dl,13  ;回车
+					mov ah,2
+					int 21h
+					mov dl,10  ;换行
+					mov ah,2
+					int 21h
+				endm
+
+ 0000				DATAS SEGMENT
+				    ;此处输入数据段代码 
+				    ;定义input字符串
+				    ;字符串只能用db
+ 0000 50 6C 65 61 73 65		    input db 'Please Input Number(<=65535):$'
+       20 49 6E 70 75 74
+       20 4E 75 6D 62 65
+       72 28 3C 3D 36 35
+       35 33 35 29 3A 24
+ 001E 43 6F 6E 76 65 72		    output db 'Convertion Success!$' 
+       74 69 6F 6E 20 53
+       75 63 63 65 73 73
+       21 24
+ 0032 49 6C 6C 65 67 61		    err db 'Illegal input! Please Try Again$'
+       6C 20 69 6E 70 75
+       74 21 20 50 6C 65
+       61 73 65 20 54 72
+       79 20 41 67 61 69
+       6E 24
+				    ;buf是定义缓冲区的指令，这里第一个10代表了要调用ah的10号指令（接收字符串）
+				    ;ah的10号指令就要求首先要定义缓冲区
+				    ;问号代表了存一个不确定的东西（预留空间）
+				    ;第二个10代表了缓冲区的大小为10字节，dup(0)，代表了复制0到缓冲区，用0占满10字节的空间
+ 0052 0A 00			    buf db 10,?,10 dup(0)
+       000A [
+        00
+       ]
+ 005E 0000			    FNN DW 0
+ 0060				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+				    ;此处输入堆栈段代码
+				    ;写就完了，不写也行
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				HAPPYHAPPY SEGMENT
+				    ASSUME CS:HAPPYHAPPY,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+ 0005				begin:
+					;input中的内容存到dx寄存器里面
+ 0005  8D 16 0000 R		    lea dx,input ;输出提示行 mov dx, offset input
+				    ;9号指令字符串输出功能
+ 0009  B4 09			    mov ah,9
+				    ;字符串输出
+ 000B  CD 21			    int 21h
+				    
+ 000D  8D 16 0052 R		    lea dx,buf  ;输入缓冲区首地址
+				    ;10号指令开始输入字符串
+ 0011  B4 0A			    mov ah,10
+				    ;输出
+ 0013  CD 21			    int 21h
+				    ;换行
+				    enterline
+ 0015  B2 0D		     1		mov dl,13  ;回车
+ 0017  B4 02		     1		mov ah,2
+ 0019  CD 21		     1		int 21h
+ 001B  B2 0A		     1		mov dl,10  ;换行
+ 001D  B4 02		     1		mov ah,2
+ 001F  CD 21		     1		int 21h
+				    
+				    ;buf+1存储的是接收的字符串一共有多少个字符
+ 0021  8A 0E 0053 R		    mov cl,buf+1 ;将实际接收字符数送入cl
+ 0025  32 ED			    xor ch,ch   ;清零语句,用异或
+ 0027  33 FF			    xor di,di   
+ 0029  33 D2			    xor dx,dx
+ 002B  BB 0001			    mov bx,1  ; 放置权重，初值是1  
+ 002E  8D 36 0054 R		    lea si,buf+2 ;将字符首字符的地址送入si
+				    ;buf+2加字符串的个数-1就是字符串的末尾
+ 0032  03 F1			    add si,cx    ; 调整到字符串到末尾，从个位开始处理
+				    ;dec起到 -1 的功能
+				    ;因为buf+2+字符串的个数，此时指针指向字符串最后一个字符的后面一个空间
+				    ;-1相当于地址往回了一个字符，此时就是字符串最后一个字符的地址
+ 0034  4E			    dec si       ;
+
+				; 从后向前循环检查输入字符并转换成数字    
+				; al存入字符串的字符
+ 0035  8A 04			cov:mov al,[si]
+					;这里是用来看字符是否是数字的，不是的话直接进error
+					;判断al >/</= '0'
+ 0037  3C 30				cmp al,'0'
+					;jb:少于则跳转
+ 0039  72 2E				jb error
+ 003B  3C 39				cmp al,'9'
+					;ja:多于的跳转
+ 003D  77 2A				ja error  ;是否数字
+					
+					;转换数字减去30h即可(十进制是48)
+ 003F  2C 30			    sub al,30h ;转换成数字
+ 0041  32 E4			    xor ah,ah  ;清零
+ 0043  F7 E3			    mul bx     ;从个位开始，乘以权重
+ 0045  83 FA 00			    cmp dx,0   ;dx符号位，溢出检测
+				    ;jne:不等则跳转
+ 0048  75 1F			    jne error
+				    
+ 004A  03 F8			    add di,ax   ;累加和，di就是最终的结果
+				    ;jc:有进位则跳转
+ 004C  72 1B			    jc error    ;检测进位，有进位就出错，所以最大只能输入65535
+				    
+				        
+ 004E  8B C3			    mov ax,bx
+ 0050  BB 000A			    mov bx,10
+ 0053  F7 E3			    mul bx  ; 调整权重，各位是1，每循环一次乘以10
+ 0055  8B D8			    mov bx,ax
+				    
+				    ; 往前倒一个字符
+ 0057  4E			    dec si   
+				    ;cx随着loop自减，当cx为0，loop不执行
+ 0058  E2 DB			    loop cov ; 每循环一次，处理一位   
+				   
+ 005A  8B C7			   	mov ax,di ; 将结果保存
+				   	
+ 005C  A3 005E R		   	MOV FNN,AX ;
+				   	
+				   	
+ 005F  8D 16 001E R		    lea dx,output ;输出提示首地址
+ 0063  B4 09			    mov ah,9
+ 0065  CD 21			    int 21h
+					
+					
+ 0067  EB 16			    jmp stop
+
+				;报错函数
+ 0069				error:
+					;err是报错提示的字符串，err是字符串的首地址
+ 0069  8D 16 0032 R			lea dx,err 
+ 006D  B4 09			    mov ah,9
+ 006F  CD 21			    int 21h
+				    enterline 
+ 0071  B2 0D		     1		mov dl,13  ;回车
+ 0073  B4 02		     1		mov ah,2
+ 0075  CD 21		     1		int 21h
+ 0077  B2 0A		     1		mov dl,10  ;换行
+ 0079  B4 02		     1		mov ah,2
+ 007B  CD 21		     1		int 21h
+				    ;程序重新开始
+ 007D  EB 86			    jmp begin   
+
+				;记得加一个stop标签       
+ 007F				stop:
+ 007F  B4 4C			    MOV AH,4CH
+ 0081  CD 21			    INT 21H
+ 0083				HAPPYHAPPY ENDS
+				    END START
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/11/23 19:34:10
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+DATAS  . . . . . . . . . . . . .	16 Bit	 0060	  Para	  Private 
+HAPPYHAPPY . . . . . . . . . . .	16 Bit	 0083	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+FNN  . . . . . . . . . . . . . .	Word	 005E	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  HAPPYHAPPY	
+begin  . . . . . . . . . . . . .	L Near	 0005	  HAPPYHAPPY	
+buf  . . . . . . . . . . . . . .	Byte	 0052	  DATAS	
+cov  . . . . . . . . . . . . . .	L Near	 0035	  HAPPYHAPPY	
+error  . . . . . . . . . . . . .	L Near	 0069	  HAPPYHAPPY	
+err  . . . . . . . . . . . . . .	Byte	 0032	  DATAS	
+input  . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+output . . . . . . . . . . . . .	Byte	 001E	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 007F	  HAPPYHAPPY	
+
+	   0 Warnings
+	   0 Errors

@@ -1,0 +1,185 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
+
+// DATE "10/27/2022 18:37:52"
+
+// 
+// Device: Altera EP3C55F484C8 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ns/ 1 ps
+
+module D (
+	LED1,
+	D,
+	Clk,
+	LED2,
+	EN);
+output 	LED1;
+input 	D;
+input 	Clk;
+output 	LED2;
+input 	EN;
+
+// Design Ports Information
+// LED1	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LED2	=>  Location: PIN_H4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// D	=>  Location: PIN_F2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Clk	=>  Location: PIN_F1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// EN	=>  Location: PIN_J5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \LED1~output_o ;
+wire \LED2~output_o ;
+wire \Clk~input_o ;
+wire \D~input_o ;
+wire \DFF|Q~feeder_combout ;
+wire \DFF|Q~q ;
+wire \EN~input_o ;
+wire \D_Latch|Q~combout ;
+
+
+// Location: IOOBUF_X0_Y40_N23
+cycloneiii_io_obuf \LED1~output (
+	.i(\DFF|Q~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED1~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED1~output .bus_hold = "false";
+defparam \LED1~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y41_N16
+cycloneiii_io_obuf \LED2~output (
+	.i(\D_Latch|Q~combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LED2~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LED2~output .bus_hold = "false";
+defparam \LED2~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y38_N1
+cycloneiii_io_ibuf \Clk~input (
+	.i(Clk),
+	.ibar(gnd),
+	.o(\Clk~input_o ));
+// synopsys translate_off
+defparam \Clk~input .bus_hold = "false";
+defparam \Clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y39_N8
+cycloneiii_io_ibuf \D~input (
+	.i(D),
+	.ibar(gnd),
+	.o(\D~input_o ));
+// synopsys translate_off
+defparam \D~input .bus_hold = "false";
+defparam \D~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y38_N24
+cycloneiii_lcell_comb \DFF|Q~feeder (
+// Equation(s):
+// \DFF|Q~feeder_combout  = \D~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\D~input_o ),
+	.cin(gnd),
+	.combout(\DFF|Q~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \DFF|Q~feeder .lut_mask = 16'hFF00;
+defparam \DFF|Q~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y38_N25
+dffeas \DFF|Q (
+	.clk(\Clk~input_o ),
+	.d(\DFF|Q~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\DFF|Q~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \DFF|Q .is_wysiwyg = "true";
+defparam \DFF|Q .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y38_N8
+cycloneiii_io_ibuf \EN~input (
+	.i(EN),
+	.ibar(gnd),
+	.o(\EN~input_o ));
+// synopsys translate_off
+defparam \EN~input .bus_hold = "false";
+defparam \EN~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y38_N26
+cycloneiii_lcell_comb \D_Latch|Q (
+// Equation(s):
+// \D_Latch|Q~combout  = (\EN~input_o  & (\D~input_o )) # (!\EN~input_o  & ((\D_Latch|Q~combout )))
+
+	.dataa(gnd),
+	.datab(\D~input_o ),
+	.datac(\D_Latch|Q~combout ),
+	.datad(\EN~input_o ),
+	.cin(gnd),
+	.combout(\D_Latch|Q~combout ),
+	.cout());
+// synopsys translate_off
+defparam \D_Latch|Q .lut_mask = 16'hCCF0;
+defparam \D_Latch|Q .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign LED1 = \LED1~output_o ;
+
+assign LED2 = \LED2~output_o ;
+
+endmodule

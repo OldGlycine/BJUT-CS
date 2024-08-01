@@ -1,0 +1,42 @@
+|pretime
+clk => array_reg1[0]~reg0.CLK
+clk => array_reg1[1]~reg0.CLK
+clk => array_reg1[2]~reg0.CLK
+clk => array_reg1[3]~reg0.CLK
+clk => array_reg1[4]~reg0.CLK
+clk => array_reg1[5]~reg0.CLK
+clk => array_reg2[0]~reg0.CLK
+clk => array_reg2[1]~reg0.CLK
+clk => array_reg2[2]~reg0.CLK
+clk => array_reg2[3]~reg0.CLK
+clk => array_reg2[4]~reg0.CLK
+clk => array_reg2[5]~reg0.CLK
+cs => always0.IN0
+w_r => always0.IN1
+addr => Decoder0.IN0
+button => w_data[0]~reg0.CLK
+button => w_data[1]~reg0.CLK
+button => w_data[2]~reg0.CLK
+button => w_data[3]~reg0.CLK
+button => w_data[4]~reg0.CLK
+button => w_data[5]~reg0.CLK
+w_data[0] <= w_data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+w_data[1] <= w_data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+w_data[2] <= w_data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+w_data[3] <= w_data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+w_data[4] <= w_data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+w_data[5] <= w_data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[0] <= array_reg1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[1] <= array_reg1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[2] <= array_reg1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[3] <= array_reg1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[4] <= array_reg1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg1[5] <= array_reg1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[0] <= array_reg2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[1] <= array_reg2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[2] <= array_reg2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[3] <= array_reg2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[4] <= array_reg2[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+array_reg2[5] <= array_reg2[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

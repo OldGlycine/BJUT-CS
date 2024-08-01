@@ -1,0 +1,25 @@
+|D
+LED1 <= D_FF:DFF.Q
+D => D_FF:DFF.D
+D => D_latch:D_Latch.D
+Clk => D_FF:DFF.CLK
+LED2 <= D_latch:D_Latch.Q
+EN => D_latch:D_Latch.EN
+
+
+|D|D_FF:DFF
+D => Q~reg0.DATAIN
+D => QN~reg0.DATAIN
+CLK => QN~reg0.CLK
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+QN <= QN~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D|D_latch:D_Latch
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+QN <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+D => Q$latch.DATAIN
+EN => Q$latch.LATCH_ENABLE
+
+

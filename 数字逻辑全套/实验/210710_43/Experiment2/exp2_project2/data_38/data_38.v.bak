@@ -1,0 +1,18 @@
+module data_38(indata, outdata, addr)
+	input [2:0] addr;
+	input [3:0] indata[7:0];
+	output [3:0] outdata;
+	reg [3:0] outdata;
+	always@(addr, indata)
+		begin
+			case(addr)
+				3'b000:outdata = indata[0];
+				3'b001:outdata = indata[1];
+				3'b010:outdata = indata[2];
+				3'b011:outdata = indata[3];
+				3'b100:outdata = indata[4];
+				3'b101:outdata = indata[5];
+				3'b110:outdata = indata[6];
+				3'b111:outdata = indata[7];
+		end
+endmodule

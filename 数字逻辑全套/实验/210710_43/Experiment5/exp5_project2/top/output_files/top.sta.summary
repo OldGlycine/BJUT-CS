@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50mhz'
+Slack : -4.335
+TNS   : -124.460
+
+Type  : Slow 1200mV 85C Model Setup 'frequency_divider:comb_4|clk_100hz'
+Slack : -1.252
+TNS   : -7.532
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50mhz'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'frequency_divider:comb_4|clk_100hz'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency_divider:comb_4|clk_100hz'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50mhz'
+Slack : -4.043
+TNS   : -113.365
+
+Type  : Slow 1200mV 0C Model Setup 'frequency_divider:comb_4|clk_100hz'
+Slack : -1.060
+TNS   : -6.422
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50mhz'
+Slack : 0.137
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'frequency_divider:comb_4|clk_100hz'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency_divider:comb_4|clk_100hz'
+Slack : -1.487
+TNS   : -11.896
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50mhz'
+Slack : -1.281
+TNS   : -31.580
+
+Type  : Fast 1200mV 0C Model Setup 'frequency_divider:comb_4|clk_100hz'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50mhz'
+Slack : -0.134
+TNS   : -0.134
+
+Type  : Fast 1200mV 0C Model Hold 'frequency_divider:comb_4|clk_100hz'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -37.960
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency_divider:comb_4|clk_100hz'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

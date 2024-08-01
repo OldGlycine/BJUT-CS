@@ -1,0 +1,541 @@
+Simulator report for flowing_water_light
+Wed Nov 09 16:39:26 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 215 nodes    ;
+; Simulation Coverage         ;      19.16 % ;
+; Total Number of Transitions ; 523          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                 ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                              ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                    ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                     ;               ;
+; Vector input source                                                                        ; C:/altera/Experiment4/exp4_project1/flowing_water_light/liushuideng.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                      ; On            ;
+; Check outputs                                                                              ; Off                                                                     ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                      ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                      ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                      ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                      ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                     ; Off           ;
+; Detect glitches                                                                            ; Off                                                                     ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                     ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                     ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                     ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                      ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                              ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                     ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                     ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                    ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                               ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                               ; Transport     ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      19.16 % ;
+; Total nodes checked                                 ; 215          ;
+; Total output ports checked                          ; 214          ;
+; Total output ports with complete 1/0-value coverage ; 41           ;
+; Total output ports with no 1/0-value coverage       ; 163          ;
+; Total output ports with no 1-value coverage         ; 168          ;
+; Total output ports with no 0-value coverage         ; 168          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                            ;
++----------------------------------+----------------------------------+------------------+
+; Node Name                        ; Output Port Name                 ; Output Port Type ;
++----------------------------------+----------------------------------+------------------+
+; |flowing_water_light|cnt[1]      ; |flowing_water_light|cnt[1]      ; regout           ;
+; |flowing_water_light|state.st1   ; |flowing_water_light|state.st1   ; regout           ;
+; |flowing_water_light|cnt~30      ; |flowing_water_light|cnt~30      ; out              ;
+; |flowing_water_light|cnt~31      ; |flowing_water_light|cnt~31      ; out              ;
+; |flowing_water_light|state.st2   ; |flowing_water_light|state.st2   ; regout           ;
+; |flowing_water_light|state.st3   ; |flowing_water_light|state.st3   ; regout           ;
+; |flowing_water_light|state.st4   ; |flowing_water_light|state.st4   ; regout           ;
+; |flowing_water_light|state.st5   ; |flowing_water_light|state.st5   ; regout           ;
+; |flowing_water_light|state.st6   ; |flowing_water_light|state.st6   ; regout           ;
+; |flowing_water_light|state~1     ; |flowing_water_light|state~1     ; out              ;
+; |flowing_water_light|state~2     ; |flowing_water_light|state~2     ; out              ;
+; |flowing_water_light|state~3     ; |flowing_water_light|state~3     ; out              ;
+; |flowing_water_light|state~4     ; |flowing_water_light|state~4     ; out              ;
+; |flowing_water_light|state~5     ; |flowing_water_light|state~5     ; out              ;
+; |flowing_water_light|state~6     ; |flowing_water_light|state~6     ; out              ;
+; |flowing_water_light|state~7     ; |flowing_water_light|state~7     ; out              ;
+; |flowing_water_light|cnt[0]      ; |flowing_water_light|cnt[0]      ; regout           ;
+; |flowing_water_light|out[0]      ; |flowing_water_light|out[0]      ; pin_out          ;
+; |flowing_water_light|out[1]      ; |flowing_water_light|out[1]      ; pin_out          ;
+; |flowing_water_light|out[2]      ; |flowing_water_light|out[2]      ; pin_out          ;
+; |flowing_water_light|out[3]      ; |flowing_water_light|out[3]      ; pin_out          ;
+; |flowing_water_light|out[4]      ; |flowing_water_light|out[4]      ; pin_out          ;
+; |flowing_water_light|out[5]      ; |flowing_water_light|out[5]      ; pin_out          ;
+; |flowing_water_light|clk         ; |flowing_water_light|clk         ; out              ;
+; |flowing_water_light|state~17    ; |flowing_water_light|state~17    ; out0             ;
+; |flowing_water_light|state.st1~0 ; |flowing_water_light|state.st1~0 ; out0             ;
+; |flowing_water_light|out[0]~0    ; |flowing_water_light|out[0]~0    ; out0             ;
+; |flowing_water_light|state.st2~0 ; |flowing_water_light|state.st2~0 ; out0             ;
+; |flowing_water_light|out[1]~1    ; |flowing_water_light|out[1]~1    ; out0             ;
+; |flowing_water_light|state.st3~0 ; |flowing_water_light|state.st3~0 ; out0             ;
+; |flowing_water_light|out[2]~2    ; |flowing_water_light|out[2]~2    ; out0             ;
+; |flowing_water_light|state.st4~0 ; |flowing_water_light|state.st4~0 ; out0             ;
+; |flowing_water_light|out[3]~3    ; |flowing_water_light|out[3]~3    ; out0             ;
+; |flowing_water_light|state.st5~0 ; |flowing_water_light|state.st5~0 ; out0             ;
+; |flowing_water_light|out[4]~4    ; |flowing_water_light|out[4]~4    ; out0             ;
+; |flowing_water_light|state.st6~0 ; |flowing_water_light|state.st6~0 ; out0             ;
+; |flowing_water_light|out[5]~5    ; |flowing_water_light|out[5]~5    ; out0             ;
+; |flowing_water_light|state.st7~0 ; |flowing_water_light|state.st7~0 ; out0             ;
+; |flowing_water_light|state~23    ; |flowing_water_light|state~23    ; out0             ;
+; |flowing_water_light|Add0~0      ; |flowing_water_light|Add0~0      ; out0             ;
+; |flowing_water_light|Equal0~0    ; |flowing_water_light|Equal0~0    ; out0             ;
++----------------------------------+----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                 ;
++-----------------------------------+-----------------------------------+------------------+
+; Node Name                         ; Output Port Name                  ; Output Port Type ;
++-----------------------------------+-----------------------------------+------------------+
+; |flowing_water_light|cnt[31]      ; |flowing_water_light|cnt[31]      ; regout           ;
+; |flowing_water_light|cnt[30]      ; |flowing_water_light|cnt[30]      ; regout           ;
+; |flowing_water_light|cnt[29]      ; |flowing_water_light|cnt[29]      ; regout           ;
+; |flowing_water_light|cnt[28]      ; |flowing_water_light|cnt[28]      ; regout           ;
+; |flowing_water_light|cnt[27]      ; |flowing_water_light|cnt[27]      ; regout           ;
+; |flowing_water_light|cnt[26]      ; |flowing_water_light|cnt[26]      ; regout           ;
+; |flowing_water_light|cnt[25]      ; |flowing_water_light|cnt[25]      ; regout           ;
+; |flowing_water_light|cnt[24]      ; |flowing_water_light|cnt[24]      ; regout           ;
+; |flowing_water_light|cnt[23]      ; |flowing_water_light|cnt[23]      ; regout           ;
+; |flowing_water_light|cnt[22]      ; |flowing_water_light|cnt[22]      ; regout           ;
+; |flowing_water_light|cnt[21]      ; |flowing_water_light|cnt[21]      ; regout           ;
+; |flowing_water_light|cnt[20]      ; |flowing_water_light|cnt[20]      ; regout           ;
+; |flowing_water_light|cnt[19]      ; |flowing_water_light|cnt[19]      ; regout           ;
+; |flowing_water_light|cnt[18]      ; |flowing_water_light|cnt[18]      ; regout           ;
+; |flowing_water_light|cnt[17]      ; |flowing_water_light|cnt[17]      ; regout           ;
+; |flowing_water_light|cnt[16]      ; |flowing_water_light|cnt[16]      ; regout           ;
+; |flowing_water_light|cnt[15]      ; |flowing_water_light|cnt[15]      ; regout           ;
+; |flowing_water_light|cnt[14]      ; |flowing_water_light|cnt[14]      ; regout           ;
+; |flowing_water_light|cnt[13]      ; |flowing_water_light|cnt[13]      ; regout           ;
+; |flowing_water_light|cnt[12]      ; |flowing_water_light|cnt[12]      ; regout           ;
+; |flowing_water_light|cnt[11]      ; |flowing_water_light|cnt[11]      ; regout           ;
+; |flowing_water_light|cnt[10]      ; |flowing_water_light|cnt[10]      ; regout           ;
+; |flowing_water_light|cnt[9]       ; |flowing_water_light|cnt[9]       ; regout           ;
+; |flowing_water_light|cnt[8]       ; |flowing_water_light|cnt[8]       ; regout           ;
+; |flowing_water_light|cnt[7]       ; |flowing_water_light|cnt[7]       ; regout           ;
+; |flowing_water_light|cnt[6]       ; |flowing_water_light|cnt[6]       ; regout           ;
+; |flowing_water_light|cnt[5]       ; |flowing_water_light|cnt[5]       ; regout           ;
+; |flowing_water_light|cnt[4]       ; |flowing_water_light|cnt[4]       ; regout           ;
+; |flowing_water_light|cnt[3]       ; |flowing_water_light|cnt[3]       ; regout           ;
+; |flowing_water_light|cnt[2]       ; |flowing_water_light|cnt[2]       ; regout           ;
+; |flowing_water_light|state.st0    ; |flowing_water_light|state.st0    ; regout           ;
+; |flowing_water_light|cnt~0        ; |flowing_water_light|cnt~0        ; out              ;
+; |flowing_water_light|cnt~1        ; |flowing_water_light|cnt~1        ; out              ;
+; |flowing_water_light|cnt~2        ; |flowing_water_light|cnt~2        ; out              ;
+; |flowing_water_light|cnt~3        ; |flowing_water_light|cnt~3        ; out              ;
+; |flowing_water_light|cnt~4        ; |flowing_water_light|cnt~4        ; out              ;
+; |flowing_water_light|cnt~5        ; |flowing_water_light|cnt~5        ; out              ;
+; |flowing_water_light|cnt~6        ; |flowing_water_light|cnt~6        ; out              ;
+; |flowing_water_light|cnt~7        ; |flowing_water_light|cnt~7        ; out              ;
+; |flowing_water_light|cnt~8        ; |flowing_water_light|cnt~8        ; out              ;
+; |flowing_water_light|cnt~9        ; |flowing_water_light|cnt~9        ; out              ;
+; |flowing_water_light|cnt~10       ; |flowing_water_light|cnt~10       ; out              ;
+; |flowing_water_light|cnt~11       ; |flowing_water_light|cnt~11       ; out              ;
+; |flowing_water_light|cnt~12       ; |flowing_water_light|cnt~12       ; out              ;
+; |flowing_water_light|cnt~13       ; |flowing_water_light|cnt~13       ; out              ;
+; |flowing_water_light|cnt~14       ; |flowing_water_light|cnt~14       ; out              ;
+; |flowing_water_light|cnt~15       ; |flowing_water_light|cnt~15       ; out              ;
+; |flowing_water_light|cnt~16       ; |flowing_water_light|cnt~16       ; out              ;
+; |flowing_water_light|cnt~17       ; |flowing_water_light|cnt~17       ; out              ;
+; |flowing_water_light|cnt~18       ; |flowing_water_light|cnt~18       ; out              ;
+; |flowing_water_light|cnt~19       ; |flowing_water_light|cnt~19       ; out              ;
+; |flowing_water_light|cnt~20       ; |flowing_water_light|cnt~20       ; out              ;
+; |flowing_water_light|cnt~21       ; |flowing_water_light|cnt~21       ; out              ;
+; |flowing_water_light|cnt~22       ; |flowing_water_light|cnt~22       ; out              ;
+; |flowing_water_light|cnt~23       ; |flowing_water_light|cnt~23       ; out              ;
+; |flowing_water_light|cnt~24       ; |flowing_water_light|cnt~24       ; out              ;
+; |flowing_water_light|cnt~25       ; |flowing_water_light|cnt~25       ; out              ;
+; |flowing_water_light|cnt~26       ; |flowing_water_light|cnt~26       ; out              ;
+; |flowing_water_light|cnt~27       ; |flowing_water_light|cnt~27       ; out              ;
+; |flowing_water_light|cnt~28       ; |flowing_water_light|cnt~28       ; out              ;
+; |flowing_water_light|cnt~29       ; |flowing_water_light|cnt~29       ; out              ;
+; |flowing_water_light|state.st8    ; |flowing_water_light|state.st8    ; regout           ;
+; |flowing_water_light|state.st9    ; |flowing_water_light|state.st9    ; regout           ;
+; |flowing_water_light|state.st10   ; |flowing_water_light|state.st10   ; regout           ;
+; |flowing_water_light|state.st11   ; |flowing_water_light|state.st11   ; regout           ;
+; |flowing_water_light|state.st12   ; |flowing_water_light|state.st12   ; regout           ;
+; |flowing_water_light|state.st13   ; |flowing_water_light|state.st13   ; regout           ;
+; |flowing_water_light|state.st14   ; |flowing_water_light|state.st14   ; regout           ;
+; |flowing_water_light|state.st15   ; |flowing_water_light|state.st15   ; regout           ;
+; |flowing_water_light|state.st16   ; |flowing_water_light|state.st16   ; regout           ;
+; |flowing_water_light|state~0      ; |flowing_water_light|state~0      ; out              ;
+; |flowing_water_light|state~9      ; |flowing_water_light|state~9      ; out              ;
+; |flowing_water_light|state~10     ; |flowing_water_light|state~10     ; out              ;
+; |flowing_water_light|state~11     ; |flowing_water_light|state~11     ; out              ;
+; |flowing_water_light|state~12     ; |flowing_water_light|state~12     ; out              ;
+; |flowing_water_light|state~13     ; |flowing_water_light|state~13     ; out              ;
+; |flowing_water_light|state~14     ; |flowing_water_light|state~14     ; out              ;
+; |flowing_water_light|state~15     ; |flowing_water_light|state~15     ; out              ;
+; |flowing_water_light|state~16     ; |flowing_water_light|state~16     ; out              ;
+; |flowing_water_light|out[6]       ; |flowing_water_light|out[6]       ; pin_out          ;
+; |flowing_water_light|out[7]       ; |flowing_water_light|out[7]       ; pin_out          ;
+; |flowing_water_light|out[8]       ; |flowing_water_light|out[8]       ; pin_out          ;
+; |flowing_water_light|out[9]       ; |flowing_water_light|out[9]       ; pin_out          ;
+; |flowing_water_light|out[10]      ; |flowing_water_light|out[10]      ; pin_out          ;
+; |flowing_water_light|out[11]      ; |flowing_water_light|out[11]      ; pin_out          ;
+; |flowing_water_light|out[12]      ; |flowing_water_light|out[12]      ; pin_out          ;
+; |flowing_water_light|out[13]      ; |flowing_water_light|out[13]      ; pin_out          ;
+; |flowing_water_light|out[14]      ; |flowing_water_light|out[14]      ; pin_out          ;
+; |flowing_water_light|out[15]      ; |flowing_water_light|out[15]      ; pin_out          ;
+; |flowing_water_light|state.st0~0  ; |flowing_water_light|state.st0~0  ; out0             ;
+; |flowing_water_light|state~19     ; |flowing_water_light|state~19     ; out0             ;
+; |flowing_water_light|out[7]~7     ; |flowing_water_light|out[7]~7     ; out0             ;
+; |flowing_water_light|state.st9~0  ; |flowing_water_light|state.st9~0  ; out0             ;
+; |flowing_water_light|out[8]~8     ; |flowing_water_light|out[8]~8     ; out0             ;
+; |flowing_water_light|state.st10~0 ; |flowing_water_light|state.st10~0 ; out0             ;
+; |flowing_water_light|out[9]~9     ; |flowing_water_light|out[9]~9     ; out0             ;
+; |flowing_water_light|state.st11~0 ; |flowing_water_light|state.st11~0 ; out0             ;
+; |flowing_water_light|out[10]~10   ; |flowing_water_light|out[10]~10   ; out0             ;
+; |flowing_water_light|state.st12~0 ; |flowing_water_light|state.st12~0 ; out0             ;
+; |flowing_water_light|out[11]~11   ; |flowing_water_light|out[11]~11   ; out0             ;
+; |flowing_water_light|state.st13~0 ; |flowing_water_light|state.st13~0 ; out0             ;
+; |flowing_water_light|out[12]~12   ; |flowing_water_light|out[12]~12   ; out0             ;
+; |flowing_water_light|state.st14~0 ; |flowing_water_light|state.st14~0 ; out0             ;
+; |flowing_water_light|out[13]~13   ; |flowing_water_light|out[13]~13   ; out0             ;
+; |flowing_water_light|state.st15~0 ; |flowing_water_light|state.st15~0 ; out0             ;
+; |flowing_water_light|out[14]~14   ; |flowing_water_light|out[14]~14   ; out0             ;
+; |flowing_water_light|state.st16~0 ; |flowing_water_light|state.st16~0 ; out0             ;
+; |flowing_water_light|out[15]~15   ; |flowing_water_light|out[15]~15   ; out0             ;
+; |flowing_water_light|Add0~1       ; |flowing_water_light|Add0~1       ; out0             ;
+; |flowing_water_light|Add0~2       ; |flowing_water_light|Add0~2       ; out0             ;
+; |flowing_water_light|Add0~3       ; |flowing_water_light|Add0~3       ; out0             ;
+; |flowing_water_light|Add0~4       ; |flowing_water_light|Add0~4       ; out0             ;
+; |flowing_water_light|Add0~5       ; |flowing_water_light|Add0~5       ; out0             ;
+; |flowing_water_light|Add0~6       ; |flowing_water_light|Add0~6       ; out0             ;
+; |flowing_water_light|Add0~7       ; |flowing_water_light|Add0~7       ; out0             ;
+; |flowing_water_light|Add0~8       ; |flowing_water_light|Add0~8       ; out0             ;
+; |flowing_water_light|Add0~9       ; |flowing_water_light|Add0~9       ; out0             ;
+; |flowing_water_light|Add0~10      ; |flowing_water_light|Add0~10      ; out0             ;
+; |flowing_water_light|Add0~11      ; |flowing_water_light|Add0~11      ; out0             ;
+; |flowing_water_light|Add0~12      ; |flowing_water_light|Add0~12      ; out0             ;
+; |flowing_water_light|Add0~13      ; |flowing_water_light|Add0~13      ; out0             ;
+; |flowing_water_light|Add0~14      ; |flowing_water_light|Add0~14      ; out0             ;
+; |flowing_water_light|Add0~15      ; |flowing_water_light|Add0~15      ; out0             ;
+; |flowing_water_light|Add0~16      ; |flowing_water_light|Add0~16      ; out0             ;
+; |flowing_water_light|Add0~17      ; |flowing_water_light|Add0~17      ; out0             ;
+; |flowing_water_light|Add0~18      ; |flowing_water_light|Add0~18      ; out0             ;
+; |flowing_water_light|Add0~19      ; |flowing_water_light|Add0~19      ; out0             ;
+; |flowing_water_light|Add0~20      ; |flowing_water_light|Add0~20      ; out0             ;
+; |flowing_water_light|Add0~21      ; |flowing_water_light|Add0~21      ; out0             ;
+; |flowing_water_light|Add0~22      ; |flowing_water_light|Add0~22      ; out0             ;
+; |flowing_water_light|Add0~23      ; |flowing_water_light|Add0~23      ; out0             ;
+; |flowing_water_light|Add0~24      ; |flowing_water_light|Add0~24      ; out0             ;
+; |flowing_water_light|Add0~25      ; |flowing_water_light|Add0~25      ; out0             ;
+; |flowing_water_light|Add0~26      ; |flowing_water_light|Add0~26      ; out0             ;
+; |flowing_water_light|Add0~27      ; |flowing_water_light|Add0~27      ; out0             ;
+; |flowing_water_light|Add0~28      ; |flowing_water_light|Add0~28      ; out0             ;
+; |flowing_water_light|Add0~29      ; |flowing_water_light|Add0~29      ; out0             ;
+; |flowing_water_light|Add0~30      ; |flowing_water_light|Add0~30      ; out0             ;
+; |flowing_water_light|Add0~31      ; |flowing_water_light|Add0~31      ; out0             ;
+; |flowing_water_light|Add0~32      ; |flowing_water_light|Add0~32      ; out0             ;
+; |flowing_water_light|Add0~33      ; |flowing_water_light|Add0~33      ; out0             ;
+; |flowing_water_light|Add0~34      ; |flowing_water_light|Add0~34      ; out0             ;
+; |flowing_water_light|Add0~35      ; |flowing_water_light|Add0~35      ; out0             ;
+; |flowing_water_light|Add0~36      ; |flowing_water_light|Add0~36      ; out0             ;
+; |flowing_water_light|Add0~37      ; |flowing_water_light|Add0~37      ; out0             ;
+; |flowing_water_light|Add0~38      ; |flowing_water_light|Add0~38      ; out0             ;
+; |flowing_water_light|Add0~39      ; |flowing_water_light|Add0~39      ; out0             ;
+; |flowing_water_light|Add0~40      ; |flowing_water_light|Add0~40      ; out0             ;
+; |flowing_water_light|Add0~41      ; |flowing_water_light|Add0~41      ; out0             ;
+; |flowing_water_light|Add0~42      ; |flowing_water_light|Add0~42      ; out0             ;
+; |flowing_water_light|Add0~43      ; |flowing_water_light|Add0~43      ; out0             ;
+; |flowing_water_light|Add0~44      ; |flowing_water_light|Add0~44      ; out0             ;
+; |flowing_water_light|Add0~45      ; |flowing_water_light|Add0~45      ; out0             ;
+; |flowing_water_light|Add0~46      ; |flowing_water_light|Add0~46      ; out0             ;
+; |flowing_water_light|Add0~47      ; |flowing_water_light|Add0~47      ; out0             ;
+; |flowing_water_light|Add0~48      ; |flowing_water_light|Add0~48      ; out0             ;
+; |flowing_water_light|Add0~49      ; |flowing_water_light|Add0~49      ; out0             ;
+; |flowing_water_light|Add0~50      ; |flowing_water_light|Add0~50      ; out0             ;
+; |flowing_water_light|Add0~51      ; |flowing_water_light|Add0~51      ; out0             ;
+; |flowing_water_light|Add0~52      ; |flowing_water_light|Add0~52      ; out0             ;
+; |flowing_water_light|Add0~53      ; |flowing_water_light|Add0~53      ; out0             ;
+; |flowing_water_light|Add0~54      ; |flowing_water_light|Add0~54      ; out0             ;
+; |flowing_water_light|Add0~55      ; |flowing_water_light|Add0~55      ; out0             ;
+; |flowing_water_light|Add0~56      ; |flowing_water_light|Add0~56      ; out0             ;
+; |flowing_water_light|Add0~57      ; |flowing_water_light|Add0~57      ; out0             ;
+; |flowing_water_light|Add0~58      ; |flowing_water_light|Add0~58      ; out0             ;
+; |flowing_water_light|Add0~59      ; |flowing_water_light|Add0~59      ; out0             ;
+; |flowing_water_light|Add0~60      ; |flowing_water_light|Add0~60      ; out0             ;
++-----------------------------------+-----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                 ;
++-----------------------------------+-----------------------------------+------------------+
+; Node Name                         ; Output Port Name                  ; Output Port Type ;
++-----------------------------------+-----------------------------------+------------------+
+; |flowing_water_light|cnt[31]      ; |flowing_water_light|cnt[31]      ; regout           ;
+; |flowing_water_light|cnt[30]      ; |flowing_water_light|cnt[30]      ; regout           ;
+; |flowing_water_light|cnt[29]      ; |flowing_water_light|cnt[29]      ; regout           ;
+; |flowing_water_light|cnt[28]      ; |flowing_water_light|cnt[28]      ; regout           ;
+; |flowing_water_light|cnt[27]      ; |flowing_water_light|cnt[27]      ; regout           ;
+; |flowing_water_light|cnt[26]      ; |flowing_water_light|cnt[26]      ; regout           ;
+; |flowing_water_light|cnt[25]      ; |flowing_water_light|cnt[25]      ; regout           ;
+; |flowing_water_light|cnt[24]      ; |flowing_water_light|cnt[24]      ; regout           ;
+; |flowing_water_light|cnt[23]      ; |flowing_water_light|cnt[23]      ; regout           ;
+; |flowing_water_light|cnt[22]      ; |flowing_water_light|cnt[22]      ; regout           ;
+; |flowing_water_light|cnt[21]      ; |flowing_water_light|cnt[21]      ; regout           ;
+; |flowing_water_light|cnt[20]      ; |flowing_water_light|cnt[20]      ; regout           ;
+; |flowing_water_light|cnt[19]      ; |flowing_water_light|cnt[19]      ; regout           ;
+; |flowing_water_light|cnt[18]      ; |flowing_water_light|cnt[18]      ; regout           ;
+; |flowing_water_light|cnt[17]      ; |flowing_water_light|cnt[17]      ; regout           ;
+; |flowing_water_light|cnt[16]      ; |flowing_water_light|cnt[16]      ; regout           ;
+; |flowing_water_light|cnt[15]      ; |flowing_water_light|cnt[15]      ; regout           ;
+; |flowing_water_light|cnt[14]      ; |flowing_water_light|cnt[14]      ; regout           ;
+; |flowing_water_light|cnt[13]      ; |flowing_water_light|cnt[13]      ; regout           ;
+; |flowing_water_light|cnt[12]      ; |flowing_water_light|cnt[12]      ; regout           ;
+; |flowing_water_light|cnt[11]      ; |flowing_water_light|cnt[11]      ; regout           ;
+; |flowing_water_light|cnt[10]      ; |flowing_water_light|cnt[10]      ; regout           ;
+; |flowing_water_light|cnt[9]       ; |flowing_water_light|cnt[9]       ; regout           ;
+; |flowing_water_light|cnt[8]       ; |flowing_water_light|cnt[8]       ; regout           ;
+; |flowing_water_light|cnt[7]       ; |flowing_water_light|cnt[7]       ; regout           ;
+; |flowing_water_light|cnt[6]       ; |flowing_water_light|cnt[6]       ; regout           ;
+; |flowing_water_light|cnt[5]       ; |flowing_water_light|cnt[5]       ; regout           ;
+; |flowing_water_light|cnt[4]       ; |flowing_water_light|cnt[4]       ; regout           ;
+; |flowing_water_light|cnt[3]       ; |flowing_water_light|cnt[3]       ; regout           ;
+; |flowing_water_light|cnt[2]       ; |flowing_water_light|cnt[2]       ; regout           ;
+; |flowing_water_light|cnt~0        ; |flowing_water_light|cnt~0        ; out              ;
+; |flowing_water_light|cnt~1        ; |flowing_water_light|cnt~1        ; out              ;
+; |flowing_water_light|cnt~2        ; |flowing_water_light|cnt~2        ; out              ;
+; |flowing_water_light|cnt~3        ; |flowing_water_light|cnt~3        ; out              ;
+; |flowing_water_light|cnt~4        ; |flowing_water_light|cnt~4        ; out              ;
+; |flowing_water_light|cnt~5        ; |flowing_water_light|cnt~5        ; out              ;
+; |flowing_water_light|cnt~6        ; |flowing_water_light|cnt~6        ; out              ;
+; |flowing_water_light|cnt~7        ; |flowing_water_light|cnt~7        ; out              ;
+; |flowing_water_light|cnt~8        ; |flowing_water_light|cnt~8        ; out              ;
+; |flowing_water_light|cnt~9        ; |flowing_water_light|cnt~9        ; out              ;
+; |flowing_water_light|cnt~10       ; |flowing_water_light|cnt~10       ; out              ;
+; |flowing_water_light|cnt~11       ; |flowing_water_light|cnt~11       ; out              ;
+; |flowing_water_light|cnt~12       ; |flowing_water_light|cnt~12       ; out              ;
+; |flowing_water_light|cnt~13       ; |flowing_water_light|cnt~13       ; out              ;
+; |flowing_water_light|cnt~14       ; |flowing_water_light|cnt~14       ; out              ;
+; |flowing_water_light|cnt~15       ; |flowing_water_light|cnt~15       ; out              ;
+; |flowing_water_light|cnt~16       ; |flowing_water_light|cnt~16       ; out              ;
+; |flowing_water_light|cnt~17       ; |flowing_water_light|cnt~17       ; out              ;
+; |flowing_water_light|cnt~18       ; |flowing_water_light|cnt~18       ; out              ;
+; |flowing_water_light|cnt~19       ; |flowing_water_light|cnt~19       ; out              ;
+; |flowing_water_light|cnt~20       ; |flowing_water_light|cnt~20       ; out              ;
+; |flowing_water_light|cnt~21       ; |flowing_water_light|cnt~21       ; out              ;
+; |flowing_water_light|cnt~22       ; |flowing_water_light|cnt~22       ; out              ;
+; |flowing_water_light|cnt~23       ; |flowing_water_light|cnt~23       ; out              ;
+; |flowing_water_light|cnt~24       ; |flowing_water_light|cnt~24       ; out              ;
+; |flowing_water_light|cnt~25       ; |flowing_water_light|cnt~25       ; out              ;
+; |flowing_water_light|cnt~26       ; |flowing_water_light|cnt~26       ; out              ;
+; |flowing_water_light|cnt~27       ; |flowing_water_light|cnt~27       ; out              ;
+; |flowing_water_light|cnt~28       ; |flowing_water_light|cnt~28       ; out              ;
+; |flowing_water_light|cnt~29       ; |flowing_water_light|cnt~29       ; out              ;
+; |flowing_water_light|state.st7    ; |flowing_water_light|state.st7    ; regout           ;
+; |flowing_water_light|state.st8    ; |flowing_water_light|state.st8    ; regout           ;
+; |flowing_water_light|state.st9    ; |flowing_water_light|state.st9    ; regout           ;
+; |flowing_water_light|state.st10   ; |flowing_water_light|state.st10   ; regout           ;
+; |flowing_water_light|state.st11   ; |flowing_water_light|state.st11   ; regout           ;
+; |flowing_water_light|state.st12   ; |flowing_water_light|state.st12   ; regout           ;
+; |flowing_water_light|state.st13   ; |flowing_water_light|state.st13   ; regout           ;
+; |flowing_water_light|state.st14   ; |flowing_water_light|state.st14   ; regout           ;
+; |flowing_water_light|state.st15   ; |flowing_water_light|state.st15   ; regout           ;
+; |flowing_water_light|state.st16   ; |flowing_water_light|state.st16   ; regout           ;
+; |flowing_water_light|state~8      ; |flowing_water_light|state~8      ; out              ;
+; |flowing_water_light|state~9      ; |flowing_water_light|state~9      ; out              ;
+; |flowing_water_light|state~10     ; |flowing_water_light|state~10     ; out              ;
+; |flowing_water_light|state~11     ; |flowing_water_light|state~11     ; out              ;
+; |flowing_water_light|state~12     ; |flowing_water_light|state~12     ; out              ;
+; |flowing_water_light|state~13     ; |flowing_water_light|state~13     ; out              ;
+; |flowing_water_light|state~14     ; |flowing_water_light|state~14     ; out              ;
+; |flowing_water_light|state~15     ; |flowing_water_light|state~15     ; out              ;
+; |flowing_water_light|state~16     ; |flowing_water_light|state~16     ; out              ;
+; |flowing_water_light|reset        ; |flowing_water_light|reset        ; out              ;
+; |flowing_water_light|out[7]       ; |flowing_water_light|out[7]       ; pin_out          ;
+; |flowing_water_light|out[8]       ; |flowing_water_light|out[8]       ; pin_out          ;
+; |flowing_water_light|out[9]       ; |flowing_water_light|out[9]       ; pin_out          ;
+; |flowing_water_light|out[10]      ; |flowing_water_light|out[10]      ; pin_out          ;
+; |flowing_water_light|out[11]      ; |flowing_water_light|out[11]      ; pin_out          ;
+; |flowing_water_light|out[12]      ; |flowing_water_light|out[12]      ; pin_out          ;
+; |flowing_water_light|out[13]      ; |flowing_water_light|out[13]      ; pin_out          ;
+; |flowing_water_light|out[14]      ; |flowing_water_light|out[14]      ; pin_out          ;
+; |flowing_water_light|out[15]      ; |flowing_water_light|out[15]      ; pin_out          ;
+; |flowing_water_light|out[6]~6     ; |flowing_water_light|out[6]~6     ; out0             ;
+; |flowing_water_light|state.st8~0  ; |flowing_water_light|state.st8~0  ; out0             ;
+; |flowing_water_light|out[7]~7     ; |flowing_water_light|out[7]~7     ; out0             ;
+; |flowing_water_light|state.st9~0  ; |flowing_water_light|state.st9~0  ; out0             ;
+; |flowing_water_light|out[8]~8     ; |flowing_water_light|out[8]~8     ; out0             ;
+; |flowing_water_light|state.st10~0 ; |flowing_water_light|state.st10~0 ; out0             ;
+; |flowing_water_light|out[9]~9     ; |flowing_water_light|out[9]~9     ; out0             ;
+; |flowing_water_light|state.st11~0 ; |flowing_water_light|state.st11~0 ; out0             ;
+; |flowing_water_light|out[10]~10   ; |flowing_water_light|out[10]~10   ; out0             ;
+; |flowing_water_light|state.st12~0 ; |flowing_water_light|state.st12~0 ; out0             ;
+; |flowing_water_light|out[11]~11   ; |flowing_water_light|out[11]~11   ; out0             ;
+; |flowing_water_light|state.st13~0 ; |flowing_water_light|state.st13~0 ; out0             ;
+; |flowing_water_light|out[12]~12   ; |flowing_water_light|out[12]~12   ; out0             ;
+; |flowing_water_light|state.st14~0 ; |flowing_water_light|state.st14~0 ; out0             ;
+; |flowing_water_light|out[13]~13   ; |flowing_water_light|out[13]~13   ; out0             ;
+; |flowing_water_light|state.st15~0 ; |flowing_water_light|state.st15~0 ; out0             ;
+; |flowing_water_light|out[14]~14   ; |flowing_water_light|out[14]~14   ; out0             ;
+; |flowing_water_light|state.st16~0 ; |flowing_water_light|state.st16~0 ; out0             ;
+; |flowing_water_light|out[15]~15   ; |flowing_water_light|out[15]~15   ; out0             ;
+; |flowing_water_light|Add0~1       ; |flowing_water_light|Add0~1       ; out0             ;
+; |flowing_water_light|Add0~2       ; |flowing_water_light|Add0~2       ; out0             ;
+; |flowing_water_light|Add0~3       ; |flowing_water_light|Add0~3       ; out0             ;
+; |flowing_water_light|Add0~4       ; |flowing_water_light|Add0~4       ; out0             ;
+; |flowing_water_light|Add0~5       ; |flowing_water_light|Add0~5       ; out0             ;
+; |flowing_water_light|Add0~6       ; |flowing_water_light|Add0~6       ; out0             ;
+; |flowing_water_light|Add0~7       ; |flowing_water_light|Add0~7       ; out0             ;
+; |flowing_water_light|Add0~8       ; |flowing_water_light|Add0~8       ; out0             ;
+; |flowing_water_light|Add0~9       ; |flowing_water_light|Add0~9       ; out0             ;
+; |flowing_water_light|Add0~10      ; |flowing_water_light|Add0~10      ; out0             ;
+; |flowing_water_light|Add0~11      ; |flowing_water_light|Add0~11      ; out0             ;
+; |flowing_water_light|Add0~12      ; |flowing_water_light|Add0~12      ; out0             ;
+; |flowing_water_light|Add0~13      ; |flowing_water_light|Add0~13      ; out0             ;
+; |flowing_water_light|Add0~14      ; |flowing_water_light|Add0~14      ; out0             ;
+; |flowing_water_light|Add0~15      ; |flowing_water_light|Add0~15      ; out0             ;
+; |flowing_water_light|Add0~16      ; |flowing_water_light|Add0~16      ; out0             ;
+; |flowing_water_light|Add0~17      ; |flowing_water_light|Add0~17      ; out0             ;
+; |flowing_water_light|Add0~18      ; |flowing_water_light|Add0~18      ; out0             ;
+; |flowing_water_light|Add0~19      ; |flowing_water_light|Add0~19      ; out0             ;
+; |flowing_water_light|Add0~20      ; |flowing_water_light|Add0~20      ; out0             ;
+; |flowing_water_light|Add0~21      ; |flowing_water_light|Add0~21      ; out0             ;
+; |flowing_water_light|Add0~22      ; |flowing_water_light|Add0~22      ; out0             ;
+; |flowing_water_light|Add0~23      ; |flowing_water_light|Add0~23      ; out0             ;
+; |flowing_water_light|Add0~24      ; |flowing_water_light|Add0~24      ; out0             ;
+; |flowing_water_light|Add0~25      ; |flowing_water_light|Add0~25      ; out0             ;
+; |flowing_water_light|Add0~26      ; |flowing_water_light|Add0~26      ; out0             ;
+; |flowing_water_light|Add0~27      ; |flowing_water_light|Add0~27      ; out0             ;
+; |flowing_water_light|Add0~28      ; |flowing_water_light|Add0~28      ; out0             ;
+; |flowing_water_light|Add0~29      ; |flowing_water_light|Add0~29      ; out0             ;
+; |flowing_water_light|Add0~30      ; |flowing_water_light|Add0~30      ; out0             ;
+; |flowing_water_light|Add0~31      ; |flowing_water_light|Add0~31      ; out0             ;
+; |flowing_water_light|Add0~32      ; |flowing_water_light|Add0~32      ; out0             ;
+; |flowing_water_light|Add0~33      ; |flowing_water_light|Add0~33      ; out0             ;
+; |flowing_water_light|Add0~34      ; |flowing_water_light|Add0~34      ; out0             ;
+; |flowing_water_light|Add0~35      ; |flowing_water_light|Add0~35      ; out0             ;
+; |flowing_water_light|Add0~36      ; |flowing_water_light|Add0~36      ; out0             ;
+; |flowing_water_light|Add0~37      ; |flowing_water_light|Add0~37      ; out0             ;
+; |flowing_water_light|Add0~38      ; |flowing_water_light|Add0~38      ; out0             ;
+; |flowing_water_light|Add0~39      ; |flowing_water_light|Add0~39      ; out0             ;
+; |flowing_water_light|Add0~40      ; |flowing_water_light|Add0~40      ; out0             ;
+; |flowing_water_light|Add0~41      ; |flowing_water_light|Add0~41      ; out0             ;
+; |flowing_water_light|Add0~42      ; |flowing_water_light|Add0~42      ; out0             ;
+; |flowing_water_light|Add0~43      ; |flowing_water_light|Add0~43      ; out0             ;
+; |flowing_water_light|Add0~44      ; |flowing_water_light|Add0~44      ; out0             ;
+; |flowing_water_light|Add0~45      ; |flowing_water_light|Add0~45      ; out0             ;
+; |flowing_water_light|Add0~46      ; |flowing_water_light|Add0~46      ; out0             ;
+; |flowing_water_light|Add0~47      ; |flowing_water_light|Add0~47      ; out0             ;
+; |flowing_water_light|Add0~48      ; |flowing_water_light|Add0~48      ; out0             ;
+; |flowing_water_light|Add0~49      ; |flowing_water_light|Add0~49      ; out0             ;
+; |flowing_water_light|Add0~50      ; |flowing_water_light|Add0~50      ; out0             ;
+; |flowing_water_light|Add0~51      ; |flowing_water_light|Add0~51      ; out0             ;
+; |flowing_water_light|Add0~52      ; |flowing_water_light|Add0~52      ; out0             ;
+; |flowing_water_light|Add0~53      ; |flowing_water_light|Add0~53      ; out0             ;
+; |flowing_water_light|Add0~54      ; |flowing_water_light|Add0~54      ; out0             ;
+; |flowing_water_light|Add0~55      ; |flowing_water_light|Add0~55      ; out0             ;
+; |flowing_water_light|Add0~56      ; |flowing_water_light|Add0~56      ; out0             ;
+; |flowing_water_light|Add0~57      ; |flowing_water_light|Add0~57      ; out0             ;
+; |flowing_water_light|Add0~58      ; |flowing_water_light|Add0~58      ; out0             ;
+; |flowing_water_light|Add0~59      ; |flowing_water_light|Add0~59      ; out0             ;
+; |flowing_water_light|Add0~60      ; |flowing_water_light|Add0~60      ; out0             ;
++-----------------------------------+-----------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 09 16:39:25 2022
+Info: Command: quartus_sim --simulation_results_format=VWF flowing_water_light -c flowing_water_light
+Info (324025): Using vector source file "C:/altera/Experiment4/exp4_project1/flowing_water_light/liushuideng.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      19.16 %
+Info (328052): Number of transitions in simulation is 523
+Info (324045): Vector file flowing_water_light.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Wed Nov 09 16:39:26 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

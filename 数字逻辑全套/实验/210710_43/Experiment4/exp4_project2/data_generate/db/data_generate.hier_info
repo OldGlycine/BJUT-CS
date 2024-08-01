@@ -1,0 +1,21 @@
+|data_generate
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => dout~reg0.CLK
+clr => dout~0.OUTPUTSELECT
+clr => data~0.OUTPUTSELECT
+clr => data~1.OUTPUTSELECT
+clr => data~2.OUTPUTSELECT
+clr => data~3.OUTPUTSELECT
+clr => data~4.OUTPUTSELECT
+clr => data~5.OUTPUTSELECT
+clr => data~6.OUTPUTSELECT
+dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

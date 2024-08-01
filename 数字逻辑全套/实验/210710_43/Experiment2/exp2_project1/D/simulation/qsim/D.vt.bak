@@ -1,0 +1,254 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/26/2022 17:27:13"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    D
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module D_vlg_sample_tst(
+	Clk,
+	D,
+	EN,
+	sampler_tx
+);
+input  Clk;
+input  D;
+input  EN;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(Clk or D or EN)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module D_vlg_check_tst (
+	LED1,
+	LED2,
+	sampler_rx
+);
+input  LED1;
+input  LED2;
+input sampler_rx;
+
+reg  LED1_expected;
+reg  LED2_expected;
+
+reg  LED1_prev;
+reg  LED2_prev;
+
+reg  LED1_expected_prev;
+reg  LED2_expected_prev;
+
+reg  last_LED1_exp;
+reg  last_LED2_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	LED1_prev = LED1;
+	LED2_prev = LED2;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	LED1_expected_prev = LED1_expected;
+	LED2_expected_prev = LED2_expected;
+end
+
+
+
+// expected LED1
+initial
+begin
+	LED1_expected = 1'bX;
+end 
+
+// expected LED2
+initial
+begin
+	LED2_expected = 1'bX;
+end 
+// generate trigger
+always @(LED1_expected or LED1 or LED2_expected or LED2)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected LED1 = %b | expected LED2 = %b | ",LED1_expected_prev,LED2_expected_prev);
+	$display("| real LED1 = %b | real LED2 = %b | ",LED1_prev,LED2_prev);
+`endif
+	if (
+		( LED1_expected_prev !== 1'bx ) && ( LED1_prev !== LED1_expected_prev )
+		&& ((LED1_expected_prev !== last_LED1_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LED1 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LED1_expected_prev);
+		$display ("     Real value = %b", LED1_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_LED1_exp = LED1_expected_prev;
+	end
+	if (
+		( LED2_expected_prev !== 1'bx ) && ( LED2_prev !== LED2_expected_prev )
+		&& ((LED2_expected_prev !== last_LED2_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LED2 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LED2_expected_prev);
+		$display ("     Real value = %b", LED2_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_LED2_exp = LED2_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module D_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg Clk;
+reg D;
+reg EN;
+// wires                                               
+wire LED1;
+wire LED2;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+D i1 (
+// port map - connection between master ports and signals/registers   
+	.Clk(Clk),
+	.D(D),
+	.EN(EN),
+	.LED1(LED1),
+	.LED2(LED2)
+);
+
+// Clk
+always
+begin
+	Clk = 1'b0;
+	Clk = #10000 1'b1;
+	#10000;
+end 
+
+// D
+initial
+begin
+	D = 1'b0;
+	D = #4500 1'b1;
+	# 7500;
+	repeat(65)
+	begin
+		D = 1'b0;
+		D = #7500 1'b1;
+		# 7500;
+	end
+	D = 1'b0;
+	D = #7500 1'b1;
+end 
+
+// EN
+initial
+begin
+	repeat(12)
+	begin
+		EN = 1'b0;
+		EN = #40000 1'b1;
+		# 40000;
+	end
+	EN = 1'b0;
+end 
+
+D_vlg_sample_tst tb_sample (
+	.Clk(Clk),
+	.D(D),
+	.EN(EN),
+	.sampler_tx(sampler)
+);
+
+D_vlg_check_tst tb_out(
+	.LED1(LED1),
+	.LED2(LED2),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/quartus13.0/QSW/D_FF/D_FF.v
+source_file = 1, D:/quartus13.0/QSW/D_FF/D_FF.vwf
+source_file = 1, D:/quartus13.0/QSW/D_FF/db/D_FF.cbx.xml
+design_name = D_FF
+instance = comp, \Q~output , Q~output, D_FF, 1
+instance = comp, \QN~output , QN~output, D_FF, 1
+instance = comp, \CLK~input , CLK~input, D_FF, 1
+instance = comp, \CLK~inputclkctrl , CLK~inputclkctrl, D_FF, 1
+instance = comp, \D~input , D~input, D_FF, 1
+instance = comp, \Q~reg0feeder , Q~reg0feeder, D_FF, 1
+instance = comp, \Q~reg0 , Q~reg0, D_FF, 1
+instance = comp, \QN~0 , QN~0, D_FF, 1
+instance = comp, \QN~reg0 , QN~reg0, D_FF, 1

@@ -1,0 +1,15 @@
+|tstage_gate
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[2] => out.DATAB
+in[3] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+
+

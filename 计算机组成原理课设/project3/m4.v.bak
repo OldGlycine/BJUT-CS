@@ -1,0 +1,6 @@
+module m4(drout, prrd, m4out, pc);
+  input [31:0] drout, prrd, pc;
+  output [31:0] m4out;
+  
+  assign m4out = (pc[15:8] == 8'h7f) ? prrd : drout;
+endmodule

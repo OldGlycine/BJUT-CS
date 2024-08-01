@@ -1,0 +1,20 @@
+
+State Machine - |flowing_water_light|state
+Name state.st15 state.st14 state.st13 state.st12 state.st11 state.st10 state.st9 state.st8 state.st7 state.st6 state.st5 state.st4 state.st3 state.st2 state.st1 state.st0 state.st16 
+state.st0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.st1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+state.st2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+state.st3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+state.st4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+state.st5 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+state.st6 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+state.st7 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+state.st8 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+state.st9 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+state.st10 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+state.st11 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st12 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st13 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st14 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st15 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+state.st16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 

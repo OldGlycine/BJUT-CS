@@ -1,0 +1,22 @@
+module test02 (sel,n_en,out,x);
+	input n_en;
+	input [1:0] sel;
+	output [3:0] out;
+	input [5:0] x;
+	reg [3:0] out;
+	reg [5:0] x;
+	reg [3:0] a;
+	reg [3:0] b;
+	assign a=x/10;
+	assign b=x%10;
+always @ (sel)
+	begin
+		if(!n_en)
+			case(sel)
+			  2'b00 : out = b;
+			  2'b01 : out = a;
+			endcase
+		else 
+			out = 4'b0000;
+	end
+endmodule

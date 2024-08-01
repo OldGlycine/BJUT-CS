@@ -1,0 +1,71 @@
+|counter_top
+clrn => clrn~0.IN1
+clk => clk~0.IN1
+enp => enp~0.IN1
+ent => ent~0.IN1
+ldn => ldn~0.IN1
+data_in[0] => data_in[0]~3.IN1
+data_in[1] => data_in[1]~2.IN1
+data_in[2] => data_in[2]~1.IN1
+data_in[3] => data_in[3]~0.IN1
+rco <= counter:comb_3.rco
+a <= led:comb_4.out
+b <= led:comb_4.out
+c <= led:comb_4.out
+d <= led:comb_4.out
+e <= led:comb_4.out
+f <= led:comb_4.out
+g <= led:comb_4.out
+sel <= led:comb_4.sel
+n_en => n_en~0.IN1
+
+
+|counter_top|counter:comb_3
+clrn => q_out~8.OUTPUTSELECT
+clrn => q_out~9.OUTPUTSELECT
+clrn => q_out~10.OUTPUTSELECT
+clrn => q_out~11.OUTPUTSELECT
+clk => q_out[0]~reg0.CLK
+clk => q_out[1]~reg0.CLK
+clk => q_out[2]~reg0.CLK
+clk => q_out[3]~reg0.CLK
+enp => always0~0.IN0
+ent => always0~0.IN1
+ent => rco~0.IN1
+ldn => q_out~4.OUTPUTSELECT
+ldn => q_out~5.OUTPUTSELECT
+ldn => q_out~6.OUTPUTSELECT
+ldn => q_out~7.OUTPUTSELECT
+data_in[0] => q_out~7.DATAB
+data_in[1] => q_out~6.DATAB
+data_in[2] => q_out~5.DATAB
+data_in[3] => q_out~4.DATAB
+q_out[0] <= q_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[1] <= q_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[2] <= q_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[3] <= q_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rco <= rco~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|counter_top|led:comb_4
+out[0] <= out~6.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out~5.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out~4.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out~3.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out~2.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out~1.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+n_en => out~0.OUTPUTSELECT
+n_en => out~1.OUTPUTSELECT
+n_en => out~2.OUTPUTSELECT
+n_en => out~3.OUTPUTSELECT
+n_en => out~4.OUTPUTSELECT
+n_en => out~5.OUTPUTSELECT
+n_en => out~6.OUTPUTSELECT
+sel <= <GND>
+
+

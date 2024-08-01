@@ -1,0 +1,197 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/04/23 13:11:31
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 69 6E 70 75 74 3A		    input_msg db "input: ",13,10,'$'
+       20 0D 0A 24
+ 000A 6F 75 74 70 75 74		    output_msg db "output: ",13,10,'$' 
+       3A 20 0D 0A 24
+ 0015 32 00			    input_str db 50,?,50 dup('$')
+       0032 [
+        24
+       ]
+ 0049 107C			    ID dw 4220
+ 004B 0D 0A 24			    next_row db 0dh,0ah,'$'
+ 004E 00			    lastnum DB 0
+ 004F 0000			    sum dw 0
+ 0051				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0128 [			    db 128h dup(0)
+        00
+       ]
+ 0128				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    
+ 0005  BE 0000			    mov si,0
+ 0008  8D 16 0000 R			lea dx,input_msg
+ 000C  B4 09				mov ah,9
+ 000E  CD 21				int 21h
+ 0010  8D 16 0015 R			lea dx,input_str;接收输入
+ 0014  B4 0A				mov ah,0ah
+ 0016  CD 21				int 21h
+ 0018  8D 16 004B R			lea dx,next_row
+ 001C  B4 09				mov ah,9
+ 001E  CD 21				int 21h
+					
+ 0020  A1 0049 R			MOV AX,ID;获取学号末位数字
+ 0023  BA 0000			    MOV DX,0
+ 0026  BB 000A			    MOV BX,10
+ 0029  F7 F3			    DIV BX
+ 002B  88 16 004E R		    MOV lastnum,DL
+				    
+ 002F  B9 0000			    mov cx,0
+				    
+ 0032				read_str:
+ 0032  8A 9C 0015 R			mov bl,input_str[si]
+ 0036  80 FB 2E				cmp bl,'.';读到.跳出
+ 0039  74 0B				jz str_num
+ 003B  80 EB 30				sub bl,'0';字符数字转数字
+ 003E  B7 00				mov bh,0
+ 0040  53				push bx;压栈
+ 0041  FE C1				inc cl ;cl记录数字位数
+ 0043  46				inc si ;指针后移
+ 0044  EB EC				jmp read_str	
+
+ 0046				str_num:;字符转数字
+ 0046  38 CD				cmp ch,cl
+ 0048  74 49				jz mul_id
+ 004A  5B				pop bx;一个数字出栈
+ 004B  80 FD 00				cmp ch,0;判断是哪一位
+ 004E  74 0F				jz lable_0
+ 0050  80 FD 01				cmp ch,1
+ 0053  74 17				jz lable_1
+ 0055  80 FD 02				cmp ch,2
+ 0058  74 1F				jz lable_2
+ 005A  80 FD 03				cmp ch,3
+ 005D  74 27				jz lable_3
+					
+ 005F				lable_0:;个位数字，乘1，累加到sum
+ 005F  B8 0001				mov ax,1
+ 0062  F6 E3				mul bl
+ 0064  01 06 004F R			add sum,ax
+ 0068  FE C5				inc ch
+ 006A  EB DA				jmp str_num
+ 006C				lable_1:
+ 006C  B8 000A				mov ax,10
+ 006F  F6 E3				mul bl
+ 0071  01 06 004F R			add sum,ax
+ 0075  FE C5				inc ch
+ 0077  EB CD				jmp str_num
+ 0079				lable_2:
+ 0079  B8 0064				mov ax,100
+ 007C  F6 E3				mul bl
+ 007E  01 06 004F R			add sum,ax
+ 0082  FE C5				inc ch
+ 0084  EB C0				jmp str_num
+ 0086				lable_3:
+ 0086  B8 03E8				mov ax,1000
+ 0089  F6 E3				mul bl
+ 008B  01 06 004F R			add sum,ax
+ 008F  FE C5				inc ch
+ 0091  EB B3				jmp str_num
+					
+ 0093				mul_id:
+ 0093  A1 004F R			mov ax,sum
+ 0096  F6 26 004E R			mul lastnum
+ 009A  8B 1E 004F R			mov bx,sum
+ 009E  E8 0000				call output
+					
+				;多位输出函数，入口参数为bx，来自csdn
+ 00A1				output proc
+ 00A1  50				push ax;数据入栈区
+ 00A2  51				push cx
+ 00A3  52				push dx
+					
+					;初始化变量
+ 00A4  8B C3				mov ax,bx;数据放入准备除法
+ 00A6  B1 0A				mov cl,10;作为除数
+ 00A8  B5 00				mov ch,0;用于计数便于后续出栈输出
+					
+ 00AA				divagain:;除法数字剥离部分
+ 00AA  83 F8 00				cmp ax,0;判断是否已经除尽
+ 00AD  74 09					je divover
+ 00AF  FE C5				inc ch;计数器加1
+ 00B1  F6 F1				div cl
+ 00B3  50				push ax;入栈，提取的时候取用ah部分,存储余数（低位优先）
+ 00B4  B4 00				mov ah,0;调整ax
+ 00B6  EB F2					jmp divagain;再次除法剥离数字
+						
+ 00B8				divover:;出栈输出部分
+ 00B8  80 FD 00				cmp ch,0;判断数字是否已经出尽
+ 00BB  74 0E					je outputover
+ 00BD  58				pop ax;取用ah部分
+ 00BE  8A D4				mov dl,ah;输出部分
+ 00C0  80 C2 30				add dl,48
+ 00C3  B4 02				mov ah,2
+ 00C5  CD 21				int 21h
+ 00C7  FE CD				dec ch
+ 00C9  EB ED					jmp divover 
+						
+ 00CB				outputover:;收尾部分
+ 00CB  5A				pop dx
+ 00CC  59				pop cx
+ 00CD  58				pop ax;数据出栈区
+ 00CE  C3				ret
+ 00CF				output endp	
+					
+ 00CF  B4 4C			    MOV AH,4CH
+ 00D1  CD 21			    INT 21H
+ 00D3				CODES ENDS
+				    END START
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/04/23 13:11:31
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00D3	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0051	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0128	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+output . . . . . . . . . . . . .	P Near	 00A1	  CODES	Length= 002E Public
+  divagain . . . . . . . . . . .	L Near	 00AA	  CODES	
+  divover  . . . . . . . . . . .	L Near	 00B8	  CODES	
+  outputover . . . . . . . . . .	L Near	 00CB	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+ID . . . . . . . . . . . . . . .	Word	 0049	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+input_msg  . . . . . . . . . . .	Byte	 0000	  DATAS	
+input_str  . . . . . . . . . . .	Byte	 0015	  DATAS	
+lable_0  . . . . . . . . . . . .	L Near	 005F	  CODES	
+lable_1  . . . . . . . . . . . .	L Near	 006C	  CODES	
+lable_2  . . . . . . . . . . . .	L Near	 0079	  CODES	
+lable_3  . . . . . . . . . . . .	L Near	 0086	  CODES	
+lastnum  . . . . . . . . . . . .	Byte	 004E	  DATAS	
+mul_id . . . . . . . . . . . . .	L Near	 0093	  CODES	
+next_row . . . . . . . . . . . .	Byte	 004B	  DATAS	
+output_msg . . . . . . . . . . .	Byte	 000A	  DATAS	
+read_str . . . . . . . . . . . .	L Near	 0032	  CODES	
+str_num  . . . . . . . . . . . .	L Near	 0046	  CODES	
+sum  . . . . . . . . . . . . . .	Word	 004F	  DATAS	
+
+	   0 Warnings
+	   0 Errors

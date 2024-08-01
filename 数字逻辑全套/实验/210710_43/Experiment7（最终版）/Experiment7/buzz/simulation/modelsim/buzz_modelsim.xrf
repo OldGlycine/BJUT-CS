@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/8/Experiment7(new)/Experiment77/Experiment7/buzz/buzz.v
+source_file = 1, C:/altera/8/Experiment7(new)/Experiment77/Experiment7/buzz/Waveform.vwf
+source_file = 1, C:/altera/8/Experiment7(new)/Experiment77/Experiment7/buzz/db/buzz.cbx.xml
+design_name = buzz
+instance = comp, \clk_fast~input , clk_fast~input, buzz, 1
+instance = comp, \beep_r~output , beep_r~output, buzz, 1
+instance = comp, \beep~output , beep~output, buzz, 1
+instance = comp, \clk~input , clk~input, buzz, 1
+instance = comp, \clk_slow~input , clk_slow~input, buzz, 1
+instance = comp, \ring[0]~input , ring[0]~input, buzz, 1
+instance = comp, \ring[1]~input , ring[1]~input, buzz, 1
+instance = comp, \beep~0 , beep~0, buzz, 1
+instance = comp, \beep_r~0 , beep_r~0, buzz, 1
+instance = comp, \beep_r~reg0 , beep_r~reg0, buzz, 1

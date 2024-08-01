@@ -1,0 +1,11 @@
+module main(start, stop, clk, r, y, g, beep, clk_slow, clk_fast, LSNG, LSNY, LSNR, LEWG, LEWY, LEWR,c_state, n_state);
+	input start, stop, clk, clk_slow, clk_fast, LSNG, LSNY, LSNR, LEWG, LEWY, LEWR;
+	input [5:0] r, y, g;
+	reg [3:0] c_state, n_state;
+	output reg beep;
+	
+	reg [5:0] r_count, y_count, g_count;
+	
+	parameter A=3'B000, B=3'B001, C=3'B010, D=3'B011, E=3'B100, F=3'B111;
+	
+	

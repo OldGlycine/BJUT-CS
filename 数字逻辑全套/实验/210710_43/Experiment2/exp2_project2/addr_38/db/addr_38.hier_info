@@ -1,0 +1,14 @@
+|addr_38
+addr[0] => Decoder0.IN2
+addr[1] => Decoder0.IN1
+addr[2] => Decoder0.IN0
+o1 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o2 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o3 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o4 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o5 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o6 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o7 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o8 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment5\expand_task\simulation\qsim
+vexpand_task
+Z1 !s100 ihm[FzYKDGk^8eZdVL3EJ3
+Z2 I?YOa@K]nb0_PEVfBiBhm30
+Z3 Vj@QK_RX8nWnR7:V_7YhiN0
+Z4 dC:\altera\Experiment5\expand_task\simulation\qsim
+Z5 w1672992757
+Z6 8expand_task.vo
+Z7 Fexpand_task.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|expand_task.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1672992758.311000
+Z12 !s107 expand_task.vo|
+!s101 -O0
+vexpand_task_vlg_check_tst
+!i10b 1
+Z13 !s100 i>PaHlSnc_U1on<;]ackV0
+Z14 I?nV]EGS]_:N5HNfP421191
+Z15 V]6R76=HRnmfbz3zd;9G]?1
+R4
+Z16 w1672992756
+Z17 8expand_task.vt
+Z18 Fexpand_task.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1672992758.379000
+Z20 !s107 expand_task.vt|
+Z21 !s90 -work|work|expand_task.vt|
+!s101 -O0
+R10
+vexpand_task_vlg_sample_tst
+!i10b 1
+Z22 !s100 h=TZVEH=N?ib_Nl9LRFHD1
+Z23 I?0KziTJW?7bSAXDRS3CI]2
+Z24 Vf?;IOFI=T]AYPH3W4mKFQ2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vexpand_task_vlg_vec_tst
+!i10b 1
+!s100 VMNlPRk=M<YB3Sf`XGg>J0
+IfmE7SM1_Sz[M7F05ZUQ`:3
+Z25 VkmlKZiUUX`H@VR76nBlLK3
+R4
+R16
+R17
+R18
+Z26 L0 417
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

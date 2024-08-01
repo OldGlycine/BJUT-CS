@@ -1,0 +1,4022 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile D:/Study/ComputerOrganizationClassDesign/project2/project2.mpf 
+# Loading project project2
+vsim -gui work.mips_tb
+# vsim -gui work.mips_tb 
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.ir
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.ar
+# Loading work.br
+# Loading work.dm_1k
+# Loading work.dr
+# Loading work.ext
+# Loading work.alu
+# Loading work.aluout
+# Loading work.controller
+# ** Warning: (vsim-3017) D:/Study/ComputerOrganizationClassDesign/project2/mips.v(67): [TFMPC] - Too few port connections. Expected 5, found 4.
+# 
+#         Region: /mips_tb/mm/m1_21071003
+# ** Warning: (vsim-3722) D:/Study/ComputerOrganizationClassDesign/project2/mips.v(67): [TFMPC] - Missing connection for port 'isjalr'.
+# 
+# A time value could not be extracted from the current line
+# Compile of mips.v was successful.
+# Compile of m1.v was successful.
+# Compile of m2.v was successful.
+# Compile of m3.v was successful.
+# Compile of alu.v was successful.
+# Compile of pc.v was successful.
+# Compile of npc.v was successful.
+# Compile of dm.v was successful.
+# Compile of ir.v was successful.
+# Compile of ar.v was successful.
+# Compile of br.v was successful.
+# Compile of aluout.v was successful.
+# Compile of dr.v was successful.
+# Compile of im.v was successful.
+# Compile of gpr.v was successful.
+# Compile of controller.v was successful.
+# Compile of ext.v was successful.
+# Compile of mips_tb.v was successful.
+# 18 compiles, 0 failed with no errors. 
+restart
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.ir
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.ar
+# Loading work.br
+# Loading work.dm_1k
+# Loading work.dr
+# Loading work.ext
+# Loading work.alu
+# Loading work.aluout
+# Loading work.controller
+add wave -position end  sim:/mips_tb/clk
+add wave -position end  sim:/mips_tb/rst
+add wave -position end  sim:/mips_tb/mm/pc_21071003/pcout
+add wave -position end  sim:/mips_tb/mm/c_21071003/cur_state
+add wave -position end  sim:/mips_tb/mm/c_21071003/next_state
+add wave -position end  sim:/mips_tb/mm/c_21071003/overflow
+add wave -position end  sim:/mips_tb/mm/gpr_21071003/reg_files
+add wave -position 3  sim:/mips_tb/mm/ir_21071003/irout
+run
+# Can't write to ir!
+# No right to hello.
+# No right to hello.
+# 
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Compile of im.v was successful.
+restart
+# Loading work.im_1k
+run
+# Can't write to ir!
+# No right to hello.
+# No right to hello.
+# 
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# Hello world!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# Hello world!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# Hello world!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# Hello world!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# $0 can't be change
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# 
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Compile of im.v was successful.
+restart
+# Loading work.im_1k
+run
+# Can't write to ir!
+# No right to hello.
+# No right to hello.
+# 
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Compile of im.v was successful.
+restart
+# Loading work.im_1k
+run
+# Can't write to ir!
+# No right to hello.
+# No right to hello.
+# 
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.

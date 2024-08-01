@@ -1,0 +1,268 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:24:26
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 71 69 6E 67 20 73		    TIP_HUNDRED DB 'qing shu ru zheng que shu zi$'
+       68 75 20 72 75 20
+       7A 68 65 6E 67 20
+       71 75 65 20 73 68
+       75 20 7A 69 24
+ 001D 73 68 75 20 72 75		    TIP_INPUT DB 'shu ru ni de shu zi!$'
+       20 6E 69 20 64 65
+       20 73 68 75 20 7A
+       69 21 24
+ 0032 6A 69 65 20 67 75		    TIP_TOATAL DB 'jie guo shi :$'
+       6F 20 73 68 69 20
+       3A 24
+ 0040 66 65 69 20 66 61		    TIP_ERROR DB 'fei fa shu ru!$' 
+       20 73 68 75 20 72
+       75 21 24
+				    
+ 004F 0000			    SCORE_TRUE DW 0
+ 0051 30			    SCORE DB 30H 
+ 0052  00			    DB 0 
+ 0053  0030 [			    DB 30H DUP('$');用于存放7个评委的分数
+        24
+       ]
+ 0083 0000			    SCOREALL DW 0
+ 0085 0000			    SCORE_MAX DW 0
+ 0087 0064			    SCORE_MIN DW 100
+				    
+ 0089				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0040 [			     DW 40H DUP(0)
+        0000
+       ]
+ 0080				    TOP LABEL WORD
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+ 0005  8E C0			    MOV ES,AX
+ 0007				THE_F:
+ 0007  B8 0000				MOV AX,0 
+ 000A  A3 0083 R			MOV SCOREALL,AX
+ 000D  A3 0085 R			MOV SCORE_MAX,AX
+ 0010  B8 0064				MOV AX,100
+ 0013  A3 0087 R			MOV SCORE_MIN,AX
+
+ 0016  8D 16 0000 R			LEA  DX,TIP_HUNDRED;输入规则提示
+ 001A  B4 09				MOV AH,09H
+ 001C  CD 21				INT 21H
+ 001E  BA 000A				MOV DX,0AH
+ 0021  B4 02				MOV AH,02H
+ 0023  CD 21				INT 21H
+ 0025  BA 000D				MOV DX,0DH
+ 0028  B4 02				MOV AH,02H
+ 002A  CD 21				INT 21H
+ 002C  B9 0007				MOV CX,07H
+ 002F				FIRST:
+ 002F  C7 06 004F R 0000		MOV SCORE_TRUE,0
+ 0035  8B D1				MOV DX,CX
+ 0037  83 C2 30				ADD DX,30H
+ 003A  B4 02				MOV AH,02H
+ 003C  CD 21				INT 21H
+ 003E  BA 003A				MOV DX,':'
+ 0041  B4 02				MOV AH,02H
+ 0043  CD 21				INT 21H
+					
+ 0045  8D 16 001D R			LEA  DX,TIP_INPUT
+ 0049  B4 09				MOV AH,09H
+ 004B  CD 21				INT 21H
+					
+ 004D  BA 000A				MOV DX,0AH
+ 0050  B4 02				MOV AH,02H
+ 0052  CD 21				INT 21H
+ 0054  BA 000D				MOV DX,0DH
+ 0057  B4 02				MOV AH,02H
+ 0059  CD 21				INT 21H
+					
+ 005B  8D 16 0051 R			LEA DX,SCORE
+ 005F  B4 0A				MOV AH,0AH
+ 0061  CD 21				INT 21H
+				    
+ 0063  BA 000A			    MOV DX,0AH
+ 0066  B4 02				MOV AH,02H
+ 0068  CD 21				INT 21H
+ 006A  BA 000D				MOV DX,0DH
+ 006D  B4 02				MOV AH,02H
+ 006F  CD 21				INT 21H
+				    
+ 0071  E8 0004			    CALL CMPAB
+ 0074  E2 B9				LOOP FIRST
+ 0076  EB 61				JMP NOLONGHAIR
+					
+					
+ 0078				CMPAB PROC
+ 0078  51				PUSH CX
+ 0079  A0 0052 R			  MOV AL,SCORE+1
+					;判断是否大于3位
+ 007C  3C 03			    CMP AL,03H
+ 007E  76 03 E9 009D		    JA ERROR_TIP
+ 0083  BE 0002			    MOV SI,2
+ 0086  8A 0E 0052 R		    MOV CL,SCORE+1
+ 008A				   NEXT:
+ 008A  33 C0			   	XOR AX,AX
+ 008C  8A 84 0051 R		    MOV AL,SCORE[SI]
+ 0090  3C 30			    CMP AL,'0'
+ 0092  73 03 E9 0089		    JB ERROR_TIP
+ 0097  3C 39			    CMP AL,'9'
+ 0099  76 03 E9 0082		    JA ERROR_TIP
+				   
+				    ;合法字符，转成真值,SCORE_TRUE用来存放其真值
+				    ;将SCORE_TRUE中的数值乘10
+ 009E  2C 30			    SUB AL,30H
+ 00A0  50			    PUSH AX
+ 00A1  33 C0			    XOR AX,AX
+ 00A3  B8 000A			    MOV AX,10
+ 00A6  F7 26 004F R		    MUL SCORE_TRUE
+ 00AA  A3 004F R		    MOV SCORE_TRUE,AX
+ 00AD  58			    POP AX
+ 00AE  01 06 004F R		   	ADD SCORE_TRUE,AX;按位数相加
+ 00B2  46			    INC SI
+ 00B3  E2 D5			    LOOP NEXT
+				    
+ 00B5				 GH:;加和到总分并且更新大小
+ 00B5  33 D2				XOR DX,DX
+ 00B7  33 C0			   	XOR AX,AX
+ 00B9  A1 004F R		    MOV AX,SCORE_TRUE
+				    
+				    ;判断这个值是不是百分制
+ 00BC  83 F8 64			    CMP AX,100
+ 00BF  77 5F			    JA  ERROR_TIP
+				    ;符合百分制就加到总分里
+ 00C1  01 06 0083 R		    ADD SCOREALL,AX
+ 00C5  3B 06 0087 R		    CMP AX,SCORE_MIN
+ 00C9  77 03			    JA GOMAX
+ 00CB  A3 0087 R		  	MOV SCORE_MIN,AX
+ 00CE				GOMAX:    
+ 00CE  3B 06 0085 R		    CMP AX,SCORE_MAX
+ 00D2  72 03			    JB RECHARGE
+ 00D4  A3 0085 R		    MOV SCORE_MAX,AX
+ 00D7				RECHARGE:
+ 00D7  59			    POP CX
+ 00D8  C3			    RET
+ 00D9				CMPAB ENDP
+
+ 00D9				NOLONGHAIR:;总数计算部分
+ 00D9  8D 16 0032 R			LEA DX,TIP_TOATAL
+ 00DD  B4 09				MOV AH,09H
+ 00DF  CD 21				INT 21H
+ 00E1  33 D2				XOR DX,DX
+ 00E3  A1 0083 R			MOV AX,SCOREALL
+ 00E6  2B 06 0087 R			SUB AX,SCORE_MIN
+ 00EA  2B 06 0085 R			SUB AX,SCORE_MAX
+ 00EE  BB 0005				MOV BX,5
+ 00F1  F7 F3				DIV BX 
+ 00F3  52				PUSH DX
+ 00F4  33 DB				XOR BX,BX
+ 00F6  BB 000A			   	MOV BX,10
+ 00F9  32 C9			   	XOR CL,CL
+ 00FB				 ML1:
+ 00FB  33 D2			   	XOR DX,DX
+ 00FD  F7 F3			  	DIV BX
+ 00FF  80 C2 30			   	ADD DL,30H
+ 0102  52			  	PUSH DX
+ 0103  FE C1			  	INC CL;记录共有几个
+ 0105  83 F8 00			  	CMP AX,0
+ 0108  75 F1			  	JNE ML1	
+ 010A				 MW1I:
+ 010A  5A			 	POP DX
+ 010B  B4 02			 	MOV AH,02H
+ 010D  CD 21			  	INT 21H
+ 010F  E2 F9				LOOP MW1I
+ 0111  BA 002E				MOV DX,'.'
+ 0114  CD 21				INT 21H
+ 0116  5A				POP DX
+ 0117  D1 E2				SAL DX,1;余数乘10除5=2，相当于左移一位 余数部分
+ 0119  83 C2 30				ADD DX,30H
+ 011C  CD 21				INT 21H
+ 011E  EB 27				JMP EXIT
+ 0120				ERROR_TIP:
+ 0120  BA 000A				 MOV DX,0AH
+ 0123  B4 02				MOV AH,02H
+ 0125  CD 21				INT 21H
+ 0127  BA 000D				MOV DX,0DH
+ 012A  B4 02				MOV AH,02H
+ 012C  CD 21				INT 21H
+					
+ 012E  8D 16 0040 R		  	LEA DX,TIP_ERROR
+ 0132  B4 09			 	MOV AH,09H
+ 0134  CD 21			  	INT 21H
+				  
+ 0136  BA 000A			  	MOV DX,0AH
+ 0139  B4 02				MOV AH,02H
+ 013B  CD 21				INT 21H
+ 013D  BA 000D				MOV DX,0DH
+ 0140  B4 02				MOV AH,02H
+ 0142  CD 21				INT 21H
+ 0144  E9 FEC0			  JMP THE_F      
+ 0147				EXIT: 
+ 0147  BA 000A				MOV DX,0AH
+ 014A  B4 02				MOV AH,02H
+ 014C  CD 21				INT 21H
+ 014E  BA 000D				MOV DX,0DH
+ 0151  B4 02				MOV AH,02H
+ 0153  CD 21				INT 21H
+ 0155  E9 FEAF				JMP THE_F
+ 0158				CODES ENDS
+				    END START
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:24:26
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0158	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0089	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+CMPAB  . . . . . . . . . . . . .	P Near	 0078	  CODES	Length= 0061 Public
+  NEXT . . . . . . . . . . . . .	L Near	 008A	  CODES	
+  GH . . . . . . . . . . . . . .	L Near	 00B5	  CODES	
+  GOMAX  . . . . . . . . . . . .	L Near	 00CE	  CODES	
+  RECHARGE . . . . . . . . . . .	L Near	 00D7	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+ERROR_TIP  . . . . . . . . . . .	L Near	 0120	  CODES	
+EXIT . . . . . . . . . . . . . .	L Near	 0147	  CODES	
+FIRST  . . . . . . . . . . . . .	L Near	 002F	  CODES	
+ML1  . . . . . . . . . . . . . .	L Near	 00FB	  CODES	
+MW1I . . . . . . . . . . . . . .	L Near	 010A	  CODES	
+NOLONGHAIR . . . . . . . . . . .	L Near	 00D9	  CODES	
+SCOREALL . . . . . . . . . . . .	Word	 0083	  DATAS	
+SCORE_MAX  . . . . . . . . . . .	Word	 0085	  DATAS	
+SCORE_MIN  . . . . . . . . . . .	Word	 0087	  DATAS	
+SCORE_TRUE . . . . . . . . . . .	Word	 004F	  DATAS	
+SCORE  . . . . . . . . . . . . .	Byte	 0051	  DATAS	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+THE_F  . . . . . . . . . . . . .	L Near	 0007	  CODES	
+TIP_ERROR  . . . . . . . . . . .	Byte	 0040	  DATAS	
+TIP_HUNDRED  . . . . . . . . . .	Byte	 0000	  DATAS	
+TIP_INPUT  . . . . . . . . . . .	Byte	 001D	  DATAS	
+TIP_TOATAL . . . . . . . . . . .	Byte	 0032	  DATAS	
+TOP  . . . . . . . . . . . . . .	Word	 0080	  STACKS	
+
+	   0 Warnings
+	   0 Errors

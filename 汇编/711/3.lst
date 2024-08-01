@@ -1,0 +1,402 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:06:41
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATA SEGMENT
+ 0000 50 6C 65 61 73 65			MSG1 DB 'Please input your choice: (P.S:q is exit)$'
+       20 69 6E 70 75 74
+       20 79 6F 75 72 20
+       63 68 6F 69 63 65
+       3A 20 28 50 2E 53
+       3A 71 20 69 73 20
+       65 78 69 74 29 24
+ 002A 31 3A 20 55 70 70			MSG2 DB '1: Uppercase to lowercase $'
+       65 72 63 61 73 65
+       20 74 6F 20 6C 6F
+       77 65 72 63 61 73
+       65 20 24
+ 0045 32 3A 20 4C 6F 77			MSG3 DB '2: Lowercase to Uppercase $'
+       65 72 63 61 73 65
+       20 74 6F 20 55 70
+       70 65 72 63 61 73
+       65 20 24
+ 0060 33 3A 20 42 69 6E			MSG4 DB '3: Binary to Hex $'	
+       61 72 79 20 74 6F
+       20 48 65 78 20 24
+ 0072 34 3A 20 48 65 78			MSG5 DB '4: Hex to binary $'
+       20 74 6F 20 62 69
+       6E 61 72 79 20 24
+ 0084 35 3A 20 48 65 78			MSG6 DB '5: Hex to dec $'
+       20 74 6F 20 64 65
+       63 20 24
+ 0093 50 6C 65 61 73 65			MSG7 DB 'Please input a number:     $'
+       20 69 6E 70 75 74
+       20 61 20 6E 75 6D
+       62 65 72 3A 20 20
+       20 20 20 24
+ 00AF 20 20 20 3C 3D 3D			MSG8 DB '   <==>   $'
+       3E 20 20 20 24
+ 00BA				DATA ENDS
+ 0000				CODE SEGMENT
+					ASSUME CS:CODE,DS:DATA
+ 0000				START:
+ 0000  B8 ---- R			MOV AX,DATA
+ 0003  8E D8				MOV DS,AX
+ 0005				P:
+ 0005  E8 0081				CALL CRLF			;换行符
+ 0008  8D 16 002A R			LEA DX,MSG2         ;输出菜单
+ 000C  B4 09				MOV AH,09H
+ 000E  CD 21				INT 21H
+ 0010  E8 0076				CALL CRLF
+ 0013  8D 16 0045 R			LEA DX,MSG3
+ 0017  B4 09				MOV AH,09H
+ 0019  CD 21				INT 21H
+ 001B  E8 006B				CALL CRLF
+ 001E  8D 16 0060 R			LEA DX,MSG4
+ 0022  B4 09				MOV AH,09H
+ 0024  CD 21				INT 21H
+ 0026  E8 0060				CALL CRLF
+ 0029  8D 16 0072 R			LEA DX,MSG5
+ 002D  B4 09				MOV AH,09H
+ 002F  CD 21				INT 21H
+ 0031  E8 0055				CALL CRLF
+ 0034  8D 16 0084 R			LEA DX,MSG6
+ 0038  B4 09				MOV AH,09H
+ 003A  CD 21				INT 21H
+ 003C  E8 004A				CALL CRLF
+ 003F  8D 16 0000 R			LEA DX,MSG1
+ 0043  B4 09				MOV AH,09H
+ 0045  CD 21				INT 21H
+ 0047  E8 003F				CALL CRLF
+ 004A  B4 01				MOV AH,01H    
+ 004C  CD 21				INT 21H
+ 004E  50				push ax
+ 004F  E8 0037				CALL CRLF
+ 0052  58				pop ax
+ 0053  2C 30				SUB AL,30H
+ 0055  3C 01				CMP AL,1
+ 0057  74 13				JE F1
+ 0059  3C 02				CMP AL,2
+ 005B  74 14				JE F2
+ 005D  3C 03				CMP AL,3
+ 005F  74 15				JE F3
+ 0061  3C 04				CMP AL,4
+ 0063  74 16				JE F4
+ 0065  3C 05				CMP AL,5
+ 0067  74 17				JE F5
+ 0069  E8 0019				CALL EXIT       ;按其他键退出
+
+ 006C				F1:
+ 006C  E8 0027				CALL FUNC1
+ 006F  EB 94				JMP P
+ 0071				F2:
+ 0071  E8 0047				CALL FUNC2
+ 0074  EB 8F				JMP P
+ 0076				F3:
+ 0076  E8 0067				CALL FUNC3
+ 0079  EB 8A				JMP P
+ 007B				F4:
+ 007B  E8 00B1				CALL FUNC4
+ 007E  EB 85				JMP P
+ 0080				F5:
+ 0080  E8 010B				CALL FUNC5
+ 0083  EB 80				JMP P
+
+ 0085				EXIT PROC NEAR
+ 0085  B4 4C				MOV AH,4CH
+ 0087  CD 21				INT 21H
+ 0089				EXIT ENDP
+
+ 0089				CRLF PROC NEAR
+ 0089  B2 0D				MOV DL,0DH	;换行
+ 008B  B4 02				MOV AH,02H
+ 008D  CD 21				INT 21H
+ 008F  B2 0A				MOV DL,0AH
+ 0091  B4 02				MOV AH,02H
+ 0093  CD 21				INT 21H
+ 0095  C3				RET
+ 0096				CRLF ENDP
+
+ 0096				FUNC1 PROC NEAR
+ 0096  8D 16 0093 R			LEA DX,MSG7
+ 009A  B4 09				MOV AH,09H
+ 009C  CD 21				INT 21H
+ 009E  B4 01				MOV AH,01H
+ 00A0  CD 21				INT 21H
+ 00A2  3C 41				CMP AL,41H
+ 00A4  72 14				JB RET1
+ 00A6  3C 5A				CMP AL,5AH
+ 00A8  77 10				JA RET1
+ 00AA  04 20				ADD AL,20H
+ 00AC  8D 16 00AF R			LEA DX,MSG8
+ 00B0  B4 09				MOV AH,09H
+ 00B2  CD 21				INT 21H
+ 00B4  8A D0				MOV DL,AL
+ 00B6  B4 02				MOV AH,02H
+ 00B8  CD 21				INT 21H
+ 00BA  C3			RET1:	RET
+ 00BB				FUNC1 ENDP
+
+ 00BB				FUNC2 PROC NEAR
+ 00BB  8D 16 0093 R			LEA DX,MSG7
+ 00BF  B4 09				MOV AH,09H
+ 00C1  CD 21				INT 21H
+ 00C3  B4 01				MOV AH,01H
+ 00C5  CD 21				INT 21H
+ 00C7  3C 61				CMP AL,61H
+ 00C9  72 14				JB RET2
+ 00CB  3C 7A				CMP AL,7AH
+ 00CD  77 10				JA RET2
+ 00CF  2C 20				SUB AL,20H
+ 00D1  8D 16 00AF R			LEA DX,MSG8
+ 00D5  B4 09				MOV AH,09H
+ 00D7  CD 21				INT 21H
+ 00D9  8A D0				MOV DL,AL
+ 00DB  B4 02				MOV AH,02H
+ 00DD  CD 21				INT 21H
+ 00DF  C3			RET2:	RET
+ 00E0				FUNC2 ENDP
+
+ 00E0				FUNC3 PROC NEAR
+ 00E0  8D 16 0093 R			LEA DX,MSG7
+ 00E4  B4 09				MOV AH,09H
+ 00E6  CD 21				INT 21H
+ 00E8  B5 04				MOV CH,4
+ 00EA  B2 00				MOV DL,0
+ 00EC				INPUT3:
+ 00EC  B4 01				MOV AH,1
+ 00EE  CD 21				INT 21H
+ 00F0  3C 30				CMP AL,30H
+ 00F2  72 3A				JB RET3
+ 00F4  3C 31				CMP AL,31H
+ 00F6  77 36				JA RET3
+ 00F8  74 07				JE L3            ;输入的是1
+ 00FA  D0 C2				ROL DL,1
+ 00FC  80 CA 00				OR DL,0
+ 00FF  EB 05				JMP AGAIN3
+ 0101				L3:	
+ 0101  D0 C2				ROL DL,1 ;左移一位让开空间
+ 0103  80 CA 01				OR DL,1	;最低位设成1
+ 0106				AGAIN3:
+ 0106  FE CD				DEC CH
+ 0108  74 02				JZ PRINT3
+ 010A  EB E0				JMP INPUT3	;
+ 010C				PRINT3:
+ 010C  80 FA 00				CMP DL,0
+ 010F  72 1D				JB RET3
+ 0111  80 FA 09				CMP DL,9
+ 0114  77 05				JA COMPER3
+ 0116  80 C2 30				ADD DL,30H
+ 0119  EB 03				JMP HEX3
+ 011B				COMPER3:
+ 011B  80 C2 37				ADD DL,37H
+ 011E				HEX3:
+ 011E  8A C2				MOV AL,DL
+ 0120  8D 16 00AF R			LEA DX,MSG8
+ 0124  B4 09				MOV AH,09H
+ 0126  CD 21				INT 21H
+ 0128  8A D0				MOV DL,AL 
+ 012A  B4 02				MOV AH,02H
+ 012C  CD 21				INT 21H
+ 012E  C3			RET3:	RET
+ 012F				FUNC3 ENDP
+
+ 012F				FUNC4 PROC NEAR
+ 012F  8D 16 0093 R			LEA DX,MSG7
+ 0133  B4 09				MOV AH,09H
+ 0135  CD 21				INT 21H
+ 0137				INPUT4:
+ 0137  B4 01				MOV AH,1
+ 0139  CD 21				INT 21H
+ 013B  3C 30				CMP AL,30H
+ 013D  72 4E				JB EXIT4
+ 013F  3C 39				CMP AL,39H
+ 0141  77 02				JA COMPER1
+ 0143  EB 14				JMP CHANGE1    ;在0~9之间
+ 0145				COMPER1:
+ 0145  3C 41				CMP AL,41H
+ 0147  72 44				JB EXIT4
+ 0149  3C 46				CMP AL,46H
+ 014B  77 02				JA COMPER2
+ 014D  EB 0E				JMP CHANGE2    ;在A-F之间
+ 014F				COMPER2:
+ 014F  3C 61				CMP AL,61H
+ 0151  72 3A				JB EXIT4
+ 0153  3C 66				CMP AL,66H
+ 0155  77 36				JA EXIT4
+ 0157  EB 08				JMP CHANGE3    ;在a~f之间
+ 0159				CHANGE1:
+ 0159  2C 30				SUB AL,30H
+ 015B  EB 08				JMP ENT
+ 015D				CHANGE2:
+ 015D  2C 37				SUB AL,37H
+ 015F  EB 04				JMP ENT
+ 0161				CHANGE3: 
+ 0161  2C 57				SUB AL,57H
+ 0163  EB 00				JMP ENT
+ 0165				ENT:
+ 0165  8D 16 00AF R			LEA DX,MSG8
+ 0169  B4 09				MOV AH,09H
+ 016B  CD 21				INT 21H
+ 016D  B5 04				MOV CH,4
+ 016F  8A D8				MOV BL,AL
+ 0171  D0 C3				ROL BL,1
+ 0173  D0 C3				ROL BL,1
+ 0175  D0 C3				ROL BL,1
+ 0177  D0 C3				ROL BL,1	
+ 0179				PRINT4:	
+ 0179  D0 C3				ROL BL,1
+ 017B  8A D3				MOV DL,BL
+ 017D  80 E2 01				AND DL,1
+ 0180  80 C2 30				ADD DL,30H
+ 0183  B4 02				MOV AH,02H
+ 0185  CD 21				INT 21H
+ 0187  FE CD			 	DEC CH
+ 0189  74 02				JZ EXIT4
+ 018B  EB EC				JMP PRINT4
+ 018D  C3			EXIT4:	RET
+ 018E				FUNC4 ENDP
+
+ 018E				FUNC5 PROC NEAR
+ 018E  8D 16 0093 R			LEA DX,MSG7
+ 0192  B4 09				MOV AH,09H
+ 0194  CD 21				INT 21H
+ 0196				INPUT5:
+ 0196  B4 01				MOV AH,1
+ 0198  CD 21				INT 21H
+ 019A  3C 30				CMP AL,30H
+ 019C  72 50				JB EXIT5
+ 019E  3C 39				CMP AL,39H
+ 01A0  77 02				JA COMPER5
+ 01A2  EB 14				JMP CHANGE11    ;在0~9之间
+ 01A4				COMPER5:
+ 01A4  3C 41				CMP AL,41H
+ 01A6  72 46				JB EXIT5
+ 01A8  3C 46				CMP AL,46H
+ 01AA  77 02				JA COMPER6
+ 01AC  EB 0E				JMP CHANGE22    ;在A-F之间
+ 01AE				COMPER6:
+ 01AE  3C 61				CMP AL,61H
+ 01B0  72 3C				JB EXIT5
+ 01B2  3C 66				CMP AL,66H
+ 01B4  77 38				JA EXIT5
+ 01B6  EB 08				JMP CHANGE33    ;在a~f之间
+
+ 01B8				CHANGE11:
+ 01B8  2C 30				SUB AL,30H
+ 01BA  EB 08				JMP ENT5
+ 01BC				CHANGE22:
+ 01BC  2C 37				SUB AL,37H
+ 01BE  EB 04				JMP ENT5
+ 01C0				CHANGE33: 
+ 01C0  2C 57				SUB AL,57H
+ 01C2  EB 00				JMP ENT5
+ 01C4				ENT5:
+ 01C4  8A D8				MOV BL,AL
+ 01C6  8D 16 00AF R			LEA DX,MSG8
+ 01CA  B4 09				MOV AH,09H
+ 01CC  CD 21				INT 21H
+ 01CE  8A C3				MOV AL,BL
+ 01D0  B4 00				MOV AH,0
+ 01D2  B3 0A				MOV BL,10
+ 01D4  F6 F3				DIV BL
+ 01D6  8A F4				MOV DH,AH
+ 01D8  3C 00				CMP AL,0
+ 01DA  74 09				JE ONE
+ 01DC  8A D0				MOV DL,AL      
+ 01DE  80 C2 30				ADD DL,30H
+ 01E1  B4 02				MOV AH,02H
+ 01E3  CD 21				INT 21H
+ 01E5				ONE:	                       
+ 01E5  8A D6				MOV DL,DH
+ 01E7  80 C2 30				ADD DL,30H
+ 01EA  B4 02				MOV AH,02H
+ 01EC  CD 21				INT 21H
+ 01EE  C3			EXIT5:	RET
+ 01EF				FUNC5 ENDP
+
+ 01EF				CODE ENDS
+				END START
+
+					
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:06:41
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODE . . . . . . . . . . . . . .	16 Bit	 01EF	  Para	  Private 
+DATA . . . . . . . . . . . . . .	16 Bit	 00BA	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+CRLF . . . . . . . . . . . . . .	P Near	 0089	  CODE	Length= 000D Public
+EXIT . . . . . . . . . . . . . .	P Near	 0085	  CODE	Length= 0004 Public
+FUNC1  . . . . . . . . . . . . .	P Near	 0096	  CODE	Length= 0025 Public
+  RET1 . . . . . . . . . . . . .	L Near	 00BA	  CODE	
+FUNC2  . . . . . . . . . . . . .	P Near	 00BB	  CODE	Length= 0025 Public
+  RET2 . . . . . . . . . . . . .	L Near	 00DF	  CODE	
+FUNC3  . . . . . . . . . . . . .	P Near	 00E0	  CODE	Length= 004F Public
+  INPUT3 . . . . . . . . . . . .	L Near	 00EC	  CODE	
+  L3 . . . . . . . . . . . . . .	L Near	 0101	  CODE	
+  AGAIN3 . . . . . . . . . . . .	L Near	 0106	  CODE	
+  PRINT3 . . . . . . . . . . . .	L Near	 010C	  CODE	
+  COMPER3  . . . . . . . . . . .	L Near	 011B	  CODE	
+  HEX3 . . . . . . . . . . . . .	L Near	 011E	  CODE	
+  RET3 . . . . . . . . . . . . .	L Near	 012E	  CODE	
+FUNC4  . . . . . . . . . . . . .	P Near	 012F	  CODE	Length= 0130 Public
+  INPUT4 . . . . . . . . . . . .	L Near	 0137	  CODE	
+  COMPER1  . . . . . . . . . . .	L Near	 0145	  CODE	
+  COMPER2  . . . . . . . . . . .	L Near	 014F	  CODE	
+  CHANGE1  . . . . . . . . . . .	L Near	 0159	  CODE	
+  CHANGE2  . . . . . . . . . . .	L Near	 015D	  CODE	
+  CHANGE3  . . . . . . . . . . .	L Near	 0161	  CODE	
+  ENT  . . . . . . . . . . . . .	L Near	 0165	  CODE	
+  PRINT4 . . . . . . . . . . . .	L Near	 0179	  CODE	
+  EXIT4  . . . . . . . . . . . .	L Near	 018D	  CODE	
+FUNC5  . . . . . . . . . . . . .	P Near	 018E	  CODE	Length= 0061 Public
+  INPUT5 . . . . . . . . . . . .	L Near	 0196	  CODE	
+  COMPER5  . . . . . . . . . . .	L Near	 01A4	  CODE	
+  COMPER6  . . . . . . . . . . .	L Near	 01AE	  CODE	
+  CHANGE11 . . . . . . . . . . .	L Near	 01B8	  CODE	
+  CHANGE22 . . . . . . . . . . .	L Near	 01BC	  CODE	
+  CHANGE33 . . . . . . . . . . .	L Near	 01C0	  CODE	
+  ENT5 . . . . . . . . . . . . .	L Near	 01C4	  CODE	
+  ONE  . . . . . . . . . . . . .	L Near	 01E5	  CODE	
+  EXIT5  . . . . . . . . . . . .	L Near	 01EE	  CODE	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+F1 . . . . . . . . . . . . . . .	L Near	 006C	  CODE	
+F2 . . . . . . . . . . . . . . .	L Near	 0071	  CODE	
+F3 . . . . . . . . . . . . . . .	L Near	 0076	  CODE	
+F4 . . . . . . . . . . . . . . .	L Near	 007B	  CODE	
+F5 . . . . . . . . . . . . . . .	L Near	 0080	  CODE	
+MSG1 . . . . . . . . . . . . . .	Byte	 0000	  DATA	
+MSG2 . . . . . . . . . . . . . .	Byte	 002A	  DATA	
+MSG3 . . . . . . . . . . . . . .	Byte	 0045	  DATA	
+MSG4 . . . . . . . . . . . . . .	Byte	 0060	  DATA	
+MSG5 . . . . . . . . . . . . . .	Byte	 0072	  DATA	
+MSG6 . . . . . . . . . . . . . .	Byte	 0084	  DATA	
+MSG7 . . . . . . . . . . . . . .	Byte	 0093	  DATA	
+MSG8 . . . . . . . . . . . . . .	Byte	 00AF	  DATA	
+P  . . . . . . . . . . . . . . .	L Near	 0005	  CODE	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODE	
+
+	   0 Warnings
+	   0 Errors

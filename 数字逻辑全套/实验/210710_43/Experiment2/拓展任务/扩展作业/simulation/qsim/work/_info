@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment2\reg_files\simulation\qsim
+vreg_files
+Z1 !s100 F[J4GFdaEcW@V<;:JiH]11
+Z2 I8klkhYi^[JbY7>;32Ri3J2
+Z3 VKbeSLVdIg^F4Fd`Y=i?V]2
+Z4 dC:\altera\Experiment2\reg_files\simulation\qsim
+Z5 w1666937372
+Z6 8reg_files.vo
+Z7 Freg_files.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|reg_files.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1666937373.533000
+Z12 !s107 reg_files.vo|
+!s101 -O0
+vreg_files_vlg_sample_tst
+!i10b 1
+Z13 !s100 NX6LS@f9aeY<4E`SD_];b2
+Z14 Ia[^F1CoUGmRCKQUMl1<Md3
+Z15 VUDK2c=0FFQI01?n2SIcdR3
+R4
+w1666937371
+Z16 8reg_files.vt
+Z17 Freg_files.vt
+L0 29
+R8
+r1
+!s85 0
+31
+!s108 1666937373.617000
+!s107 reg_files.vt|
+Z18 !s90 -work|work|reg_files.vt|
+!s101 -O0
+R10

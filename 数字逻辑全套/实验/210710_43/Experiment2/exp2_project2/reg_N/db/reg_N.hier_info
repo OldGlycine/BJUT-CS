@@ -1,0 +1,21 @@
+|reg_N
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0~0.IN0
+w_r => always0~0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Feb 28 15:06:22 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : buzz
+Top-level Entity Name : buzz
+Family : Cyclone III
+Total logic elements : 2
+    Total combinational functions : 2
+    Dedicated logic registers : 1
+Total registers : 1
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

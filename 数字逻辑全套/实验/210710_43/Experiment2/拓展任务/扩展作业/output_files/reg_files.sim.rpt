@@ -1,0 +1,484 @@
+Simulator report for reg_files
+Fri Oct 28 14:43:25 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 250 nodes    ;
+; Simulation Coverage         ;      81.20 % ;
+; Total Number of Transitions ; 11332        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                   ;
++--------------------------------------------------------------------------------------------+-----------------------------------------+---------------+
+; Option                                                                                     ; Setting                                 ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                              ; Timing        ;
+; Start time                                                                                 ; 0 ns                                    ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                     ;               ;
+; Vector input source                                                                        ; C:/altera/Experiment2/LED/files_LED.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                      ; On            ;
+; Check outputs                                                                              ; Off                                     ; Off           ;
+; Report simulation coverage                                                                 ; On                                      ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                      ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                      ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                      ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                     ; Off           ;
+; Detect glitches                                                                            ; Off                                     ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                     ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                     ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                     ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                      ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                              ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                     ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                     ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                    ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                               ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                               ; Transport     ;
++--------------------------------------------------------------------------------------------+-----------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      81.20 % ;
+; Total nodes checked                                 ; 250          ;
+; Total output ports checked                          ; 250          ;
+; Total output ports with complete 1/0-value coverage ; 203          ;
+; Total output ports with no 1/0-value coverage       ; 46           ;
+; Total output ports with no 1-value coverage         ; 46           ;
+; Total output ports with no 0-value coverage         ; 47           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                      ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; Node Name                                                                     ; Output Port Name                                                              ; Output Port Type ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; |reg_files|output[3]                                                          ; |reg_files|output[3]                                                          ; pin_out          ;
+; |reg_files|output[2]                                                          ; |reg_files|output[2]                                                          ; pin_out          ;
+; |reg_files|output[1]                                                          ; |reg_files|output[1]                                                          ; pin_out          ;
+; |reg_files|output[0]                                                          ; |reg_files|output[0]                                                          ; pin_out          ;
+; |reg_files|w_r                                                                ; |reg_files|w_r                                                                ; out              ;
+; |reg_files|addr[2]                                                            ; |reg_files|addr[2]                                                            ; out              ;
+; |reg_files|addr[1]                                                            ; |reg_files|addr[1]                                                            ; out              ;
+; |reg_files|addr[0]                                                            ; |reg_files|addr[0]                                                            ; out              ;
+; |reg_files|clk                                                                ; |reg_files|clk                                                                ; out              ;
+; |reg_files|reset                                                              ; |reg_files|reset                                                              ; out              ;
+; |reg_files|data[3]                                                            ; |reg_files|data[3]                                                            ; out              ;
+; |reg_files|data[2]                                                            ; |reg_files|data[2]                                                            ; out              ;
+; |reg_files|data[1]                                                            ; |reg_files|data[1]                                                            ; out              ;
+; |reg_files|data[0]                                                            ; |reg_files|data[0]                                                            ; out              ;
+; |reg_files|reg_N:reg8|always0~0                                               ; |reg_files|reg_N:reg8|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg7|always0~0                                               ; |reg_files|reg_N:reg7|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg7|q[3]                                                    ; |reg_files|reg_N:reg7|q[3]                                                    ; regout           ;
+; |reg_files|reg_N:reg7|q[2]                                                    ; |reg_files|reg_N:reg7|q[2]                                                    ; regout           ;
+; |reg_files|reg_N:reg7|q[1]                                                    ; |reg_files|reg_N:reg7|q[1]                                                    ; regout           ;
+; |reg_files|reg_N:reg7|q[0]                                                    ; |reg_files|reg_N:reg7|q[0]                                                    ; regout           ;
+; |reg_files|reg_N:reg6|always0~0                                               ; |reg_files|reg_N:reg6|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg5|always0~0                                               ; |reg_files|reg_N:reg5|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg5|q[3]                                                    ; |reg_files|reg_N:reg5|q[3]                                                    ; regout           ;
+; |reg_files|reg_N:reg5|q[2]                                                    ; |reg_files|reg_N:reg5|q[2]                                                    ; regout           ;
+; |reg_files|reg_N:reg5|q[1]                                                    ; |reg_files|reg_N:reg5|q[1]                                                    ; regout           ;
+; |reg_files|reg_N:reg4|always0~0                                               ; |reg_files|reg_N:reg4|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg4|q[3]                                                    ; |reg_files|reg_N:reg4|q[3]                                                    ; regout           ;
+; |reg_files|reg_N:reg4|q[1]                                                    ; |reg_files|reg_N:reg4|q[1]                                                    ; regout           ;
+; |reg_files|reg_N:reg4|q[0]                                                    ; |reg_files|reg_N:reg4|q[0]                                                    ; regout           ;
+; |reg_files|reg_N:reg3|always0~0                                               ; |reg_files|reg_N:reg3|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg3|q[3]                                                    ; |reg_files|reg_N:reg3|q[3]                                                    ; regout           ;
+; |reg_files|reg_N:reg3|q[2]                                                    ; |reg_files|reg_N:reg3|q[2]                                                    ; regout           ;
+; |reg_files|reg_N:reg3|q[1]                                                    ; |reg_files|reg_N:reg3|q[1]                                                    ; regout           ;
+; |reg_files|reg_N:reg3|q[0]                                                    ; |reg_files|reg_N:reg3|q[0]                                                    ; regout           ;
+; |reg_files|reg_N:reg2|always0~0                                               ; |reg_files|reg_N:reg2|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg1|always0~0                                               ; |reg_files|reg_N:reg1|always0~0                                               ; out0             ;
+; |reg_files|reg_N:reg1|q[0]                                                    ; |reg_files|reg_N:reg1|q[0]                                                    ; regout           ;
+; |reg_files|tstage_gate:inst|out[3]                                            ; |reg_files|tstage_gate:inst|out[3]                                            ; out              ;
+; |reg_files|tstage_gate:inst|out[2]                                            ; |reg_files|tstage_gate:inst|out[2]                                            ; out              ;
+; |reg_files|tstage_gate:inst|out[1]                                            ; |reg_files|tstage_gate:inst|out[1]                                            ; out              ;
+; |reg_files|tstage_gate:inst|out[0]                                            ; |reg_files|tstage_gate:inst|out[0]                                            ; out              ;
+; |reg_files|addr_38:addr_sel|Decoder0~0                                        ; |reg_files|addr_38:addr_sel|Decoder0~0                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~1                                        ; |reg_files|addr_38:addr_sel|Decoder0~1                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~2                                        ; |reg_files|addr_38:addr_sel|Decoder0~2                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~3                                        ; |reg_files|addr_38:addr_sel|Decoder0~3                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~4                                        ; |reg_files|addr_38:addr_sel|Decoder0~4                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~5                                        ; |reg_files|addr_38:addr_sel|Decoder0~5                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~6                                        ; |reg_files|addr_38:addr_sel|Decoder0~6                                        ; out0             ;
+; |reg_files|addr_38:addr_sel|Decoder0~7                                        ; |reg_files|addr_38:addr_sel|Decoder0~7                                        ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~1              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~1              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~3              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~3              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~5              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~5              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~6              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~6              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~7              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~7              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~8              ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~8              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~10             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~10             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~12             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~12             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~14             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~14             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~15             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~15             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~16             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~16             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~17             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~17             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~18             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~18             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~19             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~19             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~20             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~20             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]~0 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]~0 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~21             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~21             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~22             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~22             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~23             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~23             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~24             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~24             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~25             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~25             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~26             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~26             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~27             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~27             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~28             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~28             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~29             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~29             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~30             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~30             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~31             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~31             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~32             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~32             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~33             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~33             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~34             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~34             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~35             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~35             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~36             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~36             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~37             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~37             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~38             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~38             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~39             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~39             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~40             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~40             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~41             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~41             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~42             ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~42             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]~1 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]~1 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]   ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|result_node[0]   ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~1              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~1              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~2              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~2              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~3              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~3              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~4              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~4              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~5              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~5              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~6              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~6              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~7              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~7              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~8              ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~8              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~10             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~10             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~11             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~11             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~12             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~12             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~13             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~13             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~14             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~14             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~15             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~15             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~16             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~16             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~17             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~17             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~18             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~18             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~19             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~19             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~20             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~20             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]~0 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]~0 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~21             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~21             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~23             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~23             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~25             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~25             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~27             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~27             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~28             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~28             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~29             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~29             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~30             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~30             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~32             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~32             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~34             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~34             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~36             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~36             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~37             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~37             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~38             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~38             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~39             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~39             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~40             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~40             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~41             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~41             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~42             ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~42             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]~1 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]~1 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]   ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|result_node[0]   ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~1              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~1              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~2              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~2              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~3              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~3              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~4              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~4              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~5              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~5              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~6              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~6              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~7              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~7              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~8              ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~8              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~10             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~10             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~11             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~11             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~12             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~12             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~13             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~13             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~14             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~14             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~15             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~15             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~16             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~16             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~17             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~17             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~18             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~18             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~19             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~19             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~20             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~20             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]~0 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]~0 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~21             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~21             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~23             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~23             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~25             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~25             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~27             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~27             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~28             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~28             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~29             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~29             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~30             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~30             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~32             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~32             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~34             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~34             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~36             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~36             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~37             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~37             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~38             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~38             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~39             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~39             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~40             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~40             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~41             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~41             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~42             ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~42             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]~1 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]~1 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]   ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|result_node[0]   ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~1              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~1              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~2              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~2              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~3              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~3              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~4              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~4              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~5              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~5              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~6              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~6              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~7              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~7              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~8              ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~8              ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~10             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~10             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~11             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~11             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~12             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~12             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~13             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~13             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~14             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~14             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~15             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~15             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~16             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~16             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~17             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~17             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~18             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~18             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~19             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~19             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~20             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~20             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]~0 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]~0 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~21             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~21             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~23             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~23             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~25             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~25             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~27             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~27             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~28             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~28             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~29             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~29             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~30             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~30             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~32             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~32             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~34             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~34             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~36             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~36             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~37             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~37             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~38             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~38             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~39             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~39             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~40             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~40             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~41             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~41             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~42             ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~42             ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]~1 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]~1 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]   ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|result_node[0]   ; out0             ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                 ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; Node Name                                                         ; Output Port Name                                                  ; Output Port Type ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; |reg_files|reg_N:reg8|q[3]                                        ; |reg_files|reg_N:reg8|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[2]                                        ; |reg_files|reg_N:reg8|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[1]                                        ; |reg_files|reg_N:reg8|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[0]                                        ; |reg_files|reg_N:reg8|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[3]                                        ; |reg_files|reg_N:reg6|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[2]                                        ; |reg_files|reg_N:reg6|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[1]                                        ; |reg_files|reg_N:reg6|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[0]                                        ; |reg_files|reg_N:reg6|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg5|q[0]                                        ; |reg_files|reg_N:reg5|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg4|q[2]                                        ; |reg_files|reg_N:reg4|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[3]                                        ; |reg_files|reg_N:reg2|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[2]                                        ; |reg_files|reg_N:reg2|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[1]                                        ; |reg_files|reg_N:reg2|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[3]                                        ; |reg_files|reg_N:reg1|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[2]                                        ; |reg_files|reg_N:reg1|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[1]                                        ; |reg_files|reg_N:reg1|q[1]                                        ; regout           ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~2  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~2  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~4  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~4  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~11 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~11 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~13 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~13 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~35 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~35 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~35 ; out0             ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                 ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; Node Name                                                         ; Output Port Name                                                  ; Output Port Type ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+; |reg_files|reg_N:reg8|q[3]                                        ; |reg_files|reg_N:reg8|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[2]                                        ; |reg_files|reg_N:reg8|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[1]                                        ; |reg_files|reg_N:reg8|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg8|q[0]                                        ; |reg_files|reg_N:reg8|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[3]                                        ; |reg_files|reg_N:reg6|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[2]                                        ; |reg_files|reg_N:reg6|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[1]                                        ; |reg_files|reg_N:reg6|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg6|q[0]                                        ; |reg_files|reg_N:reg6|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg5|q[0]                                        ; |reg_files|reg_N:reg5|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg4|q[2]                                        ; |reg_files|reg_N:reg4|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[3]                                        ; |reg_files|reg_N:reg2|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[2]                                        ; |reg_files|reg_N:reg2|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[1]                                        ; |reg_files|reg_N:reg2|q[1]                                        ; regout           ;
+; |reg_files|reg_N:reg2|q[0]                                        ; |reg_files|reg_N:reg2|q[0]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[3]                                        ; |reg_files|reg_N:reg1|q[3]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[2]                                        ; |reg_files|reg_N:reg1|q[2]                                        ; regout           ;
+; |reg_files|reg_N:reg1|q[1]                                        ; |reg_files|reg_N:reg1|q[1]                                        ; regout           ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~2  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~2  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~4  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~4  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~11 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~11 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~13 ; |reg_files|data_38:inst1|lpm_mux:Mux3|mux_cqc:auto_generated|_~13 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux2|mux_cqc:auto_generated|_~35 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux1|mux_cqc:auto_generated|_~35 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~0  ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~0  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~9  ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~9  ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~22 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~22 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~24 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~24 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~26 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~26 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~31 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~31 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~33 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~33 ; out0             ;
+; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~35 ; |reg_files|data_38:inst1|lpm_mux:Mux0|mux_cqc:auto_generated|_~35 ; out0             ;
++-------------------------------------------------------------------+-------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 28 14:43:25 2022
+Info: Command: quartus_sim --simulation_results_format=VWF reg_files -c reg_files
+Info (324025): Using vector source file "C:/altera/Experiment2/LED/files_LED.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg8|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg7|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg6|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg5|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg4|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg3|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg2|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 60.0 ns on register "|reg_files|reg_N:reg1|q[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg8|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg7|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg6|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg5|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg4|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg3|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg2|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 120.0 ns on register "|reg_files|reg_N:reg1|q[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg8|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg7|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg6|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg5|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg4|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg3|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg2|q[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 240.0 ns on register "|reg_files|reg_N:reg1|q[2]"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      81.20 %
+Info (328052): Number of transitions in simulation is 11332
+Info (324045): Vector file reg_files.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Fri Oct 28 14:43:25 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

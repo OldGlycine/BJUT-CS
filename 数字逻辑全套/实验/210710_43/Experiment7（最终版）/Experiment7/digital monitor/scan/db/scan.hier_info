@@ -1,0 +1,17 @@
+|scan
+clk => sel[0]~reg0.CLK
+clk => sel[1]~reg0.CLK
+clk => sel[2]~reg0.CLK
+ds[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] <= sel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel[1] <= sel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel[2] <= sel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

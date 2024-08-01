@@ -1,0 +1,98 @@
+|top
+clk_50mhz => clk_50mhz.IN1
+swc[0] => swc[0].IN1
+swc[1] => swc[1].IN1
+swc[2] => swc[2].IN1
+swc[3] => swc[3].IN1
+n_en => n_en.IN1
+sel <= <GND>
+ledout[0] <= led:comb_6.out
+ledout[1] <= led:comb_6.out
+ledout[2] <= led:comb_6.out
+ledout[3] <= led:comb_6.out
+ledout[4] <= led:comb_6.out
+ledout[5] <= led:comb_6.out
+ledout[6] <= led:comb_6.out
+
+
+|top|frequency_divider:comb_4
+clk_50mhz => clk_100hz~reg0.CLK
+clk_50mhz => cnt1[0].CLK
+clk_50mhz => cnt1[1].CLK
+clk_50mhz => cnt1[2].CLK
+clk_50mhz => cnt1[3].CLK
+clk_50mhz => cnt1[4].CLK
+clk_50mhz => cnt1[5].CLK
+clk_50mhz => cnt1[6].CLK
+clk_50mhz => cnt1[7].CLK
+clk_50mhz => cnt1[8].CLK
+clk_50mhz => cnt1[9].CLK
+clk_50mhz => cnt1[10].CLK
+clk_50mhz => cnt1[11].CLK
+clk_50mhz => cnt1[12].CLK
+clk_50mhz => cnt1[13].CLK
+clk_50mhz => cnt1[14].CLK
+clk_50mhz => cnt1[15].CLK
+clk_50mhz => cnt1[16].CLK
+clk_50mhz => cnt1[17].CLK
+clk_50mhz => cnt1[18].CLK
+clk_50mhz => cnt1[19].CLK
+clk_50mhz => cnt1[20].CLK
+clk_50mhz => cnt1[21].CLK
+clk_50mhz => cnt1[22].CLK
+clk_50mhz => cnt1[23].CLK
+clk_50mhz => cnt1[24].CLK
+clk_50mhz => cnt1[25].CLK
+clk_50mhz => cnt1[26].CLK
+clk_50mhz => cnt1[27].CLK
+clk_50mhz => cnt1[28].CLK
+clk_50mhz => cnt1[29].CLK
+clk_50mhz => cnt1[30].CLK
+clk_50mhz => cnt1[31].CLK
+clk_100hz <= clk_100hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|button:comb_5
+swc[0] => Decoder1.IN3
+swc[1] => Decoder1.IN2
+swc[2] => Decoder1.IN1
+swc[3] => Decoder1.IN0
+swr0 <= swr0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr1 <= swr1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr2 <= swr2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr3 <= swr3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => key[0]~reg0.CLK
+clk => key[1]~reg0.CLK
+clk => key[2]~reg0.CLK
+clk => key[3]~reg0.CLK
+clk => swr3~reg0.CLK
+clk => swr2~reg0.CLK
+clk => swr1~reg0.CLK
+clk => swr0~reg0.CLK
+key[0] <= key[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[1] <= key[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[2] <= key[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key[3] <= key[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|led:comb_6
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+
+

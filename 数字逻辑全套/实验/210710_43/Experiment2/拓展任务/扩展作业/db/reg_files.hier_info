@@ -1,0 +1,345 @@
+|reg_files
+LEDsel <= LED:inst2.sel
+n_en => LED:inst2.n_en
+w_r => tstage_gate:inst.w_r
+w_r => reg_N:reg1.w_r
+w_r => reg_N:reg2.w_r
+w_r => reg_N:reg3.w_r
+w_r => reg_N:reg4.w_r
+w_r => reg_N:reg5.w_r
+w_r => reg_N:reg6.w_r
+w_r => reg_N:reg7.w_r
+w_r => reg_N:reg8.w_r
+addr[0] => data_38:inst1.addr[0]
+addr[0] => addr_38:addr_sel.addr[0]
+addr[1] => data_38:inst1.addr[1]
+addr[1] => addr_38:addr_sel.addr[1]
+addr[2] => data_38:inst1.addr[2]
+addr[2] => addr_38:addr_sel.addr[2]
+clk => reg_N:reg1.clk
+clk => reg_N:reg2.clk
+clk => reg_N:reg3.clk
+clk => reg_N:reg4.clk
+clk => reg_N:reg5.clk
+clk => reg_N:reg6.clk
+clk => reg_N:reg7.clk
+clk => reg_N:reg8.clk
+reset => reg_N:reg1.reset
+reset => reg_N:reg2.reset
+reset => reg_N:reg3.reset
+reset => reg_N:reg4.reset
+reset => reg_N:reg5.reset
+reset => reg_N:reg6.reset
+reset => reg_N:reg7.reset
+reset => reg_N:reg8.reset
+data[0] => reg_N:reg1.data[0]
+data[0] => reg_N:reg2.data[0]
+data[0] => reg_N:reg3.data[0]
+data[0] => reg_N:reg4.data[0]
+data[0] => reg_N:reg5.data[0]
+data[0] => reg_N:reg6.data[0]
+data[0] => reg_N:reg7.data[0]
+data[0] => reg_N:reg8.data[0]
+data[1] => reg_N:reg1.data[1]
+data[1] => reg_N:reg2.data[1]
+data[1] => reg_N:reg3.data[1]
+data[1] => reg_N:reg4.data[1]
+data[1] => reg_N:reg5.data[1]
+data[1] => reg_N:reg6.data[1]
+data[1] => reg_N:reg7.data[1]
+data[1] => reg_N:reg8.data[1]
+data[2] => reg_N:reg1.data[2]
+data[2] => reg_N:reg2.data[2]
+data[2] => reg_N:reg3.data[2]
+data[2] => reg_N:reg4.data[2]
+data[2] => reg_N:reg5.data[2]
+data[2] => reg_N:reg6.data[2]
+data[2] => reg_N:reg7.data[2]
+data[2] => reg_N:reg8.data[2]
+data[3] => reg_N:reg1.data[3]
+data[3] => reg_N:reg2.data[3]
+data[3] => reg_N:reg3.data[3]
+data[3] => reg_N:reg4.data[3]
+data[3] => reg_N:reg5.data[3]
+data[3] => reg_N:reg6.data[3]
+data[3] => reg_N:reg7.data[3]
+data[3] => reg_N:reg8.data[3]
+output[0] <= LED:inst2.out[0]
+output[1] <= LED:inst2.out[1]
+output[2] <= LED:inst2.out[2]
+output[3] <= LED:inst2.out[3]
+output[4] <= LED:inst2.out[4]
+output[5] <= LED:inst2.out[5]
+output[6] <= LED:inst2.out[6]
+
+
+|reg_files|LED:inst2
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+sel <= <GND>
+
+
+|reg_files|tstage_gate:inst
+in[0] => out.DATAB
+in[1] => out.DATAB
+in[2] => out.DATAB
+in[3] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+w_r => out.OUTPUTSELECT
+
+
+|reg_files|data_38:inst1
+in1[0] => Mux3.IN3
+in1[1] => Mux2.IN3
+in1[2] => Mux1.IN3
+in1[3] => Mux0.IN3
+in2[0] => Mux3.IN4
+in2[1] => Mux2.IN4
+in2[2] => Mux1.IN4
+in2[3] => Mux0.IN4
+in3[0] => Mux3.IN5
+in3[1] => Mux2.IN5
+in3[2] => Mux1.IN5
+in3[3] => Mux0.IN5
+in4[0] => Mux3.IN6
+in4[1] => Mux2.IN6
+in4[2] => Mux1.IN6
+in4[3] => Mux0.IN6
+in5[0] => Mux3.IN7
+in5[1] => Mux2.IN7
+in5[2] => Mux1.IN7
+in5[3] => Mux0.IN7
+in6[0] => Mux3.IN8
+in6[1] => Mux2.IN8
+in6[2] => Mux1.IN8
+in6[3] => Mux0.IN8
+in7[0] => Mux3.IN9
+in7[1] => Mux2.IN9
+in7[2] => Mux1.IN9
+in7[3] => Mux0.IN9
+in8[0] => Mux3.IN10
+in8[1] => Mux2.IN10
+in8[2] => Mux1.IN10
+in8[3] => Mux0.IN10
+outdata[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+outdata[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+outdata[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+outdata[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+addr[0] => Mux0.IN2
+addr[0] => Mux1.IN2
+addr[0] => Mux2.IN2
+addr[0] => Mux3.IN2
+addr[1] => Mux0.IN1
+addr[1] => Mux1.IN1
+addr[1] => Mux2.IN1
+addr[1] => Mux3.IN1
+addr[2] => Mux0.IN0
+addr[2] => Mux1.IN0
+addr[2] => Mux2.IN0
+addr[2] => Mux3.IN0
+
+
+|reg_files|reg_N:reg1
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|addr_38:addr_sel
+addr[0] => Decoder0.IN2
+addr[1] => Decoder0.IN1
+addr[2] => Decoder0.IN0
+o1 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o2 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o3 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o4 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o5 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o6 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o7 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o8 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg2
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg3
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg4
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg5
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg6
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg7
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg_files|reg_N:reg8
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+reset => q[0]~reg0.ACLR
+reset => q[1]~reg0.ACLR
+reset => q[2]~reg0.ACLR
+reset => q[3]~reg0.ACLR
+data[0] => q[0]~reg0.DATAIN
+data[1] => q[1]~reg0.DATAIN
+data[2] => q[2]~reg0.DATAIN
+data[3] => q[3]~reg0.DATAIN
+cs => always0.IN0
+w_r => always0.IN1
+q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

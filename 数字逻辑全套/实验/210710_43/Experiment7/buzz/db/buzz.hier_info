@@ -1,0 +1,12 @@
+|buzz
+clk => beep_r~reg0.CLK
+beep_r <= beep_r~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk_slow => beep~1.DATAB
+clk_fast => beep~0.DATAB
+ring[0] => Equal0.IN0
+ring[0] => Equal1.IN1
+ring[1] => Equal0.IN1
+ring[1] => Equal1.IN0
+beep <= beep~1.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="exp1_extern">
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test01:light|lpm_mux:Mux0" CBX_FILE_NAME="mux_src.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test01:light|lpm_mux:Mux2" CBX_FILE_NAME="mux_src.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test02:selecter|lpm_mux:Mux0" CBX_FILE_NAME="mux_cqc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test02:selecter|lpm_mux:Mux2" CBX_FILE_NAME="mux_cqc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test01:light|lpm_mux:Mux1" CBX_FILE_NAME="mux_src.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test02:selecter|lpm_mux:Mux1" CBX_FILE_NAME="mux_cqc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|exp1_extern|test02:selecter|lpm_mux:Mux3" CBX_FILE_NAME="mux_cqc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

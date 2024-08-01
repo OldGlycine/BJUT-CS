@@ -1,0 +1,561 @@
+Simulator report for top
+Thu Dec 29 21:02:47 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 217 nodes    ;
+; Simulation Coverage         ;      12.04 % ;
+; Total Number of Transitions ; 410          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                              ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                           ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                 ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                  ;               ;
+; Vector input source                                                                        ; C:/altera/Experiment4/exp4_project1/top/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                   ; On            ;
+; Check outputs                                                                              ; Off                                                  ; Off           ;
+; Report simulation coverage                                                                 ; On                                                   ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                   ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                   ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                   ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                  ; Off           ;
+; Detect glitches                                                                            ; Off                                                  ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                  ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                  ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                  ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                  ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                   ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                           ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                  ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                  ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                 ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                            ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                            ; Transport     ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      12.04 % ;
+; Total nodes checked                                 ; 217          ;
+; Total output ports checked                          ; 216          ;
+; Total output ports with complete 1/0-value coverage ; 26           ;
+; Total output ports with no 1/0-value coverage       ; 181          ;
+; Total output ports with no 1-value coverage         ; 186          ;
+; Total output ports with no 0-value coverage         ; 185          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                  ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |top|clk_50mhz                              ; |top|clk_50mhz                              ; out              ;
+; |top|out[0]                                 ; |top|out[0]                                 ; pin_out          ;
+; |top|out[1]                                 ; |top|out[1]                                 ; pin_out          ;
+; |top|out[2]                                 ; |top|out[2]                                 ; pin_out          ;
+; |top|flowing_water_light:comb_4|cnt[1]      ; |top|flowing_water_light:comb_4|cnt[1]      ; regout           ;
+; |top|flowing_water_light:comb_4|state.st1   ; |top|flowing_water_light:comb_4|state.st1   ; regout           ;
+; |top|flowing_water_light:comb_4|cnt~30      ; |top|flowing_water_light:comb_4|cnt~30      ; out              ;
+; |top|flowing_water_light:comb_4|cnt~31      ; |top|flowing_water_light:comb_4|cnt~31      ; out              ;
+; |top|flowing_water_light:comb_4|state.st2   ; |top|flowing_water_light:comb_4|state.st2   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st3   ; |top|flowing_water_light:comb_4|state.st3   ; regout           ;
+; |top|flowing_water_light:comb_4|state~2     ; |top|flowing_water_light:comb_4|state~2     ; out              ;
+; |top|flowing_water_light:comb_4|state~3     ; |top|flowing_water_light:comb_4|state~3     ; out              ;
+; |top|flowing_water_light:comb_4|state~4     ; |top|flowing_water_light:comb_4|state~4     ; out              ;
+; |top|flowing_water_light:comb_4|cnt[0]      ; |top|flowing_water_light:comb_4|cnt[0]      ; regout           ;
+; |top|flowing_water_light:comb_4|state~17    ; |top|flowing_water_light:comb_4|state~17    ; out0             ;
+; |top|flowing_water_light:comb_4|out[0]~0    ; |top|flowing_water_light:comb_4|out[0]~0    ; out0             ;
+; |top|flowing_water_light:comb_4|state.st2~0 ; |top|flowing_water_light:comb_4|state.st2~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[1]~1    ; |top|flowing_water_light:comb_4|out[1]~1    ; out0             ;
+; |top|flowing_water_light:comb_4|state.st3~0 ; |top|flowing_water_light:comb_4|state.st3~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[2]~2    ; |top|flowing_water_light:comb_4|out[2]~2    ; out0             ;
+; |top|flowing_water_light:comb_4|state.st4~0 ; |top|flowing_water_light:comb_4|state.st4~0 ; out0             ;
+; |top|flowing_water_light:comb_4|state~23    ; |top|flowing_water_light:comb_4|state~23    ; out0             ;
+; |top|frequency_divider:comb_3|clk_1hz~1     ; |top|frequency_divider:comb_3|clk_1hz~1     ; out              ;
+; |top|frequency_divider:comb_3|clk_1hz       ; |top|frequency_divider:comb_3|clk_1hz       ; regout           ;
+; |top|flowing_water_light:comb_4|Add0~0      ; |top|flowing_water_light:comb_4|Add0~0      ; out0             ;
+; |top|flowing_water_light:comb_4|Equal0~0    ; |top|flowing_water_light:comb_4|Equal0~0    ; out0             ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                       ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |top|rst                                     ; |top|rst                                     ; out              ;
+; |top|out[3]                                  ; |top|out[3]                                  ; pin_out          ;
+; |top|out[4]                                  ; |top|out[4]                                  ; pin_out          ;
+; |top|out[5]                                  ; |top|out[5]                                  ; pin_out          ;
+; |top|out[6]                                  ; |top|out[6]                                  ; pin_out          ;
+; |top|out[7]                                  ; |top|out[7]                                  ; pin_out          ;
+; |top|out[8]                                  ; |top|out[8]                                  ; pin_out          ;
+; |top|out[9]                                  ; |top|out[9]                                  ; pin_out          ;
+; |top|out[10]                                 ; |top|out[10]                                 ; pin_out          ;
+; |top|out[11]                                 ; |top|out[11]                                 ; pin_out          ;
+; |top|out[12]                                 ; |top|out[12]                                 ; pin_out          ;
+; |top|out[13]                                 ; |top|out[13]                                 ; pin_out          ;
+; |top|out[14]                                 ; |top|out[14]                                 ; pin_out          ;
+; |top|out[15]                                 ; |top|out[15]                                 ; pin_out          ;
+; |top|flowing_water_light:comb_4|cnt[31]      ; |top|flowing_water_light:comb_4|cnt[31]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[30]      ; |top|flowing_water_light:comb_4|cnt[30]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[29]      ; |top|flowing_water_light:comb_4|cnt[29]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[28]      ; |top|flowing_water_light:comb_4|cnt[28]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[27]      ; |top|flowing_water_light:comb_4|cnt[27]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[26]      ; |top|flowing_water_light:comb_4|cnt[26]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[25]      ; |top|flowing_water_light:comb_4|cnt[25]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[24]      ; |top|flowing_water_light:comb_4|cnt[24]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[23]      ; |top|flowing_water_light:comb_4|cnt[23]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[22]      ; |top|flowing_water_light:comb_4|cnt[22]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[21]      ; |top|flowing_water_light:comb_4|cnt[21]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[20]      ; |top|flowing_water_light:comb_4|cnt[20]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[19]      ; |top|flowing_water_light:comb_4|cnt[19]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[18]      ; |top|flowing_water_light:comb_4|cnt[18]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[17]      ; |top|flowing_water_light:comb_4|cnt[17]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[16]      ; |top|flowing_water_light:comb_4|cnt[16]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[15]      ; |top|flowing_water_light:comb_4|cnt[15]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[14]      ; |top|flowing_water_light:comb_4|cnt[14]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[13]      ; |top|flowing_water_light:comb_4|cnt[13]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[12]      ; |top|flowing_water_light:comb_4|cnt[12]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[11]      ; |top|flowing_water_light:comb_4|cnt[11]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[10]      ; |top|flowing_water_light:comb_4|cnt[10]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[9]       ; |top|flowing_water_light:comb_4|cnt[9]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[8]       ; |top|flowing_water_light:comb_4|cnt[8]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[7]       ; |top|flowing_water_light:comb_4|cnt[7]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[6]       ; |top|flowing_water_light:comb_4|cnt[6]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[5]       ; |top|flowing_water_light:comb_4|cnt[5]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[4]       ; |top|flowing_water_light:comb_4|cnt[4]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[3]       ; |top|flowing_water_light:comb_4|cnt[3]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[2]       ; |top|flowing_water_light:comb_4|cnt[2]       ; regout           ;
+; |top|flowing_water_light:comb_4|state.st0    ; |top|flowing_water_light:comb_4|state.st0    ; regout           ;
+; |top|flowing_water_light:comb_4|cnt~0        ; |top|flowing_water_light:comb_4|cnt~0        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~1        ; |top|flowing_water_light:comb_4|cnt~1        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~2        ; |top|flowing_water_light:comb_4|cnt~2        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~3        ; |top|flowing_water_light:comb_4|cnt~3        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~4        ; |top|flowing_water_light:comb_4|cnt~4        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~5        ; |top|flowing_water_light:comb_4|cnt~5        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~6        ; |top|flowing_water_light:comb_4|cnt~6        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~7        ; |top|flowing_water_light:comb_4|cnt~7        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~8        ; |top|flowing_water_light:comb_4|cnt~8        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~9        ; |top|flowing_water_light:comb_4|cnt~9        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~10       ; |top|flowing_water_light:comb_4|cnt~10       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~11       ; |top|flowing_water_light:comb_4|cnt~11       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~12       ; |top|flowing_water_light:comb_4|cnt~12       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~13       ; |top|flowing_water_light:comb_4|cnt~13       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~14       ; |top|flowing_water_light:comb_4|cnt~14       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~15       ; |top|flowing_water_light:comb_4|cnt~15       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~16       ; |top|flowing_water_light:comb_4|cnt~16       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~17       ; |top|flowing_water_light:comb_4|cnt~17       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~18       ; |top|flowing_water_light:comb_4|cnt~18       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~19       ; |top|flowing_water_light:comb_4|cnt~19       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~20       ; |top|flowing_water_light:comb_4|cnt~20       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~21       ; |top|flowing_water_light:comb_4|cnt~21       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~22       ; |top|flowing_water_light:comb_4|cnt~22       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~23       ; |top|flowing_water_light:comb_4|cnt~23       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~24       ; |top|flowing_water_light:comb_4|cnt~24       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~25       ; |top|flowing_water_light:comb_4|cnt~25       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~26       ; |top|flowing_water_light:comb_4|cnt~26       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~27       ; |top|flowing_water_light:comb_4|cnt~27       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~28       ; |top|flowing_water_light:comb_4|cnt~28       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~29       ; |top|flowing_water_light:comb_4|cnt~29       ; out              ;
+; |top|flowing_water_light:comb_4|state.st5    ; |top|flowing_water_light:comb_4|state.st5    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st6    ; |top|flowing_water_light:comb_4|state.st6    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st7    ; |top|flowing_water_light:comb_4|state.st7    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st8    ; |top|flowing_water_light:comb_4|state.st8    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st9    ; |top|flowing_water_light:comb_4|state.st9    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st10   ; |top|flowing_water_light:comb_4|state.st10   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st11   ; |top|flowing_water_light:comb_4|state.st11   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st12   ; |top|flowing_water_light:comb_4|state.st12   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st13   ; |top|flowing_water_light:comb_4|state.st13   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st14   ; |top|flowing_water_light:comb_4|state.st14   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st15   ; |top|flowing_water_light:comb_4|state.st15   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st16   ; |top|flowing_water_light:comb_4|state.st16   ; regout           ;
+; |top|flowing_water_light:comb_4|state~0      ; |top|flowing_water_light:comb_4|state~0      ; out              ;
+; |top|flowing_water_light:comb_4|state~1      ; |top|flowing_water_light:comb_4|state~1      ; out              ;
+; |top|flowing_water_light:comb_4|state~6      ; |top|flowing_water_light:comb_4|state~6      ; out              ;
+; |top|flowing_water_light:comb_4|state~7      ; |top|flowing_water_light:comb_4|state~7      ; out              ;
+; |top|flowing_water_light:comb_4|state~8      ; |top|flowing_water_light:comb_4|state~8      ; out              ;
+; |top|flowing_water_light:comb_4|state~9      ; |top|flowing_water_light:comb_4|state~9      ; out              ;
+; |top|flowing_water_light:comb_4|state~10     ; |top|flowing_water_light:comb_4|state~10     ; out              ;
+; |top|flowing_water_light:comb_4|state~11     ; |top|flowing_water_light:comb_4|state~11     ; out              ;
+; |top|flowing_water_light:comb_4|state~12     ; |top|flowing_water_light:comb_4|state~12     ; out              ;
+; |top|flowing_water_light:comb_4|state~13     ; |top|flowing_water_light:comb_4|state~13     ; out              ;
+; |top|flowing_water_light:comb_4|state~14     ; |top|flowing_water_light:comb_4|state~14     ; out              ;
+; |top|flowing_water_light:comb_4|state~15     ; |top|flowing_water_light:comb_4|state~15     ; out              ;
+; |top|flowing_water_light:comb_4|state~16     ; |top|flowing_water_light:comb_4|state~16     ; out              ;
+; |top|flowing_water_light:comb_4|state.st0~0  ; |top|flowing_water_light:comb_4|state.st0~0  ; out0             ;
+; |top|flowing_water_light:comb_4|state~19     ; |top|flowing_water_light:comb_4|state~19     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st1~0  ; |top|flowing_water_light:comb_4|state.st1~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[4]~4     ; |top|flowing_water_light:comb_4|out[4]~4     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st6~0  ; |top|flowing_water_light:comb_4|state.st6~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[5]~5     ; |top|flowing_water_light:comb_4|out[5]~5     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st7~0  ; |top|flowing_water_light:comb_4|state.st7~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[6]~6     ; |top|flowing_water_light:comb_4|out[6]~6     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st8~0  ; |top|flowing_water_light:comb_4|state.st8~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[7]~7     ; |top|flowing_water_light:comb_4|out[7]~7     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st9~0  ; |top|flowing_water_light:comb_4|state.st9~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[8]~8     ; |top|flowing_water_light:comb_4|out[8]~8     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st10~0 ; |top|flowing_water_light:comb_4|state.st10~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[9]~9     ; |top|flowing_water_light:comb_4|out[9]~9     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st11~0 ; |top|flowing_water_light:comb_4|state.st11~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[10]~10   ; |top|flowing_water_light:comb_4|out[10]~10   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st12~0 ; |top|flowing_water_light:comb_4|state.st12~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[11]~11   ; |top|flowing_water_light:comb_4|out[11]~11   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st13~0 ; |top|flowing_water_light:comb_4|state.st13~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[12]~12   ; |top|flowing_water_light:comb_4|out[12]~12   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st14~0 ; |top|flowing_water_light:comb_4|state.st14~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[13]~13   ; |top|flowing_water_light:comb_4|out[13]~13   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st15~0 ; |top|flowing_water_light:comb_4|state.st15~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[14]~14   ; |top|flowing_water_light:comb_4|out[14]~14   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st16~0 ; |top|flowing_water_light:comb_4|state.st16~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[15]~15   ; |top|flowing_water_light:comb_4|out[15]~15   ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~1       ; |top|flowing_water_light:comb_4|Add0~1       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~2       ; |top|flowing_water_light:comb_4|Add0~2       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~3       ; |top|flowing_water_light:comb_4|Add0~3       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~4       ; |top|flowing_water_light:comb_4|Add0~4       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~5       ; |top|flowing_water_light:comb_4|Add0~5       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~6       ; |top|flowing_water_light:comb_4|Add0~6       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~7       ; |top|flowing_water_light:comb_4|Add0~7       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~8       ; |top|flowing_water_light:comb_4|Add0~8       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~9       ; |top|flowing_water_light:comb_4|Add0~9       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~10      ; |top|flowing_water_light:comb_4|Add0~10      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~11      ; |top|flowing_water_light:comb_4|Add0~11      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~12      ; |top|flowing_water_light:comb_4|Add0~12      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~13      ; |top|flowing_water_light:comb_4|Add0~13      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~14      ; |top|flowing_water_light:comb_4|Add0~14      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~15      ; |top|flowing_water_light:comb_4|Add0~15      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~16      ; |top|flowing_water_light:comb_4|Add0~16      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~17      ; |top|flowing_water_light:comb_4|Add0~17      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~18      ; |top|flowing_water_light:comb_4|Add0~18      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~19      ; |top|flowing_water_light:comb_4|Add0~19      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~20      ; |top|flowing_water_light:comb_4|Add0~20      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~21      ; |top|flowing_water_light:comb_4|Add0~21      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~22      ; |top|flowing_water_light:comb_4|Add0~22      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~23      ; |top|flowing_water_light:comb_4|Add0~23      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~24      ; |top|flowing_water_light:comb_4|Add0~24      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~25      ; |top|flowing_water_light:comb_4|Add0~25      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~26      ; |top|flowing_water_light:comb_4|Add0~26      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~27      ; |top|flowing_water_light:comb_4|Add0~27      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~28      ; |top|flowing_water_light:comb_4|Add0~28      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~29      ; |top|flowing_water_light:comb_4|Add0~29      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~30      ; |top|flowing_water_light:comb_4|Add0~30      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~31      ; |top|flowing_water_light:comb_4|Add0~31      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~32      ; |top|flowing_water_light:comb_4|Add0~32      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~33      ; |top|flowing_water_light:comb_4|Add0~33      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~34      ; |top|flowing_water_light:comb_4|Add0~34      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~35      ; |top|flowing_water_light:comb_4|Add0~35      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~36      ; |top|flowing_water_light:comb_4|Add0~36      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~37      ; |top|flowing_water_light:comb_4|Add0~37      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~38      ; |top|flowing_water_light:comb_4|Add0~38      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~39      ; |top|flowing_water_light:comb_4|Add0~39      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~40      ; |top|flowing_water_light:comb_4|Add0~40      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~41      ; |top|flowing_water_light:comb_4|Add0~41      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~42      ; |top|flowing_water_light:comb_4|Add0~42      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~43      ; |top|flowing_water_light:comb_4|Add0~43      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~44      ; |top|flowing_water_light:comb_4|Add0~44      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~45      ; |top|flowing_water_light:comb_4|Add0~45      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~46      ; |top|flowing_water_light:comb_4|Add0~46      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~47      ; |top|flowing_water_light:comb_4|Add0~47      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~48      ; |top|flowing_water_light:comb_4|Add0~48      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~49      ; |top|flowing_water_light:comb_4|Add0~49      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~50      ; |top|flowing_water_light:comb_4|Add0~50      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~51      ; |top|flowing_water_light:comb_4|Add0~51      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~52      ; |top|flowing_water_light:comb_4|Add0~52      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~53      ; |top|flowing_water_light:comb_4|Add0~53      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~54      ; |top|flowing_water_light:comb_4|Add0~54      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~55      ; |top|flowing_water_light:comb_4|Add0~55      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~56      ; |top|flowing_water_light:comb_4|Add0~56      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~57      ; |top|flowing_water_light:comb_4|Add0~57      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~58      ; |top|flowing_water_light:comb_4|Add0~58      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~59      ; |top|flowing_water_light:comb_4|Add0~59      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~60      ; |top|flowing_water_light:comb_4|Add0~60      ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                       ;
++----------------------------------------------+----------------------------------------------+------------------+
+; Node Name                                    ; Output Port Name                             ; Output Port Type ;
++----------------------------------------------+----------------------------------------------+------------------+
+; |top|rst                                     ; |top|rst                                     ; out              ;
+; |top|out[4]                                  ; |top|out[4]                                  ; pin_out          ;
+; |top|out[5]                                  ; |top|out[5]                                  ; pin_out          ;
+; |top|out[6]                                  ; |top|out[6]                                  ; pin_out          ;
+; |top|out[7]                                  ; |top|out[7]                                  ; pin_out          ;
+; |top|out[8]                                  ; |top|out[8]                                  ; pin_out          ;
+; |top|out[9]                                  ; |top|out[9]                                  ; pin_out          ;
+; |top|out[10]                                 ; |top|out[10]                                 ; pin_out          ;
+; |top|out[11]                                 ; |top|out[11]                                 ; pin_out          ;
+; |top|out[12]                                 ; |top|out[12]                                 ; pin_out          ;
+; |top|out[13]                                 ; |top|out[13]                                 ; pin_out          ;
+; |top|out[14]                                 ; |top|out[14]                                 ; pin_out          ;
+; |top|out[15]                                 ; |top|out[15]                                 ; pin_out          ;
+; |top|flowing_water_light:comb_4|cnt[31]      ; |top|flowing_water_light:comb_4|cnt[31]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[30]      ; |top|flowing_water_light:comb_4|cnt[30]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[29]      ; |top|flowing_water_light:comb_4|cnt[29]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[28]      ; |top|flowing_water_light:comb_4|cnt[28]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[27]      ; |top|flowing_water_light:comb_4|cnt[27]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[26]      ; |top|flowing_water_light:comb_4|cnt[26]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[25]      ; |top|flowing_water_light:comb_4|cnt[25]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[24]      ; |top|flowing_water_light:comb_4|cnt[24]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[23]      ; |top|flowing_water_light:comb_4|cnt[23]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[22]      ; |top|flowing_water_light:comb_4|cnt[22]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[21]      ; |top|flowing_water_light:comb_4|cnt[21]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[20]      ; |top|flowing_water_light:comb_4|cnt[20]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[19]      ; |top|flowing_water_light:comb_4|cnt[19]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[18]      ; |top|flowing_water_light:comb_4|cnt[18]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[17]      ; |top|flowing_water_light:comb_4|cnt[17]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[16]      ; |top|flowing_water_light:comb_4|cnt[16]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[15]      ; |top|flowing_water_light:comb_4|cnt[15]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[14]      ; |top|flowing_water_light:comb_4|cnt[14]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[13]      ; |top|flowing_water_light:comb_4|cnt[13]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[12]      ; |top|flowing_water_light:comb_4|cnt[12]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[11]      ; |top|flowing_water_light:comb_4|cnt[11]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[10]      ; |top|flowing_water_light:comb_4|cnt[10]      ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[9]       ; |top|flowing_water_light:comb_4|cnt[9]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[8]       ; |top|flowing_water_light:comb_4|cnt[8]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[7]       ; |top|flowing_water_light:comb_4|cnt[7]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[6]       ; |top|flowing_water_light:comb_4|cnt[6]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[5]       ; |top|flowing_water_light:comb_4|cnt[5]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[4]       ; |top|flowing_water_light:comb_4|cnt[4]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[3]       ; |top|flowing_water_light:comb_4|cnt[3]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt[2]       ; |top|flowing_water_light:comb_4|cnt[2]       ; regout           ;
+; |top|flowing_water_light:comb_4|cnt~0        ; |top|flowing_water_light:comb_4|cnt~0        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~1        ; |top|flowing_water_light:comb_4|cnt~1        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~2        ; |top|flowing_water_light:comb_4|cnt~2        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~3        ; |top|flowing_water_light:comb_4|cnt~3        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~4        ; |top|flowing_water_light:comb_4|cnt~4        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~5        ; |top|flowing_water_light:comb_4|cnt~5        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~6        ; |top|flowing_water_light:comb_4|cnt~6        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~7        ; |top|flowing_water_light:comb_4|cnt~7        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~8        ; |top|flowing_water_light:comb_4|cnt~8        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~9        ; |top|flowing_water_light:comb_4|cnt~9        ; out              ;
+; |top|flowing_water_light:comb_4|cnt~10       ; |top|flowing_water_light:comb_4|cnt~10       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~11       ; |top|flowing_water_light:comb_4|cnt~11       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~12       ; |top|flowing_water_light:comb_4|cnt~12       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~13       ; |top|flowing_water_light:comb_4|cnt~13       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~14       ; |top|flowing_water_light:comb_4|cnt~14       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~15       ; |top|flowing_water_light:comb_4|cnt~15       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~16       ; |top|flowing_water_light:comb_4|cnt~16       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~17       ; |top|flowing_water_light:comb_4|cnt~17       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~18       ; |top|flowing_water_light:comb_4|cnt~18       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~19       ; |top|flowing_water_light:comb_4|cnt~19       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~20       ; |top|flowing_water_light:comb_4|cnt~20       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~21       ; |top|flowing_water_light:comb_4|cnt~21       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~22       ; |top|flowing_water_light:comb_4|cnt~22       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~23       ; |top|flowing_water_light:comb_4|cnt~23       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~24       ; |top|flowing_water_light:comb_4|cnt~24       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~25       ; |top|flowing_water_light:comb_4|cnt~25       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~26       ; |top|flowing_water_light:comb_4|cnt~26       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~27       ; |top|flowing_water_light:comb_4|cnt~27       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~28       ; |top|flowing_water_light:comb_4|cnt~28       ; out              ;
+; |top|flowing_water_light:comb_4|cnt~29       ; |top|flowing_water_light:comb_4|cnt~29       ; out              ;
+; |top|flowing_water_light:comb_4|state.st4    ; |top|flowing_water_light:comb_4|state.st4    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st5    ; |top|flowing_water_light:comb_4|state.st5    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st6    ; |top|flowing_water_light:comb_4|state.st6    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st7    ; |top|flowing_water_light:comb_4|state.st7    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st8    ; |top|flowing_water_light:comb_4|state.st8    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st9    ; |top|flowing_water_light:comb_4|state.st9    ; regout           ;
+; |top|flowing_water_light:comb_4|state.st10   ; |top|flowing_water_light:comb_4|state.st10   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st11   ; |top|flowing_water_light:comb_4|state.st11   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st12   ; |top|flowing_water_light:comb_4|state.st12   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st13   ; |top|flowing_water_light:comb_4|state.st13   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st14   ; |top|flowing_water_light:comb_4|state.st14   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st15   ; |top|flowing_water_light:comb_4|state.st15   ; regout           ;
+; |top|flowing_water_light:comb_4|state.st16   ; |top|flowing_water_light:comb_4|state.st16   ; regout           ;
+; |top|flowing_water_light:comb_4|state~0      ; |top|flowing_water_light:comb_4|state~0      ; out              ;
+; |top|flowing_water_light:comb_4|state~5      ; |top|flowing_water_light:comb_4|state~5      ; out              ;
+; |top|flowing_water_light:comb_4|state~6      ; |top|flowing_water_light:comb_4|state~6      ; out              ;
+; |top|flowing_water_light:comb_4|state~7      ; |top|flowing_water_light:comb_4|state~7      ; out              ;
+; |top|flowing_water_light:comb_4|state~8      ; |top|flowing_water_light:comb_4|state~8      ; out              ;
+; |top|flowing_water_light:comb_4|state~9      ; |top|flowing_water_light:comb_4|state~9      ; out              ;
+; |top|flowing_water_light:comb_4|state~10     ; |top|flowing_water_light:comb_4|state~10     ; out              ;
+; |top|flowing_water_light:comb_4|state~11     ; |top|flowing_water_light:comb_4|state~11     ; out              ;
+; |top|flowing_water_light:comb_4|state~12     ; |top|flowing_water_light:comb_4|state~12     ; out              ;
+; |top|flowing_water_light:comb_4|state~13     ; |top|flowing_water_light:comb_4|state~13     ; out              ;
+; |top|flowing_water_light:comb_4|state~14     ; |top|flowing_water_light:comb_4|state~14     ; out              ;
+; |top|flowing_water_light:comb_4|state~15     ; |top|flowing_water_light:comb_4|state~15     ; out              ;
+; |top|flowing_water_light:comb_4|state~16     ; |top|flowing_water_light:comb_4|state~16     ; out              ;
+; |top|flowing_water_light:comb_4|state.st0~0  ; |top|flowing_water_light:comb_4|state.st0~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[3]~3     ; |top|flowing_water_light:comb_4|out[3]~3     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st5~0  ; |top|flowing_water_light:comb_4|state.st5~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[4]~4     ; |top|flowing_water_light:comb_4|out[4]~4     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st6~0  ; |top|flowing_water_light:comb_4|state.st6~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[5]~5     ; |top|flowing_water_light:comb_4|out[5]~5     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st7~0  ; |top|flowing_water_light:comb_4|state.st7~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[6]~6     ; |top|flowing_water_light:comb_4|out[6]~6     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st8~0  ; |top|flowing_water_light:comb_4|state.st8~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[7]~7     ; |top|flowing_water_light:comb_4|out[7]~7     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st9~0  ; |top|flowing_water_light:comb_4|state.st9~0  ; out0             ;
+; |top|flowing_water_light:comb_4|out[8]~8     ; |top|flowing_water_light:comb_4|out[8]~8     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st10~0 ; |top|flowing_water_light:comb_4|state.st10~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[9]~9     ; |top|flowing_water_light:comb_4|out[9]~9     ; out0             ;
+; |top|flowing_water_light:comb_4|state.st11~0 ; |top|flowing_water_light:comb_4|state.st11~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[10]~10   ; |top|flowing_water_light:comb_4|out[10]~10   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st12~0 ; |top|flowing_water_light:comb_4|state.st12~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[11]~11   ; |top|flowing_water_light:comb_4|out[11]~11   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st13~0 ; |top|flowing_water_light:comb_4|state.st13~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[12]~12   ; |top|flowing_water_light:comb_4|out[12]~12   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st14~0 ; |top|flowing_water_light:comb_4|state.st14~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[13]~13   ; |top|flowing_water_light:comb_4|out[13]~13   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st15~0 ; |top|flowing_water_light:comb_4|state.st15~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[14]~14   ; |top|flowing_water_light:comb_4|out[14]~14   ; out0             ;
+; |top|flowing_water_light:comb_4|state.st16~0 ; |top|flowing_water_light:comb_4|state.st16~0 ; out0             ;
+; |top|flowing_water_light:comb_4|out[15]~15   ; |top|flowing_water_light:comb_4|out[15]~15   ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~1       ; |top|flowing_water_light:comb_4|Add0~1       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~2       ; |top|flowing_water_light:comb_4|Add0~2       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~3       ; |top|flowing_water_light:comb_4|Add0~3       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~4       ; |top|flowing_water_light:comb_4|Add0~4       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~5       ; |top|flowing_water_light:comb_4|Add0~5       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~6       ; |top|flowing_water_light:comb_4|Add0~6       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~7       ; |top|flowing_water_light:comb_4|Add0~7       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~8       ; |top|flowing_water_light:comb_4|Add0~8       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~9       ; |top|flowing_water_light:comb_4|Add0~9       ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~10      ; |top|flowing_water_light:comb_4|Add0~10      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~11      ; |top|flowing_water_light:comb_4|Add0~11      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~12      ; |top|flowing_water_light:comb_4|Add0~12      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~13      ; |top|flowing_water_light:comb_4|Add0~13      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~14      ; |top|flowing_water_light:comb_4|Add0~14      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~15      ; |top|flowing_water_light:comb_4|Add0~15      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~16      ; |top|flowing_water_light:comb_4|Add0~16      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~17      ; |top|flowing_water_light:comb_4|Add0~17      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~18      ; |top|flowing_water_light:comb_4|Add0~18      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~19      ; |top|flowing_water_light:comb_4|Add0~19      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~20      ; |top|flowing_water_light:comb_4|Add0~20      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~21      ; |top|flowing_water_light:comb_4|Add0~21      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~22      ; |top|flowing_water_light:comb_4|Add0~22      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~23      ; |top|flowing_water_light:comb_4|Add0~23      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~24      ; |top|flowing_water_light:comb_4|Add0~24      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~25      ; |top|flowing_water_light:comb_4|Add0~25      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~26      ; |top|flowing_water_light:comb_4|Add0~26      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~27      ; |top|flowing_water_light:comb_4|Add0~27      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~28      ; |top|flowing_water_light:comb_4|Add0~28      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~29      ; |top|flowing_water_light:comb_4|Add0~29      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~30      ; |top|flowing_water_light:comb_4|Add0~30      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~31      ; |top|flowing_water_light:comb_4|Add0~31      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~32      ; |top|flowing_water_light:comb_4|Add0~32      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~33      ; |top|flowing_water_light:comb_4|Add0~33      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~34      ; |top|flowing_water_light:comb_4|Add0~34      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~35      ; |top|flowing_water_light:comb_4|Add0~35      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~36      ; |top|flowing_water_light:comb_4|Add0~36      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~37      ; |top|flowing_water_light:comb_4|Add0~37      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~38      ; |top|flowing_water_light:comb_4|Add0~38      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~39      ; |top|flowing_water_light:comb_4|Add0~39      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~40      ; |top|flowing_water_light:comb_4|Add0~40      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~41      ; |top|flowing_water_light:comb_4|Add0~41      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~42      ; |top|flowing_water_light:comb_4|Add0~42      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~43      ; |top|flowing_water_light:comb_4|Add0~43      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~44      ; |top|flowing_water_light:comb_4|Add0~44      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~45      ; |top|flowing_water_light:comb_4|Add0~45      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~46      ; |top|flowing_water_light:comb_4|Add0~46      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~47      ; |top|flowing_water_light:comb_4|Add0~47      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~48      ; |top|flowing_water_light:comb_4|Add0~48      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~49      ; |top|flowing_water_light:comb_4|Add0~49      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~50      ; |top|flowing_water_light:comb_4|Add0~50      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~51      ; |top|flowing_water_light:comb_4|Add0~51      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~52      ; |top|flowing_water_light:comb_4|Add0~52      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~53      ; |top|flowing_water_light:comb_4|Add0~53      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~54      ; |top|flowing_water_light:comb_4|Add0~54      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~55      ; |top|flowing_water_light:comb_4|Add0~55      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~56      ; |top|flowing_water_light:comb_4|Add0~56      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~57      ; |top|flowing_water_light:comb_4|Add0~57      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~58      ; |top|flowing_water_light:comb_4|Add0~58      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~59      ; |top|flowing_water_light:comb_4|Add0~59      ; out0             ;
+; |top|flowing_water_light:comb_4|Add0~60      ; |top|flowing_water_light:comb_4|Add0~60      ; out0             ;
++----------------------------------------------+----------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 29 21:02:47 2022
+Info: Command: quartus_sim --simulation_results_format=VWF top -c top
+Info (324025): Using vector source file "C:/altera/Experiment4/exp4_project1/top/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      12.04 %
+Info (328052): Number of transitions in simulation is 410
+Info (324045): Vector file top.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Thu Dec 29 21:02:48 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

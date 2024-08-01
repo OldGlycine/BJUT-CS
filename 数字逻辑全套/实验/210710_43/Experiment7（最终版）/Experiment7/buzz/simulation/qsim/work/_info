@@ -1,0 +1,62 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\8\Experiment7(new)\Experiment77\Experiment7\buzz\simulation\qsim
+vbuzz
+Z1 IzAKZM7cTT4<O4c;z6JOFO1
+Z2 VWFed<V=cQ@iP5_W`n9nF>3
+Z3 dC:\altera\8\Experiment7(new)\Experiment77\Experiment7\buzz\simulation\qsim
+Z4 w1677567742
+Z5 8buzz.vo
+Z6 Fbuzz.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 a`OPe7Jh6i9LZ>Y3QUoab2
+!s85 0
+Z10 !s108 1677567743.794000
+Z11 !s107 buzz.vo|
+Z12 !s90 -work|work|buzz.vo|
+!s101 -O0
+vbuzz_vlg_check_tst
+!i10b 1
+!s100 OA8IYN<j9I=307hTihReJ2
+IfVf5zfSlGX=]bcNNIWb033
+VaALY4m;jXVZQ:O5H=P;gI0
+R3
+Z13 w1677567741
+Z14 8buzz.vt
+Z15 Fbuzz.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z16 !s108 1677567743.864000
+Z17 !s107 buzz.vt|
+Z18 !s90 -work|work|buzz.vt|
+!s101 -O0
+R8
+vbuzz_vlg_sample_tst
+!i10b 1
+!s100 S_VJ9B3MS0;a3T@]BNQS40
+I=n2i_0=E]U=7MjD`282SZ3
+VDJb4@Ca:1XD6RjNg3cbID1
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

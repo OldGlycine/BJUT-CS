@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\quartus13.0\QSW\flowing_water_light\simulation\qsim
+vflowing_water_light
+Z1 I?LjSBe77l=l>]9@gM^N@^3
+Z2 VlOGGaUZ1AabgB:QT;VMhf2
+Z3 dC:\altera\Experiment4\exp4_project1\flowing_water_light\simulation\qsim
+Z4 w1667970617
+Z5 8flowing_water_light.vo
+Z6 Fflowing_water_light.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|flowing_water_light.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 :EOYh89AXLaoRVC<<4<BM0
+!s85 0
+Z11 !s108 1667970618.830000
+Z12 !s107 flowing_water_light.vo|
+!s101 -O0
+vflowing_water_light_vlg_check_tst
+!i10b 1
+Z13 !s100 YEXX;llbV9`104Oi9d`cJ3
+Z14 I`?9EC_7^2hOflM<PgU`WB0
+Z15 Vg7z`[`mW8`Bozld1df>_`2
+R3
+Z16 w1667970616
+Z17 8flowing_water_light.vt
+Z18 Fflowing_water_light.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z19 !s108 1667970618.920000
+Z20 !s107 flowing_water_light.vt|
+Z21 !s90 -work|work|flowing_water_light.vt|
+!s101 -O0
+R9
+vflowing_water_light_vlg_sample_tst
+!i10b 1
+Z22 !s100 0k`c16c8bb3N?TWo^R^DA2
+Z23 Ie?1DcVd8XjYk^B917bYQG2
+Z24 V1D?0?To5PzHkjBb0h9o610
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vflowing_water_light_vlg_vec_tst
+!i10b 1
+!s100 J>_haHX9WHg^]o`WjKzY?2
+I]l3LRP>:]9WJOlJOk?<GT2
+Z25 V4>k>EGH]SRc4[QfcTVPHM1
+R3
+R16
+R17
+R18
+Z26 L0 423
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

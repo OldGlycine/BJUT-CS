@@ -1,0 +1,22 @@
+|led
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+n_en => out.OUTPUTSELECT
+sel <= <GND>
+
+

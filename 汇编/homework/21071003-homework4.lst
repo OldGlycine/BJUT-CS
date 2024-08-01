@@ -1,0 +1,233 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/18/23 22:36:44
+tempfile.asm						     Page 1 - 1
+
+
+				enterline macro
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+					lea dx, string
+					mov ah, 09h
+					int 21h
+				endm
+
+ 0000				DATAS SEGMENT
+				    ;此处输入数据段代码  
+ 0000 43 6F 64 65 28 64		    ti db 'Code(decimal)       Char$'
+       65 63 69 6D 61 6C
+       29 20 20 20 20 20
+       20 20 43 68 61 72
+       24
+ 0019  0009 [			    space_9 db 9 dup(' '), '$'
+        20
+       ] 24
+ 0023  0005 [			    space_5 db 5 dup(' '), '$'
+        20
+       ] 24
+ 0029 2D 24			    string_neg db '-$'
+ 002B 00			    trans_flag db 0
+ 002C 20 24			    string_space db ' $'
+ 002E 0000			    counter_code dw 0
+ 0030 0000			    counter_4 dw 0
+ 0032				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+				    ;此处输入堆栈段代码
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+				    ;初始化打印次数
+ 0005  B9 004B			    mov cx, 4bh
+				    ;初始化打印起点
+ 0008  BA 0030			    mov dx, 30h
+				    ;初始化码值起点
+ 000B  89 16 002E R		    mov counter_code, dx
+ 000F				lloop:
+ 000F  B4 02			    mov ah, 02h
+ 0011  CD 21			    int 21h 
+				    
+ 0013  52			    push dx
+				    putstr space_5
+ 0014  8D 16 0023 R	     1		lea dx, space_5
+ 0018  B4 09		     1		mov ah, 09h
+ 001A  CD 21		     1		int 21h
+				    
+ 001C  50			    push ax
+ 001D  A1 002E R		    mov ax, counter_code
+ 0020  51			    push cx
+ 0021  E8 0039			    call num2asc
+ 0024  59			    pop cx
+ 0025  58			    pop ax
+				    
+				    putstr space_9
+ 0026  8D 16 0019 R	     1		lea dx, space_9
+ 002A  B4 09		     1		mov ah, 09h
+ 002C  CD 21		     1		int 21h
+ 002E  5A			    pop dx
+				    
+ 002F  83 F9 01			    cmp cx, 1
+ 0032  75 03 E9 008E		    je stop
+				    
+ 0037  FF 06 002E R		    inc counter_code
+ 003B  FF 06 0030 R		    inc counter_4
+				    
+ 003F  83 3E 0030 R 04		    cmp counter_4, 4
+ 0044  75 14			    jne continue
+				    
+ 0046  52			    push dx
+				    enterline
+ 0047  B2 0D		     1		mov dl,13
+ 0049  B4 02		     1		mov ah,2
+ 004B  CD 21		     1		int 21h
+ 004D  B2 0A		     1		mov dl,10
+ 004F  B4 02		     1		mov ah,2
+ 0051  CD 21		     1		int 21h
+ 0053  5A			    pop dx
+				    
+ 0054  C7 06 0030 R 0000	    mov counter_4, 0
+				    
+ 005A				continue:
+ 005A  42			 	inc dx
+ 005B  E2 B2			    loop lloop
+ 005D				num2asc proc
+ 005D  33 C9				xor cx, cx
+ 005F  33 DB				xor bx, bx
+ 0061  33 D2				xor dx, dx
+					
+					;负数处理
+ 0063  32 E4				xor ah,ah
+ 0065  3C 00				cmp al, 0
+ 0067  7D 0C				jge not_neg
+ 0069  F6 D8				neg al
+					putstr string_neg
+ 006B  8D 16 0029 R	     1		lea dx, string_neg
+ 006F  B4 09		     1		mov ah, 09h
+ 0071  CD 21		     1		int 21h
+ 0073  32 E4				xor ah,ah
+ 0075				not_neg:
+ 0075  BB 2710				mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 0078				cov_back:
+ 0078  33 D2				xor dx,dx ;清零
+ 007A  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 007C  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 007E  80 3E 002B R 00			cmp trans_flag,0
+ 0083  75 05				jne nor1
+ 0085  83 F8 00				cmp ax,0 ;商是零
+ 0088  74 0E				je cont
+					
+ 008A				nor1:
+ 008A  8A D0				mov dl,al
+ 008C  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 008F  B4 02				mov ah,2   ;输出
+ 0091  CD 21				int 21h
+					
+ 0093  C6 06 002B R 01			mov trans_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0098				cont:
+ 0098  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 009B  74 0F				je outer
+					
+ 009D  33 D2				xor dx,dx ;清零
+ 009F  8B C3				mov ax,bx ;递减权重
+ 00A1  BB 000A				mov bx,10
+ 00A4  F7 F3			    div bx
+ 00A6  8B D8			    mov bx,ax 
+				        
+ 00A8  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 00AA  EB CC			    jmp cov_back 
+				   
+ 00AC				outer:
+ 00AC  8A D1				mov dl,cl;个位输出
+ 00AE  80 C2 30				add dl,30h
+ 00B1  B4 02				mov ah,2
+ 00B3  CD 21				int 21h   
+					putstr string_space
+ 00B5  8D 16 002C R	     1		lea dx, string_space
+ 00B9  B4 09		     1		mov ah, 09h
+ 00BB  CD 21		     1		int 21h
+ 00BD  C6 06 002B R 00			mov trans_flag, 0
+ 00C2  33 FF				xor di, di
+ 00C4  C3			    ret
+ 00C5				num2asc endp
+
+ 00C5				stop:
+ 00C5  B4 4C			    MOV AH,4CH
+ 00C7  CD 21			    INT 21H
+ 00C9				CODES ENDS
+				    END START
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/18/23 22:36:44
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00C9	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0032	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+num2asc  . . . . . . . . . . . .	P Near	 005D	  CODES	Length= 0068 Public
+  not_neg  . . . . . . . . . . .	L Near	 0075	  CODES	
+  cov_back . . . . . . . . . . .	L Near	 0078	  CODES	
+  nor1 . . . . . . . . . . . . .	L Near	 008A	  CODES	
+  cont . . . . . . . . . . . . .	L Near	 0098	  CODES	
+  outer  . . . . . . . . . . . .	L Near	 00AC	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+continue . . . . . . . . . . . .	L Near	 005A	  CODES	
+counter_4  . . . . . . . . . . .	Word	 0030	  DATAS	
+counter_code . . . . . . . . . .	Word	 002E	  DATAS	
+lloop  . . . . . . . . . . . . .	L Near	 000F	  CODES	
+space_5  . . . . . . . . . . . .	Byte	 0023	  DATAS	
+space_9  . . . . . . . . . . . .	Byte	 0019	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 00C5	  CODES	
+string_neg . . . . . . . . . . .	Byte	 0029	  DATAS	
+string_space . . . . . . . . . .	Byte	 002C	  DATAS	
+ti . . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+trans_flag . . . . . . . . . . .	Byte	 002B	  DATAS	
+
+	   0 Warnings
+	   0 Errors

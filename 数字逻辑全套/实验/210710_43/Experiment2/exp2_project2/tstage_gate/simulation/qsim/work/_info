@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment2\tstage_gate\simulation\qsim
+vtstage_gate
+Z1 !s100 Q2`VA228ZJDT6iA]Yog^k3
+Z2 ImeK@>0[CZISmPY>B6R<^:1
+Z3 V5DEMO_U72NRco37]ledzZ1
+Z4 dC:\altera\Experiment2\tstage_gate\simulation\qsim
+Z5 w1666867900
+Z6 8tstage_gate.vo
+Z7 Ftstage_gate.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|tstage_gate.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1666867902.066000
+Z12 !s107 tstage_gate.vo|
+!s101 -O0
+vtstage_gate_vlg_check_tst
+!i10b 1
+Z13 !s100 QjdN1i^]0kPDZWD4`Ci=H3
+Z14 IICkKL[;Flo11E@29K?MTJ0
+Z15 VYnO6X:UV8G:XQ@9?8^UGe0
+R4
+R5
+Z16 8tstage_gate.vt
+Z17 Ftstage_gate.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z18 !s108 1666867902.127000
+Z19 !s107 tstage_gate.vt|
+Z20 !s90 -work|work|tstage_gate.vt|
+!s101 -O0
+R10
+vtstage_gate_vlg_sample_tst
+!i10b 1
+Z21 !s100 jPVigVJ__ZFJJaU2aYI5z3
+Z22 IURKO9k69LQ1WHB?^ahI>R1
+Z23 Vm^bWN>OPY=1BVfJU`U?JH1
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vtstage_gate_vlg_vec_tst
+!i10b 1
+Z24 !s100 E2=HQI;Jh4R^7gBMfDh?53
+Z25 In3HSFNz3zPd7V@8]<dV9l1
+Z26 VP7CzP5PW^PX47HW3KLG?93
+R4
+R5
+R16
+R17
+Z27 L0 207
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

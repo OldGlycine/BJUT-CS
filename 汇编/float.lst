@@ -1,0 +1,208 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 19:15:55
+tempfile.asm						     Page 1 - 1
+
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 02BA			    num dw 698  
+ 0002 0000			    string_neg dw 0
+ 0004 0000				trans_flag dw 0
+ 0006 20 24				string_space db ' $'
+ 0008 2E 24				dot db ".$"
+ 000A				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+ 0005  BA 0000			    mov dx, 0
+ 0008  A1 0000 R			mov ax, num
+ 000B  BB 0005				mov bx, 5
+ 000E  F7 F3				div bx
+					
+					;先输出整数部分
+ 0010  E8 002B				call num2asc
+					putstr dot
+ 0013  52		     1	 	push dx
+ 0014  50		     1	 	push ax
+ 0015  8D 16 0008 R	     1		lea dx, dot
+ 0019  B4 09		     1		mov ah, 09h
+ 001B  CD 21		     1		int 21h
+ 001D  58		     1		pop ax
+ 001E  5A		     1		pop dx
+					
+					;保留两位小数那么x1000 (10的2 + 1次方)
+ 001F  8B C2				mov ax, dx
+ 0021  BB 03E8				mov bx, 1000
+ 0024  F7 E3				mul bx
+ 0026  BB 0005				mov bx, 5
+ 0029  F7 F3				div bx
+					
+					;采用四舍五入法
+ 002B  BB 000A				mov bx, 10
+ 002E  F7 F3				div bx
+ 0030  BA 0006				mov dx, 6
+ 0033  83 FA 05				cmp dx, 5
+ 0036  7C 01				jl she4
+ 0038  40				inc ax
+ 0039				she4:
+ 0039  E8 0002				call num2asc
+					
+ 003C  EB 69				jmp stop
+				    
+				    
+ 003E				num2asc proc
+ 003E  52				push dx
+ 003F  53				push bx
+ 0040  51				push cx
+ 0041  33 C9				xor cx, cx
+ 0043  33 DB				xor bx, bx
+ 0045  33 D2				xor dx, dx
+					
+					;负数处理
+ 0047  83 F8 00				cmp ax, 0
+ 004A  7D 0E				jge not_neg
+ 004C  F6 D8				neg al
+					putstr string_neg
+ 004E  52		     1	 	push dx
+ 004F  50		     1	 	push ax
+ 0050  8D 16 0002 R	     1		lea dx, string_neg
+ 0054  B4 09		     1		mov ah, 09h
+ 0056  CD 21		     1		int 21h
+ 0058  58		     1		pop ax
+ 0059  5A		     1		pop dx
+ 005A				not_neg:
+ 005A  BB 2710				mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 005D				cov_back:
+ 005D  33 D2				xor dx,dx ;清零
+ 005F  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 0061  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 0063  83 3E 0004 R 00			cmp trans_flag,0
+ 0068  75 05				jne nor1
+ 006A  83 F8 00				cmp ax,0 ;商是零
+ 006D  74 0F				je cont
+					
+ 006F				nor1:
+ 006F  8A D0				mov dl,al
+ 0071  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 0074  B4 02				mov ah,2   ;输出
+ 0076  CD 21				int 21h
+					
+ 0078  C7 06 0004 R 0001		mov trans_flag,1;有输出就置为1，后续的0也要输出
+					
+ 007E				cont:
+ 007E  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 0081  74 0F				je outer
+					
+ 0083  33 D2				xor dx,dx ;清零
+ 0085  8B C3				mov ax,bx ;递减权重
+ 0087  BB 000A				mov bx,10
+ 008A  F7 F3			    div bx
+ 008C  8B D8			    mov bx,ax 
+ 008E  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 0090  EB CB			    jmp cov_back 
+				   
+ 0092				outer:
+ 0092  8A D1				mov dl,cl;个位输出
+ 0094  80 C2 30				add dl,30h
+ 0097  B4 02				mov ah,2
+ 0099  CD 21				int 21h   
+ 009B  C7 06 0004 R 0000		mov trans_flag, 0
+ 00A1  33 FF				xor di, di
+ 00A3  59				pop cx
+ 00A4  5B				pop bx
+ 00A5  5A				pop dx
+ 00A6  C3			    ret
+ 00A7				num2asc endp
+				    
+ 00A7				stop:
+ 00A7  B4 4C			    MOV AH,4CH
+ 00A9  CD 21			    INT 21H
+ 00AB				CODES ENDS
+				    END START
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 19:15:55
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00AB	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 000A	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+num2asc  . . . . . . . . . . . .	P Near	 003E	  CODES	Length= 0069 Public
+  not_neg  . . . . . . . . . . .	L Near	 005A	  CODES	
+  cov_back . . . . . . . . . . .	L Near	 005D	  CODES	
+  nor1 . . . . . . . . . . . . .	L Near	 006F	  CODES	
+  cont . . . . . . . . . . . . .	L Near	 007E	  CODES	
+  outer  . . . . . . . . . . . .	L Near	 0092	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+dot  . . . . . . . . . . . . . .	Byte	 0008	  DATAS	
+num  . . . . . . . . . . . . . .	Word	 0000	  DATAS	
+she4 . . . . . . . . . . . . . .	L Near	 0039	  CODES	
+stop . . . . . . . . . . . . . .	L Near	 00A7	  CODES	
+string_neg . . . . . . . . . . .	Word	 0002	  DATAS	
+string_space . . . . . . . . . .	Byte	 0006	  DATAS	
+trans_flag . . . . . . . . . . .	Word	 0004	  DATAS	
+
+	   0 Warnings
+	   0 Errors

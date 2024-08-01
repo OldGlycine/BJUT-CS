@@ -1,0 +1,1623 @@
+TimeQuest Timing Analyzer report for frequency
+Fri Nov 04 15:28:45 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk_50mhz'
+ 13. Slow 1200mV 85C Model Hold: 'clk_50mhz'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'clk_50mhz'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'clk_50mhz'
+ 27. Slow 1200mV 0C Model Hold: 'clk_50mhz'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'clk_50mhz'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'clk_50mhz'
+ 40. Fast 1200mV 0C Model Hold: 'clk_50mhz'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'clk_50mhz'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Slow Corner Signal Integrity Metrics
+ 55. Fast Corner Signal Integrity Metrics
+ 56. Setup Transfers
+ 57. Hold Transfers
+ 58. Report TCCS
+ 59. Report RSKM
+ 60. Unconstrained Paths
+ 61. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; frequency                                                         ;
+; Device Family      ; Cyclone III                                                       ;
+; Device Name        ; EP3C16F484C8                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets       ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; clk_50mhz  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50mhz } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+
+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 136.67 MHz ; 136.67 MHz      ; clk_50mhz  ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-----------+--------+----------------+
+; Clock     ; Slack  ; End Point TNS  ;
++-----------+--------+----------------+
+; clk_50mhz ; -6.317 ; -199.365       ;
++-----------+--------+----------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-----------+-------+----------------+
+; Clock     ; Slack ; End Point TNS  ;
++-----------+-------+----------------+
+; clk_50mhz ; 0.742 ; 0.000          ;
++-----------+-------+----------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-----------+--------+------------------------------+
+; Clock     ; Slack  ; End Point TNS                ;
++-----------+--------+------------------------------+
+; clk_50mhz ; -3.000 ; -52.071                      ;
++-----------+--------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk_50mhz'                                                            ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; -6.317 ; cnt1[6]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.317 ; cnt1[6]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.317 ; cnt1[6]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.317 ; cnt1[6]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.317 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.317 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.238      ;
+; -6.274 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.274 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.274 ; cnt1[0]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.274 ; cnt1[0]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.274 ; cnt1[0]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.274 ; cnt1[0]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.195      ;
+; -6.176 ; cnt1[7]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.176 ; cnt1[7]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.176 ; cnt1[7]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.176 ; cnt1[7]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.176 ; cnt1[7]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.176 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.097      ;
+; -6.158 ; cnt1[3]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.158 ; cnt1[3]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.158 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.158 ; cnt1[3]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.158 ; cnt1[3]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.158 ; cnt1[3]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 7.079      ;
+; -6.142 ; cnt1[4]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.142 ; cnt1[4]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.142 ; cnt1[4]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.142 ; cnt1[4]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.142 ; cnt1[4]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.142 ; cnt1[4]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.609     ; 6.534      ;
+; -6.120 ; cnt1[12]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.120 ; cnt1[12]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.120 ; cnt1[12]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.120 ; cnt1[12]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.120 ; cnt1[12]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.120 ; cnt1[12]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.548      ;
+; -6.104 ; cnt1[6]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.104 ; cnt1[6]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.498      ;
+; -6.090 ; cnt1[6]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.484      ;
+; -6.063 ; cnt1[6]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.984      ;
+; -6.063 ; cnt1[0]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.984      ;
+; -6.034 ; cnt1[0]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.034 ; cnt1[0]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.428      ;
+; -6.020 ; cnt1[13]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[13]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[13]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[13]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[13]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[13]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.573     ; 6.448      ;
+; -6.020 ; cnt1[0]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.414      ;
+; -6.001 ; cnt1[1]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -6.001 ; cnt1[1]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -6.001 ; cnt1[1]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -6.001 ; cnt1[1]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -6.001 ; cnt1[1]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -6.001 ; cnt1[1]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.922      ;
+; -5.963 ; cnt1[7]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.963 ; cnt1[7]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.393      ; 7.357      ;
+; -5.959 ; cnt1[2]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.880      ;
+; -5.959 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.880      ;
+; -5.959 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.080     ; 6.880      ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk_50mhz'                                                            ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; 0.742 ; cnt1[27]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.053      ;
+; 0.742 ; cnt1[29]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.053      ;
+; 0.744 ; cnt1[31]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.055      ;
+; 0.745 ; cnt1[12]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.056      ;
+; 0.745 ; cnt1[18]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.056      ;
+; 0.745 ; cnt1[22]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.056      ;
+; 0.745 ; cnt1[23]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.056      ;
+; 0.745 ; cnt1[25]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.056      ;
+; 0.746 ; cnt1[10]  ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.057      ;
+; 0.746 ; cnt1[20]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.057      ;
+; 0.746 ; cnt1[28]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.057      ;
+; 0.746 ; cnt1[30]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.057      ;
+; 0.747 ; cnt1[24]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.058      ;
+; 0.747 ; cnt1[26]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.058      ;
+; 0.755 ; cnt1[7]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.540      ;
+; 0.760 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.052      ;
+; 0.761 ; cnt1[5]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.053      ;
+; 0.763 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.055      ;
+; 0.763 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.055      ;
+; 0.763 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.055      ;
+; 0.764 ; cnt1[7]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.549      ;
+; 0.765 ; cnt1[11]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.076      ;
+; 0.765 ; cnt1[13]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.076      ;
+; 0.765 ; cnt1[15]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.076      ;
+; 0.766 ; cnt1[19]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.077      ;
+; 0.767 ; cnt1[21]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.078      ;
+; 0.768 ; cnt1[16]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.079      ;
+; 0.768 ; cnt1[9]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.079      ;
+; 0.769 ; cnt1[14]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.080      ;
+; 0.771 ; cnt1[6]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.556      ;
+; 0.780 ; cnt1[6]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.565      ;
+; 0.785 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.077      ;
+; 0.894 ; cnt1[5]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.679      ;
+; 0.895 ; cnt1[7]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.680      ;
+; 0.903 ; cnt1[5]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.688      ;
+; 0.904 ; cnt1[7]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.689      ;
+; 0.911 ; cnt1[6]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.696      ;
+; 0.920 ; cnt1[6]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.705      ;
+; 1.033 ; cnt1[3]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.818      ;
+; 1.034 ; cnt1[5]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.819      ;
+; 1.035 ; cnt1[7]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.820      ;
+; 1.042 ; cnt1[3]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.827      ;
+; 1.043 ; cnt1[5]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.828      ;
+; 1.044 ; cnt1[7]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.829      ;
+; 1.051 ; cnt1[2]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.836      ;
+; 1.051 ; cnt1[6]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.836      ;
+; 1.060 ; cnt1[2]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.845      ;
+; 1.060 ; cnt1[6]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.845      ;
+; 1.097 ; cnt1[27]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.408      ;
+; 1.097 ; cnt1[29]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.408      ;
+; 1.099 ; cnt1[23]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.410      ;
+; 1.099 ; cnt1[25]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.410      ;
+; 1.106 ; cnt1[22]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.417      ;
+; 1.106 ; cnt1[18]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.417      ;
+; 1.106 ; cnt1[12]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.417      ;
+; 1.107 ; cnt1[28]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.418      ;
+; 1.107 ; cnt1[30]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.418      ;
+; 1.107 ; cnt1[20]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.418      ;
+; 1.107 ; cnt1[10]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.418      ;
+; 1.108 ; cnt1[26]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.419      ;
+; 1.108 ; cnt1[24]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.419      ;
+; 1.115 ; cnt1[18]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.426      ;
+; 1.115 ; cnt1[12]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.426      ;
+; 1.115 ; cnt1[22]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.426      ;
+; 1.116 ; cnt1[20]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.427      ;
+; 1.116 ; cnt1[5]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.408      ;
+; 1.116 ; cnt1[10]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.427      ;
+; 1.116 ; cnt1[28]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.427      ;
+; 1.117 ; cnt1[26]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.428      ;
+; 1.117 ; cnt1[24]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.428      ;
+; 1.120 ; cnt1[11]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.431      ;
+; 1.120 ; cnt1[13]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.431      ;
+; 1.121 ; cnt1[15]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.098      ; 1.431      ;
+; 1.121 ; cnt1[19]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.432      ;
+; 1.122 ; cnt1[9]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.433      ;
+; 1.122 ; cnt1[21]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.433      ;
+; 1.124 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.416      ;
+; 1.124 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.416      ;
+; 1.130 ; cnt1[14]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.441      ;
+; 1.132 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.080      ; 1.424      ;
+; 1.138 ; cnt1[16]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.449      ;
+; 1.140 ; cnt1[14]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.098      ; 1.450      ;
+; 1.173 ; cnt1[3]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.958      ;
+; 1.174 ; cnt1[5]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.959      ;
+; 1.175 ; cnt1[7]   ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.960      ;
+; 1.182 ; cnt1[3]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.967      ;
+; 1.183 ; cnt1[5]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.968      ;
+; 1.185 ; cnt1[7]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.572      ; 1.969      ;
+; 1.190 ; cnt1[0]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.975      ;
+; 1.191 ; cnt1[2]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.976      ;
+; 1.191 ; cnt1[6]   ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.976      ;
+; 1.199 ; cnt1[0]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.984      ;
+; 1.200 ; cnt1[2]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.573      ; 1.985      ;
+; 1.201 ; cnt1[6]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.572      ; 1.985      ;
+; 1.228 ; cnt1[27]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.539      ;
+; 1.228 ; cnt1[29]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.539      ;
+; 1.230 ; cnt1[25]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.541      ;
+; 1.230 ; cnt1[23]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.541      ;
+; 1.237 ; cnt1[27]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.548      ;
+; 1.239 ; cnt1[25]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.099      ; 1.550      ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clk_50mhz'                                           ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk_50mhz ; Rise       ; clk_50mhz   ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[4]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.234  ; 0.454        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[4]     ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; 0.245  ; 0.465        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; 0.246  ; 0.466        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; 0.257  ; 0.477        ; 0.220          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; 0.334  ; 0.522        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; 0.345  ; 0.533        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.356  ; 0.544        ; 0.188          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[4]     ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk_50mhz  ; 4.443 ; 4.683 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; 5.043 ; 5.218 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; 5.043 ; 5.218 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; 4.028 ; 4.279 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; 4.286 ; 4.546 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clk_50mhz  ; -1.692 ; -1.930 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; -1.159 ; -1.366 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; -1.699 ; -1.881 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; -2.289 ; -2.469 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; -1.159 ; -1.366 ; Rise       ; clk_50mhz       ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 7.203 ; 7.114 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 7.042 ; 6.953 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 147.32 MHz ; 147.32 MHz      ; clk_50mhz  ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; clk_50mhz ; -5.788 ; -181.943      ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; clk_50mhz ; 0.663 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------+--------+-----------------------------+
+; Clock     ; Slack  ; End Point TNS               ;
++-----------+--------+-----------------------------+
+; clk_50mhz ; -3.000 ; -52.071                     ;
++-----------+--------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk_50mhz'                                                             ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; -5.788 ; cnt1[6]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.788 ; cnt1[6]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.788 ; cnt1[6]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.788 ; cnt1[6]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.788 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.788 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.719      ;
+; -5.761 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.761 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.761 ; cnt1[0]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.761 ; cnt1[0]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.761 ; cnt1[0]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.761 ; cnt1[0]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.692      ;
+; -5.667 ; cnt1[4]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.667 ; cnt1[4]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.667 ; cnt1[4]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.667 ; cnt1[4]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.667 ; cnt1[4]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.667 ; cnt1[4]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 6.099      ;
+; -5.667 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.598      ;
+; -5.660 ; cnt1[3]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.660 ; cnt1[3]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.660 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.660 ; cnt1[3]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.660 ; cnt1[3]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.660 ; cnt1[3]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.591      ;
+; -5.601 ; cnt1[6]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.532      ;
+; -5.574 ; cnt1[0]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.505      ;
+; -5.567 ; cnt1[12]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.567 ; cnt1[12]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.567 ; cnt1[12]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.567 ; cnt1[12]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.567 ; cnt1[12]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.567 ; cnt1[12]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 6.033      ;
+; -5.545 ; cnt1[6]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.545 ; cnt1[6]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.923      ;
+; -5.521 ; cnt1[6]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.375      ; 6.898      ;
+; -5.520 ; cnt1[1]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.520 ; cnt1[1]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.520 ; cnt1[1]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.520 ; cnt1[1]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.520 ; cnt1[1]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.520 ; cnt1[1]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.451      ;
+; -5.493 ; cnt1[0]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.493 ; cnt1[0]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.871      ;
+; -5.486 ; cnt1[0]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.375      ; 6.863      ;
+; -5.480 ; cnt1[4]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.570     ; 5.912      ;
+; -5.480 ; cnt1[7]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.411      ;
+; -5.476 ; cnt1[13]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.476 ; cnt1[13]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.476 ; cnt1[13]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.476 ; cnt1[13]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.476 ; cnt1[13]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.476 ; cnt1[13]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.942      ;
+; -5.473 ; cnt1[3]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.404      ;
+; -5.462 ; cnt1[2]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.462 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.462 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.462 ; cnt1[2]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.462 ; cnt1[2]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.462 ; cnt1[2]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.071     ; 6.393      ;
+; -5.424 ; cnt1[11]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.424 ; cnt1[11]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.424 ; cnt1[11]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.424 ; cnt1[11]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.424 ; cnt1[11]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.424 ; cnt1[11]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.536     ; 5.890      ;
+; -5.412 ; cnt1[3]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.790      ;
+; -5.412 ; cnt1[3]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.790      ;
+; -5.412 ; cnt1[3]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.376      ; 6.790      ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk_50mhz'                                                             ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; 0.663 ; cnt1[7]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.394      ;
+; 0.685 ; cnt1[6]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.416      ;
+; 0.689 ; cnt1[29]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.973      ;
+; 0.690 ; cnt1[27]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.974      ;
+; 0.690 ; cnt1[31]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.974      ;
+; 0.691 ; cnt1[7]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.422      ;
+; 0.692 ; cnt1[22]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.976      ;
+; 0.693 ; cnt1[23]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.977      ;
+; 0.693 ; cnt1[25]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.977      ;
+; 0.694 ; cnt1[12]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.978      ;
+; 0.694 ; cnt1[18]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.978      ;
+; 0.694 ; cnt1[30]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.978      ;
+; 0.695 ; cnt1[20]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.979      ;
+; 0.695 ; cnt1[28]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.979      ;
+; 0.695 ; cnt1[10]  ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.979      ;
+; 0.696 ; cnt1[24]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.980      ;
+; 0.696 ; cnt1[26]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.980      ;
+; 0.700 ; cnt1[6]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.431      ;
+; 0.706 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 0.972      ;
+; 0.707 ; cnt1[5]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 0.973      ;
+; 0.709 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 0.975      ;
+; 0.709 ; cnt1[13]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.993      ;
+; 0.709 ; cnt1[15]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.993      ;
+; 0.710 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 0.976      ;
+; 0.710 ; cnt1[11]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.994      ;
+; 0.710 ; cnt1[19]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.994      ;
+; 0.711 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 0.977      ;
+; 0.711 ; cnt1[21]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.995      ;
+; 0.713 ; cnt1[9]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.997      ;
+; 0.714 ; cnt1[16]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.998      ;
+; 0.715 ; cnt1[14]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 0.999      ;
+; 0.734 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.000      ;
+; 0.779 ; cnt1[5]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.510      ;
+; 0.785 ; cnt1[7]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.516      ;
+; 0.807 ; cnt1[6]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.538      ;
+; 0.808 ; cnt1[5]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.539      ;
+; 0.813 ; cnt1[7]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.544      ;
+; 0.822 ; cnt1[6]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.553      ;
+; 0.899 ; cnt1[3]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.630      ;
+; 0.901 ; cnt1[5]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.632      ;
+; 0.907 ; cnt1[7]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.638      ;
+; 0.929 ; cnt1[3]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.660      ;
+; 0.929 ; cnt1[2]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.660      ;
+; 0.929 ; cnt1[6]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.660      ;
+; 0.930 ; cnt1[5]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.661      ;
+; 0.935 ; cnt1[7]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.666      ;
+; 0.944 ; cnt1[6]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.675      ;
+; 0.946 ; cnt1[2]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.677      ;
+; 1.010 ; cnt1[12]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.294      ;
+; 1.011 ; cnt1[29]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.295      ;
+; 1.011 ; cnt1[18]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.295      ;
+; 1.011 ; cnt1[22]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.295      ;
+; 1.012 ; cnt1[28]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.296      ;
+; 1.012 ; cnt1[30]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.296      ;
+; 1.012 ; cnt1[27]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.296      ;
+; 1.012 ; cnt1[20]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.296      ;
+; 1.012 ; cnt1[10]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.296      ;
+; 1.013 ; cnt1[26]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.297      ;
+; 1.013 ; cnt1[24]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.297      ;
+; 1.017 ; cnt1[23]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.301      ;
+; 1.017 ; cnt1[25]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.301      ;
+; 1.021 ; cnt1[3]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.752      ;
+; 1.023 ; cnt1[5]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.754      ;
+; 1.026 ; cnt1[22]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.310      ;
+; 1.028 ; cnt1[18]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.312      ;
+; 1.028 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.294      ;
+; 1.028 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.294      ;
+; 1.028 ; cnt1[12]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.312      ;
+; 1.029 ; cnt1[20]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.313      ;
+; 1.029 ; cnt1[5]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.295      ;
+; 1.029 ; cnt1[7]   ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.760      ;
+; 1.029 ; cnt1[10]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.313      ;
+; 1.029 ; cnt1[28]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.313      ;
+; 1.030 ; cnt1[26]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.314      ;
+; 1.030 ; cnt1[24]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.314      ;
+; 1.031 ; cnt1[15]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.315      ;
+; 1.031 ; cnt1[13]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.315      ;
+; 1.032 ; cnt1[11]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.316      ;
+; 1.032 ; cnt1[19]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.316      ;
+; 1.033 ; cnt1[21]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.317      ;
+; 1.033 ; cnt1[14]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.317      ;
+; 1.037 ; cnt1[9]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.321      ;
+; 1.044 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.310      ;
+; 1.048 ; cnt1[16]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.332      ;
+; 1.049 ; cnt1[0]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.780      ;
+; 1.049 ; cnt1[14]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.333      ;
+; 1.051 ; cnt1[3]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.782      ;
+; 1.051 ; cnt1[2]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.782      ;
+; 1.051 ; cnt1[6]   ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.782      ;
+; 1.052 ; cnt1[5]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.783      ;
+; 1.057 ; cnt1[7]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.788      ;
+; 1.066 ; cnt1[6]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.797      ;
+; 1.067 ; cnt1[0]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.798      ;
+; 1.068 ; cnt1[2]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.536      ; 1.799      ;
+; 1.104 ; cnt1[29]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.388      ;
+; 1.105 ; cnt1[27]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.389      ;
+; 1.111 ; cnt1[25]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.395      ;
+; 1.111 ; cnt1[23]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.089      ; 1.395      ;
+; 1.120 ; cnt1[3]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.386      ;
+; 1.122 ; cnt1[5]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.071      ; 1.388      ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clk_50mhz'                                            ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target      ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk_50mhz ; Rise       ; clk_50mhz   ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[4]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; -1.487 ; 1.000        ; 2.487          ; Min Period       ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.212  ; 0.428        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[4]     ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; 0.222  ; 0.438        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; 0.223  ; 0.439        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; 0.269  ; 0.485        ; 0.216          ; High Pulse Width ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[0]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[1]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[2]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[3]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[5]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[6]     ;
+; 0.328  ; 0.512        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[7]     ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; clk_hz~reg0 ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[10]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[11]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[12]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[13]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[14]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[15]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[16]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[17]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[18]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[19]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[20]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[21]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[22]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[23]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[24]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[25]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[26]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[27]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[28]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[29]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[30]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[31]    ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[8]     ;
+; 0.373  ; 0.557        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[9]     ;
+; 0.382  ; 0.566        ; 0.184          ; Low Pulse Width  ; clk_50mhz ; Rise       ; cnt1[4]     ;
++--------+--------------+----------------+------------------+-----------+------------+-------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk_50mhz  ; 4.083 ; 4.132 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; 4.635 ; 4.606 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; 4.635 ; 4.606 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; 3.660 ; 3.784 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; 3.897 ; 4.013 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clk_50mhz  ; -1.494 ; -1.593 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; -0.992 ; -1.068 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; -1.516 ; -1.524 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; -1.991 ; -2.055 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; -0.992 ; -1.068 ; Rise       ; clk_50mhz       ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 6.875 ; 6.755 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 6.730 ; 6.611 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; clk_50mhz ; -2.057 ; -64.115       ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; clk_50mhz ; 0.296 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-----------+--------+-----------------------------+
+; Clock     ; Slack  ; End Point TNS               ;
++-----------+--------+-----------------------------+
+; clk_50mhz ; -3.000 ; -38.617                     ;
++-----------+--------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk_50mhz'                                                             ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; -2.057 ; cnt1[6]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.057 ; cnt1[6]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.057 ; cnt1[6]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.057 ; cnt1[6]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.057 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.057 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 3.008      ;
+; -2.015 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.015 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.015 ; cnt1[0]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.015 ; cnt1[0]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.015 ; cnt1[0]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.015 ; cnt1[0]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.966      ;
+; -2.002 ; cnt1[7]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -2.002 ; cnt1[7]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -2.002 ; cnt1[7]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -2.002 ; cnt1[7]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -2.002 ; cnt1[7]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -2.002 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.953      ;
+; -1.980 ; cnt1[3]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.980 ; cnt1[3]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.980 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.980 ; cnt1[3]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.980 ; cnt1[3]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.980 ; cnt1[3]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.931      ;
+; -1.971 ; cnt1[4]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.971 ; cnt1[4]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.971 ; cnt1[4]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.971 ; cnt1[4]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.971 ; cnt1[4]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.971 ; cnt1[4]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.243     ; 2.715      ;
+; -1.970 ; cnt1[6]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.921      ;
+; -1.962 ; cnt1[6]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.100      ;
+; -1.961 ; cnt1[6]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.961 ; cnt1[6]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.099      ;
+; -1.951 ; cnt1[12]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.951 ; cnt1[12]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.951 ; cnt1[12]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.951 ; cnt1[12]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.951 ; cnt1[12]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.951 ; cnt1[12]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.706      ;
+; -1.928 ; cnt1[0]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.879      ;
+; -1.920 ; cnt1[0]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.058      ;
+; -1.919 ; cnt1[0]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.919 ; cnt1[0]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.057      ;
+; -1.915 ; cnt1[7]   ; cnt1[1]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.866      ;
+; -1.907 ; cnt1[7]   ; cnt1[17] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.045      ;
+; -1.906 ; cnt1[7]   ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[7]   ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 1.000        ; 0.151      ; 3.044      ;
+; -1.906 ; cnt1[13]  ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.906 ; cnt1[13]  ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.906 ; cnt1[13]  ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.906 ; cnt1[13]  ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.906 ; cnt1[13]  ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.906 ; cnt1[13]  ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.232     ; 2.661      ;
+; -1.904 ; cnt1[2]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.904 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.904 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.904 ; cnt1[2]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.904 ; cnt1[2]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.904 ; cnt1[2]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.855      ;
+; -1.903 ; cnt1[1]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 1.000        ; -0.036     ; 2.854      ;
++--------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk_50mhz'                                                             ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+; 0.296 ; cnt1[29]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.424      ;
+; 0.296 ; cnt1[31]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.424      ;
+; 0.297 ; cnt1[27]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.425      ;
+; 0.298 ; cnt1[18]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.426      ;
+; 0.298 ; cnt1[22]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.426      ;
+; 0.298 ; cnt1[23]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.426      ;
+; 0.298 ; cnt1[25]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.426      ;
+; 0.299 ; cnt1[20]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.427      ;
+; 0.299 ; cnt1[24]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.427      ;
+; 0.299 ; cnt1[28]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.427      ;
+; 0.299 ; cnt1[30]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.427      ;
+; 0.300 ; cnt1[10]  ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.427      ;
+; 0.300 ; cnt1[12]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.427      ;
+; 0.300 ; cnt1[26]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.428      ;
+; 0.304 ; cnt1[3]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.424      ;
+; 0.304 ; cnt1[5]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.424      ;
+; 0.305 ; cnt1[6]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; cnt1[7]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.425      ;
+; 0.306 ; cnt1[2]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.426      ;
+; 0.308 ; cnt1[13]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.435      ;
+; 0.308 ; cnt1[15]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.435      ;
+; 0.308 ; cnt1[19]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.436      ;
+; 0.309 ; cnt1[11]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.436      ;
+; 0.309 ; cnt1[16]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.437      ;
+; 0.309 ; cnt1[21]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.437      ;
+; 0.310 ; cnt1[9]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.437      ;
+; 0.310 ; cnt1[14]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.437      ;
+; 0.316 ; cnt1[0]   ; cnt1[0]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.436      ;
+; 0.321 ; cnt1[7]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.637      ;
+; 0.324 ; cnt1[7]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.640      ;
+; 0.333 ; cnt1[6]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.649      ;
+; 0.336 ; cnt1[6]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.652      ;
+; 0.386 ; cnt1[5]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.702      ;
+; 0.387 ; cnt1[7]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.703      ;
+; 0.389 ; cnt1[5]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.705      ;
+; 0.390 ; cnt1[7]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.706      ;
+; 0.399 ; cnt1[6]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.715      ;
+; 0.402 ; cnt1[6]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.718      ;
+; 0.445 ; cnt1[29]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.573      ;
+; 0.446 ; cnt1[27]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.574      ;
+; 0.447 ; cnt1[23]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.575      ;
+; 0.447 ; cnt1[25]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.575      ;
+; 0.452 ; cnt1[3]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.768      ;
+; 0.452 ; cnt1[5]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.768      ;
+; 0.453 ; cnt1[5]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.573      ;
+; 0.453 ; cnt1[7]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.769      ;
+; 0.455 ; cnt1[3]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.771      ;
+; 0.455 ; cnt1[5]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.771      ;
+; 0.456 ; cnt1[22]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.584      ;
+; 0.456 ; cnt1[18]  ; cnt1[19] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.584      ;
+; 0.456 ; cnt1[7]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.772      ;
+; 0.457 ; cnt1[28]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.585      ;
+; 0.457 ; cnt1[30]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.585      ;
+; 0.457 ; cnt1[24]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.585      ;
+; 0.457 ; cnt1[19]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.585      ;
+; 0.457 ; cnt1[20]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.585      ;
+; 0.457 ; cnt1[13]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.584      ;
+; 0.458 ; cnt1[26]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.586      ;
+; 0.458 ; cnt1[21]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.586      ;
+; 0.458 ; cnt1[15]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.042      ; 0.584      ;
+; 0.458 ; cnt1[10]  ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.585      ;
+; 0.458 ; cnt1[11]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.585      ;
+; 0.458 ; cnt1[12]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.585      ;
+; 0.459 ; cnt1[9]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.586      ;
+; 0.459 ; cnt1[22]  ; cnt1[24] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.587      ;
+; 0.459 ; cnt1[18]  ; cnt1[20] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.587      ;
+; 0.460 ; cnt1[28]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.588      ;
+; 0.460 ; cnt1[24]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.588      ;
+; 0.460 ; cnt1[20]  ; cnt1[22] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.588      ;
+; 0.461 ; cnt1[10]  ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.588      ;
+; 0.461 ; cnt1[26]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.589      ;
+; 0.461 ; cnt1[12]  ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.588      ;
+; 0.463 ; cnt1[6]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.583      ;
+; 0.464 ; cnt1[2]   ; cnt1[3]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.584      ;
+; 0.465 ; cnt1[6]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.781      ;
+; 0.466 ; cnt1[0]   ; cnt1[2]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.586      ;
+; 0.466 ; cnt1[2]   ; cnt1[9]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.782      ;
+; 0.468 ; cnt1[14]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.595      ;
+; 0.468 ; cnt1[6]   ; cnt1[14] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.784      ;
+; 0.469 ; cnt1[2]   ; cnt1[10] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.785      ;
+; 0.470 ; cnt1[16]  ; cnt1[18] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.598      ;
+; 0.472 ; cnt1[14]  ; cnt1[16] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.042      ; 0.598      ;
+; 0.508 ; cnt1[29]  ; cnt1[31] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.636      ;
+; 0.509 ; cnt1[27]  ; cnt1[29] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.637      ;
+; 0.510 ; cnt1[23]  ; cnt1[25] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.638      ;
+; 0.510 ; cnt1[25]  ; cnt1[27] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.638      ;
+; 0.512 ; cnt1[27]  ; cnt1[30] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.640      ;
+; 0.513 ; cnt1[23]  ; cnt1[26] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.641      ;
+; 0.513 ; cnt1[25]  ; cnt1[28] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.641      ;
+; 0.516 ; cnt1[3]   ; cnt1[5]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.636      ;
+; 0.516 ; cnt1[5]   ; cnt1[7]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.636      ;
+; 0.518 ; cnt1[3]   ; cnt1[11] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.834      ;
+; 0.518 ; cnt1[5]   ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.834      ;
+; 0.519 ; cnt1[3]   ; cnt1[6]  ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.036      ; 0.639      ;
+; 0.519 ; cnt1[7]   ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.835      ;
+; 0.520 ; cnt1[19]  ; cnt1[21] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.648      ;
+; 0.520 ; cnt1[13]  ; cnt1[15] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.647      ;
+; 0.521 ; cnt1[11]  ; cnt1[13] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.043      ; 0.648      ;
+; 0.521 ; cnt1[3]   ; cnt1[12] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.232      ; 0.837      ;
+; 0.521 ; cnt1[21]  ; cnt1[23] ; clk_50mhz    ; clk_50mhz   ; 0.000        ; 0.044      ; 0.649      ;
++-------+-----------+----------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clk_50mhz'                                                 ;
++--------+--------------+----------------+-----------------+-----------+------------+-------------------+
+; Slack  ; Actual Width ; Required Width ; Type            ; Clock     ; Clock Edge ; Target            ;
++--------+--------------+----------------+-----------------+-----------+------------+-------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate       ; clk_50mhz ; Rise       ; clk_50mhz         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; clk_hz~reg0       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[0]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[10]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[11]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[12]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[13]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[14]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[15]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[16]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[17]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[18]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[19]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[1]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[20]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[21]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[22]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[23]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[24]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[25]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[26]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[27]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[28]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[29]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[2]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[30]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[31]          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[3]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[4]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[5]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[6]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[7]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[8]           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period      ; clk_50mhz ; Rise       ; cnt1[9]           ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[16]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[17]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[18]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[19]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[20]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[21]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[22]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[23]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[24]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[25]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[26]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[27]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[28]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[29]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[30]          ;
+; -0.086 ; 0.098        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[31]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; clk_hz~reg0       ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[10]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[11]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[12]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[13]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[14]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[15]          ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[8]           ;
+; -0.085 ; 0.099        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[9]           ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[4]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[0]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[1]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[2]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[3]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[5]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[6]           ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[7]           ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[16]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[17]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[18]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[19]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[20]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[21]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[22]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[23]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[24]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[25]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[26]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[27]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[28]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[29]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[30]|clk      ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[31]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; clk_hz~reg0|clk   ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[10]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[11]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[12]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[13]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[14]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[15]|clk      ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[8]|clk       ;
+; 0.095  ; 0.095        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[9]|clk       ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[4]|clk       ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; clk_50mhz~input|o ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[0]|clk       ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[1]|clk       ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[2]|clk       ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[3]|clk       ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[5]|clk       ;
+; 0.123  ; 0.123        ; 0.000          ; Low Pulse Width ; clk_50mhz ; Rise       ; cnt1[6]|clk       ;
++--------+--------------+----------------+-----------------+-----------+------------+-------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk_50mhz  ; 1.877 ; 2.546 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; 2.116 ; 2.760 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; 2.116 ; 2.760 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; 1.718 ; 2.302 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; 1.835 ; 2.455 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clk_50mhz  ; -0.790 ; -1.430 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; -0.566 ; -1.147 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; -0.716 ; -1.341 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; -1.007 ; -1.564 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; -0.566 ; -1.147 ; Rise       ; clk_50mhz       ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 3.416 ; 3.464 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 3.344 ; 3.390 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.317   ; 0.296 ; N/A      ; N/A     ; -3.000              ;
+;  clk_50mhz       ; -6.317   ; 0.296 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -199.365 ; 0.0   ; 0.0      ; 0.0     ; -52.071             ;
+;  clk_50mhz       ; -199.365 ; 0.000 ; N/A      ; N/A     ; -52.071             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst       ; clk_50mhz  ; 4.443 ; 4.683 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; 5.043 ; 5.218 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; 5.043 ; 5.218 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; 4.028 ; 4.279 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; 4.286 ; 4.546 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst       ; clk_50mhz  ; -0.790 ; -1.430 ; Rise       ; clk_50mhz       ;
+; zeros[*]  ; clk_50mhz  ; -0.566 ; -1.068 ; Rise       ; clk_50mhz       ;
+;  zeros[0] ; clk_50mhz  ; -0.716 ; -1.341 ; Rise       ; clk_50mhz       ;
+;  zeros[1] ; clk_50mhz  ; -1.007 ; -1.564 ; Rise       ; clk_50mhz       ;
+;  zeros[2] ; clk_50mhz  ; -0.566 ; -1.068 ; Rise       ; clk_50mhz       ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 7.203 ; 7.114 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk_hz    ; clk_50mhz  ; 3.344 ; 3.390 ; Rise       ; clk_50mhz       ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; clk_hz        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; rst                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; zeros[1]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; zeros[0]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; zeros[2]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk_50mhz               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; clk_hz        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.9e-07 V                    ; 2.35 V              ; -0.00112 V          ; 0.061 V                              ; 0.002 V                              ; 4.84e-10 s                  ; 4.97e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.9e-07 V                   ; 2.35 V             ; -0.00112 V         ; 0.061 V                             ; 0.002 V                             ; 4.84e-10 s                 ; 4.97e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.53e-07 V                   ; 2.34 V              ; -0.00861 V          ; 0.106 V                              ; 0.016 V                              ; 6.53e-10 s                  ; 5.54e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.53e-07 V                  ; 2.34 V             ; -0.00861 V         ; 0.106 V                             ; 0.016 V                             ; 6.53e-10 s                 ; 5.54e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.51e-07 V                   ; 2.34 V              ; -0.00303 V          ; 0.118 V                              ; 0.017 V                              ; 8.67e-10 s                  ; 1.08e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.51e-07 V                  ; 2.34 V             ; -0.00303 V         ; 0.118 V                             ; 0.017 V                             ; 8.67e-10 s                 ; 1.08e-09 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; clk_hz        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-08 V                   ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-08 V                  ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.72 V              ; -0.0747 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-10 s                   ; 3.01e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.72 V             ; -0.0747 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-10 s                  ; 3.01e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-08 V                   ; 2.7 V               ; -0.0212 V           ; 0.204 V                              ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-08 V                  ; 2.7 V              ; -0.0212 V          ; 0.204 V                             ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------+
+; Setup Transfers                                                    ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; clk_50mhz  ; clk_50mhz ; 5711     ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------+
+; Hold Transfers                                                     ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; clk_50mhz  ; clk_50mhz ; 5711     ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 132   ; 132  ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Nov 04 15:28:42 2022
+Info: Command: quartus_sta frequency -c frequency
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'frequency.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_50mhz clk_50mhz
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -6.317
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.317      -199.365 clk_50mhz 
+Info (332146): Worst-case hold slack is 0.742
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.742         0.000 clk_50mhz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -52.071 clk_50mhz 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -5.788
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.788      -181.943 clk_50mhz 
+Info (332146): Worst-case hold slack is 0.663
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.663         0.000 clk_50mhz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -52.071 clk_50mhz 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.057
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.057       -64.115 clk_50mhz 
+Info (332146): Worst-case hold slack is 0.296
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.296         0.000 clk_50mhz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -38.617 clk_50mhz 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4588 megabytes
+    Info: Processing ended: Fri Nov 04 15:28:45 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

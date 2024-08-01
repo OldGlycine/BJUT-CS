@@ -1,0 +1,10 @@
+module top(clk_50mhz, I_COL, I_ROW);
+	input clk_50mhz;
+	wire clk;
+	output [15:0] I_ROW = 16'b0;
+	output [3:0] I_COL = 4'b0;
+	
+	frequency_divider(.clk50_mhz(clk_50mhz),.clk(clk));
+	scanner(.clk(clk), .I_COL(I_COL), .I_ROW(I_ROW))
+	
+endmodule

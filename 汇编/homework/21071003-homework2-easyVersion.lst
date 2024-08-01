@@ -1,0 +1,229 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 13:23:24
+tempfile.asm						     Page 1 - 1
+
+
+				enterline macro
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+				endm
+
+				putstr macro string
+					lea dx, string
+					mov ah, 09h
+					int 21h
+				endm
+
+
+ 0000				DATAS SEGMENT
+ 0000 15 00			    buf db 21,?,21 dup(0)
+       0015 [
+        00
+       ]
+ 0017 50 6C 65 61 73 65		    string1 db 'Please enter a string:$'
+       20 65 6E 74 65 72
+       20 61 20 73 74 72
+       69 6E 67 3A 24
+ 002E 49 6C 6C 65 67 61		    err db 'Illegal input!Please enter again$'
+       6C 20 69 6E 70 75
+       74 21 50 6C 65 61
+       73 65 20 65 6E 74
+       65 72 20 61 67 61
+       69 6E 24
+ 004F 54 68 65 20 62 69		    bign db 'The biggist num:$'
+       67 67 69 73 74 20
+       6E 75 6D 3A 24
+ 0060 54 68 65 20 73 6D		    smn db 'The smallest num:$'
+       61 6C 6C 65 73 74
+       20 6E 75 6D 3A 24
+ 0072  0014 [			    arr dw 20 dup(0)
+        0000
+       ]
+ 009A 0000			    bignum dw 0
+ 009C 7FFF			    smallnum dw 32767
+ 009E				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				begin:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    putstr string1
+ 0005  8D 16 0017 R	     1		lea dx, string1
+ 0009  B4 09		     1		mov ah, 09h
+ 000B  CD 21		     1		int 21h
+				    
+ 000D  8D 16 0000 R		    lea dx, buf
+ 0011  32 F6			    xor dh, dh
+ 0013  B4 0A			    mov ah, 10
+ 0015  CD 21			    int 21h
+				    enterline
+ 0017  B2 0D		     1		mov dl,13
+ 0019  B4 02		     1		mov ah,2
+ 001B  CD 21		     1		int 21h
+ 001D  B2 0A		     1		mov dl,10
+ 001F  B4 02		     1		mov ah,2
+ 0021  CD 21		     1		int 21h
+				    
+ 0023  33 D2			    xor dx, dx
+ 0025  33 FF			    xor di, di
+ 0027  33 F6			    xor si, si
+ 0029  33 C9			    xor cx, cx
+				    
+ 002B  8A 0E 0001 R		    mov cl, buf+1
+ 002F  8D 36 0002 R		    lea si, buf+2
+ 0033  03 F1			    add si, cx
+ 0035  4E			    dec si
+				    
+ 0036				find_big:
+ 0036  32 E4				xor ah, ah
+ 0038  8A 04				mov al, [si]
+					
+ 003A  3C 30				cmp al,'0'
+ 003C  72 63				jb error
+ 003E  3C 39				cmp al,'9'
+ 0040  77 5F				ja error
+					
+ 0042  39 06 009A R			cmp bignum, ax
+ 0046  7F 03				jg not_big
+ 0048  A3 009A R		    mov bignum, ax
+ 004B				not_big:
+ 004B  4E				dec si
+ 004C  E2 E8				loop find_big
+					
+ 004E  33 D2				xor dx, dx
+ 0050  33 FF			    xor di, di
+ 0052  33 F6			    xor si, si
+ 0054  33 C9			    xor cx, cx
+				    
+ 0056  8A 0E 0001 R		    mov cl, buf+1
+ 005A  8D 36 0002 R		    lea si, buf+2
+ 005E  03 F1			    add si, cx
+ 0060  4E			    dec si
+				    
+ 0061				find_small:
+ 0061  32 E4				xor ah, ah
+ 0063  8A 04				mov al, [si]
+ 0065  39 06 009C R			cmp smallnum, ax
+ 0069  7C 03				jl not_small
+ 006B  A3 009C R		    mov smallnum, ax
+ 006E				not_small:
+ 006E  4E				dec si
+ 006F  E2 F0				loop find_small
+
+					putstr bign
+ 0071  8D 16 004F R	     1		lea dx, bign
+ 0075  B4 09		     1		mov ah, 09h
+ 0077  CD 21		     1		int 21h
+ 0079  8B 16 009A R			mov dx, bignum
+ 007D  B4 02				mov ah,02h
+ 007F  CD 21				int 21h
+					
+					enterline
+ 0081  B2 0D		     1		mov dl,13
+ 0083  B4 02		     1		mov ah,2
+ 0085  CD 21		     1		int 21h
+ 0087  B2 0A		     1		mov dl,10
+ 0089  B4 02		     1		mov ah,2
+ 008B  CD 21		     1		int 21h
+					
+					putstr smn
+ 008D  8D 16 0060 R	     1		lea dx, smn
+ 0091  B4 09		     1		mov ah, 09h
+ 0093  CD 21		     1		int 21h
+ 0095  8B 16 009C R			mov dx, smallnum
+ 0099  B4 02				mov ah,02h
+ 009B  CD 21				int 21h
+
+ 009D				stop:
+ 009D  B4 4C			    MOV AH,4CH
+ 009F  CD 21			    INT 21H
+				    
+ 00A1				error:
+ 00A1  8D 16 002E R			lea dx,err 
+ 00A5  B4 09			    mov ah,9
+ 00A7  CD 21			    int 21h
+				    enterline
+ 00A9  B2 0D		     1		mov dl,13
+ 00AB  B4 02		     1		mov ah,2
+ 00AD  CD 21		     1		int 21h
+ 00AF  B2 0A		     1		mov dl,10
+ 00B1  B4 02		     1		mov ah,2
+ 00B3  CD 21		     1		int 21h
+ 00B5  E9 FF48			    jmp begin   
+				    
+ 00B8				CODES ENDS
+				    END begin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 13:23:24
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00B8	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 009E	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+arr  . . . . . . . . . . . . . .	Word	 0072	  DATAS	
+begin  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+bignum . . . . . . . . . . . . .	Word	 009A	  DATAS	
+bign . . . . . . . . . . . . . .	Byte	 004F	  DATAS	
+buf  . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+error  . . . . . . . . . . . . .	L Near	 00A1	  CODES	
+err  . . . . . . . . . . . . . .	Byte	 002E	  DATAS	
+find_big . . . . . . . . . . . .	L Near	 0036	  CODES	
+find_small . . . . . . . . . . .	L Near	 0061	  CODES	
+not_big  . . . . . . . . . . . .	L Near	 004B	  CODES	
+not_small  . . . . . . . . . . .	L Near	 006E	  CODES	
+smallnum . . . . . . . . . . . .	Word	 009C	  DATAS	
+smn  . . . . . . . . . . . . . .	Byte	 0060	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 009D	  CODES	
+string1  . . . . . . . . . . . .	Byte	 0017	  DATAS	
+
+	   0 Warnings
+	   0 Errors

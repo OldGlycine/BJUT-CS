@@ -1,0 +1,9 @@
+module top(clk,clr,dout,reset,z,c_state,n_state); 
+input clk,clr,reset; 
+output z,dout;
+output [2:0] c_state,n_state;
+wire clk 1hz,dout; 
+seqdet(clk 1hz,dout reset,z,c_state,n_state); 
+data_generate(clk_1hz,clr,dout); 
+frequency_divider(clk,clk_1hz); 
+endmodule

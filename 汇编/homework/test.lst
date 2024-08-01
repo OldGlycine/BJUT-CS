@@ -1,0 +1,205 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/04/23 13:12:21
+tempfile.asm						     Page 1 - 1
+
+
+				putstring macro string
+					lea dx, string
+					mov ah, 09h
+					int 21h
+				endm
+
+				getchar macro
+					mov ah, 1
+					int 21h
+				endm
+
+
+ 0000				DATAS SEGMENT
+ 0000 0000			    num1 dw 0
+ 0002 0000			    num2 dw 0  
+ 0004 50 6C 65 61 73 65		    prompt1 db 'Please input 2 number:$'
+       20 69 6E 70 75 74
+       20 32 20 6E 75 6D
+       62 65 72 3A 24
+ 001B 0000			    neg_flag dw 0
+ 001D 0000			    square_num1 dw 0
+ 001F 0000			    square_num2 dw 0
+ 0021 0000			    tempax dw 0
+ 0023 0000			    tempdx dw 0
+ 0025				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+					putstring prompt1
+ 0005  8D 16 0004 R	     1		lea dx, prompt1
+ 0009  B4 09		     1		mov ah, 09h
+ 000B  CD 21		     1		int 21h
+ 000D  E8 002E			    call transform1
+ 0010  A3 0000 R		    mov num1, ax
+ 0013  E8 0028			    call transform1
+ 0016  A3 0002 R		    mov num2, ax
+ 0019  A1 0000 R		    mov ax, num1
+ 001C  8B 1E 0000 R		    mov bx, num1
+ 0020  F7 E3			    mul bx
+ 0022  A3 001D R		    mov square_num1, ax
+ 0025  A1 0002 R		    mov ax, num2
+ 0028  8B 1E 0002 R		    mov bx, num2
+ 002C  F7 E3			    mul bx
+ 002E  A3 001F R		    mov square_num2, ax
+ 0031  A1 001D R		    mov ax, square_num1
+ 0034  2B 06 001F R		    sub ax, square_num2
+				    
+ 0038  E8 004B			    call transform2
+ 003B  E9 0086			    jmp stop
+				    
+ 003E				    transform1 proc
+ 003E  C7 06 001B R 0000		mov neg_flag, 0
+ 0044				skip_space:
+					getchar
+ 0044  B4 01		     1		mov ah, 1
+ 0046  CD 21		     1		int 21h
+ 0048  3C 20				cmp al, ' '
+ 004A  74 F8				je skip_space
+ 004C  3C 2D				cmp al, '-'
+ 004E  75 0A				jne next1
+ 0050  C7 06 001B R 0001		mov neg_flag, 1
+					getchar
+ 0056  B4 01		     1		mov ah, 1
+ 0058  CD 21		     1		int 21h
+ 005A				next1:
+ 005A  BF 0000				mov di, 0
+ 005D				input_loop:
+ 005D  2C 30				sub al, 30h
+ 005F  8A C8				mov cl, al
+ 0061  8B C7				mov ax, di
+ 0063  BB 000A				mov bx, 10
+ 0066  F7 E3				mul bx
+ 0068  B5 00				mov ch, 0;
+ 006A  03 C1				add ax, cx
+ 006C  8B F8				mov di, ax
+					getchar
+ 006E  B4 01		     1		mov ah, 1
+ 0070  CD 21		     1		int 21h
+ 0072  3C 0D				cmp al, 0dh
+ 0074  74 02				je int_quit
+ 0076  EB E5				jmp input_loop
+ 0078				int_quit:
+ 0078  8B C7			 	mov ax, di
+ 007A  8B 1E 001B R		 	mov bx, neg_flag
+ 007E  83 FB 01			 	cmp bx, 1
+ 0081  75 02			 	jne LN
+ 0083  F7 D8			 	neg ax
+ 0085				LN:
+ 0085  C3				ret
+ 0086				transform1 endp
+
+ 0086				transform2 proc
+ 0086  83 F8 00				cmp ax, 0
+ 0089  7D 17				jge LW
+ 008B  F7 D8				neg ax
+					
+ 008D  A3 0021 R			mov tempax, ax
+ 0090  89 16 0023 R			mov tempdx, dx
+ 0094  B4 02				mov ah, 02h
+ 0096  BA 002D				mov dx, 2Dh
+ 0099  CD 21				int 21h
+ 009B  A1 0021 R			mov ax, tempax
+ 009E  8B 16 0023 R			mov dx, tempdx
+					
+ 00A2				LW:
+ 00A2  B9 0000				mov cx, 0
+ 00A5				cal_loop:
+ 00A5  33 D2				xor dx, dx
+ 00A7  BB 000A				mov bx, 10
+ 00AA  F7 F3				div bx
+ 00AC  52				push dx
+ 00AD  41				inc cx
+ 00AE  83 F8 00				cmp ax, 0
+ 00B1  75 F2				jne cal_loop
+ 00B3				show_loop:
+ 00B3  5A				pop dx
+ 00B4  80 C2 30				add dl, 30h
+					
+ 00B7  A3 0021 R			mov tempax, ax
+ 00BA  B4 02				mov ah, 02h
+ 00BC  CD 21				int 21h
+ 00BE  A1 0021 R			mov ax, tempax
+					
+ 00C1  E2 F0				loop show_loop
+ 00C3  C3				ret
+ 00C4				transform2 endp
+				    
+ 00C4				stop:
+ 00C4  B4 4C			    MOV AH,4CH
+ 00C6  CD 21			    INT 21H
+ 00C8				CODES ENDS
+				    END START
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/04/23 13:12:21
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+getchar  . . . . . . . . . . . .	Proc
+putstring  . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00C8	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0025	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+transform1 . . . . . . . . . . .	P Near	 003E	  CODES	Length= 0048 Public
+  skip_space . . . . . . . . . .	L Near	 0044	  CODES	
+  next1  . . . . . . . . . . . .	L Near	 005A	  CODES	
+  input_loop . . . . . . . . . .	L Near	 005D	  CODES	
+  int_quit . . . . . . . . . . .	L Near	 0078	  CODES	
+  LN . . . . . . . . . . . . . .	L Near	 0085	  CODES	
+transform2 . . . . . . . . . . .	P Near	 0086	  CODES	Length= 003E Public
+  LW . . . . . . . . . . . . . .	L Near	 00A2	  CODES	
+  cal_loop . . . . . . . . . . .	L Near	 00A5	  CODES	
+  show_loop  . . . . . . . . . .	L Near	 00B3	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+neg_flag . . . . . . . . . . . .	Word	 001B	  DATAS	
+num1 . . . . . . . . . . . . . .	Word	 0000	  DATAS	
+num2 . . . . . . . . . . . . . .	Word	 0002	  DATAS	
+prompt1  . . . . . . . . . . . .	Byte	 0004	  DATAS	
+square_num1  . . . . . . . . . .	Word	 001D	  DATAS	
+square_num2  . . . . . . . . . .	Word	 001F	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 00C4	  CODES	
+tempax . . . . . . . . . . . . .	Word	 0021	  DATAS	
+tempdx . . . . . . . . . . . . .	Word	 0023	  DATAS	
+
+	   0 Warnings
+	   0 Errors

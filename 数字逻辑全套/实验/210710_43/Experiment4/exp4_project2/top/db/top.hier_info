@@ -1,0 +1,135 @@
+|top
+clk => clk.IN1
+clr => clr.IN1
+reset => reset.IN1
+rst => rst.IN1
+z <= seqdet:comb_5.z
+c_state[0] <= seqdet:comb_5.c_state
+c_state[1] <= seqdet:comb_5.c_state
+c_state[2] <= seqdet:comb_5.c_state
+c_state[3] <= seqdet:comb_5.c_state
+n_state[0] <= seqdet:comb_5.n_state
+n_state[1] <= seqdet:comb_5.n_state
+n_state[2] <= seqdet:comb_5.n_state
+n_state[3] <= seqdet:comb_5.n_state
+
+
+|top|frequency_divider:comb_3
+clk_50mhz => clk_1hz~reg0.CLK
+clk_50mhz => cnt1[0].CLK
+clk_50mhz => cnt1[1].CLK
+clk_50mhz => cnt1[2].CLK
+clk_50mhz => cnt1[3].CLK
+clk_50mhz => cnt1[4].CLK
+clk_50mhz => cnt1[5].CLK
+clk_50mhz => cnt1[6].CLK
+clk_50mhz => cnt1[7].CLK
+clk_50mhz => cnt1[8].CLK
+clk_50mhz => cnt1[9].CLK
+clk_50mhz => cnt1[10].CLK
+clk_50mhz => cnt1[11].CLK
+clk_50mhz => cnt1[12].CLK
+clk_50mhz => cnt1[13].CLK
+clk_50mhz => cnt1[14].CLK
+clk_50mhz => cnt1[15].CLK
+clk_50mhz => cnt1[16].CLK
+clk_50mhz => cnt1[17].CLK
+clk_50mhz => cnt1[18].CLK
+clk_50mhz => cnt1[19].CLK
+clk_50mhz => cnt1[20].CLK
+clk_50mhz => cnt1[21].CLK
+clk_50mhz => cnt1[22].CLK
+clk_50mhz => cnt1[23].CLK
+clk_50mhz => cnt1[24].CLK
+clk_50mhz => cnt1[25].CLK
+clk_50mhz => cnt1[26].CLK
+clk_50mhz => cnt1[27].CLK
+clk_50mhz => cnt1[28].CLK
+clk_50mhz => cnt1[29].CLK
+clk_50mhz => cnt1[30].CLK
+clk_50mhz => cnt1[31].CLK
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => cnt1.OUTPUTSELECT
+rst => clk_1hz.OUTPUTSELECT
+clk_1hz <= clk_1hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|data_generate:comb_4
+clk => data[0].CLK
+clk => data[1].CLK
+clk => data[2].CLK
+clk => data[3].CLK
+clk => data[4].CLK
+clk => data[5].CLK
+clk => data[6].CLK
+clk => data[7].CLK
+clk => dout~reg0.CLK
+clr => dout.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+clr => data.OUTPUTSELECT
+dout <= dout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|seqdet:comb_5
+clk => c_state[0]~reg0.CLK
+clk => c_state[1]~reg0.CLK
+clk => c_state[2]~reg0.CLK
+clk => c_state[3]~reg0.CLK
+clk => z~reg0.CLK
+x => Mux1.IN11
+x => Mux1.IN12
+x => Mux0.IN15
+x => Mux1.IN13
+x => Mux1.IN14
+x => Mux1.IN15
+x => n_state.DATAB
+x => Mux0.IN14
+reset => c_state.OUTPUTSELECT
+reset => c_state.OUTPUTSELECT
+reset => c_state.OUTPUTSELECT
+z <= z~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[0] <= c_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[1] <= c_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[2] <= c_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[3] <= c_state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_state[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+n_state[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+n_state[2] <= n_state.DB_MAX_OUTPUT_PORT_TYPE
+n_state[3] <= <GND>
+
+

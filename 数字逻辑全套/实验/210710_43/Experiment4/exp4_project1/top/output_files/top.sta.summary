@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50mhz'
+Slack : -4.074
+TNS   : -126.459
+
+Type  : Slow 1200mV 85C Model Setup 'frequency_divider:comb_3|clk_1hz'
+Slack : -3.619
+TNS   : -72.779
+
+Type  : Slow 1200mV 85C Model Setup 'flowing_water_light:comb_4|clk_1hz'
+Slack : -0.171
+TNS   : -1.138
+
+Type  : Slow 1200mV 85C Model Hold 'frequency_divider:comb_3|clk_1hz'
+Slack : -0.376
+TNS   : -0.376
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50mhz'
+Slack : -0.035
+TNS   : -0.035
+
+Type  : Slow 1200mV 85C Model Hold 'flowing_water_light:comb_4|clk_1hz'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency_divider:comb_3|clk_1hz'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'flowing_water_light:comb_4|clk_1hz'
+Slack : -1.487
+TNS   : -25.279
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50mhz'
+Slack : -3.749
+TNS   : -115.969
+
+Type  : Slow 1200mV 0C Model Setup 'frequency_divider:comb_3|clk_1hz'
+Slack : -3.343
+TNS   : -61.715
+
+Type  : Slow 1200mV 0C Model Setup 'flowing_water_light:comb_4|clk_1hz'
+Slack : -0.080
+TNS   : -0.425
+
+Type  : Slow 1200mV 0C Model Hold 'frequency_divider:comb_3|clk_1hz'
+Slack : -0.244
+TNS   : -0.244
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50mhz'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'flowing_water_light:comb_4|clk_1hz'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -52.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency_divider:comb_3|clk_1hz'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'flowing_water_light:comb_4|clk_1hz'
+Slack : -1.487
+TNS   : -25.279
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50mhz'
+Slack : -1.045
+TNS   : -31.399
+
+Type  : Fast 1200mV 0C Model Setup 'frequency_divider:comb_3|clk_1hz'
+Slack : -0.926
+TNS   : -13.747
+
+Type  : Fast 1200mV 0C Model Setup 'flowing_water_light:comb_4|clk_1hz'
+Slack : 0.487
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'frequency_divider:comb_3|clk_1hz'
+Slack : -0.306
+TNS   : -0.306
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50mhz'
+Slack : -0.260
+TNS   : -0.260
+
+Type  : Fast 1200mV 0C Model Hold 'flowing_water_light:comb_4|clk_1hz'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50mhz'
+Slack : -3.000
+TNS   : -38.034
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency_divider:comb_3|clk_1hz'
+Slack : -1.000
+TNS   : -33.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'flowing_water_light:comb_4|clk_1hz'
+Slack : -1.000
+TNS   : -17.000
+
+------------------------------------------------------------

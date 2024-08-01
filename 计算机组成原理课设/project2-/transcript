@@ -1,0 +1,170 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile D:/Study/ComputerOrganizationClassDesign/project2-/project2-.mpf 
+# Loading project project2-
+vsim -gui work.mips_tb
+# vsim -gui work.mips_tb 
+# Loading work.mips_tb
+# Loading work.mips
+# Loading work.pc
+# Loading work.npc
+# Loading work.im_1k
+# Loading work.ir
+# Loading work.m1
+# Loading work.m2
+# Loading work.m3
+# Loading work.gpr
+# Loading work.ar
+# Loading work.br
+# Loading work.dm_1k
+# Loading work.dr
+# Loading work.ext
+# Loading work.alu
+# Loading work.aluout
+# Loading work.controller
+add wave -position end  sim:/mips_tb/mm/pc_21071003/pcwr
+add wave -position end  sim:/mips_tb/mm/pc_21071003/pcout
+add wave -position end  sim:/mips_tb/mm/im_1k_21071003/dout
+add wave -position end  sim:/mips_tb/mm/im_1k_21071003/im
+add wave -position end  sim:/mips_tb/mm/gpr_21071003/reg_files
+add wave -position end  sim:/mips_tb/mm/c_21071003/cur_state
+add wave -position end  sim:/mips_tb/mm/c_21071003/next_state
+add wave -position end  sim:/mips_tb/mm/c_21071003/overflow
+run
+# Can't write to ir!
+# No right to hello.
+# No right to hello.
+# 
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# No right to hello.
+# no rights to write on gpr
+# No right to hello.
+run
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.
+run
+# no rights to write on gpr
+# No right to hello.
+# 
+# 
+# Can't write to ir!
+# no rights to write on gpr
+# No right to hello.

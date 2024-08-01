@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/altera/Experiment2/D_FF/D_FF.v
+source_file = 1, C:/altera/Experiment2/D_latch/D_latch.v
+source_file = 1, C:/altera/Experiment2/D/D.bdf
+source_file = 1, C:/altera/Experiment2/D/D.vwf
+source_file = 1, C:/altera/Experiment2/D/db/D.cbx.xml
+design_name = D
+instance = comp, \LED1~output , LED1~output, D, 1
+instance = comp, \LED2~output , LED2~output, D, 1
+instance = comp, \Clk~input , Clk~input, D, 1
+instance = comp, \D~input , D~input, D, 1
+instance = comp, \DFF|Q~feeder , DFF|Q~feeder, D, 1
+instance = comp, \DFF|Q , DFF|Q, D, 1
+instance = comp, \EN~input , EN~input, D, 1
+instance = comp, \D_Latch|Q , D_Latch|Q, D, 1

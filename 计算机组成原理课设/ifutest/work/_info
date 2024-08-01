@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+vifu
+Z1 !s100 9nTWcT^=ldHNAn4fiYfoQ0
+Z2 IlHYOL0X]M?OhgAjTN^JZh1
+Z3 VUC:0=nM3aOED24OK2>MZZ1
+Z4 dD:\Study\ComputerOrganizationClassDesign\project1
+Z5 w1683012752
+Z6 8D:\Study\ComputerOrganizationClassDesign\project1\ifu.v
+Z7 FD:\Study\ComputerOrganizationClassDesign\project1\ifu.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|D:\Study\ComputerOrganizationClassDesign\project1\ifu.v|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1683012923.692000
+Z12 !s107 D:\Study\ComputerOrganizationClassDesign\project1\ifu.v|
+!s101 -O0
+vifu_testbench
+!i10b 1
+Z13 !s100 R56]lVXhJ@3Yn21QXQ0i;2
+Z14 I^d?C2O;4LHS^LGm9<gj>h1
+Z15 Va]VfFkgB3B:0AEX<ZeEJP0
+R4
+Z16 w1683012917
+Z17 8D:\Study\ComputerOrganizationClassDesign\project1\ifu_testbench.v
+Z18 FD:\Study\ComputerOrganizationClassDesign\project1\ifu_testbench.v
+L0 1
+R8
+r1
+!s85 0
+31
+!s108 1683012923.757000
+!s107 D:\Study\ComputerOrganizationClassDesign\project1\ifu_testbench.v|
+Z19 !s90 -reportprogress|300|-work|work|D:\Study\ComputerOrganizationClassDesign\project1\ifu_testbench.v|
+!s101 -O0
+R10

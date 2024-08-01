@@ -1,0 +1,182 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/26/23 23:05:20
+tempfile.asm						     Page 1 - 1
+
+
+				mpush macro
+					push ax
+					push bx
+					push cx
+					push dx
+					push si
+					push di
+				endm
+
+				mpop macro
+					pop di
+					pop si
+					pop dx
+					pop cx
+					pop bx
+					pop ax
+				endm
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 64 00			    buf db 100, ?, 100 dup('$')
+       0064 [
+        24
+       ]
+ 0066				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+ 0005  8D 16 0000 R		    lea dx, buf
+ 0009  B4 0A			    mov ah,10
+ 000B  CD 21			    int 21h
+				    enterline
+ 000D  52		     1		push dx
+ 000E  50		     1		push ax
+ 000F  B2 0D		     1		mov dl,13
+ 0011  B4 02		     1		mov ah,2
+ 0013  CD 21		     1		int 21h
+ 0015  B2 0A		     1		mov dl,10
+ 0017  B4 02		     1		mov ah,2
+ 0019  CD 21		     1		int 21h
+ 001B  58		     1		pop ax
+ 001C  5A		     1		pop dx
+				    
+ 001D  E8 000E			    call b2s
+				    
+				    putstr buf+2
+ 0020  52		     1	 	push dx
+ 0021  50		     1	 	push ax
+ 0022  8D 16 0002 R	     1		lea dx, buf+2
+ 0026  B4 09		     1		mov ah, 09h
+ 0028  CD 21		     1		int 21h
+ 002A  58		     1		pop ax
+ 002B  5A		     1		pop dx
+ 002C  EB 28			    jmp stop
+				    
+				;功能：大写字母转换为小写字母
+				;变量：无   
+				;需求：字符串 
+ 002E				b2s proc
+					mpush
+ 002E  50		     1		push ax
+ 002F  53		     1		push bx
+ 0030  51		     1		push cx
+ 0031  52		     1		push dx
+ 0032  56		     1		push si
+ 0033  57		     1		push di
+ 0034  8A 0E 0001 R			mov cl, buf+1
+ 0038  32 ED			    xor ch, ch
+ 003A  8D 36 0002 R			lea si, buf+2
+ 003E				b2s_loop:
+ 003E  8A 04				mov al, [si]
+ 0040  3C 41				cmp al,'A'
+ 0042  72 08				jb b2s_no
+ 0044  3C 5A				cmp al,'Z'
+ 0046  77 04				ja b2s_no
+ 0048  04 20				add al, 20h
+ 004A  88 04				mov [si], al
+ 004C				b2s_no:	
+ 004C  46				inc si
+ 004D  E2 EF				loop b2s_loop
+					mpop
+ 004F  5F		     1		pop di
+ 0050  5E		     1		pop si
+ 0051  5A		     1		pop dx
+ 0052  59		     1		pop cx
+ 0053  5B		     1		pop bx
+ 0054  58		     1		pop ax
+ 0055  C3				ret
+ 0056				b2s endp
+				    
+ 0056				stop:
+ 0056  B4 4C			    MOV AH,4CH
+ 0058  CD 21			    INT 21H
+ 005A				CODES ENDS
+				    END START
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/26/23 23:05:20
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+mpop . . . . . . . . . . . . . .	Proc
+mpush  . . . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 005A	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0066	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+b2s  . . . . . . . . . . . . . .	P Near	 002E	  CODES	Length= 0028 Public
+  b2s_loop . . . . . . . . . . .	L Near	 003E	  CODES	
+  b2s_no . . . . . . . . . . . .	L Near	 004C	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+buf  . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 0056	  CODES	
+
+	   0 Warnings
+	   0 Errors

@@ -1,0 +1,28 @@
+module flowing_water_light
+input reset;
+input clk;
+output reg[15:0]out 
+reg [4:0]state;
+parameter st0=0,st1=1,st2=2,st3=3,st4=4,st5=5,st6=6,st7=7,st8=8 ,st9=9, st10=10, st11=l1,st12=12,st13=13,st14=14,st15=15,st16=16;
+always @(state) begin
+case (state)
+    st0:out=16'b0000 0000 0000 0000;
+	 st1:out=16'b0000 0000 0000 0001;
+	 st2:out=16'b0000 0000 0000 0010;
+	 st3:out=16'b0000 0000 0000 0100;
+	 st4:out=16'b0000 0000 0000 1000;
+	 st5:out=16'b0000 0000 0001 0000;
+	 st6:out=16'b0000 0000 0010 0000;
+	 st7:out=16'b0000 0000 0100 0000;
+	 st8:out=16'b0000 0000 1000 0000;
+	 st9:out=16'b0000 0001 0000 0000;
+	 st10:out=16'b0000 0010 0000 0000;
+	 st11:out=16'b0000 0100 0000 0000;
+	 st12:out=16'b0000 1000 0000 0000;
+	 st13:out=16'b0001 0000 0000 0000;
+	 st14:out=16'b0010 0000 0000 0000;
+	 st15:out=16'b0100 0000 0000 0000;
+	 st16:out=16'b1000 0000 0000 0000;
+	 default: out=16'b0000 0000 0000 0000:
+endcase
+end

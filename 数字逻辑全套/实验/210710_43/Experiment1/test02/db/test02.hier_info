@@ -1,0 +1,31 @@
+|test02
+sel[0] => Mux0.IN10
+sel[0] => Mux1.IN10
+sel[0] => Mux2.IN10
+sel[0] => Mux3.IN10
+sel[1] => Mux0.IN9
+sel[1] => Mux1.IN9
+sel[1] => Mux2.IN9
+sel[1] => Mux3.IN9
+sel[2] => Mux0.IN8
+sel[2] => Mux1.IN8
+sel[2] => Mux2.IN8
+sel[2] => Mux3.IN8
+n_en => out~0.OUTPUTSELECT
+n_en => out~1.OUTPUTSELECT
+n_en => out~2.OUTPUTSELECT
+n_en => out~3.OUTPUTSELECT
+out[0] <= out~3.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out~2.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out~1.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+in1[0] => Mux3.IN6
+in1[1] => Mux2.IN6
+in1[2] => Mux1.IN6
+in1[3] => Mux0.IN6
+in2[0] => Mux3.IN7
+in2[1] => Mux2.IN7
+in2[2] => Mux1.IN7
+in2[3] => Mux0.IN7
+
+

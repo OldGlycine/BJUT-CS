@@ -1,0 +1,210 @@
+Simulator report for button
+Thu Nov 17 11:50:16 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 48 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 974          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                 ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                               ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                            ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                  ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                   ;               ;
+; Vector input source                                                                        ; C:/altera/Experiment5/exp5_project2/button/button.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                    ; On            ;
+; Check outputs                                                                              ; Off                                                   ; Off           ;
+; Report simulation coverage                                                                 ; On                                                    ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                    ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                    ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                    ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                   ; Off           ;
+; Detect glitches                                                                            ; Off                                                   ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                   ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                   ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                   ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                   ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                    ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                            ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                   ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                   ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                  ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                             ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                             ; Transport     ;
++--------------------------------------------------------------------------------------------+-------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 48           ;
+; Total output ports checked                          ; 48           ;
+; Total output ports with complete 1/0-value coverage ; 48           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                  ;
++---------------------+---------------------+------------------+
+; Node Name           ; Output Port Name    ; Output Port Type ;
++---------------------+---------------------+------------------+
+; |button|key[2]~reg0 ; |button|key[2]~reg0 ; regout           ;
+; |button|WideOr0     ; |button|WideOr0     ; out0             ;
+; |button|key[1]~reg0 ; |button|key[1]~reg0 ; regout           ;
+; |button|WideOr1     ; |button|WideOr1     ; out0             ;
+; |button|key[0]~reg0 ; |button|key[0]~reg0 ; regout           ;
+; |button|key~0       ; |button|key~0       ; out0             ;
+; |button|key~1       ; |button|key~1       ; out0             ;
+; |button|key~2       ; |button|key~2       ; out              ;
+; |button|key~3       ; |button|key~3       ; out              ;
+; |button|key~4       ; |button|key~4       ; out              ;
+; |button|key~5       ; |button|key~5       ; out              ;
+; |button|key~6       ; |button|key~6       ; out              ;
+; |button|key~7       ; |button|key~7       ; out              ;
+; |button|key~8       ; |button|key~8       ; out              ;
+; |button|key~9       ; |button|key~9       ; out              ;
+; |button|key~10      ; |button|key~10      ; out              ;
+; |button|key~11      ; |button|key~11      ; out              ;
+; |button|key~12      ; |button|key~12      ; out              ;
+; |button|key~13      ; |button|key~13      ; out              ;
+; |button|key~14      ; |button|key~14      ; out              ;
+; |button|key~15      ; |button|key~15      ; out              ;
+; |button|key~16      ; |button|key~16      ; out              ;
+; |button|key~17      ; |button|key~17      ; out              ;
+; |button|swr3~reg0   ; |button|swr3~reg0   ; regout           ;
+; |button|key[3]~reg0 ; |button|key[3]~reg0 ; regout           ;
+; |button|swr2~reg0   ; |button|swr2~reg0   ; regout           ;
+; |button|swr1~reg0   ; |button|swr1~reg0   ; regout           ;
+; |button|swr0~reg0   ; |button|swr0~reg0   ; regout           ;
+; |button|swc[0]      ; |button|swc[0]      ; out              ;
+; |button|swc[1]      ; |button|swc[1]      ; out              ;
+; |button|swc[2]      ; |button|swc[2]      ; out              ;
+; |button|swc[3]      ; |button|swc[3]      ; out              ;
+; |button|swr0        ; |button|swr0        ; pin_out          ;
+; |button|swr1        ; |button|swr1        ; pin_out          ;
+; |button|swr2        ; |button|swr2        ; pin_out          ;
+; |button|swr3        ; |button|swr3        ; pin_out          ;
+; |button|clk         ; |button|clk         ; out              ;
+; |button|key[0]      ; |button|key[0]      ; pin_out          ;
+; |button|key[1]      ; |button|key[1]      ; pin_out          ;
+; |button|key[2]      ; |button|key[2]      ; pin_out          ;
+; |button|key[3]      ; |button|key[3]      ; pin_out          ;
+; |button|Decoder0~0  ; |button|Decoder0~0  ; out0             ;
+; |button|Decoder0~1  ; |button|Decoder0~1  ; out0             ;
+; |button|Decoder0~2  ; |button|Decoder0~2  ; out0             ;
+; |button|Decoder1~0  ; |button|Decoder1~0  ; out0             ;
+; |button|Decoder1~1  ; |button|Decoder1~1  ; out0             ;
+; |button|Decoder1~2  ; |button|Decoder1~2  ; out0             ;
+; |button|Decoder1~3  ; |button|Decoder1~3  ; out0             ;
++---------------------+---------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 17 11:50:16 2022
+Info: Command: quartus_sim --simulation_results_format=VWF button -c button
+Info (324025): Using vector source file "C:/altera/Experiment5/exp5_project2/button/button.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is     100.00 %
+Info (328052): Number of transitions in simulation is 974
+Info (324045): Vector file button.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Thu Nov 17 11:50:16 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

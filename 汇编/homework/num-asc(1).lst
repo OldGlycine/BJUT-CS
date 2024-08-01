@@ -1,0 +1,204 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 21:12:13
+tempfile.asm						     Page 1 - 1
+
+
+				mpush macro
+					push ax
+					push bx
+					push cx
+					push dx
+					push si
+					push di
+				endm
+
+				mpop macro
+					pop di
+					pop si
+					pop dx
+					pop cx
+					pop bx
+					pop ax
+				endm
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+				    ;此处输入数据段代码 
+ 0000 41 58 20 52 65 67		    output db 'AX Register Content is:$' 
+       69 73 74 65 72 20
+       43 6F 6E 74 65 6E
+       74 20 69 73 3A 24
+ 0018 00			    num2asc_flag db 0
+ 0019				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+				    ;此处输入堆栈段代码
+ 0000				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+ 0005				begin: 
+ 0005  8D 16 0000 R		   	lea dx,output; 输出提示首地址
+ 0009  B4 09			    mov ah,9
+ 000B  CD 21			    int 21h
+					
+ 000D  E8 0002				call num2asc
+ 0010  EB 5A				jmp stop
+					
+				;功能：十进制输出
+				;变量：num2asc_flag(db, dw)   
+				;需求：函数内部将需要转换的数字存入ax 
+ 0012				num2asc proc
+ 0012  B8 FFFF			    mov ax, 65535;要转换的十进制 (有效数值为0~65535)，按位输出
+ 0015  BB 2710			    mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 0018  33 D2			num2asc_cov:xor dx,dx ;清零
+ 001A  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 001C  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 001E  80 3E 0018 R 00			cmp num2asc_flag,0
+ 0023  75 05				jne num2asc_nor1
+ 0025  83 F8 00				cmp ax,0 ;商是零
+ 0028  74 0E				je num2asc_cont
+					
+ 002A				num2asc_nor1:
+ 002A  8A D0				mov dl,al
+ 002C  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 002F  B4 02				mov ah,2   ;输出
+ 0031  CD 21				int 21h
+					
+ 0033  C6 06 0018 R 01			mov num2asc_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0038				num2asc_cont:
+ 0038  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 003B  74 0F				je num2asc_outer
+					
+ 003D  33 D2				xor dx,dx ;清零
+ 003F  8B C3				mov ax,bx ;递减权重
+ 0041  BB 000A				mov bx,10
+ 0044  F7 F3			    div bx
+ 0046  8B D8			    mov bx,ax 
+				        
+ 0048  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 004A  EB CC			    jmp num2asc_cov    
+				   
+ 004C				num2asc_outer:
+ 004C  8A D1				mov dl,cl;个位输出
+ 004E  80 C2 30				add dl,30h
+ 0051  B4 02				mov ah,2
+ 0053  CD 21				int 21h   
+					enterline
+ 0055  52		     1		push dx
+ 0056  50		     1		push ax
+ 0057  B2 0D		     1		mov dl,13
+ 0059  B4 02		     1		mov ah,2
+ 005B  CD 21		     1		int 21h
+ 005D  B2 0A		     1		mov dl,10
+ 005F  B4 02		     1		mov ah,2
+ 0061  CD 21		     1		int 21h
+ 0063  58		     1		pop ax
+ 0064  5A		     1		pop dx
+					mpop
+ 0065  5F		     1		pop di
+ 0066  5E		     1		pop si
+ 0067  5A		     1		pop dx
+ 0068  59		     1		pop cx
+ 0069  5B		     1		pop bx
+ 006A  58		     1		pop ax
+ 006B  C3				ret
+ 006C				num2asc endp
+
+ 006C				stop:    
+ 006C  B4 4C				MOV AH,4CH
+ 006E  CD 21			    INT 21H
+ 0070				CODES ENDS
+				    END START
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 21:12:13
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+mpop . . . . . . . . . . . . . .	Proc
+mpush  . . . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0070	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0019	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0000	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+num2asc  . . . . . . . . . . . .	P Near	 0012	  CODES	Length= 005A Public
+  num2asc_cov  . . . . . . . . .	L Near	 0018	  CODES	
+  num2asc_nor1 . . . . . . . . .	L Near	 002A	  CODES	
+  num2asc_cont . . . . . . . . .	L Near	 0038	  CODES	
+  num2asc_outer  . . . . . . . .	L Near	 004C	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+begin  . . . . . . . . . . . . .	L Near	 0005	  CODES	
+num2asc_flag . . . . . . . . . .	Byte	 0018	  DATAS	
+output . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 006C	  CODES	
+
+	   0 Warnings
+	   0 Errors

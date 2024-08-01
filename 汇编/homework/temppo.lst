@@ -1,0 +1,51 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/09/23 09:29:10
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000 1234			    shit dw 1234h
+ 0002				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+ 0005  8D 3E 0000 R		    lea di, shit
+ 0009  B4 09			    mov ah, 09h
+ 000B  CD 21			    int 21h
+ 000D  B4 4C			    MOV AH,4CH
+ 000F  CD 21			    INT 21H
+ 0011				CODES ENDS
+				    END START
+Microsoft (R) Macro Assembler Version 6.11		    06/09/23 09:29:10
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0011	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0002	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+shit . . . . . . . . . . . . . .	Word	 0000	  DATAS	
+
+	   0 Warnings
+	   0 Errors

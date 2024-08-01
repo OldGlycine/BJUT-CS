@@ -1,0 +1,648 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile D:/Study/ComputerOrganizationClassDesign/4code/4code.mpf 
+# Loading project 4code
+vsim -gui work.test_mips
+# vsim -gui work.test_mips 
+# Loading work.test_mips
+# Loading work.mips
+# Loading work.pc
+# Loading work.im_1k
+# Loading work.ir
+# Loading work.gpr
+# Loading work.aReg
+# Loading work.bReg
+# Loading work.alu
+# Loading work.aluReg
+# Loading work.dm_1k
+# Loading work.dr
+# Loading work.npc
+# Loading work.ext
+# Loading work.controller
+# Loading work.muxdmin
+# Loading work.bridge
+# Loading work.timer
+# Loading work.cp0
+# Loading work.muxlw
+# Loading work.outputDev
+add wave -position end  sim:/test_mips/clk
+add wave -position end  sim:/test_mips/rst
+add wave -position end  sim:/test_mips/dev1_rd
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: ìÅ¿á¿ñ×§µÄµçÄÔ  Hostname: LAPTOP-5EFP5NV3  ProcessID: 22420
+# 
+#           Attempting to use alternate WLF file "./wlftwk4v62".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftwk4v62
+# 
+add wave -position end  sim:/test_mips/mips_wsz/controller_wsz/cur_state
+add wave -position end  sim:/test_mips/mips_wsz/controller_wsz/next_state
+add wave -position end  sim:/test_mips/mips_wsz/pc_wsz/pcout
+add wave -position end  sim:/test_mips/mips_wsz/npc_wsz/pcout
+add wave -position end  sim:/test_mips/mips_wsz/gpr_wsz/regFile
+add wave -position end  sim:/test_mips/mips_wsz/dm_wsz/dm
+add wave -position 3  sim:/test_mips/mips_wsz/ir_wsz/irout
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+run
+run
+restart
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/test_mips/mips_wsz/rst
+add wave -position 0  sim:/test_mips/mips_wsz/clk
+add wave -position end  sim:/test_mips/mips_wsz/pc_wsz/pcout
+add wave -position end  sim:/test_mips/mips_wsz/ir_wsz/irout
+add wave -position 3  sim:/test_mips/mips_wsz/controller_wsz/cur_state
+add wave -position 4  sim:/test_mips/mips_wsz/controller_wsz/next_state
+restart
+run
+run
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+run
+restart
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+run
+run
+run
+run
+run
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+run
+run
+run
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+restart
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+restart
+run
+run
+# count is 0 and will not be changed automatically!
+restart
+run
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+# count is 0 and will not be changed automatically!
+run
+run
+run
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+run
+restart
+run
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!
+# count is 0 and will not be changed automatically!

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at seqdet.v(7): always construct contains both blocking and non-blocking assignments

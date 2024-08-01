@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Nov 17 10:23:03 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : scan
+Top-level Entity Name : scan
+Family : Cyclone III
+Total logic elements : 11
+    Total combinational functions : 11
+    Dedicated logic registers : 3
+Total registers : 3
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,192 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 20:41:14
+tempfile.asm						     Page 1 - 1
+
+
+				mpush macro
+					push ax
+					push bx
+					push cx
+					push dx
+					push si
+					push di
+				endm
+
+				mpop macro
+					pop di
+					pop si
+					pop dx
+					pop cx
+					pop bx
+					pop ax
+				endm
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 64 00			    buf db 100, ?, 100 dup('$')
+       0064 [
+        24
+       ]
+ 0066 00			    h2d_flag db 0
+ 0067				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+ 0005  E8 0002			    call h2d
+ 0008  EB 60			    jmp stop
+				    
+ 000A				h2d proc
+					mpush
+ 000A  50		     1		push ax
+ 000B  53		     1		push bx
+ 000C  51		     1		push cx
+ 000D  52		     1		push dx
+ 000E  56		     1		push si
+ 000F  57		     1		push di
+ 0010  B8 0039				mov ax, 39h
+ 0013  BB 2710				mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 0016  33 D2			h2d_cov:xor dx,dx ;清零
+ 0018  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 001A  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 001C  80 3E 0066 R 00			cmp h2d_flag,0
+ 0021  75 05				jne h2d_nor1
+ 0023  83 F8 00				cmp ax,0 ;商是零
+ 0026  74 0E				je h2d_cont
+					
+ 0028				h2d_nor1:
+ 0028  8A D0				mov dl,al
+ 002A  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 002D  B4 02				mov ah,2   ;输出
+ 002F  CD 21				int 21h
+					
+ 0031  C6 06 0066 R 01			mov h2d_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0036				h2d_cont:
+ 0036  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 0039  74 0F				je h2d_outer
+					
+ 003B  33 D2				xor dx,dx ;清零
+ 003D  8B C3				mov ax,bx ;递减权重
+ 003F  BB 000A				mov bx,10
+ 0042  F7 F3			    div bx
+ 0044  8B D8			    mov bx,ax 
+				        
+ 0046  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 0048  EB CC			    jmp h2d_cov    
+				   
+ 004A				h2d_outer:
+ 004A  8A D1				mov dl,cl;个位输出
+ 004C  80 C2 30				add dl,30h
+ 004F  B4 02				mov ah,2
+ 0051  CD 21				int 21h   
+					enterline
+ 0053  52		     1		push dx
+ 0054  50		     1		push ax
+ 0055  B2 0D		     1		mov dl,13
+ 0057  B4 02		     1		mov ah,2
+ 0059  CD 21		     1		int 21h
+ 005B  B2 0A		     1		mov dl,10
+ 005D  B4 02		     1		mov ah,2
+ 005F  CD 21		     1		int 21h
+ 0061  58		     1		pop ax
+ 0062  5A		     1		pop dx
+					mpop
+ 0063  5F		     1		pop di
+ 0064  5E		     1		pop si
+ 0065  5A		     1		pop dx
+ 0066  59		     1		pop cx
+ 0067  5B		     1		pop bx
+ 0068  58		     1		pop ax
+ 0069  C3				ret
+ 006A				h2d endp
+				    
+ 006A				stop:
+ 006A  B4 4C			    MOV AH,4CH
+ 006C  CD 21			    INT 21H
+ 006E				CODES ENDS
+				    END START
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/27/23 20:41:14
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+mpop . . . . . . . . . . . . . .	Proc
+mpush  . . . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 006E	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0067	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+h2d  . . . . . . . . . . . . . .	P Near	 000A	  CODES	Length= 0060 Public
+  h2d_cov  . . . . . . . . . . .	L Near	 0016	  CODES	
+  h2d_nor1 . . . . . . . . . . .	L Near	 0028	  CODES	
+  h2d_cont . . . . . . . . . . .	L Near	 0036	  CODES	
+  h2d_outer  . . . . . . . . . .	L Near	 004A	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+buf  . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+h2d_flag . . . . . . . . . . . .	Byte	 0066	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 006A	  CODES	
+
+	   0 Warnings
+	   0 Errors

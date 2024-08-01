@@ -1,0 +1,182 @@
+|expand_task
+num_sel => num_sel~0.IN1
+n_en => n_en~0.IN2
+clk_50mhz => clk_50mhz~0.IN1
+ds[0] <= scan:comb_5.ds
+ds[1] <= scan:comb_5.ds
+ds[2] <= scan:comb_5.ds
+ds[3] <= scan:comb_5.ds
+ds[4] <= scan:comb_5.ds
+ds[5] <= scan:comb_5.ds
+ds[6] <= scan:comb_5.ds
+ds[7] <= scan:comb_5.ds
+led[0] <= LED:comb_7.out
+led[1] <= LED:comb_7.out
+led[2] <= LED:comb_7.out
+led[3] <= LED:comb_7.out
+led[4] <= LED:comb_7.out
+led[5] <= LED:comb_7.out
+led[6] <= LED:comb_7.out
+swc[0] => swc[0]~3.IN1
+swc[1] => swc[1]~2.IN1
+swc[2] => swc[2]~1.IN1
+swc[3] => swc[3]~0.IN1
+
+
+|expand_task|frequency_divider:comb_3
+clk_50mhz => clk_100hz~reg0.CLK
+clk_50mhz => cnt1[0].CLK
+clk_50mhz => cnt1[1].CLK
+clk_50mhz => cnt1[2].CLK
+clk_50mhz => cnt1[3].CLK
+clk_50mhz => cnt1[4].CLK
+clk_50mhz => cnt1[5].CLK
+clk_50mhz => cnt1[6].CLK
+clk_50mhz => cnt1[7].CLK
+clk_50mhz => cnt1[8].CLK
+clk_50mhz => cnt1[9].CLK
+clk_50mhz => cnt1[10].CLK
+clk_50mhz => cnt1[11].CLK
+clk_50mhz => cnt1[12].CLK
+clk_50mhz => cnt1[13].CLK
+clk_50mhz => cnt1[14].CLK
+clk_50mhz => cnt1[15].CLK
+clk_50mhz => cnt1[16].CLK
+clk_50mhz => cnt1[17].CLK
+clk_50mhz => cnt1[18].CLK
+clk_50mhz => cnt1[19].CLK
+clk_50mhz => cnt1[20].CLK
+clk_50mhz => cnt1[21].CLK
+clk_50mhz => cnt1[22].CLK
+clk_50mhz => cnt1[23].CLK
+clk_50mhz => cnt1[24].CLK
+clk_50mhz => cnt1[25].CLK
+clk_50mhz => cnt1[26].CLK
+clk_50mhz => cnt1[27].CLK
+clk_50mhz => cnt1[28].CLK
+clk_50mhz => cnt1[29].CLK
+clk_50mhz => cnt1[30].CLK
+clk_50mhz => cnt1[31].CLK
+clk_100hz <= clk_100hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|expand_task|button:comb_4
+swc[0] => Decoder1.IN3
+swc[0] => Mux0.IN7
+swc[0] => Mux1.IN7
+swc[1] => Decoder1.IN2
+swc[1] => Mux0.IN6
+swc[1] => Mux1.IN6
+swc[2] => Decoder1.IN1
+swc[2] => Mux0.IN5
+swc[2] => Mux1.IN5
+swc[3] => Decoder1.IN0
+swc[3] => Mux0.IN4
+swc[3] => Mux1.IN4
+swr0 <= swr0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr1 <= swr1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr2 <= swr2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+swr3 <= swr3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => key2[0]~reg0.CLK
+clk => key2[1]~reg0.CLK
+clk => key2[2]~reg0.CLK
+clk => key2[3]~reg0.CLK
+clk => key1[0]~reg0.CLK
+clk => key1[1]~reg0.CLK
+clk => key1[2]~reg0.CLK
+clk => key1[3]~reg0.CLK
+clk => key[0].CLK
+clk => key[1].CLK
+clk => key[2].CLK
+clk => key[3].CLK
+clk => swr3~reg0.CLK
+clk => swr2~reg0.CLK
+clk => swr1~reg0.CLK
+clk => swr0~reg0.CLK
+key1[0] <= key1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key1[1] <= key1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key1[2] <= key1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key1[3] <= key1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key2[0] <= key2[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key2[1] <= key2[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key2[2] <= key2[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+key2[3] <= key2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+num_sel => key1[0]~reg0.ENA
+num_sel => key2[3]~reg0.ENA
+num_sel => key2[2]~reg0.ENA
+num_sel => key2[1]~reg0.ENA
+num_sel => key2[0]~reg0.ENA
+num_sel => key1[1]~reg0.ENA
+num_sel => key1[2]~reg0.ENA
+num_sel => key1[3]~reg0.ENA
+
+
+|expand_task|scan:comb_5
+clk => sel[0]~reg0.CLK
+clk => sel[1]~reg0.CLK
+clk => sel[2]~reg0.CLK
+ds[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+ds[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] <= sel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel[1] <= sel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sel[2] <= sel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|expand_task|test02:comb_6
+sel[0] => Mux0.IN8
+sel[0] => Mux1.IN8
+sel[0] => Mux2.IN8
+sel[0] => Mux3.IN8
+sel[1] => Mux0.IN7
+sel[1] => Mux1.IN7
+sel[1] => Mux2.IN7
+sel[1] => Mux3.IN7
+sel[2] => Mux0.IN6
+sel[2] => Mux1.IN6
+sel[2] => Mux2.IN6
+sel[2] => Mux3.IN6
+n_en => out~0.OUTPUTSELECT
+n_en => out~1.OUTPUTSELECT
+n_en => out~2.OUTPUTSELECT
+n_en => out~3.OUTPUTSELECT
+out[0] <= out~3.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out~2.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out~1.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+in1[0] => Mux3.IN9
+in1[1] => Mux2.IN9
+in1[2] => Mux1.IN9
+in1[3] => Mux0.IN9
+in2[0] => Mux3.IN10
+in2[1] => Mux2.IN10
+in2[2] => Mux1.IN10
+in2[3] => Mux0.IN10
+
+
+|expand_task|LED:comb_7
+out[0] <= out~6.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out~5.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out~4.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out~3.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out~2.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out~1.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+n_en => out~0.OUTPUTSELECT
+n_en => out~1.OUTPUTSELECT
+n_en => out~2.OUTPUTSELECT
+n_en => out~3.OUTPUTSELECT
+n_en => out~4.OUTPUTSELECT
+n_en => out~5.OUTPUTSELECT
+n_en => out~6.OUTPUTSELECT
+
+

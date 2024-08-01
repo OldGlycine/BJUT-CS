@@ -1,0 +1,15 @@
+module button(swc, swr0, swr1,swr2,swr3, clk);
+	input clk;
+	input [3:0] swc;
+	output swr0, swr1, swr2, swr3;
+	
+	always@(posedge clk)
+		case({swr0, swr1, swr2, swr3})
+			4'b0111:{swr0, swr1, swr2, swr3} = 4'b1011;
+			4'b1011:{swr0, swr1, swr2, swr3} = 4'b1101;
+			4'b1101:{swr0, swr1, swr2, swr3} = 4'b1110;
+			4'b1110:{swr0, swr1, swr2, swr3} = 4'b0111;
+			default:{swr0, swr1, swr2, swr3} = 4'b0111;
+		endcase
+	
+	

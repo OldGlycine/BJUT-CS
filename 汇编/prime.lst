@@ -1,0 +1,125 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:49:53
+tempfile.asm						     Page 1 - 1
+
+
+				putstr macro string
+					lea dx, string
+					mov ah, 09h
+					int 21h
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 000B			    num dw 11 
+ 0002 79 65 73 24		    yes db "yes$"
+ 0006 6E 6F 24			    no db "no$"
+ 0009 00			    prime_flag db 0
+ 000A				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+ 0005  E8 0021			    call prime
+ 0008  80 3E 0009 R 00		    cmp prime_flag, 0
+ 000D  74 02			    je yy
+ 000F  EB 0A			    jmp nn
+				    
+				    
+ 0011				    yy: putstr yes
+ 0011  8D 16 0002 R	     1		lea dx, yes
+ 0015  B4 09		     1		mov ah, 09h
+ 0017  CD 21		     1		int 21h
+ 0019  EB 0A			    jmp stop
+ 001B				    nn:putstr no
+ 001B  8D 16 0006 R	     1		lea dx, no
+ 001F  B4 09		     1		mov ah, 09h
+ 0021  CD 21		     1		int 21h
+ 0023  EB 00			    jmp stop
+				    
+				    
+
+
+ 0025				stop:
+ 0025  B4 4C			    MOV AH,4CH
+ 0027  CD 21			    INT 21H
+				    
+				;需要prime_flag db
+ 0029				prime proc
+ 0029  8B 0E 0000 R			mov cx,num ;;;num;;;
+ 002D  49				dec cx
+ 002E				prime_loop:
+ 002E  BA 0000			 	mov dx,0
+ 0031  83 F9 01				cmp cx, 1
+ 0034  74 13				je prime_end
+ 0036  A1 0000 R			mov ax, num
+ 0039  8B D9				mov bx, cx
+ 003B  F7 FB				idiv bx
+ 003D  83 FA 00				cmp dx,0
+ 0040  74 02				je set_prime
+ 0042  E2 EA				loop prime_loop
+ 0044				set_prime:
+ 0044  C6 06 0009 R 01			mov prime_flag,1
+ 0049				prime_end:
+ 0049  C3				ret
+ 004A				prime endp
+				    
+ 004A				CODES ENDS
+				    END START
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:49:53
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 004A	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 000A	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+prime  . . . . . . . . . . . . .	P Near	 0029	  CODES	Length= 0021 Public
+  prime_loop . . . . . . . . . .	L Near	 002E	  CODES	
+  set_prime  . . . . . . . . . .	L Near	 0044	  CODES	
+  prime_end  . . . . . . . . . .	L Near	 0049	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+nn . . . . . . . . . . . . . . .	L Near	 001B	  CODES	
+no . . . . . . . . . . . . . . .	Byte	 0006	  DATAS	
+num  . . . . . . . . . . . . . .	Word	 0000	  DATAS	
+prime_flag . . . . . . . . . . .	Byte	 0009	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 0025	  CODES	
+yes  . . . . . . . . . . . . . .	Byte	 0002	  DATAS	
+yy . . . . . . . . . . . . . . .	L Near	 0011	  CODES	
+
+	   0 Warnings
+	   0 Errors

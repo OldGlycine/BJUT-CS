@@ -1,0 +1,487 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 13:22:26
+tempfile.asm						     Page 1 - 1
+
+
+				;经验：每个函数开头对寄存器清零，如果有不能清零的，进入函数之前先保存寄存器内容
+				;宏定义记得对寄存器进行清零，比如下面的enterline
+				;数组用db定义，那么al存入数组而不是ax
+
+				enterline macro
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+				endm
+
+				putstr macro string
+					lea dx, string
+					mov ah, 09h
+					int 21h
+				endm
+
+ 0000				DATAS SEGMENT
+ 0000 50 6C 65 61 73 65			string1 db 'Please input a set of numbers(-255~255):$'
+       20 69 6E 70 75 74
+       20 61 20 73 65 74
+       20 6F 66 20 6E 75
+       6D 62 65 72 73 28
+       2D 32 35 35 7E 32
+       35 35 29 3A 24
+ 0029 49 6C 6C 65 67 61			err db 'Illegal input! Please enter again!$'
+       6C 20 69 6E 70 75
+       74 21 20 50 6C 65
+       61 73 65 20 65 6E
+       74 65 72 20 61 67
+       61 69 6E 21 24
+ 004C 54 68 65 20 62 69			biggist db 'The biggist num:$'
+       67 67 69 73 74 20
+       6E 75 6D 3A 24
+ 005D 54 68 65 20 73 6D			smallest db 'The smallest num:$'
+       61 6C 6C 65 73 74
+       20 6E 75 6D 3A 24
+ 006F 64 00			    buf db 100, ?, 100 dup(0)
+       0064 [
+        00
+       ]
+ 00D5  0100 [			    arr db 100h dup(0)
+        00
+       ]
+ 01D5 0000			    arrlen dw 0
+ 01D7 0000			    arrpointer dw 0
+ 01D9 0000			    is_neg dw 0
+ 01DB 0000			    strlen dw 0
+ 01DD 2D 24			    string_neg db '-$'
+ 01DF 20 24			    string_space db ' $'
+ 01E1 0000			    ctemp dw 0
+ 01E3 0000			    trans_flag dw 0
+ 01E5 00			    temp db 0
+ 01E6 00			    big db 0
+ 01E7 00			    small db 0
+ 01E8				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				begin:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+				    ;数据输入操作
+				    putstr string1
+ 0005  8D 16 0000 R	     1		lea dx, string1
+ 0009  B4 09		     1		mov ah, 09h
+ 000B  CD 21		     1		int 21h
+				    
+ 000D  8D 16 006F R		    lea dx, buf
+ 0011  B4 0A			    mov ah,10
+ 0013  CD 21			    int 21h
+				    enterline
+ 0015  B2 0D		     1		mov dl,13
+ 0017  B4 02		     1		mov ah,2
+ 0019  CD 21		     1		int 21h
+ 001B  B2 0A		     1		mov dl,10
+ 001D  B4 02		     1		mov ah,2
+ 001F  CD 21		     1		int 21h
+				    
+ 0021  E8 0035			    call asc2num
+				    
+ 0024  E8 019E			    call find_big
+ 0027  A0 01E6 R		    mov al, big
+				    putstr biggist
+ 002A  8D 16 004C R	     1		lea dx, biggist
+ 002E  B4 09		     1		mov ah, 09h
+ 0030  CD 21		     1		int 21h
+ 0032  32 E4			    xor ah, ah
+ 0034  E8 0124			    call num2asc
+				    
+				    enterline
+ 0037  B2 0D		     1		mov dl,13
+ 0039  B4 02		     1		mov ah,2
+ 003B  CD 21		     1		int 21h
+ 003D  B2 0A		     1		mov dl,10
+ 003F  B4 02		     1		mov ah,2
+ 0041  CD 21		     1		int 21h
+				    
+ 0043  E8 01A9			    call find_small
+ 0046  A0 01E7 R			mov al, small
+					putstr smallest
+ 0049  8D 16 005D R	     1		lea dx, smallest
+ 004D  B4 09		     1		mov ah, 09h
+ 004F  CD 21		     1		int 21h
+ 0051  32 E4				xor ah, ah
+ 0053  E8 0105				call num2asc
+					
+ 0056  E9 01C0			    jmp stop
+				    
+				;函数区
+
+				;asc to num
+				;内置了转换数据的存储
+				;arr数组存储顺序与输入顺序相反，比如输入 2 3 4，存储4 3 2，这可以用倒输出，形成伪顺序存储
+ 0059				asc2num proc
+ 0059				asc2num_begin:;buf+1存储的是接收的字符串一共有多少个字符
+ 0059  33 FF				xor di, di
+ 005B  8D 3E 00D5 R			lea di, arr
+ 005F  89 3E 01D7 R			mov arrpointer, di;保存数组[0]的地址
+ 0063  8A 0E 0070 R		    mov cl,buf+1 ;将实际接收字符数送入cl
+ 0067  32 ED			    xor ch,ch   ;清零语句,用异或
+ 0069  33 FF			    xor di,di   
+ 006B  33 D2			    xor dx,dx
+ 006D  89 0E 01DB R		    mov strlen, cx
+ 0071  BB 0001			    mov bx,1  ; 放置权重，初值是1  
+ 0074  8D 36 0071 R		    lea si,buf+2 ;将字符首字符的地址送入si
+ 0078  03 F1			    add si,cx    ; 调整到字符串到末尾，从个位开始处理
+ 007A  4E			    dec si
+
+				; 从后向前循环检查输入字符并转换成数字    
+				; al存入字符串的字符
+ 007B  8A 04			cov:mov al,[si]
+ 007D  3C 20				cmp al, 20h
+ 007F  74 73				je skip_space
+ 0081  3C 2D				cmp al, '-'
+ 0083  75 03 E9 00AA			je neg_num
+ 0088  3C 30				cmp al,'0'
+ 008A  72 3F				jb error
+ 008C  3C 39				cmp al,'9'
+ 008E  77 3B				ja error
+					
+ 0090  2C 30			    sub al,30h ;转换成数字
+ 0092  32 E4			    xor ah,ah  ;清零
+ 0094  F7 E3			    mul bx     ;从个位开始，乘以权重
+ 0096  83 FA 00			    cmp dx,0   ;dx符号位，溢出检测
+ 0099  75 30			    jne error
+				    
+ 009B  03 F8			    add di,ax   ;累加和，di就是最终的结果
+				    ;jc:有进位则跳转
+ 009D  72 2C			    jc error    ;检测进位，有进位就出错，所以最大只能输入65535
+				    
+				        
+ 009F  8B C3			    mov ax,bx
+ 00A1  BB 000A			    mov bx,10
+ 00A4  F7 E3			    mul bx  ; 调整权重，各位是1，每循环一次乘以10
+ 00A6  8B D8			    mov bx,ax
+				    
+ 00A8  4E			    dec si   
+ 00A9  E2 D0			    loop cov ; 每循环一次，处理一位
+ 00AB				neg_out:
+				    ;保存数据
+ 00AB  8B C7				mov ax,di ; 将结果保存
+ 00AD  83 3E 01D9 R 01			cmp is_neg, 1
+ 00B2  75 02				jne pos2
+ 00B4  F7 D8				neg ax
+ 00B6  8B 3E 01D7 R		pos2:mov di, arrpointer; 指针保存
+ 00BA  88 05				mov [di], al ;结果存入数组
+ 00BC  FF 06 01D7 R			inc arrpointer ; 指针推进
+ 00C0  FF 06 01D5 R			inc arrlen
+ 00C4  C7 06 01D9 R 0000		mov is_neg, 0
+					
+ 00CA  C3				ret
+				    
+				;报错函数
+ 00CB				error:
+					;err是报错提示的字符串，err是字符串的首地址
+ 00CB  8D 16 0029 R			lea dx,err 
+ 00CF  B4 09			    mov ah,9
+ 00D1  C7 06 01D9 R 0000	    mov is_neg, 0
+ 00D7  C7 06 01D5 R 0000	    mov arrlen, 0
+ 00DD  C7 06 01D7 R 0000	    mov arrpointer, 0
+ 00E3  CD 21			    int 21h
+				    enterline 
+ 00E5  B2 0D		     1		mov dl,13
+ 00E7  B4 02		     1		mov ah,2
+ 00E9  CD 21		     1		int 21h
+ 00EB  B2 0A		     1		mov dl,10
+ 00ED  B4 02		     1		mov ah,2
+ 00EF  CD 21		     1		int 21h
+				    ;程序重新开始
+ 00F1  E9 FF0C			    jmp begin   
+
+
+				;下面是对空格和符号的读取
+				;涉及到了如下技巧：
+				;1.负号位置判断，避免了形如：1- 1-，--1 1这种情况出现
+				;2.number2的存储,依靠空格为判断，所以用户必须严格按照a b的形式输入，不可有多余空格
+ 00F4				skip_space:
+					;空格在字符串末尾会发生错误
+ 00F4  39 0E 01DB R			cmp strlen, cx
+ 00F8  74 D1				je error
+ 00FA  4E				dec si
+ 00FB  FE C9				dec cl
+					;首个字符是空格将会跳转到error，但是首个字符是空格是输入有误，不跳转
+					;空格前面是负号有误，跳转到error
+ 00FD  8A 04				mov al, [si]
+ 00FF  3C 2D				cmp al, '-'
+ 0101  74 C8				je error
+					;空格前面是空格也会发生错误
+ 0103  8A 04				mov al, [si]
+ 0105  3C 20				cmp al, ' '
+ 0107  74 C2				je error
+					
+					;保存数据
+ 0109  8B C7				mov ax,di ; 将结果保存
+ 010B  83 3E 01D9 R 01			cmp is_neg, 1
+ 0110  75 02				jne pos1
+ 0112  F7 D8				neg ax
+ 0114  8B 3E 01D7 R		pos1:mov di, arrpointer; 指针保存
+ 0118  88 05				mov [di], al ;结果存入数组
+ 011A  FF 06 01D7 R			inc arrpointer ; 指针推进
+ 011E  FF 06 01D5 R			inc arrlen
+ 0122  C7 06 01D9 R 0000		mov is_neg, 0
+				   	;重置寄存器,权重清除
+ 0128  33 FF			   	xor di, di
+ 012A  BB 0001			   	mov bx, 1
+ 012D  33 D2			   	xor dx, dx
+ 012F  E9 FF49			   	jmp cov
+					
+ 0132				neg_num:
+					;先判断字符串末尾是不是负号，是的话，输入错误
+ 0132  39 0E 01DB R			cmp strlen, cx
+ 0136  74 93				je error
+ 0138  4E				dec si
+ 0139  FE C9				dec cl
+					;如果负号相邻，也是错误
+ 013B  8A 04				mov al, [si]
+ 013D  3C 2D				cmp al, '-'
+ 013F  74 8A				je error
+ 0141  C7 06 01D9 R 0001		mov is_neg, 1
+					;如果第一个字符是负数，那么这里cx是0了，需要单独跳转到cov的特殊部分
+ 0147  83 F9 00				cmp cx, 0
+ 014A  75 03 E9 FF5C			je neg_out
+					;如果第二个数字是负数，那么负号前一个字符必须是空格，不然就错误
+ 014F  8A 04				mov al, [si]
+ 0151  3C 20				cmp al, ' '
+ 0153  74 03 E9 FF73			jne error
+ 0158  E9 FF20				jmp cov
+ 015B				asc2num endp
+
+				;num to asc
+				;需要ax提前存储好待转换的数，再调用此函数，此函数转换后直接输出数字+空格
+				;需要创建trans_flag
+ 015B				num2asc proc
+ 015B  33 C9				xor cx, cx
+ 015D  33 DB				xor bx, bx
+ 015F  33 D2				xor dx, dx
+					
+					;负数处理
+ 0161  32 E4				xor ah,ah
+ 0163  3C 00				cmp al, 0
+ 0165  7D 0C				jge not_neg
+ 0167  F6 D8				neg al
+					putstr string_neg
+ 0169  8D 16 01DD R	     1		lea dx, string_neg
+ 016D  B4 09		     1		mov ah, 09h
+ 016F  CD 21		     1		int 21h
+ 0171  32 E4				xor ah,ah
+ 0173				not_neg:
+ 0173  BB 2710				mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 0176				cov_back:
+ 0176  33 D2				xor dx,dx ;清零
+ 0178  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 017A  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 017C  83 3E 01E3 R 00			cmp trans_flag,0
+ 0181  75 05				jne nor1
+ 0183  83 F8 00				cmp ax,0 ;商是零
+ 0186  74 0F				je cont
+					
+ 0188				nor1:
+ 0188  8A D0				mov dl,al
+ 018A  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 018D  B4 02				mov ah,2   ;输出
+ 018F  CD 21				int 21h
+					
+ 0191  C7 06 01E3 R 0001		mov trans_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0197				cont:
+ 0197  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 019A  74 0F				je outer
+					
+ 019C  33 D2				xor dx,dx ;清零
+ 019E  8B C3				mov ax,bx ;递减权重
+ 01A0  BB 000A				mov bx,10
+ 01A3  F7 F3			    div bx
+ 01A5  8B D8			    mov bx,ax 
+				        
+ 01A7  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 01A9  EB CB			    jmp cov_back 
+				   
+ 01AB				outer:
+ 01AB  8A D1				mov dl,cl;个位输出
+ 01AD  80 C2 30				add dl,30h
+ 01B0  B4 02				mov ah,2
+ 01B2  CD 21				int 21h   
+					putstr string_space
+ 01B4  8D 16 01DF R	     1		lea dx, string_space
+ 01B8  B4 09		     1		mov ah, 09h
+ 01BA  CD 21		     1		int 21h
+ 01BC  C7 06 01E3 R 0000		mov trans_flag, 0
+ 01C2  33 FF				xor di, di
+ 01C4  C3			    ret
+ 01C5				num2asc endp
+
+ 01C5				find_big proc
+ 01C5  33 C0				xor ax, ax
+ 01C7  33 DB				xor bx, bx
+ 01C9  33 F6				xor si, si
+ 01CB  32 D2				xor dl, dl
+					;获取循环次数
+ 01CD  8B 0E 01D5 R			mov cx, arrlen
+ 01D1  49				dec cx
+ 01D2  32 ED				xor ch, ch
+					;定义首地址
+ 01D4  8D 36 00D5 R			lea	si, arr
+					;存储数组第一个 
+ 01D8  8A 14				mov dl, [si]
+ 01DA  88 16 01E6 R			mov big, dl
+ 01DE  46				inc si
+				;开始循环
+ 01DF				fbloop:
+ 01DF  8A 14				mov dl, [si]
+ 01E1  38 16 01E6 R			cmp big, dl
+ 01E5  7D 04				jge not_big
+ 01E7  88 16 01E6 R			mov big, dl
+ 01EB				not_big:
+ 01EB  46				inc si
+ 01EC  E2 F1				loop fbloop
+ 01EE  C3				ret
+ 01EF				find_big endp
+
+ 01EF				find_small proc
+ 01EF  33 C0				xor ax, ax
+ 01F1  33 DB				xor bx, bx
+ 01F3  33 F6				xor si, si
+ 01F5  32 D2				xor dl, dl
+					;获取循环次数
+					;这里不能用buf+1，因为1 2 3 4的buf+1是7，而arrlen是4
+ 01F7  8B 0E 01D5 R			mov cx, arrlen
+ 01FB  49				dec cx
+ 01FC  32 ED				xor ch, ch
+					;定义首地址
+ 01FE  8D 36 00D5 R			lea	si, arr
+					;存储数组第一个 
+ 0202  8A 14				mov dl, [si]
+ 0204  88 16 01E7 R			mov small, dl
+ 0208  46				inc si
+				;开始循环
+ 0209				fmloop:
+ 0209  8A 14				mov dl, [si]
+ 020B  38 16 01E7 R			cmp small, dl
+ 020F  7E 04				jle not_small
+ 0211  88 16 01E7 R			mov small, dl
+ 0215				not_small:
+ 0215  46				inc si
+ 0216  E2 F1				loop fmloop
+ 0218  C3				ret
+ 0219				find_small endp
+
+ 0219				stop: 
+ 0219  B4 4C			    MOV AH,4CH
+ 021B  CD 21			    INT 21H
+ 021D				CODES ENDS
+				    END begin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/16/23 13:22:26
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 021D	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 01E8	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+asc2num  . . . . . . . . . . . .	P Near	 0059	  CODES	Length= 012C Public
+  asc2num_begin  . . . . . . . .	L Near	 0059	  CODES	
+  cov  . . . . . . . . . . . . .	L Near	 007B	  CODES	
+  neg_out  . . . . . . . . . . .	L Near	 00AB	  CODES	
+  pos2 . . . . . . . . . . . . .	L Near	 00B6	  CODES	
+  error  . . . . . . . . . . . .	L Near	 00CB	  CODES	
+  skip_space . . . . . . . . . .	L Near	 00F4	  CODES	
+  pos1 . . . . . . . . . . . . .	L Near	 0114	  CODES	
+  neg_num  . . . . . . . . . . .	L Near	 0132	  CODES	
+find_big . . . . . . . . . . . .	P Near	 01C5	  CODES	Length= 002A Public
+  fbloop . . . . . . . . . . . .	L Near	 01DF	  CODES	
+  not_big  . . . . . . . . . . .	L Near	 01EB	  CODES	
+find_small . . . . . . . . . . .	P Near	 01EF	  CODES	Length= 002A Public
+  fmloop . . . . . . . . . . . .	L Near	 0209	  CODES	
+  not_small  . . . . . . . . . .	L Near	 0215	  CODES	
+num2asc  . . . . . . . . . . . .	P Near	 015B	  CODES	Length= 006A Public
+  not_neg  . . . . . . . . . . .	L Near	 0173	  CODES	
+  cov_back . . . . . . . . . . .	L Near	 0176	  CODES	
+  nor1 . . . . . . . . . . . . .	L Near	 0188	  CODES	
+  cont . . . . . . . . . . . . .	L Near	 0197	  CODES	
+  outer  . . . . . . . . . . . .	L Near	 01AB	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+arrlen . . . . . . . . . . . . .	Word	 01D5	  DATAS	
+arrpointer . . . . . . . . . . .	Word	 01D7	  DATAS	
+arr  . . . . . . . . . . . . . .	Byte	 00D5	  DATAS	
+begin  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+biggist  . . . . . . . . . . . .	Byte	 004C	  DATAS	
+big  . . . . . . . . . . . . . .	Byte	 01E6	  DATAS	
+buf  . . . . . . . . . . . . . .	Byte	 006F	  DATAS	
+ctemp  . . . . . . . . . . . . .	Word	 01E1	  DATAS	
+err  . . . . . . . . . . . . . .	Byte	 0029	  DATAS	
+is_neg . . . . . . . . . . . . .	Word	 01D9	  DATAS	
+smallest . . . . . . . . . . . .	Byte	 005D	  DATAS	
+small  . . . . . . . . . . . . .	Byte	 01E7	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 0219	  CODES	
+string1  . . . . . . . . . . . .	Byte	 0000	  DATAS	
+string_neg . . . . . . . . . . .	Byte	 01DD	  DATAS	
+string_space . . . . . . . . . .	Byte	 01DF	  DATAS	
+strlen . . . . . . . . . . . . .	Word	 01DB	  DATAS	
+temp . . . . . . . . . . . . . .	Byte	 01E5	  DATAS	
+trans_flag . . . . . . . . . . .	Word	 01E3	  DATAS	
+
+	   0 Warnings
+	   0 Errors

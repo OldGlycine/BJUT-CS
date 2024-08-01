@@ -1,0 +1,15 @@
+D:/Study/ComputerOrganizationClassDesign/project1/ifu_testbench.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project1\ifu_testbench.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ifu_testbench
+
+Top level modules:
+	ifu_testbench
+
+} {} {}} D:/Study/ComputerOrganizationClassDesign/project1/ifu.v {1 {vlog -work work {D:\Study\ComputerOrganizationClassDesign\project1\ifu.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ifu
+
+Top level modules:
+	ifu
+
+} {} {}}

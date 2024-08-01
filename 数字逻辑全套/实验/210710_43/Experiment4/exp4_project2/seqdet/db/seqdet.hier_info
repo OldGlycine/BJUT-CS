@@ -1,0 +1,28 @@
+|seqdet
+clk => c_state[0]~reg0.CLK
+clk => c_state[1]~reg0.CLK
+clk => c_state[2]~reg0.CLK
+clk => c_state[3]~reg0.CLK
+clk => z~reg0.CLK
+x => Mux1.IN11
+x => Mux1.IN12
+x => Mux0.IN15
+x => Mux1.IN13
+x => Mux1.IN14
+x => Mux1.IN15
+x => n_state.DATAB
+x => Mux0.IN14
+reset => c_state.OUTPUTSELECT
+reset => c_state.OUTPUTSELECT
+reset => c_state.OUTPUTSELECT
+z <= z~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[0] <= c_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[1] <= c_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[2] <= c_state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_state[3] <= c_state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+n_state[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+n_state[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+n_state[2] <= n_state.DB_MAX_OUTPUT_PORT_TYPE
+n_state[3] <= <GND>
+
+

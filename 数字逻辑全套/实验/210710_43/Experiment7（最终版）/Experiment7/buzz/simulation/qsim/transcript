@@ -1,0 +1,22 @@
+# do buzz.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module buzz
+# 
+# Top level modules:
+# 	buzz
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module buzz_vlg_sample_tst
+# -- Compiling module buzz_vlg_check_tst
+# -- Compiling module buzz_vlg_vec_tst
+# ** Error: buzz.vt(206): (vlog-2110) Illegal reference to net "beep".
+# 
+# ** Error: buzz.vt(207): (vlog-2110) Illegal reference to net "beep".
+# 
+# ** Error: buzz.vt(208): (vlog-2110) Illegal reference to net "beep".
+# 
+# ** Error: buzz.vt(209): (vlog-2110) Illegal reference to net "beep".
+# 
+# ** Error: buzz.vt(210): (vlog-2110) Illegal reference to net "beep".
+# 
+# ** Error: c:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Executing ONERROR command at macro ./buzz.do line 4

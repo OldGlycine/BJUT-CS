@@ -1,0 +1,385 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+valu
+Z1 IebkYV3^@GckPTE5NMeNS`1
+Z2 VQGDj=3Do[Ij7EjTOed6283
+Z3 dD:\Study\ComputerOrganizationClassDesign\project1-lh
+Z4 w1687572913
+Z5 8D:/Study/ComputerOrganizationClassDesign/project1/alu.v
+Z6 FD:/Study/ComputerOrganizationClassDesign/project1/alu.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 !s100 7<IokUoU7lFRR]V@iZ4KT3
+Z10 !s108 1688194296.717000
+Z11 !s107 D:/Study/ComputerOrganizationClassDesign/project1/alu.v|
+Z12 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/alu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valu_tb
+Z13 !s100 KYaPj7IOeTN]H9VV6RLgf1
+Z14 IQKMSMCM:SFn:MC2il];lG3
+Z15 VL;=kgzZ7GJ2Reg7Z1GkmR2
+R3
+Z16 w1683108842
+Z17 8D:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v
+Z18 FD:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v
+L0 1
+R7
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v|
+R8
+Z20 !s108 1688194297.090000
+Z21 !s107 D:/Study/ComputerOrganizationClassDesign/project1/alu_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontroller
+Z22 Ij8EBEeE_A5^DoD`TbWH9X3
+Z23 V=Dj3j87EM8`XKZFg]ZhZM0
+R3
+Z24 w1687744370
+Z25 8D:/Study/ComputerOrganizationClassDesign/project1/controller.v
+Z26 FD:/Study/ComputerOrganizationClassDesign/project1/controller.v
+L0 1
+R7
+r1
+31
+R8
+Z27 !s100 N=@>7Lo1?58X;ocjIXSol0
+Z28 !s108 1688194297.305000
+Z29 !s107 D:/Study/ComputerOrganizationClassDesign/project1/controller.v|
+Z30 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontroller_tb
+Z31 !s100 BYP6e`1XT0^LbQE[`OPHZ0
+Z32 I>9RDekM^U^X4k1M=A2z;B2
+Z33 VXjLFUflKQlK1WTZm==8l41
+R3
+Z34 w1687575294
+Z35 8D:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v
+Z36 FD:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v
+L0 1
+R7
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v|
+R8
+Z38 !s108 1688194297.372000
+Z39 !s107 D:/Study/ComputerOrganizationClassDesign/project1/controller_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdm_1k
+Z40 IK@DJZ[X;2jicG9SN;bYzS2
+Z41 V6CB0OBQ64ANZYD15;E=h<3
+R3
+Z42 w1687744302
+Z43 8D:/Study/ComputerOrganizationClassDesign/project1/dm.v
+Z44 FD:/Study/ComputerOrganizationClassDesign/project1/dm.v
+L0 1
+R7
+r1
+31
+R8
+Z45 !s100 ;VE5>8W:ggaLkZ^9CS@bH3
+Z46 !s108 1688194296.576000
+Z47 !s107 D:/Study/ComputerOrganizationClassDesign/project1/dm.v|
+Z48 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/dm.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdm_tb
+Z49 !s100 2jQFe910Zc2N:9n3Pz=5C3
+Z50 I_Wc8fU^<S2X@=UW_1zOSb2
+Z51 VhMTkI9XU2KQ:jUY<j?fOP1
+R3
+Z52 w1683107302
+Z53 8D:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v
+Z54 FD:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v
+L0 1
+R7
+r1
+31
+Z55 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v|
+R8
+Z56 !s108 1688194297.014000
+Z57 !s107 D:/Study/ComputerOrganizationClassDesign/project1/dm_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vext
+Z58 !s100 37O]TVS^^Rc_fRL@H1h8Y2
+Z59 IbAGa3<^1gzZXh]@F4FR0E1
+Z60 VN>hdN`OU8]ff6@:[4oFV90
+R3
+Z61 w1683105566
+Z62 8D:/Study/ComputerOrganizationClassDesign/project1/ext.v
+Z63 FD:/Study/ComputerOrganizationClassDesign/project1/ext.v
+L0 1
+R7
+r1
+31
+Z64 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/ext.v|
+R8
+Z65 !s108 1688194296.786000
+Z66 !s107 D:/Study/ComputerOrganizationClassDesign/project1/ext.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vext_tb
+Z67 !s100 8man;U_J8TXLD6`nf?:O<0
+Z68 I3H[]e]90O12MSBP8NZKeX0
+Z69 Vci]GK[AImE:VQ5V;>VY9I2
+R3
+Z70 w1683105857
+Z71 8D:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v
+Z72 FD:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v
+L0 1
+R7
+r1
+31
+Z73 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v|
+R8
+Z74 !s108 1688194296.859000
+Z75 !s107 D:/Study/ComputerOrganizationClassDesign/project1/ext_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vgpr
+Z76 ISiMfY74OJ2>5e4TPd072G2
+Z77 VDWK4a;>;KbBk9HjU3aK2B2
+R3
+Z78 w1687613084
+Z79 8D:/Study/ComputerOrganizationClassDesign/project1/gpr.v
+Z80 FD:/Study/ComputerOrganizationClassDesign/project1/gpr.v
+L0 1
+R7
+r1
+31
+R8
+Z81 !s100 8S;0?AR_mb_EH;OL@kEcL2
+Z82 !s108 1688194297.166000
+Z83 !s107 D:/Study/ComputerOrganizationClassDesign/project1/gpr.v|
+Z84 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/gpr.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vgpr_tb
+Z85 !s100 0H97KJRKlIHPV8eALPiS=3
+Z86 Id:l9Cz6C4zaO^cUGefHhH1
+Z87 VhBKe0a0;_cm]YbfKelFcK3
+R3
+Z88 w1687591382
+Z89 8D:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v
+Z90 FD:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v
+L0 1
+R7
+r1
+31
+Z91 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v|
+R8
+Z92 !s108 1688194297.233000
+Z93 !s107 D:/Study/ComputerOrganizationClassDesign/project1/gpr_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vim_1k
+!i10b 1
+!s100 PD4WmWIaL??O=n1XJ=A4o3
+IXRNQEM<8a5;UKGFzUdge@1
+Z94 VhWmVPd4oE5A1Xkle@lUIl2
+R3
+w1688194445
+8D:\Study\ComputerOrganizationClassDesign\project1\im.v
+FD:\Study\ComputerOrganizationClassDesign\project1\im.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1688194445.824000
+!s107 D:\Study\ComputerOrganizationClassDesign\project1\im.v|
+!s90 -reportprogress|300|-work|work|D:\Study\ComputerOrganizationClassDesign\project1\im.v|
+!s101 -O0
+R8
+vim_tb
+Z95 !s100 9dEP@JMaZVd9;=@5Ai=cS3
+Z96 Ik0=Z4X1X_aViEVXOo`Dz^0
+Z97 V:?LannFmAfYCj[[dDHihb3
+R3
+Z98 w1683106301
+Z99 8D:/Study/ComputerOrganizationClassDesign/project1/im_tb.v
+Z100 FD:/Study/ComputerOrganizationClassDesign/project1/im_tb.v
+L0 1
+R7
+r1
+31
+Z101 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/im_tb.v|
+R8
+Z102 !s108 1688194296.937000
+Z103 !s107 D:/Study/ComputerOrganizationClassDesign/project1/im_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vm1
+Z104 IOAU;1dbP[5khjK]9U`8zL3
+Z105 V0N>3iUW?@TAOIC:UE<zlc3
+R3
+Z106 w1687607034
+Z107 8D:/Study/ComputerOrganizationClassDesign/project1/m1.v
+Z108 FD:/Study/ComputerOrganizationClassDesign/project1/m1.v
+L0 1
+R7
+r1
+31
+R8
+Z109 !s100 bDMKWD9RVOcIOd>?F?H>F1
+Z110 !s108 1688194297.581000
+Z111 !s107 D:/Study/ComputerOrganizationClassDesign/project1/m1.v|
+Z112 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/m1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vm2
+Z113 I08C5NP==l1aUWX<4<LVA<0
+Z114 VRjHA:fkMHghM@BTGW5S>61
+R3
+Z115 w1687661038
+Z116 8D:/Study/ComputerOrganizationClassDesign/project1/m2.v
+Z117 FD:/Study/ComputerOrganizationClassDesign/project1/m2.v
+L0 1
+R7
+r1
+31
+R8
+Z118 !s100 VSRlKDSNFgBEQ`Fk5]DHT1
+Z119 !s108 1688194297.656000
+Z120 !s107 D:/Study/ComputerOrganizationClassDesign/project1/m2.v|
+Z121 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/m2.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vm3
+Z122 !s100 [3`fdJMPnZP[V:2SL15`c2
+Z123 IZifTIRfQ`beWzz@9FMDQI1
+Z124 V=?h=cdkh<UEJm20lcNRST3
+R3
+Z125 w1687606903
+Z126 8D:/Study/ComputerOrganizationClassDesign/project1/m3.v
+Z127 FD:/Study/ComputerOrganizationClassDesign/project1/m3.v
+L0 1
+R7
+r1
+31
+Z128 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/m3.v|
+R8
+Z129 !s108 1688194297.734000
+Z130 !s107 D:/Study/ComputerOrganizationClassDesign/project1/m3.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmips
+Z131 IBF4moV=YA9JECOGaifJLe1
+Z132 V^lO[ZOI0I1e8M8GJjI9B:3
+R3
+Z133 w1687744395
+Z134 8D:/Study/ComputerOrganizationClassDesign/project1/mips.v
+Z135 FD:/Study/ComputerOrganizationClassDesign/project1/mips.v
+L0 1
+R7
+r1
+31
+R8
+Z136 !s100 LPMkFldND:T0lYF8M0BVG0
+Z137 !s108 1688194296.651000
+Z138 !s107 D:/Study/ComputerOrganizationClassDesign/project1/mips.v|
+Z139 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/mips.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmips_tb
+Z140 !s100 OM2N^PegZ1i]2z6HRfZAk1
+Z141 ITa?6dcV:GYJR7@Ld_h[>l0
+Z142 VHfL@J;=TiSmbe>@j83EoJ0
+R3
+Z143 w1687596987
+Z144 8D:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v
+Z145 FD:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v
+L0 1
+R7
+r1
+31
+Z146 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v|
+R8
+Z147 !s108 1688194297.808000
+Z148 !s107 D:/Study/ComputerOrganizationClassDesign/project1/mips_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vnpc
+Z149 !s100 NUc9XTTO93=@k:=H[;;Yo1
+Z150 IaNGjjR<ah8QM_aR8CUUzf1
+Z151 VB<n6ULMeXU0OWzM5TYzOH0
+R3
+Z152 w1687612186
+Z153 8D:/Study/ComputerOrganizationClassDesign/project1/npc.v
+Z154 FD:/Study/ComputerOrganizationClassDesign/project1/npc.v
+L0 1
+R7
+r1
+31
+Z155 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/npc.v|
+R8
+Z156 !s108 1688194297.512000
+Z157 !s107 D:/Study/ComputerOrganizationClassDesign/project1/npc.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vnpc_tb
+Z158 !s100 jgNg=05OC4]b8AN`jk5^e1
+Z159 IfgTD?Gi@bR;zb=o04ncki2
+Z160 Vd1M]?QM`2BA5kMP:hI1892
+R3
+Z161 w1687593046
+Z162 8D:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v
+Z163 FD:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v
+L0 1
+R7
+r1
+31
+Z164 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v|
+R8
+!i10b 1
+!s85 0
+Z165 !s108 1688194297.883000
+Z166 !s107 D:/Study/ComputerOrganizationClassDesign/project1/npc_tb.v|
+!s101 -O0
+vpc
+Z167 IhcA]ZFYT79;RcJTEzz>B?2
+Z168 V_I9ilTZQb_7;eVean8cgG3
+R3
+Z169 w1687597168
+Z170 8D:/Study/ComputerOrganizationClassDesign/project1/pc.v
+Z171 FD:/Study/ComputerOrganizationClassDesign/project1/pc.v
+L0 1
+R7
+r1
+31
+R8
+Z172 !s100 Xbch>TTjEHOOTJ3e@l4]S1
+Z173 !s108 1688194297.439000
+Z174 !s107 D:/Study/ComputerOrganizationClassDesign/project1/pc.v|
+Z175 !s90 -reportprogress|300|-work|work|D:/Study/ComputerOrganizationClassDesign/project1/pc.v|
+!i10b 1
+!s85 0
+!s101 -O0

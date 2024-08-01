@@ -1,0 +1,210 @@
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:08:32
+tempfile.asm						     Page 1 - 1
+
+
+				assume cs:code,ss:stack,ds:data
+
+ 0000				data segment
+ 0000  00 00 00 00			  db 0,0,0,0
+ 0004 50 6C 65 61 73 65			  note db 'Please enter the sentence:',0dh,0ah,'$'
+       20 65 6E 74 65 72
+       20 74 68 65 20 73
+       65 6E 74 65 6E 63
+       65 3A 0D 0A 24
+ 0021 54 68 65 20 63 6F			  str1 db 'The counted result of the program:',0dh,0ah,'$'
+       75 6E 74 65 64 20
+       72 65 73 75 6C 74
+       20 6F 66 20 74 68
+       65 20 70 72 6F 67
+       72 61 6D 3A 0D 0A
+       24
+ 0046 6C 65 74 74 65 72			  str2 db 'letter:','$'
+       3A 24
+ 004E 64 69 67 69 74 20			  str3 db 'digit :','$'
+       3A 24
+ 0056 62 61 63 6B 20 3A			  str4 db 'back :','$'
+       24
+ 005D 6F 74 68 65 72 20			  str5 db 'other :','$'
+       3A 24
+ 0065				data ends
+
+ 0000				stack segment
+ 0000  0064 [				  db 100 dup(0)
+        00
+       ]
+ 0064				stack ends
+
+ 0000				code segment
+ 0000				start:	
+ 0000  B8 ---- R		      mov ax,data
+ 0003  8E D8				  mov ds,ax
+ 0005  B4 09				  mov ah,09h
+ 0007  BA 0004 R			  mov dx,offset note
+ 000A  CD 21				  int 21h			
+ 000C  B8 ---- R			  mov ax,stack
+ 000F  8E D0				  mov ss,ax
+ 0011  BC 0064				  mov sp,100
+					  
+ 0014					input:
+ 0014					  read:
+ 0014  B4 01					mov ah,01h    
+ 0016  CD 21					int 21h		
+ 0018  3C 0D					cmp al,0dh	
+ 001A  74 3C					jz outstr	
+ 001C  3C 20					cmp al,32
+ 001E  74 0A					je back	
+ 0020  3C 30					cmp al,'0'	
+ 0022  7C 12					jl other	
+ 0024  3C 39					cmp al,'9'	
+ 0026  7F 14					jg nextread		
+ 0028  7C 06					jl num			
+ 002A					  back:
+ 002A  FE 06 0002			  inc byte ptr ds:[2]
+ 002E  EB E4				  jmp read
+					  
+ 0030					  num:
+ 0030  FE 06 0001			    inc byte ptr ds:[1]
+ 0034  EB DE					jmp read
+						
+ 0036					  other:
+ 0036  FE 06 0003			    inc byte ptr ds:[3]	
+ 003A  EB D8				    jmp read			
+						
+ 003C					  nextread:			
+ 003C  3C 41				    cmp al,'A'		
+ 003E  7C F6				    jl other		
+ 0040  3C 5A				    cmp al,'Z'		
+ 0042  7F 06				    jg next1		
+ 0044  FE 06 0000			    inc byte ptr ds:[0]	
+ 0048  7C CA				    jl read			
+						
+ 004A					  next1:			
+ 004A  3C 61				    cmp al,'a'
+ 004C  7C E8					jl other		
+ 004E  3C 7A					cmp al,'z'		
+ 0050  FE 06 0000				inc byte ptr ds:[0]		
+ 0054  EB BE					jmp read
+ 0056  7F DE					jg other		
+						
+						
+ 0058				    outstr:
+ 0058  B4 09			        mov ah,09h
+ 005A  BA 0021 R			    mov dx,offset str1
+ 005D  CD 21				    int 21h			
+ 005F					  a:
+ 005F  B4 09				    mov ah,09h
+ 0061  BA 0046 R			    mov dx,offset str2
+ 0064  CD 21				    int 21h		
+ 0066  A0 0000				    mov al,ds:[0]
+ 0069  B4 00				    mov ah,0		
+ 006B  E8 0031				    call print	
+					  
+ 006E				      b:
+ 006E  B4 09				    mov ah,09h
+ 0070  BA 004E R			    mov dx,offset str3
+ 0073  CD 21				    int 21h		
+ 0075  A0 0001				    mov al,ds:[1]
+ 0078  B4 00				    mov ah,0		
+ 007A  E8 0022				    call print	
+					  
+ 007D					  cc:
+ 007D  B4 09				    mov ah,09h
+ 007F  BA 0056 R			    mov dx,offset str4
+ 0082  CD 21				    int 21h		
+ 0084  A0 0002				    mov al,ds:[2]
+ 0087  B4 00				    mov ah,0		
+ 0089  E8 0013				    call print	
+ 008C					   d:
+ 008C  B4 09				   mov ah,09h
+ 008E  BA 005D R			    mov dx,offset str5
+ 0091  CD 21				    int 21h		
+ 0093  A0 0003				    mov al,ds:[3]
+ 0096  B4 00				    mov ah,0		
+ 0098  E8 0004				    call print	
+					
+ 009B					exit:
+ 009B  B4 4C				  mov ah,4ch
+ 009D  CD 21				  int 21h			
+						
+ 009F					print:			
+					  
+ 009F  BB 000A				  mov bx,10		
+ 00A2  B9 0000				  mov cx,0		
+ 00A5  BA 0000				  mov dx,0		
+ 00A8					  s0:		    
+ 00A8  F7 F3				  div bx		
+ 00AA  52				  push dx		
+ 00AB  41				  inc cx		
+ 00AC  99				  cwd			
+ 00AD  83 F8 00				  cmp ax,0		;将剩下的数ax与0比较
+ 00B0  75 F6				  jne s0		;若ax!=0，继续循环
+					  
+ 00B2					  s1:		    ;输出字符，cx为循环次数，一个数有多少位
+ 00B2  5A				  pop dx		
+ 00B3  80 C2 30				  add dl,30h	
+ 00B6  B4 02				  mov ah,02h
+ 00B8  CD 21				  int 21h		
+ 00BA  E2 F6				  loop s1		;循环cx次
+					  
+ 00BC  B4 02				  mov ah,02h
+ 00BE  B2 0D				  mov dl,0dh
+ 00C0  CD 21				  int 21h		
+					  
+ 00C2  B4 02				  mov ah,02h
+ 00C4  B2 0A				  mov dl,0ah
+ 00C6  CD 21				  int 21h		
+ 00C8  C3				  ret			
+					
+ 00C9					code ends
+				    end start
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    06/08/23 17:08:32
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+code . . . . . . . . . . . . . .	16 Bit	 00C9	  Para	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0065	  Para	  Private 
+stack  . . . . . . . . . . . . .	16 Bit	 0064	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+a  . . . . . . . . . . . . . . .	L Near	 005F	  code	
+back . . . . . . . . . . . . . .	L Near	 002A	  code	
+b  . . . . . . . . . . . . . . .	L Near	 006E	  code	
+cc . . . . . . . . . . . . . . .	L Near	 007D	  code	
+d  . . . . . . . . . . . . . . .	L Near	 008C	  code	
+exit . . . . . . . . . . . . . .	L Near	 009B	  code	
+input  . . . . . . . . . . . . .	L Near	 0014	  code	
+next1  . . . . . . . . . . . . .	L Near	 004A	  code	
+nextread . . . . . . . . . . . .	L Near	 003C	  code	
+note . . . . . . . . . . . . . .	Byte	 0004	  data	
+num  . . . . . . . . . . . . . .	L Near	 0030	  code	
+other  . . . . . . . . . . . . .	L Near	 0036	  code	
+outstr . . . . . . . . . . . . .	L Near	 0058	  code	
+print  . . . . . . . . . . . . .	L Near	 009F	  code	
+read . . . . . . . . . . . . . .	L Near	 0014	  code	
+s0 . . . . . . . . . . . . . . .	L Near	 00A8	  code	
+s1 . . . . . . . . . . . . . . .	L Near	 00B2	  code	
+start  . . . . . . . . . . . . .	L Near	 0000	  code	
+str1 . . . . . . . . . . . . . .	Byte	 0021	  data	
+str2 . . . . . . . . . . . . . .	Byte	 0046	  data	
+str3 . . . . . . . . . . . . . .	Byte	 004E	  data	
+str4 . . . . . . . . . . . . . .	Byte	 0056	  data	
+str5 . . . . . . . . . . . . . .	Byte	 005D	  data	
+
+	   0 Warnings
+	   0 Errors

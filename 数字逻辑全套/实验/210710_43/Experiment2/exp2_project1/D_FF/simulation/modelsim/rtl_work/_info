@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment2\D_FF\simulation\modelsim
+vD_FF
+I^G=690h:Cm=z2obRHH@mR1
+V:[ZWaiL^PaDQVSW3`DL1U0
+Z1 dC:\altera\Experiment2\D_FF\simulation\modelsim
+w1666535130
+8C:/altera/Experiment2/D_FF/D_FF.v
+FC:/altera/Experiment2/D_FF/D_FF.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@d_@f@f
+!i10b 1
+!s100 Ec[@AEIjRoF@USOn9?__j1
+!s85 0
+!s108 1666866491.320000
+!s107 C:/altera/Experiment2/D_FF/D_FF.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/Experiment2/D_FF|C:/altera/Experiment2/D_FF/D_FF.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+C:/altera/Experiment2/D_FF -O0
+vD_FF_vlg_tst
+!i10b 1
+!s100 O::CbABkAdhd3DFH8:Eea2
+I:?UJ1dc3Ve7HU0Mzk;`E>1
+V9mG8idM=HA60?A=SFbYT=3
+R1
+w1666866479
+8C:/altera/Experiment2/D_FF/simulation/modelsim/D_FF.vt
+FC:/altera/Experiment2/D_FF/simulation/modelsim/D_FF.vt
+L0 28
+R2
+r1
+!s85 0
+31
+!s108 1666866491.383000
+!s107 C:/altera/Experiment2/D_FF/simulation/modelsim/D_FF.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/Experiment2/D_FF/simulation/modelsim|C:/altera/Experiment2/D_FF/simulation/modelsim/D_FF.vt|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+C:/altera/Experiment2/D_FF/simulation/modelsim -O0
+n@d_@f@f_vlg_tst

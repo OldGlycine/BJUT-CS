@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, D:/quartus13.0/QSW/D_latch/D_latch.v
+source_file = 1, D:/quartus13.0/QSW/D_latch/D_latch.vwf
+source_file = 1, D:/quartus13.0/QSW/D_latch/db/D_latch.cbx.xml
+design_name = D_latch
+instance = comp, \Q~output , Q~output, D_latch, 1
+instance = comp, \QN~output , QN~output, D_latch, 1
+instance = comp, \D~input , D~input, D_latch, 1
+instance = comp, \EN~input , EN~input, D_latch, 1

@@ -1,0 +1,390 @@
+Microsoft (R) Macro Assembler Version 6.11		    05/30/23 13:26:01
+tempfile.asm						     Page 1 - 1
+
+
+				enterline macro
+					push dx
+					push ax
+					mov dl,13
+					mov ah,2
+					int 21h
+					mov dl,10
+					mov ah,2
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+				;定义输出字符串的指令
+				putstr macro string
+				 	push dx
+				 	push ax
+					lea dx, string
+					mov ah, 09h
+					int 21h
+					pop ax
+					pop dx
+				endm
+
+ 0000				DATAS SEGMENT
+				    ;此处输入数据段代码  
+				    ;四个计数器
+ 0000 0000			    cc dw 0
+ 0002 0000			    sc dw 0
+ 0004 0000			    nc dw 0
+ 0006 0000			    ec dw 0
+ 0008 1E 00			    buf db 30, ?, 30 dup(0)
+       001E [
+        00
+       ]
+ 0028 50 6C 65 61 73 65		    string1 db 'Please enter a line of string:$'
+       20 65 6E 74 65 72
+       20 61 20 6C 69 6E
+       65 20 6F 66 20 73
+       74 72 69 6E 67 3A
+       24
+ 0047 41 2D 5A 20 61 6E		    string2 db 'A-Z and a-z :$'
+       64 20 61 2D 7A 20
+       3A 24
+ 0055 53 70 61 63 65 20		    string3 db 'Space :$'
+       3A 24
+ 005D 4E 75 6D 62 65 72		    string4 db 'Numbers :$'
+       73 20 3A 24
+ 0067 4F 74 68 65 72 20		    string5 db 'Other chars :$'
+       63 68 61 72 73 20
+       3A 24
+ 0075 0000			    string_neg dw 0
+ 0077 0000			    trans_flag dw 0
+ 0079 20 24			    string_space db ' $'
+ 007B				DATAS ENDS
+
+ 0000				STACKS SEGMENT
+				    ;此处输入堆栈段代码
+ 0000  0080 [			    db 128 dup(0)
+        00
+       ]
+ 0080				STACKS ENDS
+
+ 0000				CODES SEGMENT
+				    ASSUME CS:CODES,DS:DATAS,SS:STACKS
+ 0000				START:
+ 0000  B8 ---- R		    MOV AX,DATAS
+ 0003  8E D8			    MOV DS,AX
+				    ;此处输入代码段代码
+				    
+				    putstr string1
+ 0005  52		     1	 	push dx
+ 0006  50		     1	 	push ax
+ 0007  8D 16 0028 R	     1		lea dx, string1
+ 000B  B4 09		     1		mov ah, 09h
+ 000D  CD 21		     1		int 21h
+ 000F  58		     1		pop ax
+ 0010  5A		     1		pop dx
+				    
+ 0011  8D 16 0008 R		    lea dx, buf
+ 0015  B4 0A			    mov ah,10
+ 0017  CD 21			    int 21h
+				    enterline
+ 0019  52		     1		push dx
+ 001A  50		     1		push ax
+ 001B  B2 0D		     1		mov dl,13
+ 001D  B4 02		     1		mov ah,2
+ 001F  CD 21		     1		int 21h
+ 0021  B2 0A		     1		mov dl,10
+ 0023  B4 02		     1		mov ah,2
+ 0025  CD 21		     1		int 21h
+ 0027  58		     1		pop ax
+ 0028  5A		     1		pop dx
+				    
+ 0029  8D 36 000A R		    lea si, buf+2
+ 002D  8A 0E 0009 R			mov cl, buf+1
+ 0031  32 ED				xor ch, ch
+
+ 0033				forward:
+ 0033  8A 1C				mov bl, [si]
+					;判断空格
+ 0035  80 FB 20				cmp bl, ' '
+ 0038  75 03 E9 00BE			je SPACE
+					;判断数字
+ 003D  80 FB 30				cmp bl, 30h
+ 0040  72 08				jb not_num
+ 0042  80 FB 39				cmp bl, 39h
+ 0045  77 03				ja not_num
+ 0047  E9 00B8				jmp NUM
+ 004A				not_num:
+					;判断字母
+ 004A  80 FB 41				cmp bl, 41h
+ 004D  72 15				jb not_char
+ 004F  80 FB 7A				cmp bl, 7ah
+ 0052  77 10				ja not_char
+					;到这里能判断字符在A-z之间
+ 0054  80 FB 5A				cmp bl, 5ah
+ 0057  7F 03 E9 00AD			jle CHAR ;大写字母
+ 005C  80 FB 61				cmp bl, 61h
+ 005F  7C 03 E9 00A5			jge CHAR ;小写字母 
+ 0064				not_char:
+					;判断回车
+ 0064  80 FB 13				cmp bl, 13h
+ 0067  74 04				je ot
+ 0069  FF 06 0006 R			inc ec
+ 006D				ot:
+ 006D  46				inc si
+ 006E  E2 C3				loop forward
+					
+				;打印结果
+					putstr string2
+ 0070  52		     1	 	push dx
+ 0071  50		     1	 	push ax
+ 0072  8D 16 0047 R	     1		lea dx, string2
+ 0076  B4 09		     1		mov ah, 09h
+ 0078  CD 21		     1		int 21h
+ 007A  58		     1		pop ax
+ 007B  5A		     1		pop dx
+ 007C  A1 0000 R			mov ax, cc
+ 007F  E8 008E				call num2asc
+					enterline
+ 0082  52		     1		push dx
+ 0083  50		     1		push ax
+ 0084  B2 0D		     1		mov dl,13
+ 0086  B4 02		     1		mov ah,2
+ 0088  CD 21		     1		int 21h
+ 008A  B2 0A		     1		mov dl,10
+ 008C  B4 02		     1		mov ah,2
+ 008E  CD 21		     1		int 21h
+ 0090  58		     1		pop ax
+ 0091  5A		     1		pop dx
+					
+					putstr string3
+ 0092  52		     1	 	push dx
+ 0093  50		     1	 	push ax
+ 0094  8D 16 0055 R	     1		lea dx, string3
+ 0098  B4 09		     1		mov ah, 09h
+ 009A  CD 21		     1		int 21h
+ 009C  58		     1		pop ax
+ 009D  5A		     1		pop dx
+ 009E  A1 0002 R			mov ax, sc
+ 00A1  E8 006C				call num2asc
+					enterline
+ 00A4  52		     1		push dx
+ 00A5  50		     1		push ax
+ 00A6  B2 0D		     1		mov dl,13
+ 00A8  B4 02		     1		mov ah,2
+ 00AA  CD 21		     1		int 21h
+ 00AC  B2 0A		     1		mov dl,10
+ 00AE  B4 02		     1		mov ah,2
+ 00B0  CD 21		     1		int 21h
+ 00B2  58		     1		pop ax
+ 00B3  5A		     1		pop dx
+					
+					putstr string4
+ 00B4  52		     1	 	push dx
+ 00B5  50		     1	 	push ax
+ 00B6  8D 16 005D R	     1		lea dx, string4
+ 00BA  B4 09		     1		mov ah, 09h
+ 00BC  CD 21		     1		int 21h
+ 00BE  58		     1		pop ax
+ 00BF  5A		     1		pop dx
+ 00C0  A1 0004 R			mov ax, nc
+ 00C3  E8 004A				call num2asc
+					enterline
+ 00C6  52		     1		push dx
+ 00C7  50		     1		push ax
+ 00C8  B2 0D		     1		mov dl,13
+ 00CA  B4 02		     1		mov ah,2
+ 00CC  CD 21		     1		int 21h
+ 00CE  B2 0A		     1		mov dl,10
+ 00D0  B4 02		     1		mov ah,2
+ 00D2  CD 21		     1		int 21h
+ 00D4  58		     1		pop ax
+ 00D5  5A		     1		pop dx
+					
+					putstr string5
+ 00D6  52		     1	 	push dx
+ 00D7  50		     1	 	push ax
+ 00D8  8D 16 0067 R	     1		lea dx, string5
+ 00DC  B4 09		     1		mov ah, 09h
+ 00DE  CD 21		     1		int 21h
+ 00E0  58		     1		pop ax
+ 00E1  5A		     1		pop dx
+ 00E2  A1 0006 R			mov ax, ec
+ 00E5  E8 0028				call num2asc
+					enterline
+ 00E8  52		     1		push dx
+ 00E9  50		     1		push ax
+ 00EA  B2 0D		     1		mov dl,13
+ 00EC  B4 02		     1		mov ah,2
+ 00EE  CD 21		     1		int 21h
+ 00F0  B2 0A		     1		mov dl,10
+ 00F2  B4 02		     1		mov ah,2
+ 00F4  CD 21		     1		int 21h
+ 00F6  58		     1		pop ax
+ 00F7  5A		     1		pop dx
+					
+ 00F8  E9 0087				jmp stop
+					
+ 00FB				SPACE:
+ 00FB  FF 06 0002 R			inc sc
+ 00FF  E9 FF6B				jmp ot
+ 0102				NUM:
+ 0102  FF 06 0004 R			inc nc
+ 0106  E9 FF64				jmp ot
+ 0109				CHAR:
+ 0109  FF 06 0000 R			inc cc
+ 010D  E9 FF5D				jmp ot
+				    
+				;含有标签：not_neg, cov_back, nor1, cont, outer
+				;需要提前ax输入数字
+				;string_neg dw 0
+				;trans_flag dw 0
+				;string_space db ' $'
+ 0110				num2asc proc
+ 0110  33 C9				xor cx, cx
+ 0112  33 DB				xor bx, bx
+ 0114  33 D2				xor dx, dx
+					
+					;负数处理
+ 0116  32 E4				xor ah,ah
+ 0118  3C 00				cmp al, 0
+ 011A  7D 10				jge not_neg
+ 011C  F6 D8				neg al
+					putstr string_neg
+ 011E  52		     1	 	push dx
+ 011F  50		     1	 	push ax
+ 0120  8D 16 0075 R	     1		lea dx, string_neg
+ 0124  B4 09		     1		mov ah, 09h
+ 0126  CD 21		     1		int 21h
+ 0128  58		     1		pop ax
+ 0129  5A		     1		pop dx
+ 012A  32 E4				xor ah,ah
+ 012C				not_neg:
+ 012C  BB 2710				mov bx,10000 ; 要除以的权重，可以处理万位，
+				    
+ 012F				cov_back:
+ 012F  33 D2				xor dx,dx ;清零
+ 0131  F7 F3				div bx  ; ax是被除数，bx是除数，ax是商，dx是余数
+ 0133  8B CA				mov cx,dx ;余数先存放在cx
+					
+ 0135  83 3E 0077 R 00			cmp trans_flag,0
+ 013A  75 05				jne nor1
+ 013C  83 F8 00				cmp ax,0 ;商是零
+ 013F  74 0F				je cont
+					
+ 0141				nor1:
+ 0141  8A D0				mov dl,al
+ 0143  80 C2 30				add dl,30h ;转换成ASCII码输出
+ 0146  B4 02				mov ah,2   ;输出
+ 0148  CD 21				int 21h
+					
+ 014A  C7 06 0077 R 0001		mov trans_flag,1;有输出就置为1，后续的0也要输出
+					
+ 0150				cont:
+ 0150  83 FB 0A				cmp bx,10  ; 如果已经处理过十位，就直接输出
+ 0153  74 0F				je outer
+					
+ 0155  33 D2				xor dx,dx ;清零
+ 0157  8B C3				mov ax,bx ;递减权重
+ 0159  BB 000A				mov bx,10
+ 015C  F7 F3			    div bx
+ 015E  8B D8			    mov bx,ax 
+ 0160  8B C1			    mov ax,cx;将余数送到被除数中，继续除
+ 0162  EB CB			    jmp cov_back 
+				   
+ 0164				outer:
+ 0164  8A D1				mov dl,cl;个位输出
+ 0166  80 C2 30				add dl,30h
+ 0169  B4 02				mov ah,2
+ 016B  CD 21				int 21h   
+					putstr string_space
+ 016D  52		     1	 	push dx
+ 016E  50		     1	 	push ax
+ 016F  8D 16 0079 R	     1		lea dx, string_space
+ 0173  B4 09		     1		mov ah, 09h
+ 0175  CD 21		     1		int 21h
+ 0177  58		     1		pop ax
+ 0178  5A		     1		pop dx
+ 0179  C7 06 0077 R 0000		mov trans_flag, 0
+ 017F  33 FF				xor di, di
+ 0181  C3			    ret
+ 0182				num2asc endp
+
+
+ 0182				stop:
+ 0182  B4 4C			    MOV AH,4CH
+ 0184  CD 21			    INT 21H
+ 0186				CODES ENDS
+				    END START
+
+
+
+
+
+
+
+
+
+
+
+Microsoft (R) Macro Assembler Version 6.11		    05/30/23 13:26:01
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+enterline  . . . . . . . . . . .	Proc
+putstr . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 0186	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 007B	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0080	  Para	  Private 
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+num2asc  . . . . . . . . . . . .	P Near	 0110	  CODES	Length= 0072 Public
+  not_neg  . . . . . . . . . . .	L Near	 012C	  CODES	
+  cov_back . . . . . . . . . . .	L Near	 012F	  CODES	
+  nor1 . . . . . . . . . . . . .	L Near	 0141	  CODES	
+  cont . . . . . . . . . . . . .	L Near	 0150	  CODES	
+  outer  . . . . . . . . . . . .	L Near	 0164	  CODES	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+CHAR . . . . . . . . . . . . . .	L Near	 0109	  CODES	
+NUM  . . . . . . . . . . . . . .	L Near	 0102	  CODES	
+SPACE  . . . . . . . . . . . . .	L Near	 00FB	  CODES	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+buf  . . . . . . . . . . . . . .	Byte	 0008	  DATAS	
+cc . . . . . . . . . . . . . . .	Word	 0000	  DATAS	
+ec . . . . . . . . . . . . . . .	Word	 0006	  DATAS	
+forward  . . . . . . . . . . . .	L Near	 0033	  CODES	
+nc . . . . . . . . . . . . . . .	Word	 0004	  DATAS	
+not_char . . . . . . . . . . . .	L Near	 0064	  CODES	
+not_num  . . . . . . . . . . . .	L Near	 004A	  CODES	
+ot . . . . . . . . . . . . . . .	L Near	 006D	  CODES	
+sc . . . . . . . . . . . . . . .	Word	 0002	  DATAS	
+stop . . . . . . . . . . . . . .	L Near	 0182	  CODES	
+string1  . . . . . . . . . . . .	Byte	 0028	  DATAS	
+string2  . . . . . . . . . . . .	Byte	 0047	  DATAS	
+string3  . . . . . . . . . . . .	Byte	 0055	  DATAS	
+string4  . . . . . . . . . . . .	Byte	 005D	  DATAS	
+string5  . . . . . . . . . . . .	Byte	 0067	  DATAS	
+string_neg . . . . . . . . . . .	Word	 0075	  DATAS	
+string_space . . . . . . . . . .	Byte	 0079	  DATAS	
+trans_flag . . . . . . . . . . .	Word	 0077	  DATAS	
+
+	   0 Warnings
+	   0 Errors

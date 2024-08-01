@@ -1,0 +1,51 @@
+--lpm_mux CASCADE_CHAIN="IGNORE" DEVICE_FAMILY="Cyclone III" IGNORE_CASCADE_BUFFERS="OFF" LPM_SIZE=16 LPM_WIDTH=1 LPM_WIDTHS=4 data result sel
+--VERSION_BEGIN 13.0 cbx_lpm_mux 2013:06:12:18:03:43:SJ cbx_mgl 2013:06:12:18:05:10:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = lut 10 
+SUBDESIGN mux_src
+( 
+	data[15..0]	:	input;
+	result[0..0]	:	output;
+	sel[3..0]	:	input;
+) 
+VARIABLE 
+	result_node[0..0]	: WIRE;
+	sel_ffs_wire[3..0]	: WIRE;
+	sel_node[3..0]	: WIRE;
+	w_data64w[3..0]	: WIRE;
+	w_data65w[3..0]	: WIRE;
+	w_data66w[3..0]	: WIRE;
+	w_data67w[3..0]	: WIRE;
+	w_data9w[15..0]	: WIRE;
+	w_sel68w[1..0]	: WIRE;
+
+BEGIN 
+	result[] = result_node[];
+	result_node[] = ( ((((((w_data65w[1..1] & w_sel68w[0..0]) & (! (((w_data65w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data65w[2..2]))))) # ((((w_data65w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data65w[2..2]))) & (w_data65w[3..3] # (! w_sel68w[0..0])))) & sel_node[2..2]) & (! ((((((w_data64w[1..1] & w_sel68w[0..0]) & (! (((w_data64w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data64w[2..2]))))) # ((((w_data64w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data64w[2..2]))) & (w_data64w[3..3] # (! w_sel68w[0..0])))) & (! sel_node[3..3])) & (! sel_node[2..2])) # (sel_node[3..3] & (sel_node[2..2] # (((w_data66w[1..1] & w_sel68w[0..0]) & (! (((w_data66w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data66w[2..2]))))) # ((((w_data66w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data66w[2..2]))) & (w_data66w[3..3] # (! w_sel68w[0..0]))))))))) # (((((((w_data64w[1..1] & w_sel68w[0..0]) & (! (((w_data64w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data64w[2..2]))))) # ((((w_data64w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data64w[2..2]))) & (w_data64w[3..3] # (! w_sel68w[0..0])))) & (! sel_node[3..3])) & (! sel_node[2..2])) # (sel_node[3..3] & (sel_node[2..2] # (((w_data66w[1..1] & w_sel68w[0..0]) & (! (((w_data66w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data66w[2..2]))))) # ((((w_data66w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data66w[2..2]))) & (w_data66w[3..3] # (! w_sel68w[0..0]))))))) & ((((w_data67w[1..1] & w_sel68w[0..0]) & (! (((w_data67w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data67w[2..2]))))) # ((((w_data67w[0..0] & (! w_sel68w[1..1])) & (! w_sel68w[0..0])) # (w_sel68w[1..1] & (w_sel68w[0..0] # w_data67w[2..2]))) & (w_data67w[3..3] # (! w_sel68w[0..0])))) # (! sel_node[2..2])))));
+	sel_ffs_wire[] = ( sel[3..0]);
+	sel_node[] = ( sel_ffs_wire[3..2], sel[1..0]);
+	w_data64w[3..0] = w_data9w[3..0];
+	w_data65w[3..0] = w_data9w[7..4];
+	w_data66w[3..0] = w_data9w[11..8];
+	w_data67w[3..0] = w_data9w[15..12];
+	w_data9w[] = ( data[15..0]);
+	w_sel68w[1..0] = sel_node[1..0];
+END;
+--VALID FILE

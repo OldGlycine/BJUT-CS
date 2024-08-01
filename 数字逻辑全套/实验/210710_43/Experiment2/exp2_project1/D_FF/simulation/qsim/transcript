@@ -1,0 +1,14 @@
+# do D_FF.do 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module D_FF_vlg_sample_tst
+# -- Compiling module D_FF_vlg_check_tst
+# -- Compiling module D_FF_vlg_vec_tst
+# 
+# Top level modules:
+# 	D_FF_vlg_vec_tst
+# vsim -L cycloneiii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.D_FF_vlg_vec_tst 

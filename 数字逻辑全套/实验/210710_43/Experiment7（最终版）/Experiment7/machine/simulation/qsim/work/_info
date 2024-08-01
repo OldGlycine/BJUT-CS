@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment7\machine\simulation\qsim
+vmain
+Z1 IeH=S:aiSAz^36SNzD?=Nd0
+Z2 Vl[6H5^lO3ZPbidWiD<`mc3
+Z3 dC:\altera\Experiment7\machine\simulation\qsim
+Z4 w1676986021
+Z5 8main.vo
+Z6 Fmain.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|main.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 d^VVl2YGbKcT<j0OE1QPB2
+!s85 0
+Z11 !s108 1676986023.169000
+Z12 !s107 main.vo|
+!s101 -O0
+vmain_vlg_check_tst
+!i10b 1
+Z13 !s100 bja^gd`j@@G<nePbYW[Z<1
+Z14 Ia5Mie>P2SP^IRE`]L95BB2
+Z15 VGohgYGXJ:R8hJ8E0f0K=m2
+R3
+Z16 w1676986020
+Z17 8main.vt
+Z18 Fmain.vt
+L0 67
+R7
+r1
+!s85 0
+31
+Z19 !s108 1676986023.278000
+Z20 !s107 main.vt|
+Z21 !s90 -work|work|main.vt|
+!s101 -O0
+R9
+vmain_vlg_sample_tst
+!i10b 1
+Z22 !s100 2Z`BMM4<N?_X>LJDc@J;C1
+Z23 IdP8RfO7H7jIf6OI74dW_23
+Z24 VQS_FGeAOG^TodBiAgh:f]2
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vmain_vlg_vec_tst
+!i10b 1
+Z25 !s100 1IU3@zFITj55kF:DWk0@32
+Z26 IjSf96a_Ud`EX<cohaQQOR0
+Z27 VHZma`Q?n[z_A]1=F?<UDB3
+R3
+R16
+R17
+R18
+Z28 L0 1352
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

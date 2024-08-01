@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\Experiment2\D\simulation\modelsim
+vD
+!i10b 1
+!s100 M7`<PzXaPT65z^NIoKPb33
+IQFRVch[0Jl;^foHU6eb6A0
+V8;aKPdlQY]fzUF`PLJaB83
+Z1 dC:\altera\Experiment2\D\simulation\modelsim
+w1666799312
+8D.vo
+FD.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1666799329.930000
+!s107 D.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|D.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+n@d
