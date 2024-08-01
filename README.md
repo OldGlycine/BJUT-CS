@@ -1,7 +1,7 @@
 ![alt text](喜报-1.jpg)
 
 # BJUT-CS
-Homeworks and projects suits for BJUTers major in CS
+Homeworks and projects suits for BJUTers major in CS. A little "star" will give me a good day.
 
 ## Author's info
 高立扬(Liyang Gao) from BJUT major in CS(Experimental class) 2021-2025
