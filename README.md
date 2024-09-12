@@ -11,8 +11,14 @@ Emails: 439767274@qq.com / oldgaoglycine@gmail.com
 Bilibili: https://space.bilibili.com/23415007  
 
 ## Other Links
-C class design: https://www.bilibili.com/video/BV1dB4y1s7DZ/?spm_id_from=333.999.0.0&vd_source=fe124251f31c24fadc276ae056a6a3e7  
-CSDN: https://blog.csdn.net/qq_44119710
+C class design: https://www.bilibili.com/video/BV1dB4y1s7DZ  
+CSDN: https://blog.csdn.net/qq_44119710  
+大一公共课的一些资料链接：（感谢Z学弟提供的资源！）  
+高数上下：https://www.alipan.com/s/Vb5YvG8uAg8?adtag=wx  
+高数下补充：https://www.alipan.com/s/tbJz1XwDTZU?adtag=wx  
+电路分析基础：https://www.alipan.com/s/4EbEfiZ6izR?adtag=wx  
+线性代数（工）：https://www.alipan.com/s/cxA7xuMYADS?adtag=wx  
+
 
 ## Why I share them?
 When I was going through what you're going through right now, I was able to survive that difficult time because of the sharing of my seniors. I want to pass on this spirit, and I hope you can do it one day, to be a better person, to be a better BJUTer.  
