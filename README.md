@@ -4,7 +4,9 @@
 Homeworks and projects suits for BJUTers major in CS. A little "star" will give me a good day.
 
 ## Author's info
-高立扬(Liyang Gao) from BJUT major in CS(Experimental class) 2021-2025
+高立扬(Liyang Gao)  
+BJUT CS(Experimental class) 2021-2025  
+BUAA CS 
 
 ## Contact me
 Emails: 439767274@qq.com / oldgaoglycine@gmail.com  
