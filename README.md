@@ -20,7 +20,7 @@ CSDN: https://blog.csdn.net/qq_44119710
 高数下补充：https://www.alipan.com/s/tbJz1XwDTZU?adtag=wx  
 电路分析基础：https://www.alipan.com/s/4EbEfiZ6izR?adtag=wx  
 线性代数（工）：https://www.alipan.com/s/cxA7xuMYADS?adtag=wx  
-
+保研经验分享贴：https://zhuanlan.zhihu.com/p/721669410
 
 ## Why I share them?
 When I was going through what you're going through right now, I was able to survive that difficult time because of the sharing of my seniors. I want to pass on this spirit, and I hope you can do it one day, to be a better person, to be a better BJUTer.  
