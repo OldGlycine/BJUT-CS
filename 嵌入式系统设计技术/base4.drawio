@@ -1,0 +1,85 @@
+<mxfile host="Electron" modified="2024-04-05T13:27:56.979Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="Hs5zBrmkw2IabI7y4aRe" version="22.0.3" type="device">
+  <diagram name="第 1 页" id="uVnq4MNEXComLRy4SXYD">
+    <mxGraphModel dx="1276" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-2" value="&lt;b&gt;ESP32-C3开发板&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="130" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T0RCaQi8QKfEjNYh3yyH-3" target="T0RCaQi8QKfEjNYh3yyH-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-3" value="KEY Card" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="301.5" y="230" width="77" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-4" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="160" as="sourcePoint" />
+            <mxPoint x="520" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-5" value="I2C总线" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T0RCaQi8QKfEjNYh3yyH-4">
+          <mxGeometry x="-0.1922" y="2" relative="1" as="geometry">
+            <mxPoint x="27" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-24" value="I2C总线" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T0RCaQi8QKfEjNYh3yyH-4">
+          <mxGeometry x="-0.1922" y="2" relative="1" as="geometry">
+            <mxPoint x="-206" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-8" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="433" y="220" as="sourcePoint" />
+            <mxPoint x="433" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-9" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;16x16 LED&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="393" y="220" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-17" value="显示" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="180" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-19" value="IO0 K1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="159.5" as="sourcePoint" />
+            <mxPoint x="290" y="159.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-22" value="SPI总线" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T0RCaQi8QKfEjNYh3yyH-21">
+          <mxGeometry x="-0.1922" y="2" relative="1" as="geometry">
+            <mxPoint x="25" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-25" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="220" as="sourcePoint" />
+            <mxPoint x="200" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-26" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;汉字库&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="220" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-27" value="获取汉字" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-29" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;语音合成&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="60" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="T0RCaQi8QKfEjNYh3yyH-32" target="T0RCaQi8QKfEjNYh3yyH-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-32" value="串口1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="130" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="T0RCaQi8QKfEjNYh3yyH-34" value="语音数据" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="100" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
