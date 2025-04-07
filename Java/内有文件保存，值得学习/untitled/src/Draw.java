@@ -1,0 +1,2 @@
+public class Draw {
+}
