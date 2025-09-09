@@ -1,5 +1,6 @@
 ![alt text](喜报-1.jpg)
 
+# 北京工业大学计算机科学与技术（本科）课程资料及往年题
 # BJUT-CS
 Homeworks and projects suits for BJUTers major in CS. A little "star" will give me a good day.
 
